@@ -5,13 +5,13 @@
 
 @font-face {
     font-family: 'pp_pangram_sans_roundedbold';
-    src:url('/media/fonts/pppangramsansrounded-bold-webfont.woff') format('woff');
+    src:url('../media/fonts/pppangramsansrounded-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     
 
     font-family: 'pp_pangram_sans_rounded_semibold';
-    src: url('/media/fonts/pppangramsansrounded-narrowsemibold-webfont.woff') format('woff');
+    src: url('../media/fonts/pppangramsansrounded-narrowsemibold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     
@@ -19,35 +19,35 @@
 }
 @font-face {
     font-family: 'gotham-ultraitalic';
-        src: url('/media/fonts/gotham-ultraitalic-webfont.woff') format('woff');
+        src: url('../media/fonts/gotham-ultraitalic-webfont.woff') format('woff');
         font-weight: normal;
         font-style: normal;    
 }
 
 @font-face {
     font-family: 'proxima-nova';
-        src: url('/media/fonts/proxima_nova_bold-webfont.woff') format('woff');
+        src: url('../media/fonts/proxima_nova_bold-webfont.woff') format('woff');
         font-weight: bold;
         font-style: normal;    
 }
 
 @font-face {
     font-family: 'proxima-nova-semibold';
-        src: url('/media/fonts/proxima_nova_semibold-webfont.woff') format('woff');
+        src: url('../media/fonts/proxima_nova_semibold-webfont.woff') format('woff');
         font-style: normal;
         font-weight: 400;    
 }
 
 @font-face {
     font-family: 'proxima-nova-regular';
-        src: url('/media/fonts/proximanova-regular-webfont.woff') format('woff');
+        src: url('../media/fonts/proximanova-regular-webfont.woff') format('woff');
         font-style: normal;
         font-weight: 400;    
 }
 
 @font-face {
     font-family: 'proxima-nova';
-        src: url('/media/fonts/proxima_nova_black-webfont.woff') format('woff');
+        src: url('../media/fonts/proxima_nova_black-webfont.woff') format('woff');
         font-weight: black;
         font-style: normal;    
 }
@@ -608,12 +608,12 @@ span {
 }
 
 .bg-img-buttons-parks{
-    background-image: url("/media/imgs/buttons/parks-bg.png");
+    background-image: url("../media/imgs/buttons/parks-bg.png");
     background-size: cover;
     background-position: center 50%;
 }
 .bg-img-buttons-rides{
-    background-image: url("/media/imgs/buttons/rides-bg.png");
+    background-image: url("../media/imgs/buttons/rides-bg.png");
     background-size: cover;
     background-position: center 45%;
 }
