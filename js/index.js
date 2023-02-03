@@ -34,15 +34,36 @@ function rebuildArrow() {
 // create event listener for add-ride-list-btn 
 document.addEventListener('DOMContentLoaded', function() {
 
-    const addRideListBtn = document.querySelector('.add-ride-list-btn');
+    const addRideListBtn = document.querySelectorAll('.add-ride-list-btn');
     if (addRideListBtn) {
-        addRideListBtn.addEventListener('click', function() {
-            window.location.href = 'addridepage.html';
+        addRideListBtn.forEach(function(element) {
+            element.addEventListener('click', function() {
+                window.location.href = 'addridepage.html';
+            });
         });
     } else {
         console.log('add ride list button is not present');
     }
+
+    
 });
+
+//event listener for view-park-page 
+document.addEventListener('DOMContentLoaded', function() {
+    const parkViewRidesBtnDiv = document.querySelectorAll('.view-park-page');
+    if (parkViewRidesBtnDiv) {
+        parkViewRidesBtnDiv.forEach(function(element) {
+            element.addEventListener('click', function() {
+                window.location.href = 'parkpage.html';
+            });
+        });
+    } else {
+        console.log('park view rides button is not present');
+    }
+
+    
+});
+
 
 // create event listener for add-ride-park-btn
 document.addEventListener('DOMContentLoaded', function() {
@@ -56,6 +77,91 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {   
+            const pfpIcon = document.getElementById("change-pfp-icon");
+            const listIcon = document.getElementById("img-icon");
+
+            // Add a click event listener to the div
+            if (pfpIcon) {
+               pfpIcon.addEventListener("click", function (event) {
+                // This colde will run when the div is clicked
+                
+                // Select the image element
+                var image = document.getElementById("pfp-img");
+                // Select the input element
+                var input = document.getElementById("pfp-input");
+                // Simulate a click on the input element
+                input.click();
+                // Add a change event listener to the input element
+                input.addEventListener("change", function (event) {
+                    image.src = URL.createObjectURL(event.target.files[0]);
+                    listIcon.style.display = "none";
+                });
+            });  
+            } else {
+                console.log("pfp icon is NOTT present");
+            }
+            // Add a click event listener to the div
+
+            if (listIcon) {
+                listIcon.addEventListener("click", function (event) {
+                    // This colde will run when the div is clicked
+                    
+                    // Select the image element
+                    var image = document.getElementById("pfp-img");
+                    // Select the input element
+                    var input = document.getElementById("pfp-input");
+                    // Simulate a click on the input element
+                    input.click();
+                    // Add a change event listener to the input element
+                    input.addEventListener("change", function (event) {
+                        image.src = URL.createObjectURL(event.target.files[0]);
+                        listIcon.style.display = "none";
+                    });
+                });  
+            } else {
+                console.log("list icon is not present");
+            }
+           
+        });
+
+// 
+document.addEventListener("DOMContentLoaded", function () {   
+    const changePass = document.querySelector("#pwd-change-icon");
+    if (changePass) {
+        changePass.addEventListener("click", function (e) {
+            console.log("clicked");
+        });
+    } else {
+        console.log("change password icon is not present");
+    };
+    
+
+    const pfpIcon = document.getElementById("change-pfp-icon");
+
+    if (pfpIcon) {
+        pfpIcon.addEventListener("click", function (event) {
+            // This colde will run when the div is clicked
+            
+            // Select the image element
+            var image = document.getElementById("pfp-img");
+            // Select the input element
+            var input = document.getElementById("pfp-input");
+            // Simulate a click on the input element
+            input.click();
+            // Add a change event listener to the input element
+            input.addEventListener("change", function (event) {
+                image.src = URL.createObjectURL(event.target.files[0]);
+            });
+        });  
+    } else {
+        console.log("pfp icon is not present");
+    }
+    // Add a click event listener to the div
+    
+});
+
+
 // create event listener for list-ride-img
 document.addEventListener('DOMContentLoaded', function() {
     const listRideImg = document.querySelector('.list-ride-img');
@@ -67,6 +173,19 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('list ride image is not present');
     }
 });
+
+// Create event listener for parks-list-img
+document.addEventListener('DOMContentLoaded', function() {
+    const parksListImg = document.querySelector('.parks-list-img');
+    if (parksListImg) {
+        parksListImg.addEventListener('click', function() {
+            window.location.href = 'parkpage.html';
+        });
+    } else {
+        console.log('parks list image is not present');
+    }
+});
+
 
 //create evemt listener for back arrow
 document.addEventListener('DOMContentLoaded', function() {
@@ -109,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // create event listener for user-review-rating-div that allows users to choose between thumbs-up-review button and thumbs-down-review button 
 
-// Comment Thumb Up/Down
+// Comment Section Thumb Up/Down Interactivity
 document.addEventListener('DOMContentLoaded', function() {
     const userReviewRatingDiv = document.querySelectorAll('.user-review-rating-div');
     if (userReviewRatingDiv) {
@@ -131,7 +250,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
 //Create event listener for fa-triangle-exclamation 
 document.addEventListener('DOMContentLoaded', function() {
     const faTriangleExclamation = document.querySelector('.fa-triangle-exclamation');
@@ -146,13 +264,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // if nav-logo is clicked, go to home.html
 document.addEventListener('DOMContentLoaded', function() {
-    const navLogo = document.querySelector('.nav-logo');
-    navLogo.addEventListener('click', function() {
+const navLogo = document.querySelector('.nav-logo');
+if (navLogo) {
+        navLogo.addEventListener('click', function() {
     window.location.href = 'home.html';
-    });
-    // when the third icon-text-container element in side the icon-container div is clicked, go to comparerides.html
-//Compare Rides Icon Page Navigation
+    }); 
+    } else {
+        console.log('nav logo is not present');
+    }
 } );
+
+// when the third icon-text-container element in side the icon-container div is clicked, go to comparerides.html
+//Compare Rides Icon Page Navigation
+
 
 // if filter-icon is clicked, go to searchfilters.html
 document.addEventListener('DOMContentLoaded', function() {
@@ -233,18 +357,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // //if the bars icon is clicked, go to menu.html
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuIcon = document.querySelector('.hamburg-menu');
+document.addEventListener('DOMContentLoaded', function() {
+
+    const menuIcon = document.querySelector('.hamburg-menu');
+    if (menuIcon) {
         menuIcon.addEventListener('click', function() {
         if (menuIcon.id === "menu-selected") {
             history.back();
         } else {
             window.location.href = 'menu.html';
         }
-    });
+    }); 
+    } else {
+        console.log('menu icon is not present');
+    }       
 });
-
-
 
 
 // //if the bars icon is clicked, go to menu.html
@@ -276,6 +403,9 @@ function addRide() {
 function menuPage() {
 
     const contentDiv = document.querySelector(".content");
+    if (contentDiv) {
+        
+    }
     const allElements = document.querySelectorAll("body *");
     for (let i = 0; i < allElements.length; i++) {
     if (allElements[i] !== contentDiv) {
@@ -283,12 +413,6 @@ function menuPage() {
     }
     }
    
-    
-
-
-    
-
-
     const menuHeader = document.createElement("div");
     menuHeader.classList.add("menu-header");
 
@@ -618,9 +742,70 @@ function newList() {
     
 }
 
+function resetPass() {
+    // remove resetpass-header
+    const resetPassHeader = document.querySelector(".resetpass-text");
+    resetPassHeader.remove();
+
+    // remove resetpass-form
+    const resetPassForm = document.querySelector(".resetpass-form");
+    resetPassForm.remove();
+
+    const thanksDiv = document.createElement("div");
+    thanksDiv.classList.add("thanks-div");
+    const thanksH2 = document.createElement("h2");
+    thanksH2.classList.add("thanks-txt", "proxima-bold");
+    const thanksH2Txt1 = document.createTextNode("PASSWORD");
+    const thanksBr = document.createElement("br");
+    const thanksH2Txt2 = document.createTextNode("UPDATED!")
+    thanksH2.append(thanksH2Txt1, thanksBr, thanksH2Txt2);
+    thanksDiv.append(thanksH2);
+    const thanksP = document.createElement("p");
+    thanksP.classList.add("thanks-txt", "proxima-bold");
+    const thanksPtxt = document.createTextNode("Your Password Has Been Updated!");
+    thanksP.append(thanksPtxt);
+    const thanksIcon = document.createElement("i");
+    thanksIcon.classList.add("fa-solid", "fa-thumbs-up");
+    const btmMenu = document.querySelector(".app-footer");
+    const returnBtnDiv = document.createElement('div');
+    returnBtnDiv.classList.add("thanks-btn-div");
+    returnBtnDiv.style.bottom = "1em"
+    const returnBtn = document.createElement('button');
+    returnBtn.classList.add("contact-btn-lg", "thanks-btn");
+    returnBtn.setAttribute("onclick","history.go(-1)");
+    returnBtn.textContent = "RETURN"
+    returnBtnDiv.append(returnBtn);
+    document.body.insertBefore(returnBtnDiv, btmMenu);
+    document.body.insertBefore(thanksDiv, returnBtnDiv);
+    thanksDiv.append(thanksIcon);
+    thanksDiv.append(thanksP);
+}
+
 function editProfileBtn() {
    rebuildArrow();
    
+   const pfpIcon = document.getElementById("change-pfp-icon");
+
+    if (pfpIcon) {
+        pfpIcon.addEventListener("click", function (event) {
+            // This colde will run when the div is clicked
+            
+            // Select the image element
+            var image = document.getElementById("pfp-img");
+            // Select the input element
+            var input = document.getElementById("pfp-input");
+            // Simulate a click on the input element
+            input.click();
+            // Add a change event listener to the input element
+            input.addEventListener("change", function (event) {
+                image.src = URL.createObjectURL(event.target.files[0]);
+            });
+        });  
+    } else {
+        console.log("pfp icon is not present");
+    }
+
+    
     const savedListsDiv = document.querySelector('.saved-lists');
     savedListsDiv.remove();
     
@@ -629,7 +814,7 @@ function editProfileBtn() {
     
     const editProfileBtn = document.querySelector('.edit-profile-btn');
     editProfileBtn.remove();
-
+    
     const profileHeader = document.querySelector('#profile-header');
     // remove profile header text node
     profileHeader.removeChild(profileHeader.childNodes[0]);
@@ -640,33 +825,34 @@ function editProfileBtn() {
     const profilePicDiv = document.querySelector('.profile-pic-div');
     pfpEditDiv.classList.add('pfp-edit-div','fa-stack');
     pfpEditDiv.id = 'change-pfp-icon';
-
+    
     const pfpInput = document.createElement('input');
     pfpInput.type = 'file';
     pfpInput.id = 'pfp-input';
     pfpEditDiv.appendChild(pfpInput);
-
+    
     const editIcon1 = document.createElement('i');
     editIcon1.classList.add('fa', 'fa-circle', 'fa-stack-2x');
     editIcon1.style.color = 'rgb(255, 255, 255)';   
     pfpEditDiv.appendChild(editIcon1);
-
+    
     const editIcon2 = document.createElement('i');
     editIcon2.classList.add('fa-regular', 'fa-circle', 'fa-stack-2x');
     editIcon2.style.color = 'rgb(0, 0, 0)';
     pfpEditDiv.appendChild(editIcon2);
-
+    
     const editIcon3 = document.createElement('i');
     editIcon3.classList.add('fa-solid', 'fa-camera', 'fa-stack-2x');
     editIcon3.style.color = 'rgb(0, 0, 0)';
     pfpEditDiv.appendChild(editIcon3);
-
+    
     profilePicDiv.appendChild(pfpEditDiv);
-
+    
     const editUserIcon = document.createElement('i');
     const usernameDiv = document.querySelector('.username-txt');
     usernameDiv.classList.add('username-div');
-    editUserIcon.classList.add('fa-solid', 'fa-pen-to-square');
+    
+    editUserIcon.classList.add('fa-solid', 'fa-pen-to-square', 'username-edit-icon');
     usernameDiv.appendChild(editUserIcon);
 
     const userInfoDiv = document.createElement("div");
@@ -718,8 +904,29 @@ function editProfileBtn() {
     // append the userInfoDiv to the parent element in the DOM
     document.body.appendChild(userInfoDiv);
 
-    
+    //event listener for username-edit-icon
+    const usernameEditIcon = document.querySelector(".username-edit-icon");
+    if (usernameEditIcon) {
+        usernameEditIcon.addEventListener("click", function (event) {
+            window.location.href = 'changeusername.html';
+        });
+    } else {
+        console.log("username edit icon is not present");
+    }
 
+    //event listener for pwd-change-icon
+    const pwdChangeIcon = document.querySelector("#pwd-change-icon");
+    if (pwdChangeIcon) {
+        pwdChangeIcon.addEventListener("click", function (event) {
+            window.location.href = 'resetpass.html';
+        });
+    }
+
+
+}
+
+function changeUsername() {
+    window.location.href = history.back();
 }
 
 // event listener if bg-img-buttons-parks is clicked go to parkspage.html
