@@ -12,13 +12,34 @@
                 }
          });
 
+
+
 // if nav-logo is clicked, go to home.html
             document.addEventListener('DOMContentLoaded', function() {
               const navLogo = document.querySelector('.nav-logo');
               navLogo.addEventListener('click', function() {
                 window.location.href = 'home.html';
               });
+              // when the third icon-text-container element in side the icon-container div is clicked, go to comparerides.html
+            //Compare Rides Icon Page Navigation
             } );
+
+//when the first icon-text-container element in side the icon-container div is clicked, go to home.html
+            //Home Icon Page Navigation
+            document.addEventListener('DOMContentLoaded', function() {
+                let homeIcon = document.querySelector('.icon-container');
+                // This is for the Home Icon
+                if (homeIcon) {
+                    let homeIcon = document.querySelector('.icon-container').children[0];
+                    console.log('home icon is present');
+                    homeIcon.addEventListener('click', function() {
+                        window.location.href = 'home.html';
+                    });
+                } else {
+                    console.log('home icon is not present');
+                };
+            });
+            
 // when the second icon-text-container element in side the icon-container div is clicked, go to profile.html
             //Profile Icon Page Navigation
             document.addEventListener('DOMContentLoaded', function() {
@@ -34,26 +55,75 @@
                     console.log('profile icon is not present');
                 };
             });
-//if the bars icon is clicked, go to menu.html
-            document.addEventListener('DOMContentLoaded', function() {
-                // This is for the Menu Icon
-                    const menuIcon = document.querySelector('.hamburg-menu');
-                    
-                    if (menuIcon.style.color !== "white") {
-                        // return to previous page
-                        console.log('menu color is blue');
-                        menuIcon.addEventListener('click', function() {
-                            window.location.href = history.back();
-                            console.log('menu color went back in time');
-                        });
-                    } else {
-                        menuIcon.addEventListener('click', function() {
-                            window.location.href = 'menu.html';
-                            console.log('menu color is white')
-                        });
-                    }
 
+// when the third icon-text-container element in side the icon-container div is clicked, go to comparerides.html
+            //Compare Rides Icon Page Navigation
+            document.addEventListener('DOMContentLoaded', function() {
+                let compareIcon = document.querySelector('.icon-container');
+                // This is for the Compare Rides Icon
+                if (compareIcon) {
+                    let compareIcon = document.querySelector('.icon-container').children[2];
+                    console.log('compare icon is present');
+                    compareIcon.addEventListener('click', function() {
+                        window.location.href = 'comparerides.html';
+                    });
+                } else {
+                    console.log('compare icon is not present');
+                };
+            });
+
+// when the fourth icon-text-container element in side the icon-container div is clicked, go to ridespage.html
+            //Rides Icon Page Navigation
+            document.addEventListener('DOMContentLoaded', function() {
+                let ridesIcon = document.querySelector('.icon-container');
+                // This is for the Rides Icon
+                if (ridesIcon) {
+                    let ridesIcon = document.querySelector('.icon-container').children[3];
+                    console.log('rides icon is present');
+                    ridesIcon.addEventListener('click', function() {
+                        window.location.href = 'ridespage.html';
+                    });
+                } else {
+                    console.log('rides icon is not present');
+                }; 
+            });
+
+
+// //if the bars icon is clicked, go to menu.html
+             document.addEventListener('DOMContentLoaded', function() {
+                    const menuIcon = document.querySelector('.hamburg-menu');
+                    menuIcon.addEventListener('click', function() {
+                    if (menuIcon.id === "menu-selected") {
+                        history.back();
+                    } else {
+                        window.location.href = 'menu.html';
+                    }
                 });
+            });
+
+
+
+
+// //if the bars icon is clicked, go to menu.html
+//             document.addEventListener('DOMContentLoaded', function() {
+//                 // This is for the Menu Icon
+//                     const menuIcon = document.querySelector('.hamburg-menu');
+                    
+//                     if (menuIcon.style.color !== "white") {
+//                         // return to previous page
+//                         console.log('menu color is blue');
+//                         menuIcon.addEventListener('click', function() {
+//                             window.location.href = history.back();
+//                             console.log('menu color went back in time');
+//                         });
+//                     } else {
+//                         menuIcon.addEventListener('click', function() {
+//                             window.location.href = 'menu.html';
+//                             console.log('menu color is white')
+//                         });
+//                     }
+
+//                 });
                 
 
 
@@ -365,3 +435,23 @@ document.body.appendChild(listDiv);
 
 
 }
+
+// event listener if bg-img-buttons-parks is clicked go to parkspage.html
+document.addEventListener("DOMContentLoaded", function() {
+const parksBtn = document.querySelector(".bg-img-buttons-parks");
+    parksBtn.addEventListener("click", function() {
+        window.location.href = "parkspage.html";
+        }
+    );
+});
+
+// event listener if bg-img-buttons-rides is clicked go to parkspage.html
+document.addEventListener("DOMContentLoaded", function() {
+const ridesBtn = document.querySelector(".bg-img-buttons-rides");
+    ridesBtn.addEventListener("click", function() {
+        window.location.href = "ridespage.html";
+        }
+    );
+});
+
+
