@@ -454,6 +454,7 @@ body{
     padding: 0.1em 0em 0em 0em;
     position: absolute;
     margin-left: 0.5em;
+    cursor: pointer;
 }
 
 .ad-space-cow {
@@ -466,6 +467,7 @@ body{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
 }
 
 .search-bar-div{
@@ -517,6 +519,7 @@ body{
     position: relative;
     top: 0.3em;
     right: 1.8em;
+    cursor: pointer;
 }
 
 .fan-favs{
@@ -546,6 +549,7 @@ body{
     flex-direction: column;
     align-items: center;
     margin: 10px 20px;
+    cursor: pointer;
 }
 .icon-img {
     width: 65px;
@@ -1161,6 +1165,10 @@ span {
 
 .edit-profile-btn p{
     margin-left: 0.8em;
+}
+
+.edit-profile-btn {
+    cursor: pointer;
 }
 
 .edit-profile-btn i{
