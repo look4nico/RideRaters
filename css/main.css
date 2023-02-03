@@ -2773,7 +2773,7 @@ color: #6D6D6D;
 
 
 
-@/media screen and (min-width: 810px) {
+@media screen and (min-width: 810px) {
     
     .welcome-para {
         margin: auto;
@@ -2896,7 +2896,7 @@ color: #6D6D6D;
 }
 
 /* used to be min-width*/
-@/media screen and (min-width: 492px) {
+@media screen and (min-width: 492px) {
     .compare-btn-div {
         padding: 1.5rem 4rem 1.5rem 4rem;
     }
@@ -2909,7 +2909,7 @@ color: #6D6D6D;
     }
 }
 
-@/media screen and (max-width: 428px) and (max-height: 926px) {
+@media screen and (max-width: 428px) and (max-height: 926px) {
     
     .welcome-btm-links {
         top: 9em;
@@ -2946,7 +2946,7 @@ color: #6D6D6D;
 
 }
 
-@/media screen and (max-width: 414px) {
+@media screen and (max-width: 414px) {
     .ride-compared i {
         /* background-color: pink;
         top: -2.4rem;
@@ -2981,7 +2981,7 @@ color: #6D6D6D;
 }
 
 /* used to be min-width but it messed with ipad*/
-@/media screen and (max-width: 412px) {
+@media screen and (max-width: 412px) {
     .compare-btn-div button {
         margin-left: 2.5rem;
     }
@@ -3003,7 +3003,7 @@ color: #6D6D6D;
 }
 
 /* used to be min-width*/
-@/media screen and (max-width: 390px) {
+@media screen and (max-width: 390px) {
     .rides-title-div {
     margin: 1rem 0rem 1rem 6.5vw;
     }
@@ -3046,7 +3046,7 @@ color: #6D6D6D;
 
 }
 
-@/media screen and (max-width: 375px) {
+@media screen and (max-width: 375px) {
     .welcome-btm-links {
         top: 6em;
     }
@@ -3137,7 +3137,7 @@ color: #6D6D6D;
     }
 }
 
-@/media screen and (max-width: 375px) and (max-height: 667px) {
+@media screen and (max-width: 375px) and (max-height: 667px) {
 
     .welcome-btns-div {
         margin-top: 1.5em;
@@ -3597,7 +3597,7 @@ color: #6D6D6D;
 
 }
 
-@/media screen and (max-width: 360px) {
+@media screen and (max-width: 360px) {
     .welcome-btm-links {
         top: 3em;
     }
