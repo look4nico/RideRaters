@@ -170,3 +170,198 @@ function menuPage() {
 
 
 }
+
+function reviewThanks() {
+  const form = document.getElementById("review-div");
+
+  form.remove();
+
+  const thanksDiv = document.createElement("div");
+  thanksDiv.classList.add("thanks-div");
+  const thanksH2 = document.createElement("h2");
+  thanksH2.classList.add("thanks-txt", "proxima-bold");
+  const thanksH2Txt1 = document.createTextNode("THANK YOU FOR");
+  const thanksBr = document.createElement("br");
+  const thanksH2Txt2 = document.createTextNode("YOUR REVIEW.")
+  thanksH2.append(thanksH2Txt1, thanksBr, thanksH2Txt2);
+  thanksDiv.append(thanksH2);
+  const thanksP = document.createElement("p");
+  thanksP.classList.add("thanks-txt", "proxima-bold");
+  const thanksPtxt = document.createTextNode("Your Review Will Help Other RideRaters on Their Adventures.");
+  thanksP.append(thanksPtxt);
+  const thanksIcon = document.createElement("i");
+  thanksIcon.classList.add("fa-solid", "fa-thumbs-up");
+  const btmMenu = document.querySelector(".app-footer");
+  const returnBtnDiv = document.createElement('div');
+  returnBtnDiv.classList.add("thanks-btn-div");
+  returnBtnDiv.style.bottom = "1em"
+  const returnBtn = document.createElement('button');
+  returnBtn.classList.add("contact-btn-lg", "thanks-btn");
+  returnBtn.setAttribute("onclick","history.go(-1)");
+  returnBtn.textContent = "RETURN"
+  returnBtnDiv.append(returnBtn);
+  document.body.insertBefore(returnBtnDiv, btmMenu);
+  document.body.insertBefore(thanksDiv, returnBtnDiv);
+  thanksDiv.append(thanksP);
+  thanksDiv.append(thanksIcon);
+}
+
+function newList() { 
+  const profileHead = document.getElementById("profile-header"); 
+  //remove profile header text node
+    profileHead.removeChild(profileHead.childNodes[0]);
+  //create text node
+    const profileHeadTxt = document.createTextNode("Create List");
+    //append text node to header
+    profileHead.append(profileHeadTxt);
+
+    // Create the container div for the image
+const listImgDiv = document.createElement("div");
+listImgDiv.classList.add("list-img-div");
+
+// delete profile pic div
+const profilePicDiv = document.querySelector(".profile-pic-div");
+profilePicDiv.remove();
+// remove username-txt class div
+const usernameDiv = document.querySelector(".username-txt");
+usernameDiv.remove();
+// remove saved-lists div
+const savedListsDiv = document.querySelector(".saved-lists");
+savedListsDiv.remove();
+
+// remove review-btn-div
+const reviewBtnDiv = document.querySelector(".review-btn-div");
+reviewBtnDiv.remove();
+
+// edit-profile-btn remove
+const editProfileBtn = document.querySelector(".edit-profile-btn");
+editProfileBtn.remove();
+
+// Create the image element
+const listImg = document.createElement("img");
+listImg.src = "";
+listImg.classList.add("create-list-img");
+listImg.id = "pfp-img";
+listImg.alt = "";
+listImgDiv.appendChild(listImg);
+
+// Create the container div for the edit icon
+const listImgEdit = document.createElement("div");
+listImgEdit.classList.add("list-img-edit", "fa-stack");
+listImgEdit.id = "change-pfp-icon";
+listImgDiv.appendChild(listImgEdit);
+
+// Create the input element for the file input
+const pfpInput = document.createElement("input");
+pfpInput.type = "file";
+pfpInput.id = "pfp-input";
+listImgEdit.appendChild(pfpInput);
+
+// Create the first icon for the edit button
+const editIcon1 = document.createElement("i");
+editIcon1.classList.add("fa", "fa-circle", "fa-stack-2x");
+editIcon1.style.color = "rgb(255, 255, 255)";
+listImgEdit.appendChild(editIcon1);
+
+// Create the second icon for the edit button
+const editIcon2 = document.createElement("i");
+editIcon2.classList.add("fa-regular", "fa-circle", "fa-stack-2x");
+editIcon2.style.color = "rgb(0, 0, 0)";
+listImgEdit.appendChild(editIcon2);
+
+// Create the third icon for the edit button
+const editIcon3 = document.createElement("i");
+editIcon3.classList.add("fa-solid", "fa-camera", "fa-stack-2x");
+editIcon3.style.color = "rgb(0, 0, 0)";
+listImgEdit.appendChild(editIcon3);
+
+// Create the icon for the image
+const imgIcon = document.createElement("i");
+imgIcon.classList.add("fa-solid", "fa-images");
+imgIcon.id = "img-icon";
+listImgDiv.appendChild(imgIcon);
+
+// Create the container div for the form
+const formDiv = document.createElement("div");
+formDiv.classList.add("user-input-form-div");
+formDiv.id = "form-submit";
+
+// Create the form element
+const usernameForm = document.createElement("form");
+usernameForm.action = "";
+usernameForm.classList.add("username-form");
+formDiv.appendChild(usernameForm);
+
+// Create the label for the form
+const formLabel = document.createElement("label");
+formLabel.setAttribute("for", "listname");
+formLabel.innerText = "LIST NAME";
+usernameForm.appendChild(formLabel);
+
+// Create the input for the form
+const listNameInput = document.createElement("input");
+listNameInput.type = "text";
+listNameInput.id = "listname";
+listNameInput.name = "listname";
+listNameInput.placeholder = "Enter List Name";
+listNameInput.required = true;
+
+
+// Create the container div for the submit button
+const submitDiv = document.createElement("div");
+submitDiv.classList.add("submit-div");
+
+// Create the submit button
+const submitBtn = document.createElement("button");
+submitBtn.classList.add("submit-btn");
+submitBtn.type = "submit";
+submitBtn.innerText = "CREATE LIST";
+submitDiv.appendChild(submitBtn);
+
+// Append the input to the form
+usernameForm.appendChild(listNameInput);
+
+// Append the form to the container div
+formDiv.appendChild(usernameForm);
+
+// Append the submit button to the container div
+formDiv.insertAdjacentElement("afterend",submitDiv);
+
+// Append the image container div to the body
+document.body.appendChild(listImgDiv);
+
+// Append the container div to the body
+document.body.appendChild(formDiv);
+
+
+// Create the container div for the list
+const listDiv = document.createElement("div");
+listDiv.classList.add("list-div");
+
+const createListBtnDiv = document.createElement('div');
+createListBtnDiv.classList.add('create-list-btn-div');
+
+const createListBtn = document.createElement('button');
+createListBtn.classList.add('contact-btn-lg');
+createListBtn.onclick = function() {
+  window.location.href = "profile.html"
+};
+
+
+const createListText = document.createElement('p');
+createListText.innerText = "CREATE LIST";
+
+const createListIcon = document.createElement('i');
+createListIcon.classList.add('fa-solid', 'fa-circle-plus');
+
+createListBtn.append(createListText, createListIcon);
+createListBtnDiv.append(createListBtn);
+
+listDiv.append(createListBtnDiv);
+
+document.body.appendChild(listDiv);
+
+
+
+
+}

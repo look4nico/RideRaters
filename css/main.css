@@ -1225,6 +1225,7 @@ span {
     float: inline-end;
     bottom: 0.3em;
     margin-left: 4em;
+    cursor: pointer;
 }
 
 .saved-lists-txt-btn i {
