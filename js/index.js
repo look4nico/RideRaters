@@ -82,17 +82,55 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// create event listener for thumbs-up-review button
+// // create event listener for thumbs-up-review button
+// document.addEventListener('DOMContentLoaded', function() {
+//     const thumbsDownReview = document.querySelectorAll('.thumbs-down-review');
+//     if (thumbsDownReview) {
+//         thumbsDownReview.forEach(function(thumbsDownReview) {
+//             thumbsDownReview.addEventListener('click', function() {
+//                 thumbsDownReview.children[0].style.color = '#8E6CAF';
+//             });
+//         });
+//     } else {
+//         console.log('thumbs down review button is not present');
+//     };
+
+//     const thumbsUpReview = document.querySelectorAll('.thumbs-up-review');
+//     if (thumbsUpReview) {
+//         thumbsUpReview.forEach(function(thumbsUpReview) {
+//             thumbsUpReview.addEventListener('click', function() {
+//                 thumbsUpReview.children[0].style.color = '#8E6CAF';
+//             });
+//         });
+//     } else {
+//         console.log('thumbs up review button is not present');
+//     };
+// });
+
+// create event listener for user-review-rating-div that allows users to choose between thumbs-up-review button and thumbs-down-review button 
+
+// Comment Thumb Up/Down
 document.addEventListener('DOMContentLoaded', function() {
-    const thumbsUpReview = document.querySelector('.thumbs-up-review');
-    if (thumbsUpReview) {
-        thumbsUpReview.addEventListener('click', function() {
-            thumbsUpReview.style.color = '#C1FDAF';
+    const userReviewRatingDiv = document.querySelectorAll('.user-review-rating-div');
+    if (userReviewRatingDiv) {
+        userReviewRatingDiv.forEach(function(userReviewRatingDiv) {
+            userReviewRatingDiv.addEventListener('click', function() {
+                //if statement that alternates between thumbs-up-review button and thumbs-down-review button
+                if (userReviewRatingDiv.children[0].style.color === 'rgb(142, 108, 175)') {
+                    userReviewRatingDiv.children[0].style.color = '#000000';
+                    userReviewRatingDiv.children[1].style.color = '#8E6CAF';
+                } else {
+                    userReviewRatingDiv.children[0].style.color = '#8E6CAF';
+                    userReviewRatingDiv.children[1].style.color = '#000000';
+                }
+            });
         });
     } else {
-        console.log('thumbs up review button is not present');
-    }
+        console.log('user review rating div is not present');
+    };
 });
+
+
 
 //Create event listener for fa-triangle-exclamation 
 document.addEventListener('DOMContentLoaded', function() {
@@ -380,6 +418,44 @@ function reviewThanks() {
   document.body.insertBefore(thanksDiv, returnBtnDiv);
   thanksDiv.append(thanksP);
   thanksDiv.append(thanksIcon);
+}
+
+function reportThanks() {
+    const form = document.getElementById("form-submit");
+
+    form.remove();
+
+    const thanksDiv = document.createElement("div");
+    thanksDiv.classList.add("thanks-div");
+    const thanksH2 = document.createElement("h2");
+    thanksH2.classList.add("thanks-txt", "proxima-bold");
+    const thanksH2Txt1 = document.createTextNode("THANK YOU FOR");
+    const thanksBr = document.createElement("br");
+    const thanksH2Txt2 = document.createTextNode("YOUR FEEDBACK.")
+    thanksH2.append(thanksH2Txt1, thanksBr, thanksH2Txt2);
+    thanksDiv.append(thanksH2);
+    const thanksP = document.createElement("p");
+    thanksP.classList.add("thanks-txt", "proxima-bold");
+    const thanksPtxt = document.createTextNode("You Helped Improve This Experience For All Our User.");
+    thanksP.append(thanksPtxt);
+    const thanksIcon = document.createElement("i");
+    thanksIcon.classList.add("fa-solid", "fa-thumbs-up");
+    const btmMenu = document.querySelector(".app-footer");
+    const returnBtnDiv = document.createElement('div');
+    returnBtnDiv.classList.add("thanks-btn-div");
+    returnBtnDiv.style.bottom = "1em"
+    const returnBtn = document.createElement('button');
+    returnBtn.classList.add("contact-btn-lg", "thanks-btn");
+    returnBtn.setAttribute("onclick","history.go(-1)");
+    returnBtn.textContent = "RETURN"
+    returnBtnDiv.append(returnBtn);
+    document.body.insertBefore(returnBtnDiv, btmMenu);
+    document.body.insertBefore(thanksDiv, returnBtnDiv);
+    thanksDiv.append(thanksP);
+    thanksDiv.append(thanksIcon);
+
+    
+
 }
 
 function newList() { 
