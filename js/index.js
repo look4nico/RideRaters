@@ -751,34 +751,98 @@ function resetPass() {
     const resetPassForm = document.querySelector(".resetpass-form");
     resetPassForm.remove();
 
-    const thanksDiv = document.createElement("div");
-    thanksDiv.classList.add("thanks-div");
-    const thanksH2 = document.createElement("h2");
-    thanksH2.classList.add("thanks-txt", "proxima-bold");
-    const thanksH2Txt1 = document.createTextNode("PASSWORD");
+    const recoveryEmailText = document.createElement('div');
+    recoveryEmailText.classList.add('login-text');
+    const recoveryHeader = document.createElement('h1');
+    recoveryHeader.classList.add('login-header');
+    recoveryHeader.textContent = 'PASSWORD UPDATED!';
+    recoveryEmailText.appendChild(recoveryHeader);
+
+    const thumbsUpIcon = document.createElement('div');
+    thumbsUpIcon.classList.add('thumbs-lg-icon');
+    const thumbCircle = document.createElement('i');
+    thumbCircle.classList.add('fa-regular', 'fa-circle', 'fa-stack-2x');
+    thumbCircle.style.cssText = 'color: #ffffff; font-size: 7em !important;';
+    const thumbUp = document.createElement('i');
+    thumbUp.classList.add('fa-solid', 'fa-thumbs-up', 'fa-stack-1x');
+    thumbUp.style.cssText = 'color: rgb(255, 255, 255); font-size: 3em !important; margin-top: 0.5em;';
+    thumbsUpIcon.append(thumbCircle, thumbUp);
+
+    const recoveryEmailBtnDiv = document.createElement('div');
+    recoveryEmailBtnDiv.classList.add('login-btn-div');
+    recoveryEmailBtnDiv.style.cssText = 'top: 25vh;';
+    const recoveryParagraph = document.createElement('p');
+    recoveryParagraph.classList.add('login-para');
+    recoveryParagraph.style.cssText = 'margin-bottom: 0.8em;';
+    recoveryParagraph.textContent = 'Your password has been updated!';
+    const recoveryLink = document.createElement('a');
+    recoveryLink.classList.add('login-link');
+    recoveryLink.href = 'login.html';
+    const recoveryButton = document.createElement('button');
+    recoveryButton.classList.add('login-btn-lg');
+    recoveryButton.style.cssText = 'width: 81%; max-width: 15em; padding-left: 0em; padding-right: 0em;';
+    recoveryButton.textContent = 'Login';
+    recoveryLink.appendChild(recoveryButton);
+    recoveryEmailBtnDiv.append(recoveryParagraph, recoveryLink);
+
+    document.body.append(recoveryEmailText, thumbsUpIcon, recoveryEmailBtnDiv);
+
+    
+
+
+}
+
+function recoverySent() {
+    // remove resetpass-header
+    const resetPassHeader = document.querySelector(".login-text");
+    resetPassHeader.remove();
+
+    // remove resetpass-form
+    const resetPassForm = document.querySelector(".forgot-form-div");
+    resetPassForm.remove();
+
+    const recoveryEmailText = document.createElement('div');
+    recoveryEmailText.classList.add('login-text');
+    const recoveryHeader = document.createElement('h1');
+    recoveryHeader.classList.add('login-header');
+    const thanksH2Txt1 = document.createTextNode("Recovery Email");
     const thanksBr = document.createElement("br");
-    const thanksH2Txt2 = document.createTextNode("UPDATED!")
-    thanksH2.append(thanksH2Txt1, thanksBr, thanksH2Txt2);
-    thanksDiv.append(thanksH2);
-    const thanksP = document.createElement("p");
-    thanksP.classList.add("thanks-txt", "proxima-bold");
-    const thanksPtxt = document.createTextNode("Your Password Has Been Updated!");
-    thanksP.append(thanksPtxt);
-    const thanksIcon = document.createElement("i");
-    thanksIcon.classList.add("fa-solid", "fa-thumbs-up");
-    const btmMenu = document.querySelector(".app-footer");
-    const returnBtnDiv = document.createElement('div');
-    returnBtnDiv.classList.add("thanks-btn-div");
-    returnBtnDiv.style.bottom = "1em"
-    const returnBtn = document.createElement('button');
-    returnBtn.classList.add("contact-btn-lg", "thanks-btn");
-    returnBtn.setAttribute("onclick","history.go(-1)");
-    returnBtn.textContent = "RETURN"
-    returnBtnDiv.append(returnBtn);
-    document.body.insertBefore(returnBtnDiv, btmMenu);
-    document.body.insertBefore(thanksDiv, returnBtnDiv);
-    thanksDiv.append(thanksIcon);
-    thanksDiv.append(thanksP);
+    const thanksH2Txt2 = document.createTextNode("Sent!");
+    recoveryHeader.append(thanksH2Txt1, thanksBr, thanksH2Txt2);
+    recoveryEmailText.appendChild(recoveryHeader);
+
+    const thumbsUpIcon = document.createElement('div');
+    thumbsUpIcon.classList.add('thumbs-lg-icon');
+    const thumbCircle = document.createElement('i');
+    thumbCircle.classList.add('fa-regular', 'fa-circle', 'fa-stack-2x');
+    thumbCircle.style.cssText = 'color: #ffffff; font-size: 7em !important;';
+    const thumbUp = document.createElement('i');
+    thumbUp.classList.add('fa-solid', 'fa-thumbs-up', 'fa-stack-1x');
+    thumbUp.style.cssText = 'color: rgb(255, 255, 255); font-size: 3em !important; margin-top: 0.5em;';
+    thumbsUpIcon.append(thumbCircle, thumbUp);
+
+    const recoveryEmailBtnDiv = document.createElement('div');
+    recoveryEmailBtnDiv.classList.add('login-btn-div');
+    recoveryEmailBtnDiv.style.cssText = 'top: 25vh;';
+    const recoveryParagraph = document.createElement('p');
+    recoveryParagraph.classList.add('login-para');
+    recoveryParagraph.style.cssText = 'margin-bottom: 0.8em;';
+    recoveryParagraph.textContent = 'An Email Has Been Sent!';
+    const recoveryLink = document.createElement('a');
+    recoveryLink.classList.add('login-link');
+    recoveryLink.href = 'login.html';
+    const recoveryButton = document.createElement('button');
+    recoveryButton.classList.add('login-btn-lg');
+    recoveryButton.style.cssText = 'width: 81%; max-width: 15em; padding-left: 0em; padding-right: 0em;';
+    recoveryButton.textContent = 'Login';
+    recoveryLink.appendChild(recoveryButton);
+    recoveryEmailBtnDiv.append(recoveryParagraph, recoveryLink);
+
+    document.body.append(recoveryEmailText, thumbsUpIcon, recoveryEmailBtnDiv);
+
+
+
+
 }
 
 function editProfileBtn() {

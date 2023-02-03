@@ -7,9 +7,11 @@
         <script src="https://kit.fontawesome.com/a919c172a1.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/main.css">
         <title>RideRaters</title>
+        <script src="js/index.js"></script>
+
     </head>
     <body style="background-color:black; color: white;">
-            <span class="fa-stack" style="top:4em; left:1.3em">
+            <span class="fa-stack header-arrow" style="top:4em; left:1.3em">
                 <i class="fa-regular fa-circle fa-stack-2x" style="color: #ffffff;font-size: 3em !important;margin-top: -0.15em;"></i>
                 <i class="fa-solid fa-arrow-left fa-stack-1x" style="color: rgb(255, 255, 255);font-size: 2em !important;margin-left: 0.12em;"></i>
             </span>
@@ -40,7 +42,7 @@
                 <!--Forgot Password Button Div-->
                 <!--------------------->
                 <div class="forgot-btn-div">
-                    <a href="recoverysent.html" class="login-link"><button class="forgot-btn">Send Recovery Email</button></a>
+                    <a href="recoverysent.html" class="login-link"><button onclick="recoverySent()" class="forgot-btn">Send Recovery Email</button></a>
                 </div>
             </form>
         </div>
