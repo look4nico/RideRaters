@@ -67,6 +67,10 @@
     cursor: pointer;
 }
 
+.edit-user-list-name {
+    cursor: pointer;
+}
+
 .proxima-semibold{
     font-family: proxima-nova-semibold !important;
     font-weight: normal;

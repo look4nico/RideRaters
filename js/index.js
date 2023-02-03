@@ -31,6 +31,110 @@ function rebuildArrow() {
     // End Arrow Left Rebuild
 }
 
+//event listener for edit-user-list-name
+document.addEventListener('DOMContentLoaded', function() {
+    const editUserListName = document.querySelector('.edit-user-list-name');
+    if (editUserListName) {
+        editUserListName.addEventListener('click', function() {
+            // window.location.href = 'editlistname.html';
+
+            const profileHead = document.querySelector('.profile-header');
+
+            //clear profile header text node
+            while (profileHead.firstChild) {
+                profileHead.removeChild(profileHead.firstChild);
+            }
+
+            const profileHeadP = document.createElement("p");
+            profileHeadP.className = "profile-header-txt proxima-semibold";
+            profileHeadP.textContent = "EDIT LIST NAME";
+
+            profileHead.appendChild(profileHeadP);
+
+            const userRidesDiv = document.querySelector('.user-rides-div');
+            userRidesDiv.remove();
+
+            const listImg = document.querySelector('.list-img-div');
+            listImg.remove();
+
+            const listTitle = document.querySelector('.list-title-div');
+            listTitle.remove();
+            
+            const listImgDiv = document.createElement("div");
+            listImgDiv.className = "list-img-div";
+
+            const bottomBtn = document.querySelector('.add-ride-btn-div');
+            bottomBtn.remove();
+            
+            const img = document.createElement("img");
+            img.src = "media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg";
+            img.className = "create-list-img";
+            img.id = "pfp-img";
+            img.alt = "";
+
+            listImgDiv.appendChild(img);
+
+            const listTitleDiv = document.createElement("div");
+            listTitleDiv.className = "list-title-div";
+
+            const p = document.createElement("p");
+            p.className = "user-list-txt proxima-semibold";
+            p.textContent = "MY 2025 TRIP";
+
+            listTitleDiv.appendChild(p);
+
+            const userInputFormDiv = document.createElement("div");
+            userInputFormDiv.className = "user-input-form-div";
+            userInputFormDiv.id = "form-submit";
+
+            const form = document.createElement("form");
+            form.action = "";
+            form.className = "username-form";
+
+            const label = document.createElement("label");
+            label.for = "listname";
+            label.textContent = "NEW LIST NAME";
+
+            const input = document.createElement("input");
+            input.type = "text";
+            input.id = "listname";
+            input.name = "listname";
+            input.placeholder = "";
+
+            const changeListNameBtnDiv = document.createElement("div");
+            changeListNameBtnDiv.className = "change-list-name-btn-div";
+
+            const button = document.createElement("button");
+            button.onclick = () => confirmList();
+            button.className = "contact-btn-lg";
+
+            const btnP = document.createElement("p");
+            btnP.textContent = "CONFIRM";
+
+            button.appendChild(btnP);
+            changeListNameBtnDiv.appendChild(button);
+
+            form.appendChild(label);
+            form.appendChild(document.createElement("br"));
+            form.appendChild(input);
+            form.appendChild(document.createElement("br"));
+            form.appendChild(changeListNameBtnDiv);
+
+            userInputFormDiv.appendChild(form);
+
+            const pageListHeader = document.querySelector('.page-list-header');
+            pageListHeader.insertAdjacentElement("afterend",listImgDiv);
+            listImgDiv.insertAdjacentElement("afterend",listTitleDiv);
+            listTitleDiv.insertAdjacentElement("afterend",userInputFormDiv);
+            
+    
+        });
+    } else {
+        console.log('edit user list name is not present');
+    }
+});
+
+
 // create event listener for home-searchbar 
 document.addEventListener('DOMContentLoaded', function() {
     const homeSearchBar = document.querySelector('.home-searchbar');
@@ -463,7 +567,12 @@ document.addEventListener('DOMContentLoaded', function() {
 //                     }
 
 //                 });
-                
+    
+function confirmList() {
+    //returns to previous page
+    window.location.href = history.go(1);
+}
+
 function addRide() {
     //returns to previous page
     window.location.href = history.back();
