@@ -6,30 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a919c172a1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/index.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {   
-            
-
-            const pfpIcon = document.getElementById("change-pfp-icon");
-            const listIcon = document.getElementById("img-icon");
-
-            // Add a click event listener to the div
-            pfpIcon.addEventListener("click", function (event) {
-                // This colde will run when the div is clicked
-                
-                // Select the image element
-                var image = document.getElementById("pfp-img");
-                // Select the input element
-                var input = document.getElementById("pfp-input");
-                // Simulate a click on the input element
-                input.click();
-                // Add a change event listener to the input element
-                input.addEventListener("change", function (event) {
-                    image.src = URL.createObjectURL(event.target.files[0]);
-                    listIcon.style.display = "none";
-                });
-            });
-        });
     </script>
     <title>RideRaters</title>
 </head>
@@ -370,7 +348,7 @@
 
         <!--Leave a Review Button Div-->
         <div class="review-btn-div leave-review-btn">
-            <button onclick="thankYou()" class="contact-btn-lg">
+            <button onclick="location.href='review.html'" class="contact-btn-lg">
                 <p>Leave a Ride Review</p><i class="fa-solid fa-circle-plus"></i>
             </button>
         </div>

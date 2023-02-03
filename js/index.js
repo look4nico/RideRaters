@@ -31,8 +31,44 @@ function rebuildArrow() {
     // End Arrow Left Rebuild
 }
 
+// create event listener for add-ride-list-btn 
+document.addEventListener('DOMContentLoaded', function() {
 
-//creat evemt listener for back arrow
+    const addRideListBtn = document.querySelector('.add-ride-list-btn');
+    if (addRideListBtn) {
+        addRideListBtn.addEventListener('click', function() {
+            window.location.href = 'addridepage.html';
+        });
+    } else {
+        console.log('add ride list button is not present');
+    }
+});
+
+// create event listener for add-ride-park-btn
+document.addEventListener('DOMContentLoaded', function() {
+    const addRideParkBtn = document.querySelector('.add-ride-park-btn');
+    if (addRideParkBtn) {
+        addRideParkBtn.addEventListener('click', function() {
+            window.location.href = 'addridepage.html';
+        });
+    } else {
+        console.log('add ride park button is not present');
+    }
+});
+
+// create event listener for list-ride-img
+document.addEventListener('DOMContentLoaded', function() {
+    const listRideImg = document.querySelector('.list-ride-img');
+    if (listRideImg) {
+        listRideImg.addEventListener('click', function() {
+            window.location.href = 'ridepage.html';
+        });
+    } else {
+        console.log('list ride image is not present');
+    }
+});
+
+//create evemt listener for back arrow
 document.addEventListener('DOMContentLoaded', function() {
     const backArrow = document.querySelector('.header-arrow');
     // check if the back arrow is present on the page
@@ -43,6 +79,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     } else {
         console.log('back arrow is not present');
+    }
+});
+
+// create event listener for thumbs-up-review button
+document.addEventListener('DOMContentLoaded', function() {
+    const thumbsUpReview = document.querySelector('.thumbs-up-review');
+    if (thumbsUpReview) {
+        thumbsUpReview.addEventListener('click', function() {
+            thumbsUpReview.style.color = '#C1FDAF';
+        });
+    } else {
+        console.log('thumbs up review button is not present');
+    }
+});
+
+//Create event listener for fa-triangle-exclamation 
+document.addEventListener('DOMContentLoaded', function() {
+    const faTriangleExclamation = document.querySelector('.fa-triangle-exclamation');
+    if (faTriangleExclamation) {
+        faTriangleExclamation.addEventListener('click', function() {
+            window.location.href = 'report.html';
+        });
+    } else {
+        console.log('fa triangle exclamation is not present');
     }
 });
 
@@ -147,6 +207,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
+
 // //if the bars icon is clicked, go to menu.html
 //             document.addEventListener('DOMContentLoaded', function() {
 //                 // This is for the Menu Icon
@@ -168,6 +230,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //                 });
                 
+function addRide() {
+    //returns to previous page
+    window.location.href = history.back();
+}
 
 function menuPage() {
 
