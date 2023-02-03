@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Add a click event listener to the div
             if (pfpIcon) {
                pfpIcon.addEventListener("click", function (event) {
-                // This colde will run when the div is clicked
+                // This code will run when the div is clicked
                 
                 // Select the image element
                 var image = document.getElementById("pfp-img");
@@ -253,10 +253,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Simulate a click on the input element
                 input.click();
                 // Add a change event listener to the input element
-                input.addEventListener("change", function (event) {
-                    image.src = URL.createObjectURL(event.target.files[0]);
-                    listIcon.style.display = "none";
-                });
+                if (listIcon) {
+                    input.addEventListener("change", function (event) {
+                        image.src = URL.createObjectURL(event.target.files[0]);
+                        listIcon.style.display = "none";
+                    });
+                } else {
+                    input.addEventListener("change", function (event) {
+                        image.src = URL.createObjectURL(event.target.files[0]);
+                    });
+                }
+                
             });  
             } else {
                 console.log("pfp icon is NOTT present");
@@ -283,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log("list icon is not present");
             }
            
-        });
+});
 
 // 
 document.addEventListener("DOMContentLoaded", function () {   
@@ -1027,50 +1034,52 @@ function recoverySent() {
 function editProfileBtn() {
    rebuildArrow();
    
-//    const pfpIcon = document.getElementById("change-pfp-icon");
+    //    const pfpIcon = document.getElementById("change-pfp-icon");
 
-//     if (pfpIcon) {
-//         pfpIcon.addEventListener("click", function (event) {
-//             // This colde will run when the div is clicked
-            
-//             // Select the image element
-//             var image = document.getElementById("pfp-img");
-//             // Select the input element
-//             var input = document.getElementById("pfp-input");
-//             // Simulate a click on the input element
-//             input.click();
-//             // Add a change event listener to the input element
-//             input.addEventListener("change", function (event) {
-//                 image.src = URL.createObjectURL(event.target.files[0]);
-//             });
-//         });  
-//     } else {
-//         console.log("pfp icon is not present");
-//     }
-    document.addEventListener("DOMContentLoaded", function () {   
-            
-
-            const pfpIcon = document.getElementById("change-pfp-icon");
-            const listIcon = document.getElementById("img-icon");
-
-            // Add a click event listener to the div
-            pfpIcon.addEventListener("click", function (event) {
-                // This colde will run when the div is clicked
+    //     if (pfpIcon) {
+    //         pfpIcon.addEventListener("click", function (event) {
+    //             // This colde will run when the div is clicked
                 
-                // Select the image element
-                var image = document.getElementById("pfp-img");
-                // Select the input element
-                var input = document.getElementById("pfp-input");
-                // Simulate a click on the input element
-                input.click();
-                // Add a change event listener to the input element
-                input.addEventListener("change", function (event) {
-                    image.src = URL.createObjectURL(event.target.files[0]);
-                    listIcon.style.display = "none";
-                });
-            });
-    });
+    //             // Select the image element
+    //             var image = document.getElementById("pfp-img");
+    //             // Select the input element
+    //             var input = document.getElementById("pfp-input");
+    //             // Simulate a click on the input element
+    //             input.click();
+    //             // Add a change event listener to the input element
+    //             input.addEventListener("change", function (event) {
+    //                 image.src = URL.createObjectURL(event.target.files[0]);
+    //             });
+    //         });  
+    //     } else {
+    //         console.log("pfp icon is not present");
+    //     }
 
+
+            
+    // const pfpIcon = document.getElementById("change-pfp-icon");
+    // const listIcon = document.getElementById("img-icon");
+
+    // // Add a click event listener to the div
+    // if (pfpIcon) {
+    //     pfpIcon.addEventListener("click", function (event) {
+    //         // This colde will run when the div is clicked
+            
+    //         // Select the image element
+    //         var image = document.getElementById("pfp-img");
+    //         // Select the input element
+    //         var input = document.getElementById("pfp-input");
+    //         // Simulate a click on the input element
+    //         input.click();
+    //         // Add a change event listener to the input element
+    //         input.addEventListener("change", function (event) {
+    //             image.src = URL.createObjectURL(event.target.files[0]);
+    //             listIcon.style.display = "none";
+    //         });
+    //     });   
+    // } else {
+    //     console.log("pfp icon is not present");
+    // }    
     
     const savedListsDiv = document.querySelector('.saved-lists');
     savedListsDiv.remove();
@@ -1091,6 +1100,11 @@ function editProfileBtn() {
     const profilePicDiv = document.querySelector('.profile-pic-div');
     pfpEditDiv.classList.add('pfp-edit-div','fa-stack');
     pfpEditDiv.id = 'change-pfp-icon';
+    
+    // const listIcon = document.getElementById("img-icon");
+
+       
+
     
     const pfpInput = document.createElement('input');
     pfpInput.type = 'file';
@@ -1170,6 +1184,23 @@ function editProfileBtn() {
     // append the userInfoDiv to the parent element in the DOM
     document.body.appendChild(userInfoDiv);
 
+    // Add a click event listener to the div
+    pfpEditDiv.addEventListener("click", function () {
+        // This colde will run when the div is clicked
+        
+        // Select the image element
+        var image = document.querySelector(".profile-pic");
+        // Select the input element
+        var input = document.getElementById("pfp-input");
+        // Simulate a click on the input element
+        input.click();
+        // Add a change event listener to the input element
+        input.addEventListener("change", function (event) {
+            image.src = URL.createObjectURL(event.target.files[0]);
+            // listIcon.style.display = "none";
+        });
+    });
+
     //event listener for username-edit-icon
     const usernameEditIcon = document.querySelector(".username-edit-icon");
     if (usernameEditIcon) {
@@ -1187,7 +1218,6 @@ function editProfileBtn() {
             window.location.href = 'resetpass.html';
         });
     }
-
 
 }
 
