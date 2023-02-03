@@ -134,6 +134,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// create event listener for .fa-trash that removes the element
+
+
 
 // create event listener for home-searchbar 
 document.addEventListener('DOMContentLoaded', function() {
@@ -212,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // create event listener for list-img
 document.addEventListener('DOMContentLoaded', function() {
-    const listImg = document.querySelectorAll('.list-img');
+    const listImg = document.querySelectorAll('.user-list-img');
     if (listImg) {
         listImg.forEach(function(element) {
             element.addEventListener('click', function() {
@@ -577,7 +580,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 function confirmList() {
     //returns to previous page
-    window.location.href = history.go(1);
+    window.location.href = editlist.html;
 }
 
 function addRide() {
