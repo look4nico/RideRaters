@@ -59,6 +59,14 @@
     font-family: pp_pangram_sans_rounded_semibold;
 }
 
+.fan-faves-to-list {
+    cursor: pointer;
+}
+
+.fan-fav-img {
+    cursor: pointer;
+}
+
 .proxima-semibold{
     font-family: proxima-nova-semibold !important;
     font-weight: normal;
@@ -1274,6 +1282,7 @@ span {
     object-fit: cover;
     border-radius: 10pt;
     border: 2.5pt solid black;
+    cursor: pointer;
 }
 
 .leave-review-btn {

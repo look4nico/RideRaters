@@ -31,6 +31,48 @@ function rebuildArrow() {
     // End Arrow Left Rebuild
 }
 
+// create event listener for home-searchbar 
+document.addEventListener('DOMContentLoaded', function() {
+    const homeSearchBar = document.querySelector('.home-searchbar');
+    if (homeSearchBar) {
+        homeSearchBar.addEventListener('click', function() {
+            window.location.href = 'ridesorparks.html';
+        });
+    } else {
+        console.log('home search bar is not present');
+    }
+});
+
+// create event listener for fan-faves-to-list
+document.addEventListener('DOMContentLoaded', function() {
+    const fanFavesToList = document.querySelectorAll('.fan-faves-to-list');
+    if (fanFavesToList) {
+        fanFavesToList.forEach(function(element) {
+            element.addEventListener('click', function() {
+                window.location.href = 'addridepage.html';
+            });
+        });
+    } else {
+        console.log('fan faves to list is not present');
+    }
+});
+
+// create event listener for  class="fan-fav-img"
+document.addEventListener('DOMContentLoaded', function() {
+    const fanFavImg = document.querySelectorAll('.fan-fav-img');
+    if (fanFavImg) {
+        fanFavImg.forEach(function(element) {
+            element.addEventListener('click', function() {
+                window.location.href = 'ridepage.html';
+            });
+        });
+    } else {
+        console.log('fan fav image is not present');
+    }
+});
+
+
+
 // create event listener for add-ride-list-btn 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -62,6 +104,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     
+});
+
+// create event listener for list-img
+document.addEventListener('DOMContentLoaded', function() {
+    const listImg = document.querySelectorAll('.list-img');
+    if (listImg) {
+        listImg.forEach(function(element) {
+            element.addEventListener('click', function() {
+                window.location.href = 'editlist.html';
+            });
+        });
+    } else {
+        console.log('list image is not present');
+    }
 });
 
 
@@ -161,13 +217,26 @@ document.addEventListener("DOMContentLoaded", function () {
     
 });
 
+// create event listener for compare-ride-button
+document.addEventListener('DOMContentLoaded', function() {
+    const compareRideBtn = document.querySelector('#compare-ride-button');
+    if (compareRideBtn) {
+        compareRideBtn.addEventListener('click', function() {
+            window.location.href = 'compareridesresults.html';
+        });
+    } else {
+        console.log('compare ride button is not present');
+    }
+});
 
 // create event listener for list-ride-img
 document.addEventListener('DOMContentLoaded', function() {
-    const listRideImg = document.querySelector('.list-ride-img');
+    const listRideImg = document.querySelectorAll('.list-ride-img');
     if (listRideImg) {
-        listRideImg.addEventListener('click', function() {
-            window.location.href = 'ridepage.html';
+        listRideImg.forEach(function(element) {
+            element.addEventListener('click', function() {
+                window.location.href = 'ridepage.html';
+            });
         });
     } else {
         console.log('list ride image is not present');
@@ -845,29 +914,53 @@ function recoverySent() {
 
 }
 
+
 function editProfileBtn() {
    rebuildArrow();
    
-   const pfpIcon = document.getElementById("change-pfp-icon");
+//    const pfpIcon = document.getElementById("change-pfp-icon");
 
-    if (pfpIcon) {
-        pfpIcon.addEventListener("click", function (event) {
-            // This colde will run when the div is clicked
+//     if (pfpIcon) {
+//         pfpIcon.addEventListener("click", function (event) {
+//             // This colde will run when the div is clicked
             
-            // Select the image element
-            var image = document.getElementById("pfp-img");
-            // Select the input element
-            var input = document.getElementById("pfp-input");
-            // Simulate a click on the input element
-            input.click();
-            // Add a change event listener to the input element
-            input.addEventListener("change", function (event) {
-                image.src = URL.createObjectURL(event.target.files[0]);
+//             // Select the image element
+//             var image = document.getElementById("pfp-img");
+//             // Select the input element
+//             var input = document.getElementById("pfp-input");
+//             // Simulate a click on the input element
+//             input.click();
+//             // Add a change event listener to the input element
+//             input.addEventListener("change", function (event) {
+//                 image.src = URL.createObjectURL(event.target.files[0]);
+//             });
+//         });  
+//     } else {
+//         console.log("pfp icon is not present");
+//     }
+    document.addEventListener("DOMContentLoaded", function () {   
+            
+
+            const pfpIcon = document.getElementById("change-pfp-icon");
+            const listIcon = document.getElementById("img-icon");
+
+            // Add a click event listener to the div
+            pfpIcon.addEventListener("click", function (event) {
+                // This colde will run when the div is clicked
+                
+                // Select the image element
+                var image = document.getElementById("pfp-img");
+                // Select the input element
+                var input = document.getElementById("pfp-input");
+                // Simulate a click on the input element
+                input.click();
+                // Add a change event listener to the input element
+                input.addEventListener("change", function (event) {
+                    image.src = URL.createObjectURL(event.target.files[0]);
+                    listIcon.style.display = "none";
+                });
             });
-        });  
-    } else {
-        console.log("pfp icon is not present");
-    }
+    });
 
     
     const savedListsDiv = document.querySelector('.saved-lists');
