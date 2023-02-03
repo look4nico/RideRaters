@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a919c172a1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+        
+        
+
+        function thankYou() {
+            const form = document.getElementById("form-submit");
+            const feedbackTxt = document.getElementById("feedback-txt");
+            const feedbackHeader = document.querySelector(".feedback-header");
+                feedbackHeader.classList.remove("feedback-header");
+            form.remove();
+            feedbackTxt.remove();
+
+            const thanksDiv = document.createElement("div");
+            thanksDiv.classList.add("thanks-div");
+            const thanksH2 = document.createElement("h2");
+            thanksH2.classList.add("thanks-txt", "proxima-bold");
+            const thanksH2Txt1 = document.createTextNode("THANK YOU FOR");
+            const thanksBr = document.createElement("br");
+            const thanksH2Txt2 = document.createTextNode("YOUR FEEDBACK.")
+            thanksH2.append(thanksH2Txt1, thanksBr, thanksH2Txt2);
+            thanksDiv.append(thanksH2);
+            const thanksP = document.createElement("p");
+            thanksP.classList.add("thanks-txt", "proxima-bold");
+            const thanksPtxt = document.createTextNode("You Helped Improve This Experience For All Our User.");
+            thanksP.append(thanksPtxt);
+            const thanksIcon = document.createElement("i");
+            thanksIcon.classList.add("fa-solid", "fa-thumbs-up");
+            const btmMenu = document.querySelector(".app-footer");
+            const returnBtnDiv = document.createElement('div');
+            returnBtnDiv.classList.add("thanks-btn-div");
+            returnBtnDiv.style.bottom = "1em"
+            const returnBtn = document.createElement('button');
+            returnBtn.classList.add("contact-btn-lg", "thanks-btn");
+            returnBtn.textContent = "RETURN"
+            returnBtnDiv.append(returnBtn);
+            document.body.insertBefore(returnBtnDiv, btmMenu);
+            document.body.insertBefore(thanksDiv, returnBtnDiv);
+            thanksDiv.append(thanksP);
+            thanksDiv.append(thanksIcon);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+                let stars = document.querySelectorAll(".fa-star");
+                const btnNg = document.querySelector("#btn-ng");
+                console.log(btnNg);
+                const btnGd = document.querySelector("#btn-gd");
+                const btnFr = document.querySelector("#btn-fr");
+                const btnGt = document.querySelector("#btn-gt");
+                const thumbUpBtn = document.querySelector(".fa-thumbs-up");
+                const thumbDwnBtn = document.querySelector(".fa-thumbs-down");
+
+                thumbUpBtn.addEventListener("click", function () {
+                    thumbUpBtn.classList.remove("thumb-unselected");
+                    thumbUpBtn.classList.add("thumb-selected");
+                    thumbDwnBtn.classList.remove("thumb-selected");
+                    thumbDwnBtn.classList.add("thumb-unselected");
+                    console.log("Thumbs up Icon clicked");
+            });
+                thumbDwnBtn.addEventListener("click", function () {
+                    thumbDwnBtn.classList.remove("thumb-unselected");
+                    thumbDwnBtn.classList.add("thumb-selected");
+                    thumbUpBtn.classList.remove("thumb-selected");
+                    thumbUpBtn.classList.add("thumb-unselected");
+                    console.log("Thumbs down Icon clicked");
+            });
+
+                console.log(stars);
+                stars.forEach(function (star) {
+                    star.addEventListener("click", function () {
+                        switch (star.id) {
+                            case "one-star":
+                                // console.log("one-star was clicked");
+                                star.classList.add("stars-checked")
+                                stars[1].classList.remove("stars-checked");
+                                stars[2].classList.remove("stars-checked");
+                                stars[3].classList.remove("stars-checked");
+                                stars[4].classList.remove("stars-checked");
+                                btnNg.classList.add("rate-btn-selected");
+                                btnGd.classList.remove("rate-btn-selected");
+                                btnFr.classList.remove("rate-btn-selected");
+                                btnGt.classList.remove("rate-btn-selected");
+
+                                break;
+                            case "two-star":
+                                // console.log("two-star was clicked");
+                                stars[0].classList.add("stars-checked")
+                                stars[1].classList.add("stars-checked")
+                                stars[2].classList.remove("stars-checked");
+                                stars[3].classList.remove("stars-checked");
+                                stars[4].classList.remove("stars-checked");
+                                btnNg.classList.add("rate-btn-selected");
+                                btnGd.classList.remove("rate-btn-selected");
+                                btnFr.classList.remove("rate-btn-selected");
+                                btnGt.classList.remove("rate-btn-selected");
+                                break;
+                            case "three-star":
+                                // console.log("three-star was clicked");
+                                stars[0].classList.add("stars-checked")
+                                stars[1].classList.add("stars-checked")
+                                stars[2].classList.add("stars-checked")
+                                stars[3].classList.remove("stars-checked");
+                                stars[4].classList.remove("stars-checked");
+                                btnNg.classList.remove("rate-btn-selected");
+                                btnGd.classList.remove("rate-btn-selected");
+                                btnFr.classList.add("rate-btn-selected");
+                                btnGt.classList.remove("rate-btn-selected");
+                                break;
+                            case "four-star":
+                                // console.log("four-star was clicked");
+                                stars[0].classList.add("stars-checked")
+                                stars[1].classList.add("stars-checked")
+                                stars[2].classList.add("stars-checked")
+                                stars[3].classList.add("stars-checked");
+                                stars[4].classList.remove("stars-checked");
+                                btnNg.classList.remove("rate-btn-selected");
+                                btnGd.classList.add("rate-btn-selected");
+                                btnFr.classList.remove("rate-btn-selected");
+                                btnGt.classList.remove("rate-btn-selected");
+                                break;
+                            case "five-star":
+                                // console.log("five-star was clicked");
+                                stars[0].classList.add("stars-checked")
+                                stars[1].classList.add("stars-checked")
+                                stars[2].classList.add("stars-checked")
+                                stars[3].classList.add("stars-checked");
+                                stars[4].classList.add("stars-checked");
+                                btnNg.classList.remove("rate-btn-selected");
+                                btnGd.classList.remove("rate-btn-selected");
+                                btnFr.classList.remove("rate-btn-selected");
+                                btnGt.classList.add("rate-btn-selected");
+                                break;
+                        }
+                    });
+                });
+            });
+
+
+        // window.onload = function () {
+        //         let stars = document.getElementsByClassName("fa-star");
+        //         let oneStar = document.getElementById("one-star");
+        //         let twoStar = document.getElementById("two-star");
+        //         let threeStar = document.getElementById("three-star")
+        //         let fourStar = document.getElementById("four-star");
+        //         let fiveStar = document.getElementById("five-star");
+        //         for (let i = 0; i < stars.length; i++) {
+        //             stars[i].addEventListener("click", function () {
+        //                 if (condition) {
+                            
+        //                 }
+        //             });
+        //         }
+        //     }
+            // create an event listener for each star. if the first is clicked, color only that star
+            // if the third is clicked, color all the stars leading up to that.
+
+    </script>
+    <title>RideRaters</title>
+</head>
+<body>
+    <!--Top Nav-->
+    <div class="content">
+        <header class="app-header">
+            <div class="hamburg-logo-div">
+                <i class="fa-solid fa-bars fa-3x hamburg-menu" style="color: #ffffff;"></i>
+                <img src="/media/imgs/logo-nav.png" class="nav-logo" alt="" class="logo" width="100vw" height="auto">
+            </div>
+        </header>
+    </div>
+
+    <!---Header-->
+    <div class="page-list-header feedback-header">
+        <span class="fa-stack header-arrow" style="display: flex;">
+            <i class="fa-regular fa-circle fa-stack-2x"
+                style="color: #000000;font-size: 3em !important;margin-top: -0.15em;"></i>
+            <i class="fa-solid fa-arrow-left fa-stack-1x"
+                style="color: rgb(0, 0, 0);font-size: 2em !important;margin-left: 0.12em;"></i>
+        </span>
+        <h1>LEAVE A REVIEW</h1>
+    </div>
+    <!--Review Div-->
+    <div class="review-Div">
+        <!--Review Text Div-->
+        <div class="feedback-txt-rating" id="review-txt">
+            <p class="review-txt proxima-regular">
+                LEAVE A REVIEW BASED ON YOUR GENERAL EXPERIENCE OF THIS RIDE
+            </p>
+            <!---->
+        </div>
+        <!--Review Form Div-->
+        <div class="feedback-form-div">
+            <!--Review Form-->
+            <form action="" class="review-area">
+                <!--Divider-->
+                <hr class="review-hr">
+                <!--Star Rating Div-->
+                <div class="star-review-div">
+                    <!--Star Rating Text-->
+                    <div class="review-txt-div">
+                        <p class="review-txt-header proxima-bold">STAR RATING</p>
+                        <p class="review-txt-para proxima-regular">Your star rating will be posted with your review and added to the user score average.</p>
+                    </div>
+                    <!--Stars Div-->
+                    <div class="feedback-stars">
+                        <i class="fa-solid fa-star" id="one-star"></i>
+                        <i class="fa-solid fa-star" id="two-star"></i>
+                        <i class="fa-solid fa-star" id="three-star"></i>
+                        <i class="fa-solid fa-star" id="four-star"></i>
+                        <i class="fa-solid fa-star" id="five-star"></i>
+                    </div>
+                    <!--Rating Buttons Div-->
+                    <div class="rating-btns">
+                        <div class="btns-set">
+                            <button class="proxima-regular" id="btn-ng">NOT GREAT</button>
+                            <button class="proxima-regular" id="btn-gd">GOOD</button>
+                        </div>
+                        <div class="btns-set" style="margin-left:-5.5em">
+                            <button class="proxima-regular" id="btn-fr">FAIR</button>
+                            <button class="proxima-regular" id="btn-gt">GREAT</button>
+                        </div>
+                    </div>
+                </div>
+                <!--Divider-->
+                <hr class="review-hr">
+                <!--Thumbs: Recommendation Div-->
+                <div class="rec-div">
+                    <div class="review-txt-div">
+                        <p class="review-txt-header proxima-bold">WOULD YOU RECOMMEND THIS RIDE?</p>
+                    </div>
+                    <div class="thumb-rating">
+                        <div class="thumb-container">
+                            <i class="fas fa-thumbs-up"></i>
+                            <div class="thumb-text">YES</div>
+                        </div>
+                        <div class="thumb-container">
+                            <i class="fas fa-thumbs-down"></i>
+                            <div class="thumb-text">NO</div>
+                        </div>
+                    </div>
+                </div>
+                <!--Divider-->
+                <hr class="review-hr">
+                <!--Text Area-->
+                <label class="review-txt-header proxima-bold" for="review">WRITE A REVIEW</label>
+                <p class="review-txt-sm  proxima-regular">Describe your experience!</p>
+                <textarea id="review"  class="proxima-regular" name="review" rows="">I think...</textarea>
+                <!--Submit Review Button Div-->
+                <div class="submit-btn-div">
+                        <button onclick="thankYou()" class="submit-btn">SUBMIT</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <!--Feedback Text-->
+    
+    <!------BOTTOM MENU------>
+    <footer class="app-footer">
+        <div class="icon-container">
+            <div class="icon-text-container">
+                <i class="icon fa fa-home"></i>
+                <span>HOME</span>
+            </div>
+            <div class="icon-text-container">
+                <i class="icon fa-solid fa-circle-user"></i>
+                <span>PROFILE</span>
+            </div>
+            <div class="icon-text-container">
+                <img src="/media/imgs/compare.png" class="icon-img">
+                <span>COMPARE</span>
+            </div>
+            <div class="icon-text-container">
+                <img src="/media/imgs/rides.png" class="icon-img">
+                <span>RIDES</span>
+            </div>
+        </div>
+    
+    </footer>
+</body>
+</html>
+
+
+
+

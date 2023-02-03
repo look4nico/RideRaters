@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a919c172a1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/index.js"></script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const userListItem = document.querySelectorAll(".user-list-item");
+            const selectRideBtn = document.querySelector("#select-list-btn");
+
+
+            // event listener for each list item in the user list
+            userListItem.forEach(function (item) {
+                if (!item.classList.contains("selected-list-item")) {
+                    selectRideBtn.classList.add("disabled");
+                }
+                item.addEventListener("click", function (event) {
+                   console.log("clicked!");
+                   if (item.classList.contains("selected-list-item")) {
+                          item.classList.remove("selected-list-item");
+                          selectRideBtn.classList.add("disabled");
+                     } else {
+                          item.classList.add("selected-list-item");
+                          selectRideBtn.classList.remove("disabled");
+                   }
+                });
+            });
+        
+            
+            
+        });
+
+        function thankYou() {
+            const form = document.getElementById("form-submit");
+            const pageIcon = document.getElementById("page-lg-icon");
+            form.remove();
+            pageIcon.remove();
+
+            const thanksDiv = document.createElement("div");
+                thanksDiv.classList.add("thanks-div");
+            const thanksH2 = document.createElement("h2");
+                thanksH2.classList.add("thanks-txt","proxima-bold");
+            const thanksH2Txt1 = document.createTextNode("THANK YOU FOR");
+            const thanksBr = document.createElement("br");
+            const thanksH2Txt2 = document.createTextNode("FOR CONTACTING US.")
+                thanksH2.append(thanksH2Txt1,thanksBr,thanksH2Txt2);
+                thanksDiv.append(thanksH2);
+            const thanksP = document.createElement("p");
+                thanksP.classList.add("thanks-txt","proxima-bold");
+            const thanksPtxt = document.createTextNode("We Will Reach Out As Soon As We Can, Thank You!");
+                thanksP.append(thanksPtxt);
+            const thanksIcon = document.createElement("i");
+                thanksIcon.classList.add("fa-solid", "fa-thumbs-up");
+            const btmMenu = document.querySelector(".app-footer");
+            const returnBtnDiv = document.createElement('div');
+                returnBtnDiv.classList.add("thanks-btn-div");
+                returnBtnDiv.style.bottom = "1em"
+            const returnBtn = document.createElement('button');
+                returnBtn.classList.add("contact-btn-lg","thanks-btn");
+                returnBtn.textContent = "RETURN"
+            returnBtnDiv.append(returnBtn);
+            document.body.insertBefore(returnBtnDiv, btmMenu); 
+            document.body.insertBefore(thanksDiv,returnBtnDiv);   
+            thanksDiv.append(thanksP);
+            thanksDiv.append(thanksIcon);
+        }
+
+    </script>
+    <title>RideRaters</title>
+</head>
+<body>
+    <!--Top Nav-->
+    <div class="content">
+        <header class="app-header">
+            <div class="hamburg-logo-div">
+                <i class="fa-solid fa-bars fa-3x hamburg-menu" style="color: #ffffff;"></i>
+                <img src="media/imgs/logo-nav.png" class="nav-logo" alt="" class="logo" width="100vw" height="auto">
+            </div>
+        </header>
+    </div>
+
+    <!---Header-->
+    <div class="page-list-header review-page-header" style="margin-bottom:0.1rem">
+        <span class="fa-stack header-arrow" style="display: flex;">
+            <i class="fa-regular fa-circle fa-stack-2x"
+                style="color: #000000;font-size: 3em !important;margin-top: -0.15em;"></i>
+            <i class="fa-solid fa-arrow-left fa-stack-1x"
+                style="color: rgb(0, 0, 0);font-size: 2em !important;margin-left: 0.12em;"></i>
+        </span>
+        <h1 class="add-ride-header">ADD<br>RIDE TO LIST</h1>
+    </div>
+    
+    <!--Add Ride to List Page Description-->
+    <div class="add-ride-page-desc">
+        <div class="add-ride-txt-div">
+            <p class="add-ride-page-desc-txt proxima-semibold">
+                These are your lists so far, add to them and share them as you see fit.
+            </p>
+            <p class="user-lists-txt proxima-semibold">
+                SELECT LIST TO PLACE RIDE IN
+            </p>
+        </div>
+    </div>
+
+    <!--Saved List Div-->
+    <div class="saved-lists-div">
+
+            <!--User List Item-->
+            <div class="user-list-item">
+                <p class="list-name proxima-semibold">USER LIST ONE</p>
+                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="list-img">
+            </div>
+
+            <!--User List Item-->
+            <div class="user-list-item">
+                <p class="list-name proxima-semibold">USER LIST TWO</p>
+                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="list-img">
+            </div>
+
+            <!--User List Item-->
+            <div class="user-list-item">
+                <p class="list-name proxima-semibold">USER LIST THREE</p>
+                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="list-img">
+            </div>
+
+            <!--User List Item-->
+            <div class="user-list-item">
+                <p class="list-name proxima-semibold">USER LIST FOUR</p>
+                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="list-img">
+            </div>
+
+            <!--User List Item-->
+            <div class="user-list-item">
+                <p class="list-name proxima-semibold">USER LIST FIVE</p>
+                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="list-img">
+            </div>
+
+            <!--User List Item-->
+            <div class="user-list-item">
+                <p class="list-name proxima-semibold">USER LIST SIX</p>
+                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="list-img">
+            </div>
+    </div>
+
+    <!------BOTTOM MENU------>
+    <footer class="app-footer">
+
+        <!--Select List Div-->
+        <div class="select-ride-list-btn-div" id="select-list-btn">
+            <button onclick="thankYou()" class="contact-btn-lg">
+                <p>Select List</p>
+            </button>
+        </div>
+
+        <!--Bottom Menu Icons-->
+        <div class="icon-container">
+            <div class="icon-text-container">
+                <i class="icon fa fa-home"></i>
+                <span>HOME</span>
+            </div>
+            <div class="icon-text-container">
+                <i class="icon fa-solid fa-circle-user"></i>
+                <span>PROFILE</span>
+            </div>
+            <div class="icon-text-container">
+                <img src="media/imgs/compare.png" class="icon-img">
+                <span>COMPARE</span>
+            </div>
+            <div class="icon-text-container icon-color">
+                <img src="media/imgs/rides-blue.png" class="icon-img">
+                <span>RIDES</span>
+            </div>
+        </div>
+    
+    </footer>
+</body>
+</html>
+
+
+
+

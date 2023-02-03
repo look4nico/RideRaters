@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a919c172a1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/index.js"></script>
+    <script>
+        
+        function clearFilters() {
+            //on click of clear filters button, remove all selected classes from filter buttons
+            const filterTags = document.querySelectorAll(".filter-tags-btn");
+            const sortBtn = document.querySelectorAll(".sort-btn-item");
+            const filterDropdown = document.querySelectorAll(".filter-item");
+            const cityDropdown = document.querySelector(".city-dropdown-content");
+            const parkDropdown = document.querySelector(".park-dropdown-content");
+            const filterDiv = document.querySelector(".filter-dropdown-div");
+            const dropdownLinks = filterDiv.querySelectorAll("a");
+
+            // remove selected class from filter tags
+            filterTags.forEach(function (item) {
+                if (item.classList.contains("filter-tags-btn-selected")) {
+                    item.classList.remove("filter-tags-btn-selected");
+                }
+            });
+
+            // remove selected class from sort buttons
+            sortBtn.forEach(function (item) {
+                if (item.classList.contains("sort-btn-item-selected")) {
+                    item.classList.remove("sort-btn-item-selected");
+                }
+            });
+
+            // clear the filterResultText node by setting it to an empty text node
+            const filterResult = document.querySelector("#filter-result");
+            if (filterResult.hasChildNodes()) {
+                filterResult.removeChild(filterResult.firstChild);
+            }
+
+        }
+
+        // this event listener waits for the DOM to load before running the function
+        document.addEventListener("DOMContentLoaded", function () {
+            const sortBtn = document.querySelectorAll(".sort-btn-item");
+            const filterTags = document.querySelectorAll(".filter-tags-btn");
+            const filterDropdown = document.querySelectorAll(".filter-item");
+            const cityDropdown = document.querySelector(".city-dropdown-content");
+            const parkDropdown = document.querySelector(".park-dropdown-content");
+            const filterDiv = document.querySelector(".filter-dropdown-div");
+            const dropdownLinks = filterDiv.querySelectorAll("a");
+            const filterResult = document.querySelector("#filter-result");
+
+            // event listener for downdownLinks 
+            // this is for the dropdowns that are inside the filter dropdown
+            // The console.log(item.id) is for testing purposes
+            // the console.log("clicked dropdown link!") is for testing purposes
+            // the cosole.log(item.id) returns the id of the link that was clicked
+            dropdownLinks.forEach(function (item) {
+                item.addEventListener("click", function (event) {
+                    // clear the filterResultText node by setting it to an empty text node
+                    
+                    // if filterResultText has a child node, remove it first
+                    if (filterResult.hasChildNodes()) {
+                        filterResult.removeChild(filterResult.firstChild);
+                    }
+                                    
+                    let filterResultText = document.createTextNode(item.id.toUpperCase());
+                    // replace filterResultText dashes with spaces
+                    filterResultText.textContent = filterResultText.textContent.replace(/-/g, " ");
+                    filterResult.appendChild(filterResultText);
+                    filterResult.classList.add("filter-result-selected");
+                    console.log("clicked dropdown link!");
+                    console.log(item.id);
+                });
+            });
+
+            
+            // event listener for the filter dropdowns
+            filterDropdown.forEach(function (item) {
+                item.addEventListener("click", function (event) {
+                    console.log("clicked!");
+                    filterDropdown.forEach(function (otherItem) {
+                        // this removes the selected class from all the other buttons
+                        // otherItem represents a new item in the array and does not interferer with the item variable
+                        if (otherItem !== item) {
+                            otherItem.classList.remove("filter-item-selected");
+                            if (otherItem.id === "park") {
+                                parkDropdown.classList.remove("filter-dropdown-selected");
+                            } else if (otherItem.id === "city") {
+                                cityDropdown.classList.remove("filter-dropdown-selected");
+                            }
+                        }
+                    });
+                    // this adds the selected class to the button that was clicked
+                    if (item.classList.contains("filter-item-selected")) {
+                        // this removes the selected class from all the other buttons
+                        item.classList.remove("filter-item-selected");
+                        if (item.id === "park") {
+                            parkDropdown.classList.remove("filter-dropdown-selected");
+                        } else if (item.id === "city") {
+                            cityDropdown.classList.remove("filter-dropdown-selected");
+                        }
+                    } else {
+                        //this adds the selected class to the button that was clicked
+                        item.classList.add("filter-item-selected");
+                        if (item.id === "park") {
+                            parkDropdown.classList.add("filter-dropdown-selected");
+                        } else if (item.id === "city") {
+                            cityDropdown.classList.add("filter-dropdown-selected");
+                        }
+                    }
+                });
+            })
+            
+
+            // event listener that toggles the sort button but only lets you choose one at a time
+            sortBtn.forEach(function (item) {
+                item.addEventListener("click", function (event) {
+                    console.log("clicked!");
+                    if (item.classList.contains("sort-btn-item-selected")) {
+                        item.classList.remove("sort-btn-item-selected");
+                    } else {
+                        // this removes the selected class from all the other buttons
+                        sortBtn.forEach(function (item) {
+                            item.classList.remove("sort-btn-item-selected");
+                        });
+                        item.classList.add("sort-btn-item-selected");
+                    }
+                });
+            });
+
+
+            // event listener for each list item in the user list
+            filterTags.forEach(function (item) {
+                // if (!item.classList.contains("selected-list-item")) {
+                //     selectRideBtn.classList.add("disabled");
+                // }
+                item.addEventListener("click", function (event) {
+                   console.log("clicked!");
+                   if (item.classList.contains("filter-tags-btn-selected")) {
+                          item.classList.remove("filter-tags-btn-selected");
+                        //   selectRideBtn.classList.add("disabled");
+                     } else {
+                          item.classList.add("filter-tags-btn-selected");
+                        //   selectRideBtn.classList.remove("disabled");
+                   }
+                });
+            });
+            
+             
+            
+             
+        });
+
+
+    </script>
+    <title>RideRaters</title>
+</head>
+<body>
+    <!--Top Nav-->
+    <div class="content">
+        <header class="app-header">
+            <div class="hamburg-logo-div">
+                <i class="fa-solid fa-bars fa-3x hamburg-menu" style="color: #ffffff;"></i>
+                <img src="/media/imgs/logo-nav.png" class="nav-logo" alt="" class="logo" width="100vw" height="auto">
+            </div>
+        </header>
+    </div>
+
+    <!---Header-->
+    <div class="page-list-header review-page-header">
+        <span class="fa-stack header-arrow" style="display: flex;">
+            <i class="fa-regular fa-circle fa-stack-2x"
+                style="color: #000000;font-size: 3em !important;margin-top: -0.15em;"></i>
+            <i class="fa-solid fa-arrow-left fa-stack-1x"
+                style="color: rgb(0, 0, 0);font-size: 2em !important;margin-left: 0.12em;"></i>
+        </span>
+        <h1 class="search-filter-header">Search Filters</h1>
+    </div>
+
+    <div class="search-filter-div">
+
+        <!--Filter Section-->
+        <div class="filters-div">
+            <p class="filter-title-txt">
+                FILTERS
+            </p>
+            <div class="filter-dropdown-div">
+                <button class="filter-item" id="park" >PARK<i class="fa-solid fa-angle-down"></i>   
+                    <div class="park-dropdown-content">
+                        <a href="#" id="universal-ioa">Universal IOA</a>
+                        <a href="#" id="universal-studios">Universal Studios</a>
+                        <a href="#" id="animal-kingdom">Animal Kingdom</a>
+                        <a href="#" id="epcot">EPCOT</a>
+                        <a href="#" id="magic-kingdom">Magic Kingdom</a>
+                        <a href="#" id="hollywood-studios">Hollywood Studios</a>
+                        <a href="#" id="legoland">Legoland</a>
+                        <a href="#" id="seaworld">SeaWorld</a>
+                    </div>
+                </button>
+                <button class="filter-item" id="city">CITY<i class="fa-solid fa-angle-down"></i>
+                    <div class="city-dropdown-content">
+                        <a href="#" id="orlando">Orlando</a>
+                        <a href="#" id="lake-buena-vista">Lake Buena Vista</a>
+                        <a href="#" id="tampa">Tampa</a>
+                    </div>
+                </button>
+            </div>
+            <p id="filter-result"></p>
+        </div>
+
+        <hr>
+
+        <!--Sort By Section-->
+        <div class="sort-by-div">
+            <p class="sort-by-title-txt">
+                SORT BY
+            </p>
+            <div class="sort-by-btn-div">
+                <button class="sort-btn-item">ABC</button>
+                <button class="sort-btn-item">PARK</button>
+            </div>
+            <div class="sort-by-btn-div">
+                <button class="sort-btn-item">USER RATING</button>
+                <button class="sort-btn-item">ACCESS RATING</button>
+            </div>
+            <!-- <div class="sort-by-btn-div">
+                <button class="sort-btn-item">ABC</button>
+                <button class="sort-btn-item">PARK</button>
+                <button class="sort-btn-item">USER RATING</button>
+                <button class="sort-btn-item">ACCESS RATING</button>
+            </div> -->
+        </div>
+
+        <hr>
+        
+        <!--Tags Section-->
+        <div class="tags-div">
+            <p class="tags-title-txt">
+                TAGS
+            </p>
+            <div class="filter-tags-btn-div">
+                <button class="filter-tags-btn">
+                    WHEELCHAIR
+                </button>
+                <button class="filter-tags-btn">
+                    PHOTOSENSITIVE
+                </button>
+                <button class="filter-tags-btn">
+                    SERVICE-ANIMAL
+                </button>
+                <button class="filter-tags-btn">
+                    SIZE/SHAPE
+                </button>
+                <button class="filter-tags-btn">
+                    CHILD SWAP
+                </button>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <!------BOTTOM MENU------>
+    <footer class="app-footer">
+
+        <!--Select List Div-->
+        <div class="select-ride-list-btn-div" id="select-list-btn">
+            <button onclick="clearFilters()" class="contact-btn-lg">
+                <p>CLEAR FILTERS</p>
+            </button>
+        </div>
+
+        <div class="icon-container">
+            <div class="icon-text-container">
+                <i class="icon fa fa-home"></i>
+                <span>HOME</span>
+            </div>
+            <div class="icon-text-container">
+                <i class="icon fa-solid fa-circle-user"></i>
+                <span>PROFILE</span>
+            </div>
+            <div class="icon-text-container">
+                <img src="/media/imgs/compare.png" class="icon-img">
+                <span>COMPARE</span>
+            </div>
+            <div class="icon-text-container">
+                <img src="/media/imgs/rides.png" class="icon-img">
+                <span>RIDES</span>
+            </div>
+        </div>
+    
+    </footer>
+</body>
+</html>
+
+
+
+

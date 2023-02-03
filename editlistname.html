@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a919c172a1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/index.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {   
+            
+
+            const pfpIcon = document.getElementById("change-pfp-icon");
+            const listIcon = document.getElementById("img-icon");
+
+            // Add a click event listener to the div
+            pfpIcon.addEventListener("click", function (event) {
+                // This colde will run when the div is clicked
+                
+                // Select the image element
+                var image = document.getElementById("pfp-img");
+                // Select the input element
+                var input = document.getElementById("pfp-input");
+                // Simulate a click on the input element
+                input.click();
+                // Add a change event listener to the input element
+                input.addEventListener("change", function (event) {
+                    image.src = URL.createObjectURL(event.target.files[0]);
+                    listIcon.style.display = "none";
+                });
+            });
+        });
+    </script>
+    <title>RideRaters</title>
+</head>
+<body>
+    <!--Top Nav-->
+    <div class="content">
+        <header class="app-header">
+            <div class="hamburg-logo-div">
+                <i class="fa-solid fa-bars fa-3x hamburg-menu" style="color: #ffffff;"></i>
+                <img src="/media/imgs/logo-nav.png" class="nav-logo" alt="" class="logo" width="100vw" height="auto">
+            </div>
+        </header>
+    </div>
+
+    <!---Header-->
+    <div class="page-list-header review-page-header">
+        <span class="fa-stack header-arrow" style="display: flex;">
+            <i class="fa-regular fa-circle fa-stack-2x"
+                style="color: #000000;font-size: 3em !important;margin-top: -0.15em;"></i>
+            <i class="fa-solid fa-arrow-left fa-stack-1x"
+                style="color: rgb(0, 0, 0);font-size: 2em !important;margin-left: 0.12em;"></i>
+        </span>
+        <h1 class="profile-header">CREATE LIST</h1>
+    </div>
+
+    <!--User List Div-->
+    <div class="list-img-div">
+        <img src="/media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" class="create-list-img" id="pfp-img" alt="">
+        <!-- <i class="fa-solid fa-images" id="img-icon"></i> -->
+    </div>
+
+    <div class="list-title-div">
+        <p class="user-list-txt proxima-semibold">MY 2025 TRIP</p>
+    </div>
+
+
+    <div class="user-input-form-div" id="form-submit">
+        <form action="" class="username-form">
+            <label for="listname">NEW LIST NAME</label><br>
+            <input type="text" id="listname" name="listname" placeholder=""><br>
+            <!--Send Message Div-->
+            <div class="change-list-name-btn-div">
+                <button onclick="thankYou()" class="contact-btn-lg">
+                    <p>CONFIRM</p>
+                </button>
+            </div>
+            <!--Leave a Review Div-->
+        </form>
+    </div>
+
+    <!------BOTTOM MENU------>
+    <footer class="app-footer">
+        <div class="icon-container">
+            <div class="icon-text-container">
+                <i class="icon fa fa-home"></i>
+                <span>HOME</span>
+            </div>
+            <div class="icon-text-container icon-color">
+                <i class="icon fa-solid fa-circle-user"></i>
+                <span>PROFILE</span>
+            </div>
+            <div class="icon-text-container">
+                <img src="/media/imgs/compare.png" class="icon-img">
+                <span>COMPARE</span>
+            </div>
+            <div class="icon-text-container">
+                <img src="/media/imgs/rides.png" class="icon-img">
+                <span>RIDES</span>
+            </div>
+        </div>
+    
+    </footer>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a919c172a1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {   
+            
+
+            const pfpIcon = document.getElementById("change-pfp-icon");
+            const listIcon = document.getElementById("img-icon");
+
+            // Add a click event listener to the div
+            pfpIcon.addEventListener("click", function (event) {
+                // This colde will run when the div is clicked
+                
+                // Select the image element
+                var image = document.getElementById("pfp-img");
+                // Select the input element
+                var input = document.getElementById("pfp-input");
+                // Simulate a click on the input element
+                input.click();
+                // Add a change event listener to the input element
+                input.addEventListener("change", function (event) {
+                    image.src = URL.createObjectURL(event.target.files[0]);
+                    listIcon.style.display = "none";
+                });
+            });
+        });
+    </script>
+    <title>RideRaters</title>
+</head>
+<body>
+    <!--Top Nav-->
+    <div class="content">
+        <header class="app-header">
+            <div class="hamburg-logo-div">
+                <i class="fa-solid fa-bars fa-3x hamburg-menu" style="color: #ffffff;"></i>
+                <img src="/media/imgs/logo-nav.png" class="nav-logo" alt="" class="logo" width="100vw" height="auto">
+            </div>
+        </header>
+    </div>
+
+    <!---Header-->
+    <div class="page-list-header review-page-header" style="margin-bottom:0.1rem">
+        <span class="fa-stack header-arrow" style="display: flex;">
+            <i class="fa-regular fa-circle fa-stack-2x"
+                style="color: #000000;font-size: 3em !important;margin-top: -0.15em;"></i>
+            <i class="fa-solid fa-arrow-left fa-stack-1x"
+                style="color: rgb(0, 0, 0);font-size: 2em !important;margin-left: 0.12em;"></i>
+        </span>
+        <h1 class="search-header">SEARCH FOR<br>RIDES or PARKS</h1>
+    </div>
+
+    <div class="search-bar-div">
+        <i class="fa-solid fa-magnifying-glass fa-xl mag-icon"></i>
+        <input type="text" class="search-bar" placeholder="SEARCH...">
+        <i class="fa-solid fa-sliders fa-2x filter-icon"></i>
+    </div>
+
+    <!--Recent Searches Div-->
+    <div class="rides-title-div">
+        <h2 class="recent-search-div">
+            Recent Searches
+        </h2>
+    </div>
+
+    <!--List Rides Div-->
+    <div class="recent-rides-div">
+        <!--Park Rides Div-->
+        <div class="park-rides-div">
+
+            <div class="user-ride-item">
+                <!--Ride Image Div-->
+                <div class="list-ride-img-div">
+                    <img src="/media/imgs/Rides/Despicable-Me-Minion-Mayhem.jpg" class="list-ride-img" alt="">
+                </div>
+                <!--Ride Data Div-->
+                <div class="list-ride-data-div">
+                    <!--Ride Name and Location Div-->
+                    <div class="list-ride-info-div">
+                        <p class="list-ride-location proxima-semibold">First Islands of Adventure</p>
+                        <p class="list-ride-name proxima-semibold">Despicable Me Minion Mayhem</p>
+                    </div>
+                    <!--Ride Ratings Div-->
+                    <div class="list-ride-ratings-div">
+                        <div class="ride-user-rating">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x" style="color: #F4C153;"></i>
+                                <i class="fas fa-star fa-stack-1x"
+                                    style="color: rgb(255, 255, 255);margin-top: -0.85px; font-size:0.5rem"></i>
+                            </span>
+                            <p class="user-rating-txt proxima-regular">
+                                4.5
+                            </p>
+                        </div>
+                        <div class="ride-access-rating">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x" style="color: rgb(255, 255, 255);"></i>
+                                <i class="fa-solid fa-universal-access fa-stack-2x" style="color: #739CF9;"></i>
+                            </span>
+                            <p class="access-rating-txt proxima-regular">
+                                4.5
+                            </p>
+                        </div>
+                    </div>
+                    <!--Park Location Div-->
+                    <div class="list-ride-location-div">
+                        <i class="fa-solid fa-location-dot" style="color: #FF8B8B;"></i>
+                        <p class="proxima-regular">Orlando, FL</p>
+                    </div>
+                </div>
+                <!--Add Ride to List Div-->
+                <div class="add-ride-list-btn-div">
+                    <button class="add-ride-list-btn proxima-semibold"><i class="fa-solid fa-circle-plus"></i>Add to
+                        List</button>
+                </div>
+        
+                <!--Ride Item Divider-->
+            </div>
+            <hr class="park-ride-hr">
+            <!--Park Item Div: Universal IOA-->
+            <div class="parks-list-item">
+            
+                <!--Ride Image Div-->
+                <div class="parks-list-img-div">
+                    <img src="/media/imgs/parks/universal-ioa.jpg" class="parks-list-img" alt="">
+                </div>
+            
+                <!--Ride Data Div-->
+                <div class="parks-ride-data-div">
+                    <!--Ride Name and Location Div-->
+                    <div class="parks-list-item-name">
+                        <p class="parks-item-location proxima-semibold">Universal's Island of Adventure</p>
+                    </div>
+                    <!--Ride Ratings Div-->
+                    <div class="parks-list-item-ratings-div">
+                        <div class="park-user-rating">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x" style="color: #F4C153;"></i>
+                                <i class="fas fa-star fa-stack-1x"
+                                    style="color: rgb(255, 255, 255);margin-top: -0.85px; font-size:0.5rem"></i>
+                            </span>
+                            <p class="user-rating-txt proxima-regular">
+                                4.5
+                            </p>
+                        </div>
+                        <div class="park-access-rating">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x" style="color: rgb(255, 255, 255);"></i>
+                                <i class="fa-solid fa-universal-access fa-stack-2x" style="color: #739CF9;"></i>
+                            </span>
+                            <p class="access-rating-txt proxima-regular">
+                                3
+                            </p>
+                        </div>
+                    </div>
+                    <!--Park Location Div-->
+                    <div class="parks-list-location-div">
+                        <i class="fa-solid fa-location-dot" style="color: #FF8B8B;"></i>
+                        <p class="proxima-regular">Orlando, FL</p>
+                    </div>
+                </div>
+            
+                <!--Add Ride to List Div-->
+                <div class="view-rides-btn-div">
+                    <button class="add-ride-list-btn proxima-semibold">VIEW RIDES</button>
+                </div>
+            
+                <!--Ride Item Divider-->
+            </div>
+            <hr class="park-ride-hr">
+            <!--Park Item Div: Disney's Animal Kingdom-->
+            <div class="parks-list-item">
+            
+                <!--Ride Image Div-->
+                <div class="parks-list-img-div">
+                    <img src="/media/imgs/parks/disney-animal-kingdom.jpg" class="parks-list-img" alt="">
+                </div>
+            
+                <!--Ride Data Div-->
+                <div class="parks-ride-data-div">
+                    <!--Ride Name and Location Div-->
+                    <div class="parks-list-item-name">
+                        <p class="parks-item-location proxima-semibold">Disney's Animal Kingdom</p>
+                    </div>
+                    <!--Ride Ratings Div-->
+                    <div class="parks-list-item-ratings-div">
+                        <div class="park-user-rating">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x" style="color: #F4C153;"></i>
+                                <i class="fas fa-star fa-stack-1x"
+                                    style="color: rgb(255, 255, 255);margin-top: -0.85px; font-size:0.5rem"></i>
+                            </span>
+                            <p class="user-rating-txt proxima-regular">
+                                4.5
+                            </p>
+                        </div>
+                        <div class="park-access-rating">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x" style="color: rgb(255, 255, 255);"></i>
+                                <i class="fa-solid fa-universal-access fa-stack-2x" style="color: #739CF9;"></i>
+                            </span>
+                            <p class="access-rating-txt proxima-regular">
+                                3.5
+                            </p>
+                        </div>
+                    </div>
+                    <!--Park Location Div-->
+                    <div class="parks-list-location-div">
+                        <i class="fa-solid fa-location-dot" style="color: #FF8B8B;"></i>
+                        <p class="proxima-regular">Lake Buena Vista, FL</p>
+                    </div>
+                </div>
+            
+                <!--Add Ride to List Div-->
+                <div class="view-rides-btn-div">
+                    <button class="add-ride-list-btn proxima-semibold">VIEW RIDES</button>
+                </div>
+            
+                <!--Ride Item Divider-->
+            </div>
+            <hr class="park-ride-hr">
+            <div class="user-ride-item">
+                <!--Ride Image Div-->
+                <div class="list-ride-img-div">
+                    <img src="/media/imgs/Rides/Despicable-Me-Minion-Mayhem.jpg" class="list-ride-img" alt="">
+                </div>
+                <!--Ride Data Div-->
+                <div class="list-ride-data-div">
+                    <!--Ride Name and Location Div-->
+                    <div class="list-ride-info-div">
+                        <p class="list-ride-location proxima-semibold">First Islands of Adventure</p>
+                        <p class="list-ride-name proxima-semibold">Despicable Me Minion Mayhem</p>
+                    </div>
+                    <!--Ride Ratings Div-->
+                    <div class="list-ride-ratings-div">
+                        <div class="ride-user-rating">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x" style="color: #F4C153;"></i>
+                                <i class="fas fa-star fa-stack-1x"
+                                    style="color: rgb(255, 255, 255);margin-top: -0.85px; font-size:0.5rem"></i>
+                            </span>
+                            <p class="user-rating-txt proxima-regular">
+                                4.5
+                            </p>
+                        </div>
+                        <div class="ride-access-rating">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x" style="color: rgb(255, 255, 255);"></i>
+                                <i class="fa-solid fa-universal-access fa-stack-2x" style="color: #739CF9;"></i>
+                            </span>
+                            <p class="access-rating-txt proxima-regular">
+                                4.5
+                            </p>
+                        </div>
+                    </div>
+                    <!--Park Location Div-->
+                    <div class="list-ride-location-div">
+                        <i class="fa-solid fa-location-dot" style="color: #FF8B8B;"></i>
+                        <p class="proxima-regular">Orlando, FL</p>
+                    </div>
+                </div>
+                <!--Add Ride to List Div-->
+                <div class="add-ride-list-btn-div">
+                    <button class="add-ride-list-btn proxima-semibold"><i class="fa-solid fa-circle-plus"></i>Add to
+                        List</button>
+                </div>
+        
+                <!--Ride Item Divider-->
+            </div>
+            <hr class="park-ride-hr">
+            <div class="user-ride-item">
+                <!--Ride Image Div-->
+                <div class="list-ride-img-div">
+                    <img src="/media/imgs/Rides/Despicable-Me-Minion-Mayhem.jpg" class="list-ride-img" alt="">
+                </div>
+                <!--Ride Data Div-->
+                <div class="list-ride-data-div">
+                    <!--Ride Name and Location Div-->
+                    <div class="list-ride-info-div">
+                        <p class="list-ride-location proxima-semibold">First Islands of Adventure</p>
+                        <p class="list-ride-name proxima-semibold">Despicable Me Minion Mayhem</p>
+                    </div>
+                    <!--Ride Ratings Div-->
+                    <div class="list-ride-ratings-div">
+                        <div class="ride-user-rating">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x" style="color: #F4C153;"></i>
+                                <i class="fas fa-star fa-stack-1x"
+                                    style="color: rgb(255, 255, 255);margin-top: -0.85px; font-size:0.5rem"></i>
+                            </span>
+                            <p class="user-rating-txt proxima-regular">
+                                4.5
+                            </p>
+                        </div>
+                        <div class="ride-access-rating">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x" style="color: rgb(255, 255, 255);"></i>
+                                <i class="fa-solid fa-universal-access fa-stack-2x" style="color: #739CF9;"></i>
+                            </span>
+                            <p class="access-rating-txt proxima-regular">
+                                4.5
+                            </p>
+                        </div>
+                    </div>
+                    <!--Park Location Div-->
+                    <div class="list-ride-location-div">
+                        <i class="fa-solid fa-location-dot" style="color: #FF8B8B;"></i>
+                        <p class="proxima-regular">Orlando, FL</p>
+                    </div>
+                </div>
+                <!--Add Ride to List Div-->
+                <div class="add-ride-list-btn-div">
+                    <button class="add-ride-list-btn proxima-semibold"><i class="fa-solid fa-circle-plus"></i>Add to
+                        List</button>
+                </div>
+        
+                <!--Ride Item Divider-->
+            </div>
+            <hr class="park-ride-hr">
+            <div class="user-ride-item">
+                <!--Ride Image Div-->
+                <div class="list-ride-img-div">
+                    <img src="/media/imgs/Rides/Despicable-Me-Minion-Mayhem.jpg" class="list-ride-img" alt="">
+                </div>
+                <!--Ride Data Div-->
+                <div class="list-ride-data-div">
+                    <!--Ride Name and Location Div-->
+                    <div class="list-ride-info-div">
+                        <p class="list-ride-location proxima-semibold">First Islands of Adventure</p>
+                        <p class="list-ride-name proxima-semibold">Despicable Me Minion Mayhem</p>
+                    </div>
+                    <!--Ride Ratings Div-->
+                    <div class="list-ride-ratings-div">
+                        <div class="ride-user-rating">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x" style="color: #F4C153;"></i>
+                                <i class="fas fa-star fa-stack-1x"
+                                    style="color: rgb(255, 255, 255);margin-top: -0.85px; font-size:0.5rem"></i>
+                            </span>
+                            <p class="user-rating-txt proxima-regular">
+                                4.5
+                            </p>
+                        </div>
+                        <div class="ride-access-rating">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x" style="color: rgb(255, 255, 255);"></i>
+                                <i class="fa-solid fa-universal-access fa-stack-2x" style="color: #739CF9;"></i>
+                            </span>
+                            <p class="access-rating-txt proxima-regular">
+                                4.5
+                            </p>
+                        </div>
+                    </div>
+                    <!--Park Location Div-->
+                    <div class="list-ride-location-div">
+                        <i class="fa-solid fa-location-dot" style="color: #FF8B8B;"></i>
+                        <p class="proxima-regular">Orlando, FL</p>
+                    </div>
+                </div>
+                <!--Add Ride to List Div-->
+                <div class="add-ride-list-btn-div">
+                    <button class="add-ride-list-btn proxima-semibold"><i class="fa-solid fa-circle-plus"></i>Add to
+                        List</button>
+                </div>
+        
+                <!--Ride Item Divider-->
+            </div>
+
+        </div>
+    </div>
+    
+    <!------BOTTOM MENU------>
+    <footer class="app-footer">
+        <!--Leave a Review Div-->
+        <!-- <div class="add-ride-btn-div">
+            <button onclick="thankYou()" class="contact-btn-lg">
+                <p>ADD RIDE</p><i class="fa-solid fa-circle-plus"></i>
+            </button>
+        </div> -->
+        <div class="icon-container">
+            <div class="icon-text-container icon-color">
+                <i class="icon fa fa-home"></i>
+                <span>HOME</span>
+            </div>
+            <div class="icon-text-container">
+                <i class="icon fa-solid fa-circle-user"></i>
+                <span>PROFILE</span>
+            </div>
+            <div class="icon-text-container">
+                <img src="/media/imgs/compare.png" class="icon-img">
+                <span>COMPARE</span>
+            </div>
+            <div class="icon-text-container">
+                <img src="/media/imgs/rides.png" class="icon-img">
+                <span>RIDES</span>
+            </div>
+        </div>
+    
+    </footer>
+</body>
+</html>
+
+
+
+

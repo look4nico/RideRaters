@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a919c172a1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/settings.js"></script>
+    <script src="js/index.js"></script>
+    <title>RideRaters</title>
+</head>
+<body>
+    <!--Top Nav-->
+    <div class="content">
+        <header class="app-header">
+            <div class="hamburg-logo-div">
+                <i class="fa-solid fa-bars fa-3x hamburg-menu" style="color: #ffffff;"></i>
+                <img src="/media/imgs/logo-nav.png" class="nav-logo" alt="" class="logo" width="100vw" height="auto">
+            </div>
+        </header>
+    </div>
+
+    <!---Header-->
+    <div class="page-list-header">
+        <span class="fa-stack header-arrow" style="display: flex;">
+            <i class="fa-regular fa-circle fa-stack-2x"
+                style="color: #000000;font-size: 3em !important;margin-top: -0.15em;"></i>
+            <i class="fa-solid fa-arrow-left fa-stack-1x"
+                style="color: rgb(0, 0, 0);font-size: 2em !important;margin-left: 0.12em;"></i>
+        </span>
+        <h1 id="settings-header">SETTINGS</h1>
+    </div>
+
+    <!--Setting Options-->
+    <div class="settings-items" id="settings-options">
+        <!--Contact-->
+        <a onclick="contactPage()" class="settings-link-div">
+            <div class="menu-settings">
+                <!--Icons-->
+                <span class="fa-stack">
+                    <i class="fa fa-circle fa-stack-2x" style="color: black;font-size:3em;position: relative;"></i>
+                    <i class="fa-solid fa-phone fa-stack-2x" style="color: #ffffff;font-size:1.6em;position: relative;bottom: 1.55em;left:0.15em;"></i>
+                </span>
+                <p>Contact</p>
+                <i class="fa-solid fa-chevron-right" style="font-size:2em"></i>
+            </div>
+        </a>
+
+        <!--Share App-->
+        <a href="settings.html" class="menu-link-div">
+            <div class="menu-settings">
+                <!--Icons-->
+                <span class="fa-stack">
+                    <i class="fa-solid fa-share-nodes fa-stack-2x" style="color: black;font-size:3em;position: relative;"></i>
+                </span>
+                <!--------->
+                <p>Share App</p>
+                <i class="fa-solid fa-chevron-right" style="font-size:2em"></i>
+            </div>
+        </a>
+
+        <!--Privacy & Security-->
+        <a onclick="privacyPage()" class="menu-link-div">
+            <div class="menu-settings">
+                <!--Icons-->
+                <span class="fa-stack">
+                    <i class="fa-solid fa-lock fa-stack-2x" style="color: black;font-size:3em;position: relative;"></i>
+                    <i class="fa-solid fa-circle fa-stack-2x"
+                        style="color: #ffffff;font-size:0.6em;position: relative;bottom: 3.8em;left:0.12em;"></i>
+                </span>
+                <!--------->
+                <p>Privacy & Security</p>
+                <i class="fa-solid fa-chevron-right" style="font-size:2em"></i>
+            </div>
+        </a>
+
+        <!--About-->
+        <a onclick="aboutPage()" class="menu-link-div">
+            <div class="menu-settings">
+                <!--Icons-->
+                <span class="fa-stack">
+                    <i class="fa-solid fa-circle-question fa-stack-2x" style="color: black;font-size:3em;position: relative;"></i>
+                </span>
+                
+                <p>About</p>
+                <i class="fa-solid fa-chevron-right" style="font-size:2em"></i>
+            </div>
+        </a>
+
+        <!--Terms & Conditions-->
+        <a onclick="termsPage()" class="menu-link-div">
+            <div class="menu-settings">
+                <!--Icons-->
+                <span class="fa-stack">
+                    <i class="fa-solid fa-circle-exclamation fa-stack-2x" style="color: black;font-size:3em;position: relative;"></i>
+                </span>
+                <!--------->
+                <p>Terms & Conditions</p>
+                <i class="fa-solid fa-chevron-right" style="font-size:2em"></i>
+            </div>
+        </a>
+
+        <!--Leave Feedback-->
+        <a onclick="feedbackPage()" class="menu-link-div">
+            <div class="menu-settings">
+                <!--Icons-->
+                <span class="fa-stack">
+                    <i class="fa fa-circle fa-stack-2x" style="color: black;font-size:3em;position: relative;"></i>
+                    <i class="fa-regular fa-thumbs-up fa-stack-2x"
+                        style="color: #ffffff;font-size:1.8em;position: relative;bottom: 1.5em;left:0.16em;"></i>
+                </span>
+                <!--------->
+                <p>Leave us Feedback</p>
+                <i class="fa-solid fa-chevron-right" style="font-size:2em"></i>
+            </div>
+        </a>
+    </div>
+    
+    <!--Logout Button Div-->
+    <div class="logout-btn-div" id="logout-btn">
+        <a href="index.html" class="login-link">
+            <button class="login-btn-lg" style="width: 75%;padding-left: 0em;padding-right: 0em;">Logout</button>
+        </a>
+    </div>
+
+    <!------BOTTOM MENU------>
+    <footer class="app-footer">
+        <div class="icon-container">
+            <div class="icon-text-container">
+                <i class="icon fa fa-home"></i>
+                <span>HOME</span>
+            </div>
+            <div class="icon-text-container">
+                <i class="icon fa-solid fa-circle-user"></i>
+                <span>PROFILE</span>
+            </div>
+            <div class="icon-text-container">
+                <img src="/media/imgs/compare.png" class="icon-img">
+                <span>COMPARE</span>
+            </div>
+            <div class="icon-text-container">
+                <img src="/media/imgs/rides.png" class="icon-img">
+                <span>RIDES</span>
+            </div>
+        </div>
+    
+    </footer>
+</body>
+</html>
+
+
+
+
