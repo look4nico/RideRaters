@@ -8,40 +8,7 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/index.js"></script>
     <script>
-        function thankYou() {
-            const form = document.getElementById("form-submit");
-            const pageIcon = document.getElementById("page-lg-icon");
-            form.remove();
-            pageIcon.remove();
-
-            const thanksDiv = document.createElement("div");
-                thanksDiv.classList.add("thanks-div");
-            const thanksH2 = document.createElement("h2");
-                thanksH2.classList.add("thanks-txt","proxima-bold");
-            const thanksH2Txt1 = document.createTextNode("THANK YOU FOR");
-            const thanksBr = document.createElement("br");
-            const thanksH2Txt2 = document.createTextNode("FOR CONTACTING US.")
-                thanksH2.append(thanksH2Txt1,thanksBr,thanksH2Txt2);
-                thanksDiv.append(thanksH2);
-            const thanksP = document.createElement("p");
-                thanksP.classList.add("thanks-txt","proxima-bold");
-            const thanksPtxt = document.createTextNode("We Will Reach Out As Soon As We Can, Thank You!");
-                thanksP.append(thanksPtxt);
-            const thanksIcon = document.createElement("i");
-                thanksIcon.classList.add("fa-solid", "fa-thumbs-up");
-            const btmMenu = document.querySelector(".app-footer");
-            const returnBtnDiv = document.createElement('div');
-                returnBtnDiv.classList.add("thanks-btn-div");
-                returnBtnDiv.style.bottom = "1em"
-            const returnBtn = document.createElement('button');
-                returnBtn.classList.add("contact-btn-lg","thanks-btn");
-                returnBtn.textContent = "RETURN"
-            returnBtnDiv.append(returnBtn);
-            document.body.insertBefore(returnBtnDiv, btmMenu); 
-            document.body.insertBefore(thanksDiv,returnBtnDiv);   
-            thanksDiv.append(thanksP);
-            thanksDiv.append(thanksIcon);
-        }
+        
     </script>
     <title>RideRaters</title>
 </head>
@@ -84,7 +51,7 @@
 
             <!--Send Message Div-->
             <div class="update-username-btn-div">
-                <button onclick="thankYou()" class="contact-btn-lg" ><p>UPDATE USERNAME</p><i class="fa-solid fa-circle-plus"></i></button>
+                <button onclick="changeUsername()" class="contact-btn-lg" ><p>UPDATE USERNAME</p><i class="fa-solid fa-circle-plus"></i></button>
             </div>
             <!--Leave a Review Div-->
         </form>

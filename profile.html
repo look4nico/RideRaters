@@ -64,23 +64,26 @@
             <i class="fa-solid fa-arrow-left fa-stack-1x"
                 style="color: rgb(0, 0, 0);font-size: 2em !important;margin-left: 0.12em;"></i>
         </span>
-        <h1 class="review-header">PROFILE</h1>
-        <button class="edit-profile-btn">
+        <h1 class="review-header" id="profile-header">PROFILE</h1>
+        <button onclick="editProfileBtn()" class="edit-profile-btn">
             <i class="fa-solid fa-pen-to-square"></i>
             <p class="edit-prof-txt proxima-semibold">Edit</p>
         </button>
     </div>
+
     <!--Profile Picture-->
     <div class="profile-pic-div">
         <img src="media/imgs/profile-pic.jpg" class="profile-pic" alt="Profile Picture">
     </div>
+
     <!--Username-->
     <p class="username-txt proxima-bold">USERNAME123</p>
+    
     <!--Saved List Div-->
     <div class="saved-lists">
         <div class="saved-lists-txt-btn">
             <p class="saved-header proxima-semibold">YOUR SAVED LISTS</p>
-            <button class="edit-list-btn">
+            <button onclick="newList()" class="edit-list-btn" id="create-list-btn">
                 <i class="fa-solid fa-circle-plus"></i>
                 <p class="edit-list-txt  proxima-semibold">New List</p>
             </button>
@@ -88,27 +91,27 @@
         <div class="user-lists-div">
             <div class="user-list-item">
                 <p class="list-name proxima-semibold">USER LIST ONE</p>
-                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="list-img">
+                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="user-list-img">
             </div>
             <div class="user-list-item">
                 <p class="list-name proxima-semibold">USER LIST TWO</p>
-                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="list-img">
+                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="user-list-img">
             </div>
             <div class="user-list-item">
                 <p class="list-name proxima-semibold">USER LIST THREE</p>
-                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="list-img">
+                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="user-list-img">
             </div>
             <div class="user-list-item">
                 <p class="list-name proxima-semibold">USER LIST FOUR</p>
-                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="list-img">
+                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="user-list-img">
             </div>
             <div class="user-list-item">
                 <p class="list-name proxima-semibold">USER LIST FIVE</p>
-                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="list-img">
+                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="user-list-img">
             </div>
             <div class="user-list-item">
                 <p class="list-name proxima-semibold">USER LIST SIX</p>
-                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="list-img">
+                <img src="media/imgs/Rides/ioa-the-incredible-hulk-coaster-universal-barrel-roll-c.jpg" alt="" class="user-list-img">
             </div>
         </div>
     </div>
@@ -117,7 +120,7 @@
     <footer class="app-footer">
         <!--Leave a Review Div-->
         <div class="review-btn-div leave-review-btn">
-            <button onclick="thankYou()" class="contact-btn-lg" ><p>Leave a Ride Review</p><i class="fa-solid fa-circle-plus"></i></button>
+            <button onclick="location.href='review.html'" class="contact-btn-lg" ><p>Leave a Ride Review</p><i class="fa-solid fa-circle-plus"></i></button>
         </div>
         <div class="icon-container">
             <div class="icon-text-container">

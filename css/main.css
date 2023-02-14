@@ -59,6 +59,18 @@
     font-family: pp_pangram_sans_rounded_semibold;
 }
 
+.fan-faves-to-list {
+    cursor: pointer;
+}
+
+.fan-fav-img {
+    cursor: pointer;
+}
+
+.edit-user-list-name {
+    cursor: pointer;
+}
+
 .proxima-semibold{
     font-family: proxima-nova-semibold !important;
     font-weight: normal;
@@ -454,6 +466,7 @@ body{
     padding: 0.1em 0em 0em 0em;
     position: absolute;
     margin-left: 0.5em;
+    cursor: pointer;
 }
 
 .ad-space-cow {
@@ -466,6 +479,7 @@ body{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
 }
 
 .search-bar-div{
@@ -517,6 +531,7 @@ body{
     position: relative;
     top: 0.3em;
     right: 1.8em;
+    cursor: pointer;
 }
 
 .fan-favs{
@@ -546,6 +561,7 @@ body{
     flex-direction: column;
     align-items: center;
     margin: 10px 20px;
+    cursor: pointer;
 }
 .icon-img {
     width: 65px;
@@ -605,6 +621,7 @@ span {
     padding: 1.3em 0em 1.3em 0em;
     margin: -1.2em -0.67em -1.2em -0.67em !important;
     border-radius: 26px;
+    cursor: pointer;
 }
 
 .bg-img-buttons-parks{
@@ -1156,10 +1173,15 @@ span {
     float: inline-end;
     bottom: 1.45em;
     right: 1.6em;
+    cursor: pointer;
 }
 
 .edit-profile-btn p{
     margin-left: 0.8em;
+}
+
+.edit-profile-btn {
+    cursor: pointer;
 }
 
 .edit-profile-btn i{
@@ -1219,12 +1241,13 @@ span {
     display: flex;
     position: relative;
     background-color: rgba(255, 255, 255, 0);
-    border: solid #707070 2.5px;
+    border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3em 0.7em 0.3em 0.4em;
     float: inline-end;
     bottom: 0.3em;
     margin-left: 4em;
+    cursor: pointer;
 }
 
 .saved-lists-txt-btn i {
@@ -1263,6 +1286,7 @@ span {
     object-fit: cover;
     border-radius: 10pt;
     border: 2.5pt solid black;
+    cursor: pointer;
 }
 
 .leave-review-btn {
@@ -1301,6 +1325,7 @@ span {
 
 .username-div i {
     margin: 0em 0em 0.1em 0.7em;
+    cursor: pointer;
 }
 
 .username-div, .list-title-div {
@@ -1639,6 +1664,7 @@ display: flex;
     border-radius: 10pt;
     margin: 0rem 1rem 0rem 0rem;
     box-shadow: 0px 3px 8px #00000029;
+    cursor: pointer;
 }
 
 .list-ride-location-div {
@@ -1741,11 +1767,12 @@ display: flex;
     display: flex;
     position: relative;
     background-color: rgba(255, 255, 255, 0);
-    border: solid #707070 2.5px;
+    border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3em 0.5em 0.3em 0.5em;
     float: inline-end;
     margin-left: 1.5rem;
+    cursor: pointer;
 }
 
 .add-ride-list-btn-div i {
@@ -1871,10 +1898,11 @@ display: flex;
     display: flex;
     position: relative;
     background-color: rgb(255, 255, 255);
-    border: solid #707070 2.5px;
+    border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3rem 0.7em 0.3em 0.7em;
     float: inline-end;
+    cursor: pointer;
 }
 
 .add-ride-park-btn-div i {
@@ -2017,10 +2045,11 @@ display: flex;
     background-color: #F5D79C;
     color: #000000;
     font-size: 0.75rem;
-    border: solid #707070 2.5px;
+    border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.15rem 0.9em 0.3em 0.9em;
     margin: 0.2rem 0rem 0.4rem 0rem;
+    cursor: pointer;
 }
 
 .park-ride-stat-div .park-stat-btn-div {
@@ -2078,6 +2107,7 @@ display: flex;
 
 .user-review-rating-div .fa-triangle-exclamation, .fa-thumbs-down {
     margin-left: 0.7rem;
+    cursor: pointer;
 }
 
 .user-review-rating-div .thumbs-down-review-count,.thumbs-up-review-count {
@@ -2087,6 +2117,7 @@ display: flex;
 .thumbs-up-review, .thumbs-down-review {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .user-review-pfp-div {
@@ -2143,11 +2174,29 @@ padding-bottom: 1rem;
     display: flex;
     position: relative;
     background-color: rgba(255, 255, 255, 0);
-    border: solid #707070 2.5px;
+    border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3em 0.7em 0.3em 0.7em;
     float: inline-end;
     margin-left: 2rem;
+    cursor: pointer;
+}
+.park-view-rides-btn-div {
+    margin-left: -6rem;
+    position: relative;
+    top: 4rem;
+}
+
+.park-view-rides-btn-div button {
+    display: flex;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+    border: solid #707070 2px;
+    border-radius: 17px;
+    padding: 0.3em 0.7em 0.3em 0.7em;
+    float: inline-end;
+    margin-left: 2rem;
+    cursor: pointer;
 }
 
 .view-rides-btn-div i {
@@ -2175,6 +2224,7 @@ padding-bottom: 1rem;
     border-radius: 10pt;
     margin: 0rem 1rem 0rem 0rem;
     box-shadow: 0px 3px 8px #00000029;
+    cursor: pointer;
 }
 
 .parks-ride-data-div {

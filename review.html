@@ -6,47 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a919c172a1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/index.js"></script>
     <script>
         
-        
-
-        function thankYou() {
-            const form = document.getElementById("form-submit");
-            const feedbackTxt = document.getElementById("feedback-txt");
-            const feedbackHeader = document.querySelector(".feedback-header");
-                feedbackHeader.classList.remove("feedback-header");
-            form.remove();
-            feedbackTxt.remove();
-
-            const thanksDiv = document.createElement("div");
-            thanksDiv.classList.add("thanks-div");
-            const thanksH2 = document.createElement("h2");
-            thanksH2.classList.add("thanks-txt", "proxima-bold");
-            const thanksH2Txt1 = document.createTextNode("THANK YOU FOR");
-            const thanksBr = document.createElement("br");
-            const thanksH2Txt2 = document.createTextNode("YOUR FEEDBACK.")
-            thanksH2.append(thanksH2Txt1, thanksBr, thanksH2Txt2);
-            thanksDiv.append(thanksH2);
-            const thanksP = document.createElement("p");
-            thanksP.classList.add("thanks-txt", "proxima-bold");
-            const thanksPtxt = document.createTextNode("You Helped Improve This Experience For All Our User.");
-            thanksP.append(thanksPtxt);
-            const thanksIcon = document.createElement("i");
-            thanksIcon.classList.add("fa-solid", "fa-thumbs-up");
-            const btmMenu = document.querySelector(".app-footer");
-            const returnBtnDiv = document.createElement('div');
-            returnBtnDiv.classList.add("thanks-btn-div");
-            returnBtnDiv.style.bottom = "1em"
-            const returnBtn = document.createElement('button');
-            returnBtn.classList.add("contact-btn-lg", "thanks-btn");
-            returnBtn.textContent = "RETURN"
-            returnBtnDiv.append(returnBtn);
-            document.body.insertBefore(returnBtnDiv, btmMenu);
-            document.body.insertBefore(thanksDiv, returnBtnDiv);
-            thanksDiv.append(thanksP);
-            thanksDiv.append(thanksIcon);
-        }
-
         document.addEventListener("DOMContentLoaded", function () {
                 let stars = document.querySelectorAll(".fa-star");
                 const btnNg = document.querySelector("#btn-ng");
@@ -143,24 +105,7 @@
             });
 
 
-        // window.onload = function () {
-        //         let stars = document.getElementsByClassName("fa-star");
-        //         let oneStar = document.getElementById("one-star");
-        //         let twoStar = document.getElementById("two-star");
-        //         let threeStar = document.getElementById("three-star")
-        //         let fourStar = document.getElementById("four-star");
-        //         let fiveStar = document.getElementById("five-star");
-        //         for (let i = 0; i < stars.length; i++) {
-        //             stars[i].addEventListener("click", function () {
-        //                 if (condition) {
-                            
-        //                 }
-        //             });
-        //         }
-        //     }
-            // create an event listener for each star. if the first is clicked, color only that star
-            // if the third is clicked, color all the stars leading up to that.
-
+      
     </script>
     <title>RideRaters</title>
 </head>
@@ -185,8 +130,9 @@
         </span>
         <h1>LEAVE A REVIEW</h1>
     </div>
+
     <!--Review Div-->
-    <div class="review-Div">
+    <div class="review-Div" id="review-div">
         <!--Review Text Div-->
         <div class="feedback-txt-rating" id="review-txt">
             <p class="review-txt proxima-regular">
@@ -253,7 +199,7 @@
                 <textarea id="review"  class="proxima-regular" name="review" rows="">I think...</textarea>
                 <!--Submit Review Button Div-->
                 <div class="submit-btn-div">
-                        <button onclick="thankYou()" class="submit-btn">SUBMIT</button>
+                        <button onclick="reviewThanks()" class="submit-btn">SUBMIT</button>
                 </div>
                 
             </form>

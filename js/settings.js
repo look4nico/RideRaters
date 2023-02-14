@@ -600,9 +600,12 @@ function contactPage() {
 
 //Function that take the user to the Thank You page
 function contactThanks() {
-    rebuildArrow();
+    // rebuildArrow();
+    
     const form = document.getElementById("contact-form");
     const contactIcon = document.getElementById("contact-icon");
+    
+
     contactIcon.remove();
     form.remove();
     
@@ -641,7 +644,7 @@ function contactThanks() {
 
 //Function that take the user to the Thank You page
 function feedbackThanks() {
-  rebuildArrow();
+  // rebuildArrow();
   const form = document.getElementById("form-submit");
   const feedbackTxt = document.getElementById("feedback-txt-rating");
   const feedbackHeader = document.querySelector(".feedback-header");
@@ -678,3 +681,7 @@ function feedbackThanks() {
   thanksDiv.append(thanksP);
   thanksDiv.append(thanksIcon);
 }
+
+
+  
+
