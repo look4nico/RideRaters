@@ -1170,6 +1170,7 @@ span {
     border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3em 0.8em 0.3em 0.8em;
+    float: right;
     float: inline-end;
     bottom: 1.45em;
     right: 1.6em;
@@ -1244,6 +1245,7 @@ span {
     border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3em 0.7em 0.3em 0.4em;
+    float: right;
     float: inline-end;
     bottom: 0.3em;
     margin-left: 4em;
@@ -1770,6 +1772,7 @@ display: flex;
     border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3em 0.5em 0.3em 0.5em;
+    float: right;
     float: inline-end;
     margin-left: 1.5rem;
     cursor: pointer;
@@ -1901,7 +1904,8 @@ display: flex;
     border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3rem 0.7em 0.3em 0.7em;
-    float: inline-end;
+    float: right;
+    float: inline-end;   
     cursor: pointer;
 }
 
@@ -2177,7 +2181,8 @@ padding-bottom: 1rem;
     border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3em 0.7em 0.3em 0.7em;
-    float: inline-end;
+    float: right;
+    float: inline-end;   
     margin-left: 2rem;
     cursor: pointer;
 }
@@ -2194,6 +2199,7 @@ padding-bottom: 1rem;
     border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3em 0.7em 0.3em 0.7em;
+    float: right;
     float: inline-end;
     margin-left: 2rem;
     cursor: pointer;
@@ -2633,6 +2639,7 @@ padding-bottom: 1rem;
 
 .search-result-items-div {
     margin-top: 0.2rem;
+    margin-bottom: 5rem;
 }
 
 .Search-result-item {
