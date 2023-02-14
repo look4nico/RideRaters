@@ -377,7 +377,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (backArrow) { 
         console.log('back arrow is present');
         backArrow.addEventListener('click', function() {
-            window.location.href = history.back();
+            history.back();
         });
     } else {
         console.log('back arrow is not present');
@@ -585,7 +585,7 @@ function confirmList() {
 
 function addRide() {
     //returns to previous page
-    window.location.href = history.back();
+    history.back();
 }
 
 function menuPage() {
@@ -803,7 +803,7 @@ function newList() {
 
     // Create the image element
     const listImg = document.createElement("img");
-    listImg.src = "";
+    listImg.src = "media/imgs/empty-img.png";
     listImg.classList.add("create-list-img");
     listImg.id = "pfp-img";
     listImg.alt = "";
@@ -1225,7 +1225,7 @@ function editProfileBtn() {
 }
 
 function changeUsername() {
-    window.location.href = history.back();
+    history.back();
 }
 
 // event listener if bg-img-buttons-parks is clicked go to parkspage.html
