@@ -4,14 +4,87 @@ fetch('/data/data.json')
   .then(data => {
     console.log(data);
     const rides = data.parks[0].rides[0].park;
+    const addRides = data.parks
+    
+    let allRides = [];
+
+    //map through parks array
+    for (let i = 0; i < addRides.length; i++) {
+        allRides.push(data.parks[i].rides);
+        // console.log(data.parks[i].rides);
+        // console.log(data.parks[i]);
+        // console.log(addRides.length);
+    }
+
+    let ridesList = [];
+
+    //map through rides array
+    for (let i = 0; i < allRides.length; i++) {
+        for (let j = 0; j < allRides[i].length; j++) {
+            // console.log(allRides[i][j]);
+            ridesList.push(allRides[i][j]);
+        }
+    }
+    console.log(ridesList.length);
+    console.log(ridesList);
+    console.log(ridesList[1].name);
+
     const parks = data.parks;
     console.log(rides);
+    console.log(allRides);
     console.log(parks);
     search(parks);
+    searchRides(ridesList);
+    ridesGlobal(ridesList);
+
   })
   .catch(error => {
     console.error('There was a problem:', error);
 });
+
+
+function searchRides(data) {
+    const searchRides = document.getElementById('search-for-rides');
+    const searchResultsContainer = document.getElementById("search-results-container");
+    const template = document.getElementById("search-result-template");
+    
+    if (searchRides) {
+        searchRides.addEventListener('input', () => {
+            const searchValue = searchRides.value.toLowerCase();
+            const filteredParks = data.filter(park => {
+                return park.name.toLowerCase().includes(searchValue);
+            });
+            // console.log(filteredParks);
+            // console.log(filteredParks[0].name);
+            // console.log(filteredParks);
+        
+            searchResultsContainer.innerHTML = "";
+
+            filteredParks.forEach((ride) => {
+            const result = document.importNode(template.content, true);
+            const rideImg = result.querySelector(".list-ride-img");
+            const rideLocation = result.querySelector(".list-ride-location");
+            const rideName = result.querySelector(".list-ride-name");
+            const userRating = result.querySelector(".user-rating-txt");
+            const accessRating = result.querySelector(".access-rating-txt");
+            const location = result.querySelector(".proxima-regular");
+            const itemCity = result.querySelector(".ride-city");
+            
+            rideImg.src = ride.img;
+            rideLocation.textContent = ride.park;
+            rideName.textContent = ride.name;
+            userRating.textContent = ride.rating;
+            accessRating.textContent = ride.rating;
+            location.textContent = ride.rating;
+            itemCity.textContent = ride.location;
+
+            searchResultsContainer.appendChild(result);
+            });
+
+    
+        }); 
+    }
+};
 
 function search(data) {
     const searchParks = document.getElementById('search-for-parks');
@@ -26,8 +99,8 @@ function search(data) {
                 return park.name.toLowerCase().includes(searchValue);
             });
             // console.log(filteredParks);
-            console.log(filteredParks[0].name);
-            console.log(filteredParks);
+            // console.log(filteredParks[0].name);
+            // console.log(filteredParks);
         
             searchResultsContainer.innerHTML = "";
 
@@ -619,6 +692,31 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('compare icon is not present');
     };
 });
+
+let ridesData = [];
+
+function ridesGlobal(rides) {
+    ridesData = rides;
+}
+
+function addCompare() {
+    console.log("Ride Added to Compare!")
+    const compareIcon = document.querySelectorAll('.ride-compare-img');
+    const compareBtn = document.querySelector('.add-ride-list-btn');
+    //select list-ride-name class closest to the compareBtn without closest() method
+    const rideName = compareBtn.parentElement.previousElementSibling.children[0].children[1].innerText;
+    // search ridesData for rideName
+    const ride = ridesData.find(ride => ride.name === rideName);
+    console.log(ride);
+
+
+    console.log(rideName);
+    // console.log(ridesData);
+    // console.log(ridesData);
+    
+}
+
+
 
 // when the fourth icon-text-container element in side the icon-container div is clicked, go to ridespage.html
 //Rides Icon Page Navigation
