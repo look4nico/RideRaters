@@ -1,3 +1,101 @@
+
+fetch('/data/data.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    const rides = data.parks[0].rides[0].park;
+    const parks = data.parks;
+    console.log(rides);
+    console.log(parks);
+    search(parks);
+  })
+  .catch(error => {
+    console.error('There was a problem:', error);
+});
+
+function search(data) {
+    const searchParks = document.getElementById('search-for-parks');
+    const searchRides = document.getElementById('search-for-rides');
+    const searchResultsContainer = document.getElementById("search-results-container");
+    const template = document.getElementById("search-result-template");
+    
+    if (searchRides) {
+        searchRides.addEventListener('input', () => {
+            const searchValue = searchRides.value.toLowerCase();
+            const filteredParks = data.filter(park => {
+                return park.name.toLowerCase().includes(searchValue);
+            });
+            // console.log(filteredParks);
+            console.log(filteredParks[0].name);
+            console.log(filteredParks);
+        
+            searchResultsContainer.innerHTML = "";
+
+            filteredParks.forEach((ride) => {
+            const result = document.importNode(template.content, true);
+            const rideImg = result.querySelector(".list-ride-img");
+            const rideLocation = result.querySelector(".list-ride-location");
+            const rideName = result.querySelector(".list-ride-name");
+            const userRating = result.querySelector(".user-rating-txt");
+            const accessRating = result.querySelector(".access-rating-txt");
+            const location = result.querySelector(".proxima-regular");
+            const itemCity = result.querySelector(".ride-city");
+            
+            rideImg.src = ride.img;
+            rideLocation.textContent = ride.name;
+            rideName.textContent = ride.name;
+            userRating.textContent = ride.rating;
+            accessRating.textContent = ride.rating;
+            location.textContent = ride.rating;
+            itemCity.textContent = ride.location;
+
+            searchResultsContainer.appendChild(result);
+            });
+
+    
+        }); 
+    }
+
+    
+    if (searchParks) {
+        searchParks.addEventListener('input', () => {
+            const searchValue = searchParks.value.toLowerCase();
+            const filteredParks = data.filter(park => {
+                return park.name.toLowerCase().includes(searchValue);
+            });
+            // console.log(filteredParks);
+            console.log(filteredParks[0].name);
+            console.log(filteredParks);
+        
+            searchResultsContainer.innerHTML = "";
+
+            filteredParks.forEach((ride) => {
+                const result = document.importNode(template.content, true);
+                const rideImg = result.querySelector(".parks-list-img");
+                const rideLocation = result.querySelector(".parks-item-location");
+                const rideName = result.querySelector(".parks-item-location");
+                const userRating = result.querySelector(".user-rating-txt");
+                const accessRating = result.querySelector(".access-rating-txt");
+                const location = result.querySelector(".proxima-regular");
+                const itemCity = result.querySelector(".park-city");
+                
+                rideImg.src = ride.img;
+                rideLocation.textContent = ride.name;
+                rideName.textContent = ride.name;
+                userRating.textContent = ride.rating;
+                accessRating.textContent = ride.rating;
+                location.textContent = ride.rating;
+                itemCity.textContent = ride.location;
+
+                searchResultsContainer.appendChild(result);
+            });
+
+        
+        }); 
+    }
+}
+
+
 function rebuildArrow() {
   // Arrow Left Rebuild to curb event listener bubbling
     const headerArrow = document.querySelector(".header-arrow");
@@ -1032,7 +1130,6 @@ function recoverySent() {
 
 
 }
-
 
 function editProfileBtn() {
    rebuildArrow();
