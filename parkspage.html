@@ -35,7 +35,7 @@
 
     <div class="search-bar-div">
         <i class="fa-solid fa-magnifying-glass fa-xl mag-icon"></i>
-        <input type="text" class="search-bar" placeholder="SEARCH...">
+        <input type="text" id="search-for-parks" class="search-bar" placeholder="SEARCH...">
         <i class="fa-solid fa-sliders fa-2x filter-icon"></i>
     </div>
 
@@ -44,6 +44,75 @@
         <!--Park Rides Div-->
         <div class="parks-div">
     
+
+
+        <!-- Container for search results -->
+            <div id="search-results-container"></div>
+
+            <!-- Template for search result item -->
+            <template id="search-result-template">
+
+                <div class="parks-list-item">
+                
+                    <!--Ride Image Div-->
+                    <div class="parks-list-img-div">
+                        <img src="" class="parks-list-img" alt="">
+                    </div>
+                
+                    <!--Ride Data Div-->
+                    <div class="parks-ride-data-div">
+                        <!--Ride Name and Location Div-->
+                        <div class="parks-list-item-name">
+                            <p class="parks-item-location proxima-semibold"></p>
+                        </div>
+                        <!--Ride Ratings Div-->
+                        <div class="parks-list-item-ratings-div">
+                            <div class="park-user-rating">
+                                <span class="fa-stack">
+                                    <i class="fa fa-circle fa-stack-2x" style="color: #F4C153;"></i>
+                                    <i class="fas fa-star fa-stack-1x"
+                                        style="color: rgb(255, 255, 255);margin-top: -0.85px; font-size:0.5rem"></i>
+                                </span>
+                                <p class="user-rating-txt proxima-regular">
+                                    
+                                </p>
+                            </div>
+                            <div class="park-access-rating">
+                                <span class="fa-stack">
+                                    <i class="fa fa-circle fa-stack-2x" style="color: rgb(255, 255, 255);"></i>
+                                    <i class="fa-solid fa-universal-access fa-stack-2x" style="color: #739CF9;"></i>
+                                </span>
+                                <p class="access-rating-txt proxima-regular">
+                                    
+                                </p>
+                            </div>
+                        </div>
+                        <!--Park Location Div-->
+                        <div class="parks-list-location-div">
+                            <i class="fa-solid fa-location-dot" style="color: #FF8B8B;"></i>
+                            <p class="proxima-regular park-city"></p>
+                        </div>
+                    </div>
+
+                    <!--Add Ride to List Div-->
+                    <div class="park-view-rides-btn-div">
+                        <button class="view-park-page proxima-semibold">VIEW RIDES</button>
+                    </div>
+                </div>
+                <!-- Ride Item Divider -->
+                <hr class="park-ride-hr">
+
+
+            </template>
+
+
+
+
+
+
+
+
+
             <!--Park Item Div: Universal IOA-->
             <div class="parks-list-item">
     
