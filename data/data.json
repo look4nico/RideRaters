@@ -188,7 +188,7 @@
                     "rating": 4.0,
                     "site": "https://buschgardens.com/tampa/rides/serengeti-express-train/",
                     "img": "media/imgs/ride-imgs/SerengetiRailway2_357x229.jpg",
-                    "accessibility":
+                    "accessibility": 
                         {
                             "wheelchair": true,
                             "sizeShape": true,
