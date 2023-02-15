@@ -1,0 +1,2169 @@
+{
+    "parks": [
+        {
+            "name": "Busch Gardens",
+            "location": "Tampa, FL",
+            "description": "Busch Gardens is one of America\u2019s largest zoological institutions, with 335 acres (136 ha) and more than 2,700 animals.",
+            "rating": 2.4,
+            "height": "44 inches",
+            "wheelchair": "53.1%",
+            "site": "https://buschgardens.com/tampa/",
+            "img": "media/imgs/parks/busch-gardens.png",
+            "rides": [
+                {
+                    "name": "Air Grover",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "Add to the excitement with this junior coaster set within the Sesame Street Safari of Fun area.",
+                    "rating": 2.5,
+                    "site": "https://buschgardens.com/tampa/roller-coasters/air-grover/",
+                    "img": "media/imgs/ride-imgs/AirGrover4_357x22.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Cheetah Hunt",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "This triple launch roller coaster carries riders high above the park, then races down along the ground through a rocky gorge. At a length of 4,400 feet, Cheetah Hunt\u00ae is the park\u2019s longest thrill ride attraction!",
+                    "rating": 2.0,
+                    "site": "https://buschgardens.com/tampa/roller-coasters/cheetah-hunt/",
+                    "img": "media/imgs/ride-imgs/Cheetah_Hunt2_357x22.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Cobra's Curse",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "Change your ride by changing who you ride with on this thrilling steel serpent. This one-of-a-kind roller coaster features a menacing 30,000-pound snake king and a 70-foot vertical lift that will take riders within inches of its 3 foot-wide eyes and 4-foot-long fangs.",
+                    "rating": 2.0,
+                    "site": "https://buschgardens.com/tampa/roller-coasters/cobras-curse/",
+                    "img": "media/imgs/ride-imgs/CobrasCurse_Listing.png",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Congo River Rapids",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "Climb aboard and enjoy a refreshing splash \u2013 or get seriously soaked. This expedition will send you twirling down a racing river through Congo, so get ready to get soaked!",
+                    "rating": 3.5,
+                    "site": "https://buschgardens.com/tampa/rides/congo-river-rapids/",
+                    "img": "media/imgs/ride-imgs/CongoRiverRapids_357x229.png",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Falcon's Fury",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "The height Falcon\u2019s Fury\u00ae reaches offers an incredible view stretching well past downtown Tampa and encompassing all of Busch Gardens. The ride takes about a minute until riders get to its peak, giving plenty of time to enjoy the landscape.",
+                    "rating": 2.0,
+                    "site": "https://buschgardens.com/tampa/rides/falcons-fury/",
+                    "img": "media/imgs/ride-imgs/FalconsFury_357x229.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Iron Gwazi",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "Iron Gwazi takes thrills to new heights, plunging riders from a 206 foot-tall peak into a 91-degree drop and reaching top speeds of 76 miles per hour.",
+                    "rating": 2.0,
+                    "site": "https://buschgardens.com/tampa/roller-coasters/iron-gwazi/",
+                    "img": "media/imgs/ride-imgs/IronGwazi_ListingImage_GoldenTicket.png",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Kumba",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "Touting one of the world's largest vertical loops, enthusiasts have consistently voted Kumba\u00ae, one of the world's best roller coasters! It is said that if you can hear the roar of a lion in the distance, you have crossed into his territory.",
+                    "rating": 2.0,
+                    "site": "https://buschgardens.com/tampa/roller-coasters/kumba/",
+                    "img": "media/imgs/ride-imgs/Kumba_ListingImage.png",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Montu",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "Climb high into the air and hold on for a twisting drop, a 60-foot vertical loop, an Immelmann loop and a weightless roll and that's only the beginning on this inverted roller coaster.",
+                    "rating": 2.0,
+                    "site": "https://buschgardens.com/tampa/roller-coasters/montu/",
+                    "img": "media/imgs/ride-imgs/Montu_LiftListingImage_357x2.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Sand Serpent",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "Families will love the curves, drops, and corkscrews of this \"wild-mouse\" style roller coaster located in the Pantopia\u00ae area of the park. SandSerpent is a fun-filled family coaster that zips, zooms and climbs five stories into the air before bringing riders back down in a roar of laughter.",
+                    "rating": 2.5,
+                    "site": "https://buschgardens.com/tampa/roller-coasters/sandserpent/",
+                    "img": "media/imgs/ride-imgs/Sand_Serpent_357x229.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Scorpion",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "The Scorpion\u00ae is one of only three roller coasters of its kind remaining in the world today, yet its sting is every bit as effective at instilling thrills through every twist and turn. Scorpion pulls you through a 360 degree loop and speeds of 50 miles per hour!",
+                    "rating": 1.5,
+                    "site": "https://buschgardens.com/tampa/roller-coasters/scorpion/",
+                    "img": "media/imgs/ride-imgs/Scorpion2_ListingIm.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Serengeti Express",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "A ride on the Serengeti Express Train is one of the best ways to take in the breathtaking beauty and scale of Busch Garden's Serengeti Plain\u00ae.",
+                    "rating": 4.0,
+                    "site": "https://buschgardens.com/tampa/rides/serengeti-express-train/",
+                    "img": "media/imgs/ride-imgs/SerengetiRailway2_357x229.jpg",
+                    "accessibility":
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "SheiKra",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "Climb 200 feet to the edge of a 90-degree drop that inches you mercilessly over the edge\u2014and stops. Then surrender to speed as you dive straight down into a 70 mph roller coaster.",
+                    "rating": 2.0,
+                    "site": "https://buschgardens.com/tampa/roller-coasters/sheikra/",
+                    "img": "media/imgs/ride-imgs/SheiKra_357x229.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Skyride",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "Take in beautiful views of roller coasters and the animals in our care as you cross our lush park from the comfort of your Skyride cable car, that runs between Egypt and Congo on the opposite side of the park.",
+                    "rating": 3.5,
+                    "site": "https://buschgardens.com/tampa/rides/skyride/",
+                    "img": "media/imgs/ride-imgs/SkyRide2_357x229.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Stanley Falls Flume",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "Catch a current of fun aboard the Stanley Falls Flume\u00ae, Busch Gardens Tampa Bay\u2019s family-friendly log flume ride that\u2019s perfect for younger guests. The ride twists and turns through a lush jungle before diving toward a final 40-foot splashdown. If you\u2019re looking for a great way to cool off on a hot day, this is the ride for you!",
+                    "rating": 2.0,
+                    "site": "https://buschgardens.com/tampa/rides/stanley-falls/",
+                    "img": "media/imgs/ride-imgs/Stanley_Falls_357x2.png",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Tigris",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "Catapult through an exhilarating array of looping twists with forward and backward motion and breath-taking drops",
+                    "rating": 2.0,
+                    "site": "https://buschgardens.com/tampa/roller-coasters/tigris/",
+                    "img": "media/imgs/ride-imgs/Tigris_1900x700.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Wild Surge",
+                    "location": "Tampa, FL",
+                    "park": "Busch Gardens",
+                    "description": "Launch out of a 35-foot mountain crater up above a towering waterfall for a thrilling view of Jungala\u2019s\u00ae village below. Look out for the gibbons and flying foxes as they soar pass the adjacent animal habitats!",
+                    "rating": 2.5,
+                    "site": "https://buschgardens.com/tampa/rides/wild-surge/",
+                    "img": "media/imgs/ride-imgs/WildSurge1_357x229.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                }
+            ]
+        },
+        {
+            "name": "Disney's Animal Kingdom",
+            "location": "Lake Buena Vista, FL",
+            "description": "Disney\u2019s Animal Kingdom distinguishes itself from the rest of Walt Disney World\u2019s theme parks by featuring traditional attractions as well as hundreds of species of live animals.",
+            "rating": 3.5,
+            "height": "42 inches",
+            "wheelchair": "77.8%",
+            "site": "https://disneyworld.disney.go.com/destinations/animal-kingdom/",
+            "img": "media/imgs/parks/disney-animal-kingdom.jpg",
+            "rides": [
+                {
+                    "name": "Avatar Flight of Passage",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Animal Kingdom",
+                    "description": "Climb atop a winged mountain banshee for a breathtaking 3D flight over Pandora\u2019s otherworldly landscape.",
+                    "rating": 2.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/animal-kingdom/avatar-flight-of-passage/",
+                    "img": "media/imgs/ride-imgs/AVATAR-flight-of-passage-in-ride.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "DINOSAUR",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Animal Kingdom",
+                    "description": "Travel back in time on a perilous prehistoric race to rescue a dinosaur\u2014before the meteor strikes.",
+                    "rating": 2.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/animal-kingdom/dinosaur/",
+                    "img": "media/imgs/ride-imgs/dinosaur.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Expedition Everest",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Animal Kingdom",
+                    "description": "Careen through icy Himalayan peaks on a speeding train while avoiding the clutches of the mythic Yeti.",
+                    "rating": 2.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/animal-kingdom/expedition-everest/",
+                    "img": "media/imgs/ride-imgs/expedition-everest-day.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Kali River Rapids",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Animal Kingdom",
+                    "description": "Set out on a thrilling whitewater adventure through a lush jungle in the heart of Asia.",
+                    "rating": 3.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/animal-kingdom/kali-river-rapids/",
+                    "img": "media/imgs/ride-imgs/kali-river-rapids.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Kilimanjaro Safaris",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Animal Kingdom",
+                    "description": "Set off in an open-air vehicle for a guided tour of an African savanna\u2014and spot live animals roaming free.",
+                    "rating": 3.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/animal-kingdom/kilimanjaro-safaris/",
+                    "img": "media/imgs/ride-imgs/kilimanjaro-safaris.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Na\u2019vi River Journey",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Animal Kingdom",
+                    "description": "Take a mystical journey by boat deep into Pandora\u2019s glowing bioluminescent rainforest.",
+                    "rating": 2.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/animal-kingdom/navi-river-journey/",
+                    "img": "media/imgs/ride-imgs/pandora-navi-river-journey-full-boat.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "TriceraTop Spin",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Animal Kingdom",
+                    "description": "Fly high on a dinosaur around a twirling tin-toy top at this delightful carnival-inspired attraction.",
+                    "rating": 3.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/animal-kingdom/tricera-top-spin/",
+                    "img": "media/imgs/ride-imgs/tricera-top-spin.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Wildlife Express Train",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Animal Kingdom",
+                    "description": "Cross the African savanna on a rustic locomotive for a behind-the-scenes look at the park\u2019s animals.",
+                    "rating": 2.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/animal-kingdom/wildlife-express-train/",
+                    "img": "media/imgs/ride-imgs/wildlife-express-train.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": false,
+                            "photosensitivity": false
+                        }
+                }
+            ]
+        },
+        {
+            "name": "Disney's EPCOT",
+            "location": "Lake Buena Vista, FL",
+            "description": "Epcot is dedicated to the celebration of human achievement, namely technological innovation and international culture.",
+            "rating": 3.0,
+            "height": "41 inches",
+            "wheelchair": "72.7%",
+            "site": "https://disneyworld.disney.go.com/destinations/epcot/",
+            "img": "media/imgs/parks/disney-epcot.jpg",
+            "rides": [
+                {
+                    "name": "Frozen Ever After",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's EPCOT",
+                    "description": "Voyage to Arendelle aboard an ancient Nordic vessel as you take a musical tour of the wintery world of Frozen.",
+                    "rating": 2.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/epcot/frozen-ever-after/",
+                    "img": "media/imgs/ride-imgs/frozen-ever-after-olaf-anna-elsa.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Gran Fiesta Tour Starring The Three Caballeros",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's EPCOT",
+                    "description": "Take in the sights of Mexico and the antics of 3 feathered amigos on this gentle boat ride through the Mexico Pavilion.",
+                    "rating": 2.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/epcot/gran-fiesta-tour-starring-three-caballeros/",
+                    "img": "media/imgs/ride-imgs/gran-fiesta-tour-starring-three-caballeros.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Guardians of the Galaxy: Cosmic Rewind",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's EPCOT",
+                    "description": "Take off on an intergalactic chase through space and time with the Guardians of the Galaxy.",
+                    "rating": 2.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/epcot/guardians-of-the-galaxy-cosmic-rewind/",
+                    "img": "media/imgs/ride-imgs/guardians-of-the-galaxy.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Journey Into Imagination With Figment",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's EPCOT",
+                    "description": "Figment the playful dragon is your guide on this delightful ride through the sensory labs of Imagination Institute.",
+                    "rating": 2.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/epcot/journey-into-imagination-with-figment/",
+                    "img": "media/imgs/ride-imgs/journey-into-imagination-with-figment.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Living With The Land",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's EPCOT",
+                    "description": "Cruise past greenhouses on a gentle boat tour and discover the surprising history of farming.",
+                    "rating": 2.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/epcot/living-with-the-land/",
+                    "img": "media/imgs/ride-imgs/living-with-the-land.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Mission: SPACE",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's EPCOT",
+                    "description": "Blast off on a thrilling simulated NASA-style mission to Mars\u2014or orbit the Earth on a more gentle ride through space.",
+                    "rating": 2.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/epcot/mission-space/",
+                    "img": "media/imgs/ride-imgs/mission-space.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Remy's Ratatouille Adventure",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's EPCOT",
+                    "description": "Feel like you\u2019ve shrunk down to Chef Remy\u2019s size for a 4D culinary adventure based on the Disney and Pixar film Ratatouille. When you\u2019re small, life is a big adventure!",
+                    "rating": 2.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/epcot/remys-ratatouille-adventure/",
+                    "img": "media/imgs/ride-imgs/remy-RatatouilleKV.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Soarin' Around the World",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's EPCOT",
+                    "description": "Take flight on a breezy, airborne adventure as you hang glide above the breathtaking wonders of the world.",
+                    "rating": 3.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/epcot/soarin-around-world/",
+                    "img": "media/imgs/ride-imgs/soarin.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Spaceship Earth",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's EPCOT",
+                    "description": "Travel through time and explore the remarkable history of human communication from the Stone Age to the computer age.",
+                    "rating": 3.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/epcot/spaceship-earth/",
+                    "img": "media/imgs/ride-imgs/spaceship-earth.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Test Track",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's EPCOT",
+                    "description": "Design a virtual concept car and put it to the test on this thrilling, high-octane attraction.",
+                    "rating": 2.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/epcot/test-track/",
+                    "img": "media/imgs/ride-imgs/test-track-presented-by-chevrolet.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "The Seas With Nemo & Friends",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's EPCOT",
+                    "description": "Go under the sea\u2014without getting wet\u2014on this gentle ride based on Disney and Pixar's Finding Nemo, which finds Nemo lost again.",
+                    "rating": 1.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/epcot/seas-with-nemo-and-friends/",
+                    "img": "media/imgs/ride-imgs/the-seas-with-nemo-and-friends.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": false
+                        }
+                }
+            ]
+        },
+        {
+            "name": "Disney's Hollywood Studios",
+            "location": "Lake Buena Vista, FL",
+            "description": "Disney's Hollywood Studios was initially developed as both a theme park inspired by show business and an operating production studio.",
+            "rating": 2.8,
+            "height": "40 inches",
+            "wheelchair": "56.3%",
+            "site": "https://disneyworld.disney.go.com/destinations/hollywood-studios/",
+            "img": "media/imgs/parks/disney-hollywood-studios.jpg",
+            "rides": [
+                {
+                    "name": "Alien Swirling Saucers",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Hollywood Studios",
+                    "description": "Power up the saucers for an interstellar romp through space, while futuristic tunes set the mood. Space cadets of all ages may enjoy this gentle whirl through the sky above Toy Story Land.",
+                    "rating": 1.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/hollywood-studios/alien-swirling-saucers/",
+                    "img": "media/imgs/ride-imgs/aliens-swirliing-saucers-entrance.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Millennium Falcon: Smugglers Run",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Hollywood Studios",
+                    "description": "Ride in the famous cockpit of the Millennium Falcon on a daring flight\u2014and whether you\u2019re a pilot, engineer or gunner, every role is crucial.",
+                    "rating": 3.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/hollywood-studios/millennium-falcon-smugglers-run/",
+                    "img": "media/imgs/ride-imgs/millennium-smugglers-run-interior.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Rock \u2018n\u2019 Roller Coaster Starring Aerosmith",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Hollywood Studios",
+                    "description": "Race along the darkened freeways of Los Angeles in a super-stretch limo to the rockin' tunes of Aerosmith.",
+                    "rating": 3.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/hollywood-studios/rock-and-roller-coaster-starring-aerosmith/",
+                    "img": "media/imgs/ride-imgs/rock-and-roller-coaster-starring-aerosmith.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Slinky Dog Dash",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Hollywood Studios",
+                    "description": "Take off on a family-friendly coaster that twists and turns past giant toys and springs across Andy\u2019s oversized backyard!",
+                    "rating": 2.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/hollywood-studios/slinky-dog-dash/",
+                    "img": "media/imgs/ride-imgs/slinky-dog-ride.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Star Tours: The Adventures Continue",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Hollywood Studios",
+                    "description": "Make the jump to hyperspace on a thrilling 3D space flight to legendary destinations from the Star Wars saga.",
+                    "rating": 3.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/hollywood-studios/star-tours/",
+                    "img": "media/imgs/ride-imgs/star-tours-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Star Wars: Rise of the Resistance",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Hollywood Studios",
+                    "description": "Join the Resistance in an unforgettable battle against the First Order on this exciting ride.",
+                    "rating": 2.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/hollywood-studios/star-wars-rise-of-the-resistance/",
+                    "img": "media/imgs/ride-imgs/star-wars-rise-resistance.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "The Twilight Zone Tower of Terror",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Hollywood Studios",
+                    "description": "Hurtle up and down aboard a haunted elevator-style lift. You\u2019re about to enter\u2026 The Twilight Zone!",
+                    "rating": 3.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/hollywood-studios/twilight-zone-tower-of-terror/",
+                    "img": "media/imgs/ride-imgs/the-twilight-zone-tower-of-terror.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Toy Story Mania!",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Hollywood Studios",
+                    "description": "Zip through an exhilarating 4D shootin\u2019 game starring Toy Story characters\u2014and blast away.",
+                    "rating": 2.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/hollywood-studios/toy-story-mania/",
+                    "img": "media/imgs/ride-imgs/toy-story-mania.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": false,
+                            "photosensitivity": false
+                        }
+                } 
+            ]
+        },
+        {
+            "name": "Disney's Magic Kingdom",
+            "location": "Lake Buena Vista, FL",
+            "description": "The park is represented by Cinderella Castle, inspired by the fairy tale castle featured in the 1950 film",
+            "rating": 4.0,
+            "height": "38 inches",
+            "wheelchair": "61.9%",
+            "site": "https://disneyworld.disney.go.com/destinations/magic-kingdom/",
+            "img": "media/imgs/parks/disney-magic-kingdom.jpg",
+            "rides": [
+                {
+                    "name": "Astro Orbiter",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Pilot a spaceship high in the sky amid a gleaming constellation of planets.",
+                    "rating": 4.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/astro-orbiter/",
+                    "img": "media/imgs/ride-imgs/astro-orbiter-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Big Thunder Mountain",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Race through a haunted gold mine aboard a speeding train on this thrilling coaster-style ride.",
+                    "rating": 3.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/big-thunder-mountain-railroad/",
+                    "img": "media/imgs/ride-imgs/big-thunder-mountain-railroad-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Buzz Lightyear\u2019s Space Ranger Spin",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Fire your laser to earn points and defeat the Evil Emperor Zurg as you journey through a galactic space battle.",
+                    "rating": 3.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/buzz-lightyear-space-ranger-spin/",
+                    "img": "media/imgs/ride-imgs/buzz-lightyear-space-ranger-spin-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Dumbo the Flying Elephant",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Soar high in the sky\u2014and see an elephant fly\u2014on a whimsical flight aboard Dumbo.",
+                    "rating": 3.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/dumbo-the-flying-elephant/",
+                    "img": "media/imgs/ride-imgs/dumbo-the-flying-elephant-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Haunted Mansion",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Climb aboard a gloomy Doom Buggy for a grave journey through a labyrinth of haunted chambers.",
+                    "rating": 3.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/haunted-mansion/",
+                    "img": "media/imgs/ride-imgs/haunted-mansion-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "It\u2019s a small world",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Embark on a whimsical boat ride past a jubilant chorus of children from around the globe.",
+                    "rating": 4.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/its-a-small-world/",
+                    "img": "media/imgs/ride-imgs/its-a-small-world-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Jungle Cruise",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Chart a course for high adventure on a scenic and comedic boat tour of exotic rivers across Asia, Africa and South America.",
+                    "rating": 4.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/jungle-cruise/",
+                    "img": "media/imgs/ride-imgs/jingle-cruise-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Liberty Square Riverboat",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Cruise the scenic Rivers of America aboard an authentic steam-powered paddle wheeler.",
+                    "rating": 5.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/liberty-square-riverboat/",
+                    "img": "media/imgs/ride-imgs/liberty-square-riverboat-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Mad Tea Party",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Spin \u2018round and \u2018round in a giant teacup during a madcap music-filled whirlwind.",
+                    "rating": 3.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/mad-tea-party/",
+                    "img": "media/imgs/ride-imgs/mad-tea-party-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Main Street Vehicles",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Travel back in time during a breezy drive down Main Street, U.S.A. in a charming turn-of-the-century vehicle.",
+                    "rating": 4.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/main-street-vehicles/",
+                    "img": "media/imgs/ride-imgs/main-street-vehicles-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Peter Pan\u2019s Flight",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Embark on a high-flying adventure over iconic scenes made famous in Disney\u2019s animated film.",
+                    "rating": 2.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/peter-pan-flight/",
+                    "img": "media/imgs/ride-imgs/peter-pan-flight-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": false,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Pirates of the Caribbean",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Set sail on a swashbuckling voyage to a long-forgotten time and place when pirates and privateers ruled the seas.",
+                    "rating": 3.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/pirates-of-the-caribbean/",
+                    "img": "media/imgs/ride-imgs/pirates-of-the-caribbean-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Prince Charming Regal Carrousel",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Ride atop a regal steed and gallop through a whirling backdrop of wondrous color and whimsical music.",
+                    "rating": 4.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/prince-charming-regal-carrousel/",
+                    "img": "media/imgs/ride-imgs/prince-charming-regal-carrousel-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Seven Dwarfs Mine Train",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Race through the diamond mine from Snow White and the Seven Dwarfs on a swaying family coaster ride.",
+                    "rating": 3.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/seven-dwarfs-mine-train/",
+                    "img": "media/imgs/ride-imgs/seven-dwarfs-mine-train-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Space Mountain",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Blast off on a rip-roaring rocket into the furthest reaches of outer space on this roller-coaster ride in the dark.",
+                    "rating": 2.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/space-mountain/",
+                    "img": "media/imgs/ride-imgs/space-mountain-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Splash Mountain",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Drop into a whimsical world filled with classic characters and songs on this thrilling log-flume adventure.",
+                    "rating": 3.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/splash-mountain/",
+                    "img": "media/imgs/ride-imgs/splash-mountain-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "The Magic Carpets of Aladdin",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Fly high over Adventureland on an enchanted carpet ride inspired by the Disney movie Aladdin.",
+                    "rating": 4.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/magic-carpets-of-aladdin/",
+                    "img": "media/imgs/ride-imgs/the-magic-carpets-of-aladdin-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "The Many Adventures of Winnie the Pooh",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Travel through Hundred-Acre Wood in an oversized Hunny Pot and get lost in the pages of A.A. Milne\u2019s classic tales.",
+                    "rating": 4.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/many-adventures-of-winnie-the-pooh/",
+                    "img": "media/imgs/ride-imgs/the-many-adventures-of-winnie-the-pooh-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Tomorrowland Transit Authority PeopleMover",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Embark on a 10-minute tour of Tomorrowland aboard this mass transit system of the future.",
+                    "rating": 4.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/tomorrowland-transit-authority-peoplemover/",
+                    "img": "media/imgs/ride-imgs/tomorrowland-transit-authority-peoplemover-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": false,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Under the Sea \u2013 Journey of the Little Mermaid",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Board a clamshell and become part of Ariel\u2019s world on a musical adventure awash with scenes from the animated classic.",
+                    "rating": 3.5,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/under-the-sea-journey-of-the-little-mermaid/",
+                    "img": "media/imgs/ride-imgs/under-the-sea-journey-of-the-little-mermaid-new-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Walt Disney\u2019s Carousel of Progress",
+                    "location": "Lake Buena Vista, FL",
+                    "park": "Disney's Magic Kingdom",
+                    "description": "Travel through the 20th century and marvel at the evolution of technology during this classic Audio-Animatronics show.",
+                    "rating": 5.0,
+                    "site": "https://disneyworld.disney.go.com/attractions/magic-kingdom/walt-disney-carousel-of-progress/",
+                    "img": "media/imgs/ride-imgs/walt-disney-carousel-of-progress-00.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                }
+            ]
+        },
+        {
+            "name": "Legoland",
+            "location": "Winter Haven, FL",
+            "description": "Designed for families with children ages 2 to 12, the park has more than fifty rides, shows, attractions, restaurants, and shops.",
+            "rating": 3.0,
+            "height": "39 inches",
+            "wheelchair": "59.1%",
+            "site": "https://www.legoland.com/florida/",
+            "img": "media/imgs/parks/legoland.jpg",
+            "rides": [
+                {
+                    "name": "Aquazone Wave Racers",
+                    "location": "Winter Haven, FL",
+                    "park": "Legoland",
+                    "description": "Family friendly hydro slider water carousel, which is operated in a water basin.",
+                    "rating": 4.0,
+                    "site": "https://www.legoland.com/florida/things-to-do/theme-park/rides-attractions/aquazone-wave-racers/",
+                    "img": "media/imgs/ride-imgs/aquazone-wave-racers.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Boating School",
+                    "location": "Winter Haven, FL",
+                    "park": "Legoland",
+                    "description": "Boating School is an attraction that enables guests to experience actual driving and steering of a boat through a course.",
+                    "rating": 3.0,
+                    "site": "https://www.undercovertourist.com/orlando/legoland-florida/boating-school/",
+                    "img": "media/imgs/ride-imgs/boating_school_1400x800.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Coastersaurus",
+                    "location": "Winter Haven, FL",
+                    "park": "Legoland",
+                    "description": "A classic wooden roller coaster designed to thrill riders with steep drops and fast turns.",
+                    "rating": 2.5,
+                    "site": "https://www.legoland.com/florida/things-to-do/theme-park/rides-attractions/coastersaurus/",
+                    "img": "media/imgs/ride-imgs/coastersaurus_1400x800.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Flying School",
+                    "location": "Winter Haven, FL",
+                    "park": "Legoland",
+                    "description": "The train is designed to hang under the track (as opposed to a traditional roller coaster), giving guests who ride the feeling of flying.",
+                    "rating": 3.5,
+                    "site": "https://www.legoland.com/florida/things-to-do/theme-park/rides-attractions/flying-school/",
+                    "img": "media/imgs/ride-imgs/flying_school_1400x800.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Ford Driving School",
+                    "location": "Winter Haven, FL",
+                    "park": "Legoland",
+                    "description": "An attraction that enables children to experience actual driving and steering of a car through a course",
+                    "rating": 2.5,
+                    "site": "https://www.legoland.com/florida/things-to-do/theme-park/rides-attractions/ford-driving-school/",
+                    "img": "media/imgs/ride-imgs/ford_driving_school_1400x800.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Lego Ninjago Ride",
+                    "location": "Winter Haven, FL",
+                    "park": "Legoland",
+                    "description": "Blast animated fireballs, lightning and more at a sinister gallery of villains before teaming up to defeat a powerful foe.",
+                    "rating": 2.5,
+                    "site": "https://www.legoland.com/florida/things-to-do/theme-park/rides-attractions/lego-ninjago-world/",
+                    "img": "media/imgs/ride-imgs/lego-ninjago-ride1400x800.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Lost Kingdom Adventure",
+                    "location": "Winter Haven, FL",
+                    "park": "Legoland",
+                    "description": "An interactive dark ride where guests compete for the highest score by shooting laser blasters",
+                    "rating": 1.5,
+                    "site": "https://www.legoland.com/florida/things-to-do/theme-park/rides-attractions/lost-kingdom-adventure/",
+                    "img": "media/imgs/ride-imgs/lost-kingdom-adventure.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                    "sizeShape": false,
+                    "serviceAnimal": false,
+                    "childSwap": true,
+                    "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Merlins Challenge",
+                    "location": "Winter Haven, FL",
+                    "park": "Legoland",
+                    "description": "A caterpillar ride that spins in a clockwise motion and progressively speeds up.",
+                    "rating": 3.5,
+                    "site": "https://www.legoland.com/florida/things-to-do/theme-park/rides-attractions/merlin-s-challenge/",
+                    "img": "media/imgs/ride-imgs/merlins-challenge_1800x900.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Safari Trek",
+                    "location": "Winter Haven, FL",
+                    "park": "Legoland",
+                    "description": "A slow moving car ride where guests travel through a LEGO\u00ae jungle",
+                    "rating": 3.5,
+                    "site": "https://www.legoland.com/florida/things-to-do/theme-park/rides-attractions/safari-trek/",
+                    "img": "media/imgs/ride-imgs/safari-trek.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "The Dragon",
+                    "location": "Winter Haven, FL",
+                    "park": "Legoland",
+                    "description": "The Dragon is an indoor/outdoor steel roller coaster",
+                    "rating": 2.5,
+                    "site": "https://www.legoland.com/florida/things-to-do/theme-park/rides-attractions/the-dragon/",
+                    "img": "media/imgs/ride-imgs/the-great-lego-race.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "The Great Lego Race",
+                    "location": "Winter Haven, FL",
+                    "park": "Legoland",
+                    "description": "The Great LEGO\u00ae Race is an exciting wild-mouse style rollercoaster that thrills riders with large drops, hair-pin turns, and thrill inducing fun!",
+                    "rating": 3.5,
+                    "site": "https://www.legoland.com/florida/things-to-do/theme-park/rides-attractions/the-great-lego-race/",
+                    "img": "media/imgs/ride-imgs/the_dragon.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                }
+            ]
+        },
+        {
+            "name": "SeaWorld",
+            "location": "Orlando, FL",
+            "description": "SeaWorld Orlando functions both as theme park and marine zoological park.",
+            "rating": 3.4,
+            "height": "45 inches",
+            "wheelchair": "83.3%",
+            "site": "https://seaworld.com/orlando/",
+            "img": "media/imgs/parks/seaworld.jpg",
+            "rides": [
+                {
+                    "name": "Abby's Flower Tower",
+                    "location": "Orlando, FL",
+                    "park": "SeaWorld",
+                    "description": "Just a sprinkle of magic from Abby Cadabby\u2019s wand will send you up, up, up in colorful flower pots aboard Abby\u2019s Flower Tower.",
+                    "rating": 3.0,
+                    "site": "https://seaworld.com/orlando/sesame-street/attractions/abbys-flower-tower/",
+                    "img": "media/imgs/ride-imgs/Abbys-Flower-Tower.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Big Bird's Twirl 'N' Whirl",
+                    "location": "Orlando, FL",
+                    "park": "SeaWorld",
+                    "description": "Ready\u2026 set \u2026 spin in a nest of your own when you enjoy Big Bird\u2019s Twirl \u2018N\u2019 Whirl.",
+                    "rating": 2.5,
+                    "site": "https://seaworld.com/orlando/sesame-street/attractions/big-birds-twirl-n-whirl/",
+                    "img": "media/imgs/ride-imgs/Big-Bird-Twirl-N-Whirl.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Cookie Drop",
+                    "location": "Orlando, FL",
+                    "park": "SeaWorld",
+                    "description": "Get carried away in a cloud of cookie crumbs as you bounce up and down on Cookie Monster\u2019s Cookie Drop!",
+                    "rating": 2.5,
+                    "site": "https://seaworld.com/orlando/sesame-street/attractions/cookie-drop/",
+                    "img": "media/imgs/ride-imgs/CookieDrop.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Elmo's Choo Choo Train",
+                    "location": "Orlando, FL",
+                    "park": "SeaWorld",
+                    "description": "It\u2019s all aboard for everyone on Elmo\u2019s Choo Choo Train, an interactive bell-ringing, horn-honking train ride you won\u2019t want to miss!",
+                    "rating": 3.0,
+                    "site": "https://seaworld.com/orlando/sesame-street/attractions/elmos-choo-choo-train/",
+                    "img": "media/imgs/ride-imgs/ElmosChooChooTrain.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": true,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Flamingo Paddle Boats",
+                    "location": "Orlando, FL",
+                    "park": "SeaWorld",
+                    "description": "Climb aboard one of our paddle boats for a leisurely tour of SeaWorld Orlando's large central lake.",
+                    "rating": 2.5,
+                    "site": "https://seaworld.com/orlando/rides/paddle-boats/",
+                    "img": "media/imgs/ride-imgs/Flamingo-Paddle-Boats-with-Riders.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": false,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Ice Breaker",
+                    "location": "Orlando, FL",
+                    "park": "SeaWorld",
+                    "description": "Our brand new roller coaster features four airtime filled launches, both backwards and forwards, culminating in a reverse launch into the steepest beyond vertical drop in Florida.",
+                    "rating": 2.0,
+                    "site": "https://seaworld.com/orlando/roller-coasters/ice-breaker/",
+                    "img": "media/imgs/ride-imgs/Ice-Breaker.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Infinity Falls",
+                    "location": "Orlando, FL",
+                    "park": "SeaWorld",
+                    "description": "Experience world-class rapids and the tallest drop in Florida as you embark on this rafting adventure.",
+                    "rating": 2.0,
+                    "site": "https://seaworld.com/orlando/rides/infinity-falls/",
+                    "img": "media/imgs/ride-imgs/InfinityFalls.png",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Journey to Atlantis",
+                    "location": "Orlando, FL",
+                    "park": "SeaWorld",
+                    "description": "Water ride enthusiasts are in for a thrill as this mythical paradise reveals its darker side.",
+                    "rating": 1.5,
+                    "site": "https://seaworld.com/orlando/rides/journey-to-atlantis/",
+                    "img": "media/imgs/ride-imgs/Journey-to-Atlantis-Splash.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Kraken",
+                    "location": "Orlando, FL",
+                    "park": "SeaWorld",
+                    "description": "Born from tales that struck terror in sailors for centuries, SeaWorld Orlando's mighty Kraken\u00ae is a monster coaster like no other.",
+                    "rating": 2.0,
+                    "site": "https://seaworld.com/orlando/roller-coasters/kraken/",
+                    "img": "media/imgs/ride-imgs/Kraken-Coaster.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Mako",
+                    "location": "Orlando, FL",
+                    "park": "SeaWorld",
+                    "description": "Ride Mako\u00ae, a hyper coaster known for high speeds, deep dives, and thrills around every turn.",
+                    "rating": 2.5,
+                    "site": "https://seaworld.com/orlando/roller-coasters/mako/",
+                    "img": "media/imgs/ride-imgs/Mako-Roller-Coaster.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Manta",
+                    "location": "Orlando, FL",
+                    "park": "SeaWorld",
+                    "description": "Find out what it\u2019s like to spin, glide, skim and fly like a giant ray when you experience the only flying roller coaster of its kind in Florida.",
+                    "rating": 2.0,
+                    "site": "https://seaworld.com/orlando/roller-coasters/manta/",
+                    "img": "media/imgs/ride-imgs/Manta-Curve.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Sky Tower",
+                    "location": "Orlando, FL",
+                    "park": "SeaWorld",
+                    "description": "Our 400-foot Sky Tower has stood as an icon for our park since it opened in summer 1974. Today the Sky Tower adds a dose of retro-cool to the day\u2019s adventures.",
+                    "rating": 4.0,
+                    "site": "https://seaworld.com/orlando/rides/sky-tower/",
+                    "img": "media/imgs/ride-imgs/Skytower.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Slimey's Sliders",
+                    "location": "Orlando, FL",
+                    "park": "SeaWorld",
+                    "description": "Climb into Slimey\u2019s Slider for an exhilarating swoop and swivel ride through Oscar the Grouch\u2019s treasured compost collection!",
+                    "rating": 3.5,
+                    "site": "https://seaworld.com/orlando/sesame-street/attractions/slimeys-slider/",
+                    "img": "media/imgs/ride-imgs/Slimeys-Slider.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Sunny Day Carousel",
+                    "location": "Orlando, FL",
+                    "park": "SeaWorld",
+                    "description": "The Sunny Day Carousel is a cute, colorful, classic ride that\u2019s perfect for everyone who likes a good go-round.",
+                    "rating": 3.5,
+                    "site": "https://seaworld.com/orlando/sesame-street/attractions/sunny-day-carousel/",
+                    "img": "media/imgs/ride-imgs/Sunny-Day-Carousel.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Super Grover's Box Car Derby",
+                    "location": "Orlando, FL",
+                    "park": "SeaWorld",
+                    "description": "Sesame Street's own furry superhero wants you behind the wheel for a racing good time at Super Grover's Box Car Derby.",
+                    "rating": 2.5,
+                    "site": "https://seaworld.com/orlando/sesame-street/attractions/super-grovers-box-car-derby/",
+                    "img": "media/imgs/ride-imgs/Super-Grover-Box-Car-Derby.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                }
+            ]
+        },
+        {
+            "name": "Universal's Island of Adventure",
+            "location": "Orlando, FL",
+            "description": "Islands of Adventure is modeled after a journey of exploration, where guests embark on an adventure to visit a variety of themed islands.",
+            "rating": 3.0,
+            "height": "44 inches",
+            "wheelchair": "60.5%",
+            "site": "https://www.universalorlando.com/web/en/us/theme-parks/islands-of-adventure",
+            "img": "media/imgs/parks/universal-ioa.jpg",
+            "rides": [
+                {
+                    "name": "Caro-Seuss-El",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This carousel has an array of fun and unusual creatures from the imagination of Dr. Seuss.",
+                    "rating": 4.0,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/caro-seuss-el",
+                    "img": "media/imgs/ride-imgs/ioa-caro-seuss-el.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Doom\u2019s Fearfall",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This ride is a high-speed, free-fall experience that includes sudden and intense acceleration, climbing and dropping",
+                    "rating": 1.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/doctor-dooms-fearfall",
+                    "img": "media/imgs/ride-imgs/ioa-dr-dooms-fearfall-towers.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Dudley Do-Right Ripsaw Falls",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This ride is a water journey in a floating log. The log will suddenly accelerate, turn, and drop.",
+                    "rating": 2.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/dudley-do-rights-ripsaw-falls",
+                    "img": "media/imgs/ride-imgs/ioa-dudley-do-rights-ripsaw-falls.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Flight of the Hippogriff",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This high-speed roller coaster ride includes sudden and dramatic accelerations, climbing, tilting and dropping.",
+                    "rating": 2.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/flight-of-the-hippogriff",
+                    "img": "media/imgs/ride-imgs/ioa-flight-of-the-hippogriff-coaster.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Hagrid\u2019s Magical Creatures Motorbike Adventure",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This is a high speed roller coaster that includes sudden dramatic acceleration, climbing, tilting, dropping, and backwards motion.",
+                    "rating": 1.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/hagrids-magical-creatures-motorbike-adventure",
+                    "img": "media/imgs/ride-imgs/ioa-hagrids-motorbike-adventure.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Harry Potter and the Forbidden Journey",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This ride simulates dramatic aerobatics. The ride vehicle will suddenly accelerate, stop, turn, tilt, climb, and drop.",
+                    "rating": 2.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/harry-potter-and-the-forbidden-journey",
+                    "img": "media/imgs/ride-imgs/ioa-harry-potter-and-the-forbidden-journey-hogwarts.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Hogwarts Express: Hogsmeade Station",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This is a passenger train that involves traveling in an enclosed cabin and includes loud noises and low-lighting conditions.",
+                    "rating": 2.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/hogwarts-express",
+                    "img": "media/imgs/ride-imgs/ioa-hogwarts-express-hogsmeade-station.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": false,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Jurassic Park River Adventure Ride",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This ride is a water journey on a touring raft. The raft will suddenly and dramatically accelerate, turn, and drop. Riders will get wet, possibly soaked.",
+                    "rating": 2.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/jurassic-park-river-adventure",
+                    "img": "media/imgs/ride-imgs/ioa-jurassic-park-river-adventure.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": false,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Jurassic World VelociCoaster",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This is a high-speed roller coaster that includes sudden and dramatic acceleration, climbing, tilting, inversions, and dropping.",
+                    "rating": 2.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/jurassic-world-velocicoaster",
+                    "img": "media/imgs/ride-imgs/ioa-jurassic-park-velocicoaster.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "One fish, Two fish, Red fish, Blue Fish",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This is a circular motion gondola ride. Up and down movement is controlled by the rider. Riders will get wet.",
+                    "rating": 5.0,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/one-fish-two-fish-red-fish",
+                    "img": "media/imgs/ride-imgs/ioa-one-fish-two-fish-red-fish-blue-fish.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Popeye and Bluto\u2019s Bilge-rat Barges",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This ride is a water journey in a circular barge. The barge will suddenly accelerate, turn and drop.",
+                    "rating": 2.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/popeye-and-blutos-bilge-rat-barges",
+                    "img": "media/imgs/ride-imgs/ioa-popeye-and-blutos-bilge-rat-barges.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Pteranodon Flyers",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This glider style roller coaster includes climbing, side-to-side swinging and sudden acceleration.",
+                    "rating": 2.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/pteranodon-flyers",
+                    "img": "media/imgs/ride-imgs/ioa-pteranodon-flyers.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Skull Island: Reign of Kong",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This 3-D ride is an expedition through the rough terrain of King Kong\u2019s natural habitat.",
+                    "rating": 4.0,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/skull-island-reign-of-kong",
+                    "img": "media/imgs/ride-imgs/ioa-skull-island-reign-of-kong.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivit        y": false
+                        }
+                },
+                {
+                    "name": "Storm Force Accelatron",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This attraction seats riders in round pods and subjects you to sudden acceleration, turning, and spinning.",
+                    "rating": 3.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/storm-force-accelatron",
+                    "img": "media/imgs/ride-imgs/ioa-storm-force-accelatron.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "The Amazing Adventures of Spider-Man",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This 3-D ride takes a journey through the world of Spider-Man\u2122 in a prototype news vehicle.",
+                    "rating": 3.0,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/the-amazing-adventures-of-spider-man",
+                    "img": "media/imgs/ride-imgs/ioa-the-amazing-adventures-of-spiderman.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "The Cat in the Hat Ride",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This ride takes a journey through the world of The Cat in the Hat\u2122.",
+                    "rating": 5.0,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/the-cat-in-the-hat",
+                    "img": "media/imgs/ride-imgs/ioa-the-cat-in-the-hat.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "The High in the Sky Seuss Trolley Train",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This ride is a trolley train through Seuss Landing\u2122 on an elevated track.",
+                    "rating": 3.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/high-in-the-sky-seuss-trolley-train-ride",
+                    "img": "media/imgs/ride-imgs/ioa-the-high-in-the-sky-seuss-trolly.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "The Incredible Hulk Coaster",
+                    "location": "Orlando, FL",
+                    "park": "Universal\u2019s Islands of Adventure",
+                    "description": "This is a high-speed roller coaster ride that includes sudden and dramatic acceleration, climbing, tilting, and dropping.",
+                    "rating": 1.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/the-incredible-hulk-coaster",
+                    "img": "media/imgs/ride-imgs/ioa-the-incredible-hulk-coaster.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                }
+            ]
+        },
+        {
+            "name": "Universal's Studios",
+            "location": "Orlando, FL",
+            "description": "Universal Studios Florida was originally designed to function as both a theme park and working production studio.",
+            "rating": 3.1,
+            "height": "42 inches",
+            "wheelchair": "61.5%",
+            "site": "https://www.universalorlando.com/web/en/us/theme-parks/universal-studios-florida",
+            "img": "media/imgs/parks/universal-studios.jpg",
+            "rides": [
+                {
+                    "name": "Despicable Me Minion Mayhem",
+                    "location": "Orlando, FL",
+                    "park": "Universal Studios",
+                    "description": "Simulates the action of a high-speed aerial chase, with sudden turns and strong lighting effects.",
+                    "rating": 2.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/despicable-me-minion-mayhem",
+                    "img": "media/imgs/ride-imgs/Despicable Me Minion Mayhem.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "E.T. Adventure",
+                    "location": "Orlando, FL",
+                    "park": "Universal Studios",
+                    "description": "Forest chase on a flying bicycle, with sudden acceleration and turns.",
+                    "rating": 3.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/et-adventure",
+                    "img": "media/imgs/ride-imgs/et-adventure-family.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Fast And Furious - Supercharged",
+                    "location": "Orlando, FL",
+                    "park": "Universal Studios",
+                    "description": "High-octane journey into the underground racing world with sudden acceleration and turns.",
+                    "rating": 3.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/fast-furious-supercharged",
+                    "img": "media/imgs/ride-imgs/fast-and-furious-supercharged.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Harry Potter and the Escape from Gringotts",
+                    "location": "Orlando, FL",
+                    "park": "Universal Studios",
+                    "description": "A high-speed roller coaster with 3-D visuals and sudden movements.",
+                    "rating": 1.5,
+                    "site": "https://www.universalorlando.com/web/en/us/search-results/filtered?attraction_experience=rides-attractions&attraction_location=usf&attraction_interest=",
+                    "img": "media/imgs/ride-imgs/harry-potter-escape-from-gringotts.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Hogwarts\u2122 Express",
+                    "location": "Orlando, FL",
+                    "park": "Universal Studios",
+                    "description": "A passenger train with an enclosed cabin, loud noises, and low-lighting conditions.",
+                    "rating": 5.0,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/hogwarts-express",
+                    "img": "media/imgs/ride-imgs/hogwarts-express.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "Hollywood Rip Ride Rockit\u2122",
+                    "location": "Orlando, FL",
+                    "park": "Universal Studios",
+                    "description": "High-speed roller coaster that includes sudden and dramatic accelerations, climbs, tilts, and drops",
+                    "rating": 1.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/hollywood-rip-ride-rockit",
+                    "img": "media/imgs/ride-imgs/hollywood-rip-ride-rockit.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Kang & Kodos' Twirl 'n' Hurl",
+                    "location": "Orlando, FL",
+                    "park": "Universal Studios",
+                    "description": "Circular motion gondola ride with a lot of spinning!",
+                    "rating": 4.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/kang-and-kodos-twirl-and-hurl",
+                    "img": "media/imgs/ride-imgs/kang-kodos-twirl-n-hurl.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                },
+                {
+                    "name": "MEN IN BLACK\u2122 Alien Attack",
+                    "location": "Orlando, FL",
+                    "park": "Universal Studios",
+                    "description": "Men In Black recruits on the city streets for an intense training exercise, sudden movements and spins.",
+                    "rating": 2.0,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/men-in-black-alien-attack",
+                    "img": "media/imgs/ride-imgs/men-in-black-alien-attack.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Race Through New York Starring Jimmy Fallon",
+                    "location": "Orlando, FL",
+                    "park": "Universal Studios",
+                    "description": "Simulates a high speed, turbulent thrill ride with dramatic aerobatics, rapid acceleration and movements.",
+                    "rating": 3.0,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/race-through-ny-starring-jimmy-fallon",
+                    "img": "media/imgs/ride-imgs/race-through-new-york-jimmy-fallon.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Revenge of the Mummy",
+                    "location": "Orlando, FL",
+                    "park": "Universal Studios",
+                    "description": "A Mummy themes coaster with sudden movements and drops.",
+                    "rating": 1.5,
+                    "site": "https://en.wikipedia.org/wiki/Universal_Studios_Florida#Areas_and_attractions",
+                    "img": "media/imgs/ride-imgs/revenge-of-the-mummy-ride.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "The Simpsons Ride",
+                    "location": "Orlando, FL",
+                    "park": "Universal Studios",
+                    "description": "Motion simulator with many sudden movements.",
+                    "rating": 3.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/the-simpsons-ride",
+                    "img": "media/imgs/ride-imgs/the-simpsons-ride.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": true,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "TRANSFORMERS: The Ride-3D",
+                    "location": "Orlando, FL",
+                    "park": "Universal Studios",
+                    "description": "This Ride takes place on a high-speed vehicle that will suddenly and dramatically accelerate and make movements.",
+                    "rating": 2.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/transformers-ride-3d",
+                    "img": "media/imgs/ride-imgs/transformers-3d.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": true,
+                            "childSwap": true,
+                            "photosensitivity": false
+                        }
+                },
+                {
+                    "name": "Woody Woodpecker's Nuthouse Coaster",
+                    "location": "Orlando, FL",
+                    "park": "Universal Studios",
+                    "description": "High-speed roller coaster that includes sudden and dramatic accelerations, climbs, tilts, and drops",
+                    "rating": 2.5,
+                    "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/woody-woodpeckers-nuthouse-coaster",
+                    "img": "media/imgs/ride-imgs/woody-woodpecker.jpg",
+                    "accessibility": 
+                        {
+                            "wheelchair": true,
+                            "sizeShape": false,
+                            "serviceAnimal": false,
+                            "childSwap": true,
+                            "photosensitivity": true
+                        }
+                }
+            ]
+        }
+    ]
+}
