@@ -701,13 +701,34 @@ function ridesGlobal(rides) {
 
 function addCompare() {
     console.log("Ride Added to Compare!")
-    const compareIcon = document.querySelectorAll('.ride-compare-img');
+    const compareIcon = document.querySelectorAll('.ride-compared-img');
     const compareBtn = document.querySelector('.add-ride-list-btn');
+
     //select list-ride-name class closest to the compareBtn without closest() method
     const rideName = compareBtn.parentElement.previousElementSibling.children[0].children[1].innerText;
     // search ridesData for rideName
     const ride = ridesData.find(ride => ride.name === rideName);
     console.log(ride);
+    console.log(ride.img);
+    console.log(compareIcon[0].src);
+
+
+    // if conpareIcon[i].src is equal to http://127.0.0.1:5500/media/imgs/empty-img.png, then change it to ride.img
+        for (let i = 0; i < compareIcon.length; i++) {
+            if (compareIcon[i].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png') {
+                compareIcon[i].src = '';
+                compareIcon[i].src = ride.img;
+                //stop after the first img is replaced and wait for the next click and change the next img
+                break;
+            } else {
+                console.log('All images are full');
+            }
+            
+            // compareIcon[0].src = '';
+            // compareIcon[0].src = ride.img; 
+            
+        }
+
 
 
     console.log(rideName);
