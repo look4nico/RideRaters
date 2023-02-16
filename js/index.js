@@ -81,6 +81,18 @@ function searchRides(data) {
             searchResultsContainer.appendChild(result);
             });
 
+            // Added  this for button listener to add ride to compare list
+            const buttons = document.querySelectorAll('.add-ride-list-btn');
+            buttons.forEach(button => {
+                if (!button.hasEventListener) {
+                    button.addEventListener('click', () => {
+                        console.log("event listener added");
+                        handleClick(button);
+                    });
+                    button.hasEventListener = true;
+                }
+            });
+
     
         }); 
     }
@@ -308,7 +320,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // create event listener for .fa-trash that removes the element
 
 
-
 // create event listener for home-searchbar 
 document.addEventListener('DOMContentLoaded', function() {
     const homeSearchBar = document.querySelector('.home-searchbar');
@@ -348,7 +359,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('fan fav image is not present');
     }
 });
-
 
 
 // create event listener for add-ride-list-btn 
@@ -699,43 +709,104 @@ function ridesGlobal(rides) {
     ridesData = rides;
 }
 
-function addCompare() {
-    console.log("Ride Added to Compare!")
-    const compareIcon = document.querySelectorAll('.ride-compared-img');
-    const compareBtn = document.querySelector('.add-ride-list-btn');
 
-    //select list-ride-name class closest to the compareBtn without closest() method
-    const rideName = compareBtn.parentElement.previousElementSibling.children[0].children[1].innerText;
-    // search ridesData for rideName
+function handleClick(button) {
+  console.log('Button clicked:', button);
+  // your code here
+  console.log("Ride Added to Compare!")
+    const compareIcon = document.querySelectorAll('.ride-compared-img');
+    const compareBtn = document.querySelectorAll('.add-ride-list-btn');
+    console.log(compareBtn.length);
+
+    const rideName = button.parentElement.previousElementSibling.children[0].children[1].innerText;
     const ride = ridesData.find(ride => ride.name === rideName);
     console.log(ride);
+    console.log(ride.name);
     console.log(ride.img);
     console.log(compareIcon[0].src);
 
+    // for (let i = 0; i < compareIcon.length; i++) {
+        // if (compareIcon[i].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png') {
+        //     compareIcon[i].src = '';
+        //     compareIcon[i].src = ride.img;
+        //     break;
+        // } else {
+        //     console.log('All images are full');
+        // }   
+    // }
 
-    // if conpareIcon[i].src is equal to http://127.0.0.1:5500/media/imgs/empty-img.png, then change it to ride.img
-        for (let i = 0; i < compareIcon.length; i++) {
-            if (compareIcon[i].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png') {
-                compareIcon[i].src = '';
-                compareIcon[i].src = ride.img;
-                //stop after the first img is replaced and wait for the next click and change the next img
-                break;
-            } else {
-                console.log('All images are full');
-            }
-            
-            // compareIcon[0].src = '';
-            // compareIcon[0].src = ride.img; 
-            
-        }
+    if (compareIcon[0].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png' && compareIcon[1].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png' && compareIcon[2].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png') {
+        console.log('All images are empty');
+        compareIcon[0].src = '';
+        compareIcon[0].src = ride.img;
+        return;        
+    } else if (compareIcon[1].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png' && compareIcon[2].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png') {
+        console.log('Image 1 and Image 2 are full');
+        compareIcon[1].src = '';
+        compareIcon[1].src = ride.img;
+        return;
+ 
+    } else if (compareIcon[1].src != 'http://127.0.0.1:5500/media/imgs/empty-img.png' && compareIcon[2].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png') {
+        console.log('Image 2 and Image 3 are full');
+        compareIcon[2].src = '';
+        compareIcon[2].src = ride.img;
+ 
+    } 
 
-
-
-    console.log(rideName);
-    // console.log(ridesData);
-    // console.log(ridesData);
     
 }
+
+// function addCompare() {
+//     console.log("event listener added");
+//    const buttons = document.querySelectorAll('.add-ride-list-btn');
+//     buttons.forEach(button => {
+//         if (!button.hasEventListener) {
+//             button.addEventListener('click', () => {
+//                 console.log("event listener added");
+//                 handleClick(button);
+//             });
+//             button.hasEventListener = true;
+//         }
+//     });
+// }
+
+
+
+
+// function addCompare() {
+//     console.log("Ride Added to Compare!")
+//     const compareIcon = document.querySelectorAll('.ride-compared-img');
+//     const compareBtn = document.querySelector('.add-ride-list-btn');
+//     console.log(compareBtn.length);
+
+//     //select list-ride-name class closest to the compareBtn without closest() method
+//     const rideName = compareBtn.parentElement.previousElementSibling.children[0].children[1].innerText;
+//     // search ridesData for rideName
+//     const ride = ridesData.find(ride => ride.name === rideName);
+//     console.log(ride);
+//     console.log(ride.img);
+//     console.log(compareIcon[0].src);
+
+
+//     // if conpareIcon[i].src is equal to http://127.0.0.1:5500/media/imgs/empty-img.png, then change it to ride.img
+//     for (let i = 0; i < compareIcon.length; i++) {
+//         if (compareIcon[i].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png') {
+//             compareIcon[i].src = '';
+//             compareIcon[i].src = ride.img;
+//             //stop after the first img is replaced and wait for the next click and change the next img
+//             break;
+//         } else {
+//             console.log('All images are full');
+//         }     
+//     }
+
+
+
+//     console.log(rideName);
+//     // console.log(ridesData);
+//     // console.log(ridesData);
+    
+// }
 
 
 
@@ -773,27 +844,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }       
 });
 
-
-// //if the bars icon is clicked, go to menu.html
-//             document.addEventListener('DOMContentLoaded', function() {
-//                 // This is for the Menu Icon
-//                     const menuIcon = document.querySelector('.hamburg-menu');
-                    
-//                     if (menuIcon.style.color !== "white") {
-//                         // return to previous page
-//                         console.log('menu color is blue');
-//                         menuIcon.addEventListener('click', function() {
-//                             window.location.href = history.back();
-//                             console.log('menu color went back in time');
-//                         });
-//                     } else {
-//                         menuIcon.addEventListener('click', function() {
-//                             window.location.href = 'menu.html';
-//                             console.log('menu color is white')
-//                         });
-//                     }
-
-//                 });
     
 function confirmList() {
     //returns to previous page
