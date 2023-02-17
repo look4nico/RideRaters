@@ -201,23 +201,7 @@ function search(data) {
     }
 }
 
-function ridesCompared(data) {
 
-    const compareResultsContainer = document.querySelector('.compare-results-container');
-    const compareResultsTemplate = document.querySelector('#compare-results-template');
-
-    // Loop through your data and create a new template for each item
-    data.forEach(item => {
-        const compareResultsClone = compareResultsTemplate.content.cloneNode(true);
-        compareResultsClone.querySelector('.compare-results-img').src = item.imgSrc;
-        compareResultsClone.querySelector('.compare-results-img-text:nth-of-type(1)').textContent = item.parkName;
-        compareResultsClone.querySelector('.compare-results-img-text:nth-of-type(2)').textContent = item.rideName;
-        compareResultsClone.querySelector('.ride-location-txt').textContent = item.location;
-        compareResultsClone.querySelector('.user-rating-txt').textContent = item.userRating;
-        compareResultsClone.querySelector('.access-rating-txt').textContent = item.accessRating;
-        compareResultsContainer.appendChild(compareResultsClone);
-    });
-}
 
 function rebuildArrow() {
   // Arrow Left Rebuild to curb event listener bubbling
@@ -555,6 +539,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const compareRideBtn = document.querySelector('#compare-ride-button');
     if (compareRideBtn) {
         compareRideBtn.addEventListener('click', function() {
+            // ridesAllAdded();
             window.location.href = 'compareridesresults.html';
         });
     } else {
@@ -755,6 +740,58 @@ function removeRideData(ridesData) {
 let rideInfoFirst;
 let rideInfoSecond;
 let rideInfoThird;
+
+
+let ridesResults = [];
+// push rideInfoFirst, rideInfoSecond, rideInfoThird into ridesCompared object
+
+
+function ridesAllAdded() {
+    // for (let i = 0; i < 3; i++) {
+    //     ridesResults.push(rideInfoFirst, rideInfoSecond, rideInfoThird);
+    // }
+
+    // add rideInfoFirst object, rideInfoSecond object, rideInfoThird object to ridesResults
+    ridesResults = [];
+    ridesResults.push(rideInfoFirst, rideInfoSecond, rideInfoThird)
+    // save to seesion storage
+    sessionStorage.setItem('ridesResults', JSON.stringify(ridesResults));
+    // retrieve from session storage
+    // ridesResults = JSON.parse(sessionStorage.getItem('ridesResults'));
+
+    // console.log(rideInfoFirst);
+    // console.log(rideInfoSecond);
+    // console.log(rideInfoThird);
+    console.log(ridesResults);
+    return ridesResults;
+}
+
+
+
+function ridesCompared(data) {
+
+    // ridesAllAdded();
+    ridesResults = JSON.parse(sessionStorage.getItem('ridesResults'));
+    const compareResultsContainer = document.querySelector('.compare-results-container');
+    const compareResultsTemplate = document.querySelector('#compare-results-template');
+
+    // Loop through your data and create a new template for each item
+    if (compareResultsTemplate) {
+        data.forEach(item => {
+            const compareResultsClone = compareResultsTemplate.content.cloneNode(true);
+            compareResultsClone.querySelector('.compare-results-img').src = item.img;
+            compareResultsClone.querySelector('.compare-results-img-text:nth-of-type(1)').textContent = item.park;
+            compareResultsClone.querySelector('.compare-results-img-text:nth-of-type(2)').textContent = item.name;
+            compareResultsClone.querySelector('.ride-location-txt').textContent = item.location;
+            compareResultsClone.querySelector('.user-rating-txt').textContent = item.rating;
+            compareResultsClone.querySelector('.access-rating-txt').textContent = item.rating;
+            compareResultsContainer.appendChild(compareResultsClone);
+        });
+
+    }
+    
+}
+
 
 function handleClick(button) {
   console.log('Button clicked:', button);
