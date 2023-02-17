@@ -851,15 +851,15 @@ function handleClick(button) {
 
     function checkData() {
         if (xMark[0].style.transform === 'rotate(0deg)') {
-            rideInfoFirst = {};
+            rideInfoFirst = undefined;
             console.log(rideInfoFirst);
             return;
         } else if (xMark[1].style.transform === 'rotate(0deg)') {
-            rideInfoSecond = {};
+            rideInfoSecond = undefined;
             console.log(rideInfoSecond);
             return;
         } else if (xMark[2].style.transform === 'rotate(0deg)') {
-            rideInfoThird = {};
+            rideInfoThird = undefined;
             console.log(rideInfoThird);
             return;
         }
