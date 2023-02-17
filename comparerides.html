@@ -20,24 +20,36 @@
             document.addEventListener('DOMContentLoaded', function() {
                 const xMark = document.querySelectorAll('.fa-circle-xmark');
             
-                xMark.forEach(function (xMark) {
-                    //rotate the xmark icon by 45 degrees on click and remove the img src of the img element below the xMark icon and if the xMark icon is clicked again, rotate the xMark icon back to 0 degrees and add the img src back to the img element below the xMark icon
-                    xMark.addEventListener('click', function () {
-                        if (xMark.style.transform === 'rotate(45deg)') {
-                            // take the user to the comparerides page
-                            window.location.href = 'comparesearch.html';
-                        } else {
-                            xMark.style.transform = 'rotate(45deg)';
-                            xMark.nextElementSibling.src = 'media/imgs/empty-img.png';
-                        }
-                    });
-                });
+                // xMark.forEach(function (xMark) {
+                //     //rotate the xmark icon by 45 degrees on click and remove the img src of the img element below the xMark icon and if the xMark icon is clicked again, rotate the xMark icon back to 0 degrees and add the img src back to the img element below the xMark icon
+                //     // if (xMark.nextElementSibling.src != 'http://127.0.0.1:5500/media/imgs/empty-img.png') {
+                //     //     xMark.style.transform = 'rotate(0deg)';
+                //     //     console.log("the x is ready to be turned");
+                //     // }
+                //     xMark.addEventListener('click', function () {
+                //         // if (xMark.style.transform === 'rotate(0deg)') {
+                //         //     // take the user to the comparerides page
+                //         //     // window.location.href = 'comparesearch.html';
+                //         // } else {
+                //         //     xMark.style.transform = 'rotate(45deg)';
+                //         //     xMark.nextElementSibling.src = 'media/imgs/empty-img.png';
+                //         // }
+                //         if (xMark.style.transform === 'rotate(45deg)') {
+                //             xMark.style.transform = 'rotate(0deg)';
+                //             xMark.nextElementSibling.src = 'media/imgs/empty-img.png';
+                //         // } else {
+                //         //     xMark.style.transform = 'rotate(45deg)';
+                //         //     xMark.nextElementSibling.src = 'media/imgs/empty-img.png';
+                //         }
+                //     });
+                // });
 
 
 
 
 
             });
+            
     </script>
     <title>RideRaters</title>
 </head>
@@ -124,7 +136,7 @@
                     </div>
                     <!-- Add Ride to List Div -->
                     <div class="add-ride-list-btn-div">
-                        <button onclick="addCompare()" class="add-ride-list-btn proxima-semibold"><i class="fa-solid fa-circle-plus"></i>Add Ride</button>
+                        <button onclick="addCompare()" class="add-ride-compare-btn proxima-semibold"><i class="fa-solid fa-circle-plus"></i>Add Ride</button>
                     </div>
                 </div>
             
