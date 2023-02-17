@@ -756,6 +756,7 @@ function ridesAllAdded() {
     ridesResults.push(rideInfoFirst, rideInfoSecond, rideInfoThird)
     // save to seesion storage
     sessionStorage.setItem('ridesResults', JSON.stringify(ridesResults));
+    ridesCompared();
     // retrieve from session storage
     // ridesResults = JSON.parse(sessionStorage.getItem('ridesResults'));
 
@@ -768,16 +769,19 @@ function ridesAllAdded() {
 
 
 
-function ridesCompared(data) {
+function ridesCompared() {
 
     // ridesAllAdded();
     ridesResults = JSON.parse(sessionStorage.getItem('ridesResults'));
+    // ridesResults.forEach(ride => {
+    //     console.log(ride.name);
+    // });
     const compareResultsContainer = document.querySelector('.compare-results-container');
     const compareResultsTemplate = document.querySelector('#compare-results-template');
 
     // Loop through your data and create a new template for each item
     if (compareResultsTemplate) {
-        data.forEach(item => {
+        ridesResults.forEach(item => {
             const compareResultsClone = compareResultsTemplate.content.cloneNode(true);
             compareResultsClone.querySelector('.compare-results-img').src = item.img;
             compareResultsClone.querySelector('.compare-results-img-text:nth-of-type(1)').textContent = item.park;
