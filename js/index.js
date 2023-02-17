@@ -37,6 +37,13 @@ fetch('/data/data.json')
     searchRides(ridesList);
     ridesGlobal(ridesList);
 
+    let ridesss = [];
+    // push three rides into an object
+    for (let i = 0; i < 3; i++) {
+        ridesss[i] = ridesList[i];
+    }
+    ridesCompared(ridesss);
+
   })
   .catch(error => {
     console.error('There was a problem:', error);
@@ -82,7 +89,7 @@ function searchRides(data) {
             });
 
             // Added  this for button listener to add ride to compare list
-            const buttons = document.querySelectorAll('.add-ride-list-btn');
+            const buttons = document.querySelectorAll('.add-ride-compare-btn');
             buttons.forEach(button => {
                 if (!button.hasEventListener) {
                     button.addEventListener('click', () => {
@@ -92,6 +99,17 @@ function searchRides(data) {
                     button.hasEventListener = true;
                 }
             });
+
+            const addRideListBtn = document.querySelectorAll('.add-ride-list-btn');
+            if (addRideListBtn) {
+                addRideListBtn.forEach(function(element) {
+                    element.addEventListener('click', function() {
+                        window.location.href = 'addridepage.html';
+                    });
+                });
+            } else {
+                console.log('add ride list button is not present');
+            }
 
     
         }); 
@@ -149,7 +167,10 @@ function search(data) {
                 return park.name.toLowerCase().includes(searchValue);
             });
             // console.log(filteredParks);
-            console.log(filteredParks[0].name);
+            for (let i = 0; i < filteredParks.length; i++) {
+                console.log(filteredParks[i].name);
+            }
+            // console.log(filteredParks[0].name);
             console.log(filteredParks);
         
             searchResultsContainer.innerHTML = "";
@@ -180,6 +201,23 @@ function search(data) {
     }
 }
 
+function ridesCompared(data) {
+
+    const compareResultsContainer = document.querySelector('.compare-results-container');
+    const compareResultsTemplate = document.querySelector('#compare-results-template');
+
+    // Loop through your data and create a new template for each item
+    data.forEach(item => {
+        const compareResultsClone = compareResultsTemplate.content.cloneNode(true);
+        compareResultsClone.querySelector('.compare-results-img').src = item.imgSrc;
+        compareResultsClone.querySelector('.compare-results-img-text:nth-of-type(1)').textContent = item.parkName;
+        compareResultsClone.querySelector('.compare-results-img-text:nth-of-type(2)').textContent = item.rideName;
+        compareResultsClone.querySelector('.ride-location-txt').textContent = item.location;
+        compareResultsClone.querySelector('.user-rating-txt').textContent = item.userRating;
+        compareResultsClone.querySelector('.access-rating-txt').textContent = item.accessRating;
+        compareResultsContainer.appendChild(compareResultsClone);
+    });
+}
 
 function rebuildArrow() {
   // Arrow Left Rebuild to curb event listener bubbling
@@ -709,6 +747,14 @@ function ridesGlobal(rides) {
     ridesData = rides;
 }
 
+function removeRideData(ridesData) {
+    ridesData = {};
+}
+
+
+let rideInfoFirst;
+let rideInfoSecond;
+let rideInfoThird;
 
 function handleClick(button) {
   console.log('Button clicked:', button);
@@ -724,9 +770,21 @@ function handleClick(button) {
     console.log(ride.name);
     console.log(ride.img);
     console.log(compareIcon[0].src);
+    // const xMark = document.querySelectorAll('.fa-circle-xmark');
+    
+    // xMark.forEach(function (xMark) {
+    //     xMark.addEventListener('click', function () {
+    //         if (xMark.nextElementSibling.src == "media/imgs/empty-img.png") {
+    //             console.log('empty-img.png');
+    //         }
+    //     });
+    // });
+            
+        
+    // console.log(xMark);
 
     // for (let i = 0; i < compareIcon.length; i++) {
-        // if (compareIcon[i].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png') {
+        // if (compareIcon[i].src === window.location.origin + '/media/imgs/empty-img.png') {
         //     compareIcon[i].src = '';
         //     compareIcon[i].src = ride.img;
         //     break;
@@ -734,25 +792,101 @@ function handleClick(button) {
         //     console.log('All images are full');
         // }   
     // }
+    const xMark = document.querySelectorAll('.fa-circle-xmark');
 
-    if (compareIcon[0].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png' && compareIcon[1].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png' && compareIcon[2].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png') {
+    console.log(xMark[0]);
+    
+   
+
+    xMark.forEach(function (xMark) {
+        xMark.addEventListener('click', function () {
+            if (xMark.style.transform === 'rotate(45deg)') {
+                xMark.style.transform = 'rotate(0deg)';
+                xMark.nextElementSibling.src = 'media/imgs/empty-img.png';
+                checkData();
+            }
+        });
+    });
+
+    function checkData() {
+        if (xMark[0].style.transform === 'rotate(0deg)') {
+            rideInfoFirst = {};
+            console.log(rideInfoFirst);
+            return;
+        } else if (xMark[1].style.transform === 'rotate(0deg)') {
+            rideInfoSecond = {};
+            console.log(rideInfoSecond);
+            return;
+        } else if (xMark[2].style.transform === 'rotate(0deg)') {
+            rideInfoThird = {};
+            console.log(rideInfoThird);
+            return;
+        }
+    }
+
+    
+
+    
+
+    if (compareIcon[0].src === window.location.origin + '/media/imgs/empty-img.png' && compareIcon[1].src === window.location.origin + '/media/imgs/empty-img.png' && compareIcon[2].src === window.location.origin + '/media/imgs/empty-img.png') {
         console.log('All images are empty');
         compareIcon[0].src = '';
         compareIcon[0].src = ride.img;
+        rideInfoFirst = ride;
+        console.log(rideInfoFirst);
+        xMark[0].style.transform = 'rotate(45deg)';
         return;        
-    } else if (compareIcon[1].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png' && compareIcon[2].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png') {
+    } else if (compareIcon[1].src === window.location.origin + '/media/imgs/empty-img.png' && compareIcon[2].src === window.location.origin + '/media/imgs/empty-img.png') {
         console.log('Image 1 and Image 2 are full');
         compareIcon[1].src = '';
         compareIcon[1].src = ride.img;
+        rideInfoSecond = ride;
+        console.log(rideInfoSecond);
+        xMark[1].style.transform = 'rotate(45deg)';
         return;
  
-    } else if (compareIcon[1].src != 'http://127.0.0.1:5500/media/imgs/empty-img.png' && compareIcon[2].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png') {
+    } else if (compareIcon[1].src != window.location.origin + '/media/imgs/empty-img.png' && compareIcon[2].src === window.location.origin + '/media/imgs/empty-img.png') {
         console.log('Image 2 and Image 3 are full');
         compareIcon[2].src = '';
         compareIcon[2].src = ride.img;
- 
-    } 
+        rideInfoThird = ride;
+        console.log(rideInfoThird);
+        xMark[2].style.transform = 'rotate(45deg)';
+        return;
+    } else if (compareIcon[0].src === window.location.origin + '/media/imgs/empty-img.png' && compareIcon[1].src != window.location.origin + '/media/imgs/empty-img.png' && compareIcon[2].src != window.location.origin + '/media/imgs/empty-img.png') {
+        console.log('All images are empty');
+        compareIcon[0].src = '';
+        compareIcon[0].src = ride.img;
+        rideInfoFirst = ride;
+        console.log(rideInfoFirst);
+        xMark[0].style.transform = 'rotate(45deg)';
+        return;    
+    } else if (compareIcon[1].src === window.location.origin + '/media/imgs/empty-img.png' && compareIcon[0].src != window.location.origin + '/media/imgs/empty-img.png' && compareIcon[2].src != window.location.origin + '/media/imgs/empty-img.png') {
+        console.log('All images are empty');
+        compareIcon[1].src = '';
+        compareIcon[1].src = ride.img;
+        rideInfoSecond = ride;
+        console.log(rideInfoSecond);
+        xMark[1].style.transform = 'rotate(45deg)';
+        return;    
+    } else if (compareIcon[2].src === window.location.origin + '/media/imgs/empty-img.png' && compareIcon[0].src != window.location.origin + '/media/imgs/empty-img.png' && compareIcon[1].src != window.location.origin + '/media/imgs/empty-img.png') {
+        console.log('All images are empty');
+        compareIcon[2].src = '';
+        compareIcon[2].src = ride.img;
+        rideInfoThird = ride;
+        console.log(rideInfoThird);
+        xMark[2].style.transform = 'rotate(45deg)';
+        return;    
+    }
 
+    // for (let i = 0; i < xMark.length; i++) {
+    //     if (xMark[i].style.transform === 'rotate(0deg)') {
+    //         // rideInfo[i] = {};
+    //         console.log("x has been clicked");
+    //         // console.log(rideInfo[i]);
+    //         // break;
+    //     }
+    // }
     
 }
 
@@ -790,7 +924,7 @@ function handleClick(button) {
 
 //     // if conpareIcon[i].src is equal to http://127.0.0.1:5500/media/imgs/empty-img.png, then change it to ride.img
 //     for (let i = 0; i < compareIcon.length; i++) {
-//         if (compareIcon[i].src === 'http://127.0.0.1:5500/media/imgs/empty-img.png') {
+//         if (compareIcon[i].src === window.location.origin + '/media/imgs/empty-img.png') {
 //             compareIcon[i].src = '';
 //             compareIcon[i].src = ride.img;
 //             //stop after the first img is replaced and wait for the next click and change the next img
