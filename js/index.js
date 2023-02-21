@@ -773,6 +773,7 @@ function ridesCompared() {
 
     // ridesAllAdded();
     ridesResults = JSON.parse(sessionStorage.getItem('ridesResults'));
+    console.log(ridesResults);
     // ridesResults.forEach(ride => {
     //     console.log(ride.name);
     // });
@@ -782,6 +783,10 @@ function ridesCompared() {
     // Loop through your data and create a new template for each item
     if (compareResultsTemplate) {
         ridesResults.forEach(item => {
+            //if null skip, this fixes the issue of an item being null
+            if (!item) {
+                return;
+            } else {
             const compareResultsClone = compareResultsTemplate.content.cloneNode(true);
             compareResultsClone.querySelector('.compare-results-img').src = item.img;
             compareResultsClone.querySelector('.compare-results-img-text:nth-of-type(1)').textContent = item.park;
@@ -790,6 +795,7 @@ function ridesCompared() {
             compareResultsClone.querySelector('.user-rating-txt').textContent = item.rating;
             compareResultsClone.querySelector('.access-rating-txt').textContent = item.rating;
             compareResultsContainer.appendChild(compareResultsClone);
+            }
         });
 
     }
@@ -1019,7 +1025,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }       
 });
 
-    
+
 function confirmList() {
     //returns to previous page
     window.location.href = editlist.html;
