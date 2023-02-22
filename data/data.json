@@ -1615,7 +1615,7 @@
             ]
         },
         {
-            "name": "Universal's Island of Adventure",
+            "name": "Universal\u2019s Islands of Adventure",
             "location": "Orlando, FL",
             "description": "Islands of Adventure is modeled after a journey of exploration, where guests embark on an adventure to visit a variety of themed islands.",
             "rating": 3.0,
@@ -1933,7 +1933,7 @@
             ]
         },
         {
-            "name": "Universal's Studios",
+            "name": "Universal Studios",
             "location": "Orlando, FL",
             "description": "Universal Studios Florida was originally designed to function as both a theme park and working production studio.",
             "rating": 3.1,
