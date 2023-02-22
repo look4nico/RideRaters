@@ -129,18 +129,34 @@ function searchRidesAndParks(data) {
                 console.log('add ride list button is not present');
             }
 
-            // Adds event listeners to view rides button
-            const viewParkBtn = document.querySelectorAll('.view-park-page');
-            if (viewParkBtn) {
-                viewParkBtn.forEach(function(element) {
+            // // Adds event listeners to view rides button
+            // const viewParkBtn = document.querySelectorAll('.view-park-page');
+            // if (viewParkBtn) {
+            //     viewParkBtn.forEach(function(element) {
+            //         element.addEventListener('click', function() {
+            //             // Page gets rendered with park info
+            //             window.location.href = 'parkpage.html';
+            //         });
+            //     });
+            // } else {
+            //     console.log('View Rides button is not present');
+            // }
+
+            const parkViewRidesBtnDiv = document.querySelectorAll('.view-park-page');
+
+            if (parkViewRidesBtnDiv) {
+                parkViewRidesBtnDiv.forEach(function(element) {
                     element.addEventListener('click', function() {
-                        // Page gets rendered with park info
+                        parkPageRendered(element);
                         window.location.href = 'parkpage.html';
+                        console.log("park view rides button clicked");
+                        // selectedParkPage()
                     });
                 });
             } else {
-                console.log('View Rides button is not present');
+                console.log('park view rides button is not present');
             }
+            
 
             const listRideImg = document.querySelectorAll('.list-ride-img');
             if (listRideImg) {
