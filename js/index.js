@@ -47,6 +47,7 @@ fetch('/data/data.json')
     parksGlobal(parks);
     ridesCompared();
     selectedParkPage();
+    selectedRidePage()
 
   })
   .catch(error => {
@@ -162,6 +163,7 @@ function searchRidesAndParks(data) {
             if (listRideImg) {
                 listRideImg.forEach(function(element) {
                     element.addEventListener('click', function() {
+                        ridePageRendered(element);
                         window.location.href = 'ridepage.html';
                     });
                 });
@@ -357,6 +359,7 @@ function search(data) {
             if (listRideImg) {
                 listRideImg.forEach(function(element) {
                     element.addEventListener('click', function() {
+                        ridePageRendered(element);
                         window.location.href = 'ridepage.html';
                     });
                 });
@@ -1163,6 +1166,7 @@ function handleClick(button) {
 }
 
 let parkPageSelected = [];
+let ridePageSelected = []; 
 
 
 function parkPageRendered(button) {
@@ -1212,12 +1216,28 @@ function parkPageRendered(button) {
     // }
 }
 
+function ridePageRendered(img) {
+    sessionStorage.removeItem('ridePageSelected');
+    const rideName = img.parentElement.nextElementSibling.children[0].children[1].innerText;
+    console.log(rideName);
+    // console.log(parksData);
+    console.log(ridesData);
+    
+    const selectedRide = ridesData.find(ride => ride.name === rideName);
+    console.log(selectedRide);
+    
+    ridePageSelected = [];
+    ridePageSelected.push(selectedRide);
+
+    // clear the parkPageSelected session storage item
+
+    
+    sessionStorage.setItem('ridePageSelected', JSON.stringify(ridePageSelected));
+}
+
 function selectedParkPage() {
     parkPageSelected = JSON.parse(sessionStorage.getItem('parkPageSelected'));
-    console.log(parkPageSelected);
-    console.log(parkPageSelected[0].img);
-    console.log(parkPageSelected[0].location);
-    console.log(parkPageSelected[0].rides);
+   
     // ridesResults.forEach(ride => {
     //     console.log(ride.name);
     // });
@@ -1225,87 +1245,151 @@ function selectedParkPage() {
     const parkResultsTemplate = document.querySelector('#park-result-template');
 
     // Loop through your data and create a new template for each item
-   
-    const parkResultsClone = parkResultsTemplate.content.cloneNode(true);
-    // document.querySelector('.park-page').textContent = parkPageSelected[0].name;
-    // If the Park is Universal's Islands of Adventure, then add a line break
-    if (parkPageSelected[0].name === parksData[7].name) {
-        const universalIoa1 = 'Universal\'s';
-        const br = document.createElement('br');
-        const universalIoa3 = 'Islands of Adventure';
+    if (parkResultsTemplate) {
+        const parkResultsClone = parkResultsTemplate.content.cloneNode(true);
+        // document.querySelector('.park-page').textContent = parkPageSelected[0].name;
+        // If the Park is Universal's Islands of Adventure, then add a line break
+        if (parkPageSelected[0].name === parksData[7].name) {
+            const universalIoa1 = 'Universal\'s';
+            const br = document.createElement('br');
+            const universalIoa3 = 'Islands of Adventure';
 
-        const div = document.createElement('div');
-        div.textContent = universalIoa3;
+            const div = document.createElement('div');
+            div.textContent = universalIoa3;
 
-        const parkPage = document.querySelector('.park-page');
-        parkPage.textContent = universalIoa1;
-        parkPage.appendChild(br);
-        parkPage.appendChild(div);
-    } else {
-        document.querySelector('.park-page').textContent = parkPageSelected[0].name;
-    }
-    parkResultsClone.querySelector('.park-page-img').src = parkPageSelected[0].img;
-    // parkResultsClone.querySelector('.compare-results-img-text:nth-of-type(1)').textContent = parkPageSelected.park;
-    // parkResultsClone.querySelector('.compare-results-img-text:nth-of-type(2)').textContent = parkPageSelected.name;
-    parkResultsClone.querySelector('.park-themepark').textContent = parkPageSelected[0].location;
-    if (parkPageSelected[0].location === 'Lake Buena Vista, FL') {
-        parkResultsClone.querySelector('.park-rating-div').style.marginLeft = '4rem';
-    };
-    // style.marginLeft = '4rem'
-    parkResultsClone.querySelector('.park-rating-div');
-    parkResultsClone.querySelector('.user-rating-txt').textContent = parkPageSelected[0].rating;
-    parkResultsClone.querySelector('.access-rating-txt').textContent = parkPageSelected[0].rating;
-    parkResultsClone.querySelector('.park-descript-txt').textContent = parkPageSelected[0].description;
-    parkResultsClone.querySelector('.park-link').href = parkPageSelected[0].site;
-    parkResultsContainer.appendChild(parkResultsClone);
-    
-    //render the rides
-    const parkRidesContainer = document.querySelector('#search-results-container');
-    const parkRidesTemplate = document.querySelector('#search-result-template');
-    parkPageSelected[0].rides.forEach(ride => {
-        const result = document.importNode(parkRidesTemplate.content, true);
-        const rideImg = result.querySelector(".list-ride-img");
-        const rideLocation = result.querySelector(".list-ride-location");
-        const rideName = result.querySelector(".list-ride-name");
-        const userRating = result.querySelector(".user-rating-txt");
-        const accessRating = result.querySelector(".access-rating-txt");
-        const location = result.querySelector(".proxima-regular");
-        const itemCity = result.querySelector(".ride-city");
+            const parkPage = document.querySelector('.park-page');
+            parkPage.textContent = universalIoa1;
+            parkPage.appendChild(br);
+            parkPage.appendChild(div);
+        } else {
+            document.querySelector('.park-page').textContent = parkPageSelected[0].name;
+        }
+        parkResultsClone.querySelector('.park-page-img').src = parkPageSelected[0].img;
+        parkResultsClone.querySelector('.park-themepark').textContent = parkPageSelected[0].location;
+        if (parkPageSelected[0].location === 'Lake Buena Vista, FL') {
+            parkResultsClone.querySelector('.park-rating-div').style.marginLeft = '4rem';
+        };
+        // style.marginLeft = '4rem'
+        parkResultsClone.querySelector('.park-rating-div');
+        parkResultsClone.querySelector('.user-rating-txt').textContent = parkPageSelected[0].rating;
+        parkResultsClone.querySelector('.access-rating-txt').textContent = parkPageSelected[0].rating;
+        parkResultsClone.querySelector('.park-descript-txt').textContent = parkPageSelected[0].description;
+        parkResultsClone.querySelector('.park-link').href = parkPageSelected[0].site;
+        parkResultsContainer.appendChild(parkResultsClone);
         
-        rideImg.src = ride.img;
-        rideLocation.textContent = ride.park;
-        rideName.textContent = ride.name;
-        userRating.textContent = ride.rating;
-        accessRating.textContent = ride.rating;
-        location.textContent = ride.rating;
-        itemCity.textContent = ride.location;
-        parkRidesContainer.appendChild(result);
-    });
-    const addRideListBtn = document.querySelectorAll('.add-ride-list-btn');
-    if (addRideListBtn) {
-        addRideListBtn.forEach(function(element) {
-            element.addEventListener('click', function() {
-                window.location.href = 'addridepage.html';
-            });
+        //render the rides
+        const parkRidesContainer = document.querySelector('#search-results-container');
+        const parkRidesTemplate = document.querySelector('#search-result-template');
+        parkPageSelected[0].rides.forEach(ride => {
+            const result = document.importNode(parkRidesTemplate.content, true);
+            const rideImg = result.querySelector(".list-ride-img");
+            const rideLocation = result.querySelector(".list-ride-location");
+            const rideName = result.querySelector(".list-ride-name");
+            const userRating = result.querySelector(".user-rating-txt");
+            const accessRating = result.querySelector(".access-rating-txt");
+            const location = result.querySelector(".proxima-regular");
+            const itemCity = result.querySelector(".ride-city");
+            
+            rideImg.src = ride.img;
+            rideLocation.textContent = ride.park;
+            rideName.textContent = ride.name;
+            userRating.textContent = ride.rating;
+            accessRating.textContent = ride.rating;
+            location.textContent = ride.rating;
+            itemCity.textContent = ride.location;
+            parkRidesContainer.appendChild(result);
         });
-    } else {
-        console.log('add ride list button is not present');
-    }
-    const listRideImg = document.querySelectorAll('.list-ride-img');
-    if (listRideImg) {
-        listRideImg.forEach(function(element) {
-            element.addEventListener('click', function() {
-                window.location.href = 'ridepage.html';
+        const addRideListBtn = document.querySelectorAll('.add-ride-list-btn');
+        if (addRideListBtn) {
+            addRideListBtn.forEach(function(element) {
+                element.addEventListener('click', function() {
+                    window.location.href = 'addridepage.html';
+                });
             });
-        });
-    } else {
-        console.log('list ride image is not present');
+        } else {
+            console.log('add ride list button is not present');
+        }
+        const listRideImg = document.querySelectorAll('.list-ride-img');
+        if (listRideImg) {
+            listRideImg.forEach(function(element) {
+                element.addEventListener('click', function() {
+                    window.location.href = 'ridepage.html';
+                });
+            });
+        } else {
+            console.log('list ride image is not present');
+        } 
     }
     
-    
-    
+}
 
+function selectedRidePage() {
+    ridePageSelected = JSON.parse(sessionStorage.getItem('ridePageSelected'));
+    console.log(ridePageSelected);
+    const rideResultsContainer = document.querySelector('#ride-results-container');
+    const rideResultsTemplate = document.querySelector('#ride-result-template');
     
+    if (rideResultsTemplate) {
+        console.log(ridePageSelected[0].name);
+
+        let parkName = ridePageSelected[0].park;
+        console.log(parkName);
+
+        console.log(ridePageSelected[0].accessibility.wheelchair);
+        console.log(ridePageSelected[0].accessibility.photosensitivity);
+        console.log(ridePageSelected[0].accessibility.serviceAnimal);
+        console.log(ridePageSelected[0].accessibility.sizeShape);
+        console.log(ridePageSelected[0].accessibility.childSwap);
+
+        console.log(parksData[0].name);
+        console.log(parksData[1].name);
+        console.log(parksData[2].name);
+        console.log(parksData[3].name);
+        console.log(parksData[4].name);
+        console.log(parksData[5].name);
+        console.log(parksData[6].name);
+        console.log(parksData[7].name);
+        console.log(parksData[8].name);
+
+
+        const selectedRidePark = parksData.find(park => park.name === parkName);
+        console.log(selectedRidePark);
+
+        const rideResultsClone = rideResultsTemplate.content.cloneNode(true);
+        rideResultsClone.querySelector('.park-ride-page-img').src = ridePageSelected[0].img;
+        document.querySelector('.park-ride-page').textContent = ridePageSelected[0].name;
+        rideResultsClone.querySelector('.park-ride-themepark').textContent = ridePageSelected[0].park;
+        rideResultsClone.querySelector('.park-ride-city').textContent = ridePageSelected[0].location;
+        rideResultsClone.querySelector('.user-rating-txt').textContent = ridePageSelected[0].rating;
+        rideResultsClone.querySelector('.access-rating-txt').textContent = ridePageSelected[0].rating;
+        rideResultsClone.querySelector('.ride-descript-txt').textContent = ridePageSelected[0].description;
+        rideResultsClone.querySelector('.ride-site-link').href = ridePageSelected[0].site;
+        rideResultsClone.querySelector('.park-wheel').textContent = selectedRidePark.wheelchair;
+        rideResultsClone.querySelector('.park-height').textContent = selectedRidePark.height;
+        
+        // Accessibilty Data Rendering
+        if (ridePageSelected[0].accessibility.wheelchair === true) {
+            rideResultsClone.querySelector('.access-wheel').classList = 'access-ride-true';
+        }
+        if (ridePageSelected[0].accessibility.photosensitivity === true) {
+            rideResultsClone.querySelector('.access-photo').classList = 'access-ride-true';
+        }
+        if (ridePageSelected[0].accessibility.serviceAnimal === true) {
+            rideResultsClone.querySelector('.access-animal').classList = 'access-ride-true';
+        }
+        if (ridePageSelected[0].accessibility.sizeShape === true) {
+            rideResultsClone.querySelector('.access-shape').classList = 'access-ride-true';
+        }
+        if (ridePageSelected[0].accessibility.childSwap === true) {
+            rideResultsClone.querySelector('.access-swap').classList = 'access-ride-true';
+        }
+
+        rideResultsContainer.appendChild(rideResultsClone);
+
+
+    } else {
+        console.log('ride results template is not present');
+    }
 }
 
 // when the fourth icon-text-container element in side the icon-container div is clicked, go to ridespage.html
