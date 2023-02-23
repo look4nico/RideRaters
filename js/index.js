@@ -1,4 +1,5 @@
 
+// fetch data from json file and store in variables for use in other functions and pages 
 fetch('/data/data.json')
   .then(response => response.json())
   .then(data => {
@@ -54,7 +55,7 @@ fetch('/data/data.json')
     console.error('There was a problem:', error);
 });
 
-
+// Search function for Rides and Parks
 function searchRidesAndParks(data) {
     const searchAll = document.getElementById('search-for-all');
     const searchResultsContainer = document.getElementById("search-results-container");
@@ -70,10 +71,11 @@ function searchRidesAndParks(data) {
             // console.log(filteredParks);
             // console.log(filteredParks[0].name);
             // console.log(filteredParks);
-        
+            
+            // Clears search results
             searchResultsContainer.innerHTML = "";
             
-
+            // forEach loop to render search results
             filteredParks.forEach((ride) => {
                 if (ride.height === undefined) {
                     const result = document.importNode(template.content, true);
@@ -143,8 +145,8 @@ function searchRidesAndParks(data) {
             //     console.log('View Rides button is not present');
             // }
 
+            // Enables user to click on park button to go to ride page
             const parkViewRidesBtnDiv = document.querySelectorAll('.view-park-page');
-
             if (parkViewRidesBtnDiv) {
                 parkViewRidesBtnDiv.forEach(function(element) {
                     element.addEventListener('click', function() {
@@ -158,7 +160,20 @@ function searchRidesAndParks(data) {
                 console.log('park view rides button is not present');
             }
             
+            // Enables user to click on park image to go to park page
+            const listParkImg = document.querySelectorAll('.parks-list-img');
+            if (listParkImg) {
+                listParkImg.forEach(function(element) {
+                    element.addEventListener('click', function() {
+                        parkPageImgRendered(element);
+                        window.location.href = 'parkpage.html';
+                    });
+                });
+            } else {
+                console.log('list ride image is not present');
+            }
 
+            // Enables user to click on ride image to go to ride page
             const listRideImg = document.querySelectorAll('.list-ride-img');
             if (listRideImg) {
                 listRideImg.forEach(function(element) {
@@ -174,9 +189,6 @@ function searchRidesAndParks(data) {
     
         }); 
     }
-
-
-
 
 }
 
@@ -248,6 +260,8 @@ function searchRidesAndParks(data) {
 //     }
 // };
 
+
+// Search Function for Parks or Rides
 function search(data) {
     const searchParks = document.getElementById('search-for-parks');
     const searchRides = document.getElementById('search-for-rides');
@@ -433,7 +447,7 @@ function search(data) {
     }
 }
 
-
+// Function that renders the arrow on the header for each page
 function rebuildArrow() {
   // Arrow Left Rebuild to curb event listener bubbling
     const headerArrow = document.querySelector(".header-arrow");
@@ -643,8 +657,6 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.log('park view rides button is not present');
     }
-
-    
 });
 
 // create event listener for list-img
@@ -960,16 +972,18 @@ document.addEventListener('DOMContentLoaded', function() {
 let ridesData = [];
 let parksData = [];
 
+// function to retrieve rides data and make it global
 function ridesGlobal(rides) {
     ridesData = rides;
 }
 
+// function to retrieve parks data and make it global
 function parksGlobal(parks) {
     parksData = parks;
 }
 
 
-
+// function to clear ridesData
 function removeRideData(ridesData) {
     ridesData = {};
 }
@@ -983,7 +997,7 @@ let rideInfoThird;
 let ridesResults = [];
 // push rideInfoFirst, rideInfoSecond, rideInfoThird into ridesCompared object
 
-
+// function to add rides to ridesResults
 function ridesAllAdded() {
     // for (let i = 0; i < 3; i++) {
     //     ridesResults.push(rideInfoFirst, rideInfoSecond, rideInfoThird);
@@ -1005,8 +1019,7 @@ function ridesAllAdded() {
     return ridesResults;
 }
 
-
-
+// function to display rides compared
 function ridesCompared() {
 
     // ridesAllAdded();
@@ -1041,7 +1054,7 @@ function ridesCompared() {
     
 }
 
-
+// function to add ride to compare list
 function handleClick(button) {
   console.log('Button clicked:', button);
   // your code here
@@ -1165,10 +1178,12 @@ function handleClick(button) {
     
 }
 
+// Variable that stores the selected park page data
 let parkPageSelected = [];
+// Variable that stores the selected ride page data
 let ridePageSelected = []; 
 
-
+// Function that renders the park page on button click
 function parkPageRendered(button) {
     sessionStorage.removeItem('parkPageSelected');
     const rideName = button.parentElement.previousElementSibling.children[0].innerText;
@@ -1176,16 +1191,13 @@ function parkPageRendered(button) {
     console.log(parksData);
     const park = parksData.find(ride => ride.name === rideName);
     console.log(park);
-    // console.log(ride.name);
-    // console.log(ride.img);
-    // console.log(compareIcon[0].src);
+  
     parkPageSelected = [];
     parkPageSelected.push(park);
 
     // clear the parkPageSelected session storage item
-
-    
     sessionStorage.setItem('parkPageSelected', JSON.stringify(parkPageSelected));
+
     // selectedParkPage();
     // parkPageSelected = JSON.parse(sessionStorage.getItem('ridesResults'));
     // console.log(ridesResults);
@@ -1216,6 +1228,23 @@ function parkPageRendered(button) {
     // }
 }
 
+// Function that renders the park page on img click
+function parkPageImgRendered(img) {
+    sessionStorage.removeItem('parkPageSelected');
+    const rideName = img.parentElement.nextElementSibling.children[0].innerText;
+    console.log(rideName);
+    console.log(parksData);
+    const park = parksData.find(ride => ride.name === rideName);
+    console.log(park);
+   
+    parkPageSelected = [];
+    parkPageSelected.push(park);
+
+    // clear the parkPageSelected session storage item
+    sessionStorage.setItem('parkPageSelected', JSON.stringify(parkPageSelected));
+}
+
+// Function that renders the ride page on img click
 function ridePageRendered(img) {
     
     sessionStorage.removeItem('ridePageSelected');
@@ -1235,6 +1264,8 @@ function ridePageRendered(img) {
     
 }
 
+
+// Function that renders the selected park page
 function selectedParkPage() {
     parkPageSelected = JSON.parse(sessionStorage.getItem('parkPageSelected'));
    
@@ -1324,10 +1355,10 @@ function selectedParkPage() {
     
 }
 
+// Setting up the recent searches
 let lastFiveSearches = [];
 
-
-
+// Function that renders the selected ride page
 function selectedRidePage() {
     ridePageSelected = JSON.parse(sessionStorage.getItem('ridePageSelected'));
     console.log(ridePageSelected);
