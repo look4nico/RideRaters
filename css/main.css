@@ -1868,6 +1868,12 @@ display: flex;
     display: flex;
 }
 
+.park-rides-div {
+    overflow-y: scroll;
+    max-height: 26vh;
+    padding-top: 0.4rem;
+}
+
 .park-ride-page {
     text-align: center;
     font-size: 2rem;
@@ -2973,6 +2979,7 @@ color: #6D6D6D;
     }
 }
 
+
 @media screen and (max-width: 428px) and (max-height: 926px) {
     
     .welcome-btm-links {
@@ -3660,6 +3667,8 @@ color: #6D6D6D;
     }
 
 }
+
+
 
 @media screen and (max-width: 360px) {
     .welcome-btm-links {
