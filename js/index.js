@@ -1217,6 +1217,7 @@ function parkPageRendered(button) {
 }
 
 function ridePageRendered(img) {
+    
     sessionStorage.removeItem('ridePageSelected');
     const rideName = img.parentElement.nextElementSibling.children[0].children[1].innerText;
     console.log(rideName);
@@ -1230,9 +1231,8 @@ function ridePageRendered(img) {
     ridePageSelected.push(selectedRide);
 
     // clear the parkPageSelected session storage item
-
-    
     sessionStorage.setItem('ridePageSelected', JSON.stringify(ridePageSelected));
+    
 }
 
 function selectedParkPage() {
@@ -1313,6 +1313,7 @@ function selectedParkPage() {
         if (listRideImg) {
             listRideImg.forEach(function(element) {
                 element.addEventListener('click', function() {
+                    ridePageRendered(element);
                     window.location.href = 'ridepage.html';
                 });
             });
@@ -1322,6 +1323,10 @@ function selectedParkPage() {
     }
     
 }
+
+let lastFiveSearches = [];
+
+
 
 function selectedRidePage() {
     ridePageSelected = JSON.parse(sessionStorage.getItem('ridePageSelected'));
