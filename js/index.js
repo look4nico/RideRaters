@@ -1386,6 +1386,27 @@ function selectedRidePage() {
 
         rideResultsContainer.appendChild(rideResultsClone);
 
+        // Adds event listeners to add ride button on search results to add ride page
+        // not present on compare page
+        const addRideListBtn = document.querySelectorAll('.add-ride-park-btn');
+        if (addRideListBtn) {
+            addRideListBtn.forEach(function(element) {
+                element.addEventListener('click', function() {
+                    window.location.href = 'addridepage.html';
+                });
+            });
+        } else {
+            console.log('add ride list button is not present');
+        }
+
+        const leaveReviewBtn = document.querySelector('.leave-review-btn').children[0];
+        if (leaveReviewBtn) {
+            leaveReviewBtn.addEventListener('click', function() {
+                    window.location.href = 'review.html';
+            });
+        } else {
+            console.log('Leave Review button is not present');
+        }
 
     } else {
         console.log('ride results template is not present');
