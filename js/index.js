@@ -263,6 +263,12 @@ function searchRidesAndParks(data) {
 
 // Search Function for Parks or Rides
 function search(data) {
+    let userFilters ={};
+    userFilters = JSON.parse(sessionStorage.getItem('userFilters'));
+    console.log(userFilters);
+    let searchfilters = userFilters;
+    console.log(searchfilters);
+
     const searchParks = document.getElementById('search-for-parks');
     const searchRides = document.getElementById('search-for-rides');
     const searchResultsContainer = document.getElementById("search-results-container");
@@ -306,6 +312,12 @@ function search(data) {
     //     }); 
     // }
 
+    // search filters, on search page load, remove previous search results, 
+    // or just save 
+    // In the search filters page, the back button will check for selected filters, then apply that to the search results
+    // if the ride search page will retain the filters until they are cleared
+    // the rides page, rides or parks page, and parks page will have separate search filters saved in session storage
+    // sort parks by alphabetical order of parks 
     if (searchRides) {
         searchRides.addEventListener('input', () => {
             const searchValue = searchRides.value.toLowerCase();

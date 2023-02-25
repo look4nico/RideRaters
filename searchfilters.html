@@ -39,6 +39,19 @@
                 filterResult.removeChild(filterResult.firstChild);
             }
 
+            let userFilters = {
+                parkCity: "",
+                sort: "",
+                tags: {
+                    wheelchair: false,
+                    photosensitivity: false,
+                    serviceAnimal: false,
+                    sizeShape: false,
+                    childSwap: false,
+                }
+            };
+            console.log(userFilters);
+
         }
 
         // this event listener waits for the DOM to load before running the function
@@ -51,6 +64,36 @@
             const filterDiv = document.querySelector(".filter-dropdown-div");
             const dropdownLinks = filterDiv.querySelectorAll("a");
             const filterResult = document.querySelector("#filter-result");
+            const selectedFilter = document.querySelector("#filter-result-selected");
+
+            const filterPageArrow = document.querySelector("#search-filters-arrow");
+
+            filterPageArrow.addEventListener("click", function (event) {
+                console.log("The search filter page arrow was clicked!");
+               // add userFilters to sessionStorage as an object
+                sessionStorage.setItem("userFilters", JSON.stringify(userFilters));
+                console.log(userFilters);
+
+            });
+            
+            let userFilters = {
+                parkCity: "",
+                sort: "",
+                tags: {
+                    wheelchair: false,
+                    photosensitivity: false,
+                    serviceAnimal: false,
+                    sizeShape: false,
+                    childSwap: false,
+                }
+            };
+
+            // if (selectedFilter) {
+            //     userFilters;
+            //     let userParkCity;
+            //     selectedFilter.textContent = userParkCity;
+            //     console.log(userParkCity);
+            // }
 
             // event listener for downdownLinks 
             // this is for the dropdowns that are inside the filter dropdown
@@ -67,12 +110,30 @@
                     }
                                     
                     let filterResultText = document.createTextNode(item.id.toUpperCase());
+                    
                     // replace filterResultText dashes with spaces
                     filterResultText.textContent = filterResultText.textContent.replace(/-/g, " ");
                     filterResult.appendChild(filterResultText);
                     filterResult.classList.add("filter-result-selected");
                     console.log("clicked dropdown link!");
                     console.log(item.id);
+                    // console.log(filterResultText.textContent);
+
+                    userFilters;
+
+                    if (filterResultText.textContent) {
+                        if (filterResultText.textContent === "UNIVERSAL IOA") {
+                            let filterContent = "Universal's Islands of Adventure";
+                            userFilters.parkCity = filterContent;
+                            console.log(userFilters.parkCity);
+                            console.log(userFilters);
+                        } else {
+                            userFilters.parkCity = filterResultText.textContent;
+                            console.log(userFilters.parkCity);
+                            console.log(userFilters);
+                        }
+                    }
+                    
                 });
             });
 
@@ -115,7 +176,7 @@
             })
             
 
-            // event listener that toggles the sort button but only lets you choose one at a time
+            // event listener that toggles the SORT button but only lets you choose one at a time
             sortBtn.forEach(function (item) {
                 item.addEventListener("click", function (event) {
                     console.log("clicked!");
@@ -127,7 +188,22 @@
                             item.classList.remove("sort-btn-item-selected");
                         });
                         item.classList.add("sort-btn-item-selected");
+
+                        console.log(item.textContent);
+                        
+                        userFilters;
+
+                        if (item.textContent) {
+
+                            userFilters.sort = item.textContent.toLowerCase();
+                            if (userFilters.sort === "access rating") {
+                                userFilters.sort = "rating";
+                            }
+                            console.log(userFilters.sort);
+                            console.log(userFilters);
+                        }
                     }
+                    
                 });
             });
 
@@ -140,19 +216,41 @@
                 item.addEventListener("click", function (event) {
                    console.log("clicked!");
                    if (item.classList.contains("filter-tags-btn-selected")) {
-                          item.classList.remove("filter-tags-btn-selected");
+                            item.classList.remove("filter-tags-btn-selected");
+                            
+                            // Declaring the userFilters variable
+                            userFilters;
+                            // Changing the value of the tag to false
+                            if (item.id) {
+                                let tagText = item.id
+                                userFilters.tags[tagText] = false;
+                                console.log(userFilters.tags[tagText]);
+                                console.log(item.id);
+                                console.log(userFilters);
+                            }
                         //   selectRideBtn.classList.add("disabled");
                      } else {
                           item.classList.add("filter-tags-btn-selected");
                         //   selectRideBtn.classList.remove("disabled");
+                        
+                        // Declaring the userFilters variable
+                        userFilters;
+                        // Changing the value of the tag to true
+                        if (item.id) {
+                            let tagText = item.id
+                            userFilters.tags[tagText] = true;
+                            console.log(userFilters.tags[tagText]);
+                            console.log(item.id);
+                            console.log(userFilters);
+                        }
                    }
                 });
             });
             
-             
-            
-             
+
+
         });
+
 
 
     </script>
@@ -171,7 +269,7 @@
 
     <!---Header-->
     <div class="page-list-header review-page-header">
-        <span class="fa-stack header-arrow" style="display: flex;">
+        <span id="search-filters-arrow" class="fa-stack header-arrow" style="display: flex;">
             <i class="fa-regular fa-circle fa-stack-2x"
                 style="color: #000000;font-size: 3em !important;margin-top: -0.15em;"></i>
             <i class="fa-solid fa-arrow-left fa-stack-1x"
@@ -205,6 +303,7 @@
                         <a href="#" id="orlando">Orlando</a>
                         <a href="#" id="lake-buena-vista">Lake Buena Vista</a>
                         <a href="#" id="tampa">Tampa</a>
+                        <a href="#" id="winter-haven">Winter Haven</a>
                     </div>
                 </button>
             </div>
@@ -242,19 +341,19 @@
                 TAGS
             </p>
             <div class="filter-tags-btn-div">
-                <button class="filter-tags-btn">
+                <button id="wheelchair" class="filter-tags-btn">
                     WHEELCHAIR
                 </button>
-                <button class="filter-tags-btn">
+                <button id="photosensitivity" class="filter-tags-btn">
                     PHOTOSENSITIVE
                 </button>
-                <button class="filter-tags-btn">
+                <button id="serviceAnimal" class="filter-tags-btn">
                     SERVICE-ANIMAL
                 </button>
-                <button class="filter-tags-btn">
+                <button id="sizeShape" class="filter-tags-btn">
                     SIZE/SHAPE
                 </button>
-                <button class="filter-tags-btn">
+                <button id="childSwap" class="filter-tags-btn">
                     CHILD SWAP
                 </button>
             </div>
