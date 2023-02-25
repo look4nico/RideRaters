@@ -1615,7 +1615,7 @@
             ]
         },
         {
-            "name": "Universal\u2019s Islands of Adventure",
+            "name": "Universal's Islands of Adventure",
             "location": "Orlando, FL",
             "description": "Islands of Adventure is modeled after a journey of exploration, where guests embark on an adventure to visit a variety of themed islands.",
             "rating": 3.0,
@@ -1627,7 +1627,7 @@
                 {
                     "name": "Caro-Seuss-El",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This carousel has an array of fun and unusual creatures from the imagination of Dr. Seuss.",
                     "rating": 4.0,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/caro-seuss-el",
@@ -1644,7 +1644,7 @@
                 {
                     "name": "Doom\u2019s Fearfall",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This ride is a high-speed, free-fall experience that includes sudden and intense acceleration, climbing and dropping",
                     "rating": 1.5,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/doctor-dooms-fearfall",
@@ -1661,7 +1661,7 @@
                 {
                     "name": "Dudley Do-Right Ripsaw Falls",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This ride is a water journey in a floating log. The log will suddenly accelerate, turn, and drop.",
                     "rating": 2.5,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/dudley-do-rights-ripsaw-falls",
@@ -1678,7 +1678,7 @@
                 {
                     "name": "Flight of the Hippogriff",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This high-speed roller coaster ride includes sudden and dramatic accelerations, climbing, tilting and dropping.",
                     "rating": 2.5,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/flight-of-the-hippogriff",
@@ -1695,7 +1695,7 @@
                 {
                     "name": "Hagrid\u2019s Magical Creatures Motorbike Adventure",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This is a high speed roller coaster that includes sudden dramatic acceleration, climbing, tilting, dropping, and backwards motion.",
                     "rating": 1.5,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/hagrids-magical-creatures-motorbike-adventure",
@@ -1712,7 +1712,7 @@
                 {
                     "name": "Harry Potter and the Forbidden Journey",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This ride simulates dramatic aerobatics. The ride vehicle will suddenly accelerate, stop, turn, tilt, climb, and drop.",
                     "rating": 2.5,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/harry-potter-and-the-forbidden-journey",
@@ -1729,7 +1729,7 @@
                 {
                     "name": "Hogwarts Express: Hogsmeade Station",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This is a passenger train that involves traveling in an enclosed cabin and includes loud noises and low-lighting conditions.",
                     "rating": 2.5,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/hogwarts-express",
@@ -1746,7 +1746,7 @@
                 {
                     "name": "Jurassic Park River Adventure Ride",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This ride is a water journey on a touring raft. The raft will suddenly and dramatically accelerate, turn, and drop. Riders will get wet, possibly soaked.",
                     "rating": 2.5,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/jurassic-park-river-adventure",
@@ -1763,7 +1763,7 @@
                 {
                     "name": "Jurassic World VelociCoaster",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This is a high-speed roller coaster that includes sudden and dramatic acceleration, climbing, tilting, inversions, and dropping.",
                     "rating": 2.5,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/jurassic-world-velocicoaster",
@@ -1780,7 +1780,7 @@
                 {
                     "name": "One fish, Two fish, Red fish, Blue Fish",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This is a circular motion gondola ride. Up and down movement is controlled by the rider. Riders will get wet.",
                     "rating": 5.0,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/one-fish-two-fish-red-fish",
@@ -1797,7 +1797,7 @@
                 {
                     "name": "Popeye and Bluto\u2019s Bilge-rat Barges",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This ride is a water journey in a circular barge. The barge will suddenly accelerate, turn and drop.",
                     "rating": 2.5,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/popeye-and-blutos-bilge-rat-barges",
@@ -1814,7 +1814,7 @@
                 {
                     "name": "Pteranodon Flyers",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This glider style roller coaster includes climbing, side-to-side swinging and sudden acceleration.",
                     "rating": 2.5,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/pteranodon-flyers",
@@ -1831,7 +1831,7 @@
                 {
                     "name": "Skull Island: Reign of Kong",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This 3-D ride is an expedition through the rough terrain of King Kong\u2019s natural habitat.",
                     "rating": 4.0,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/skull-island-reign-of-kong",
@@ -1848,7 +1848,7 @@
                 {
                     "name": "Storm Force Accelatron",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This attraction seats riders in round pods and subjects you to sudden acceleration, turning, and spinning.",
                     "rating": 3.5,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/storm-force-accelatron",
@@ -1865,7 +1865,7 @@
                 {
                     "name": "The Amazing Adventures of Spider-Man",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This 3-D ride takes a journey through the world of Spider-Man\u2122 in a prototype news vehicle.",
                     "rating": 3.0,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/the-amazing-adventures-of-spider-man",
@@ -1882,7 +1882,7 @@
                 {
                     "name": "The Cat in the Hat Ride",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This ride takes a journey through the world of The Cat in the Hat\u2122.",
                     "rating": 5.0,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/the-cat-in-the-hat",
@@ -1899,7 +1899,7 @@
                 {
                     "name": "The High in the Sky Seuss Trolley Train",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This ride is a trolley train through Seuss Landing\u2122 on an elevated track.",
                     "rating": 3.5,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/high-in-the-sky-seuss-trolley-train-ride",
@@ -1916,7 +1916,7 @@
                 {
                     "name": "The Incredible Hulk Coaster",
                     "location": "Orlando, FL",
-                    "park": "Universal\u2019s Islands of Adventure",
+                    "park": "Universal's Islands of Adventure",
                     "description": "This is a high-speed roller coaster ride that includes sudden and dramatic acceleration, climbing, tilting, and dropping.",
                     "rating": 1.5,
                     "site": "https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/the-incredible-hulk-coaster",
