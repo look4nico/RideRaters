@@ -321,13 +321,19 @@ function search(data) {
     if (searchRides) {
         searchRides.addEventListener('input', () => {
             const searchValue = searchRides.value.toLowerCase();
+            console.log(searchfilters);
+            console.log(searchfilters.parkCity);
+            console.log(searchfilters.sort);
+            console.log(searchfilters.tags);
+            // if sort is alphabetical, sort by alphabetical order of rides
+            // if sort is park, sort by park
+            // if sort is access rating, sort by access rating
+
+            //match rides with accessibilites and tags, find rides that match the tags 
             const filteredParks = data.filter(park => {
                 return park.name.toLowerCase().includes(searchValue);
             });
-            // console.log(filteredParks);
-            // console.log(filteredParks[0].name);
-            // console.log(filteredParks);
-        
+         
             searchResultsContainer.innerHTML = "";
 
             filteredParks.forEach((ride) => {

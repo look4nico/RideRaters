@@ -39,18 +39,23 @@
                 filterResult.removeChild(filterResult.firstChild);
             }
 
-            let userFilters = {
-                parkCity: "",
-                sort: "",
-                tags: {
-                    wheelchair: false,
-                    photosensitivity: false,
-                    serviceAnimal: false,
-                    sizeShape: false,
-                    childSwap: false,
-                }
-            };
-            console.log(userFilters);
+            // remove userFilters from sessionStorage
+            sessionStorage.removeItem("userFilters");
+            
+            // if(!userFilters) {
+            //     let userFilters = {
+            //         parkCity: null,
+            //         sort: null,
+            //         tags: {
+            //             wheelchair: false,
+            //             photosensitivity: false,
+            //             serviceAnimal: false,
+            //             sizeShape: false,
+            //             childSwap: false,
+            //         }
+            //     };
+            //     console.log(userFilters);
+            // }
 
         }
 
@@ -70,13 +75,18 @@
 
             filterPageArrow.addEventListener("click", function (event) {
                 console.log("The search filter page arrow was clicked!");
-               // add userFilters to sessionStorage as an object
-                sessionStorage.setItem("userFilters", JSON.stringify(userFilters));
+               
+                if (sessionStorage.setItem("userFilters", JSON.stringify(userFilters))){
+                    console.log("userFilters was set in sessionStorage");
+                } else {
+                    sessionStorage.setItem("userFilters", JSON.stringify(userFilters));
+                }
+                
                 console.log(userFilters);
 
             });
             
-            let userFilters = {
+            let userFilters = JSON.parse(sessionStorage.getItem('userFilters')) || {
                 parkCity: "",
                 sort: "",
                 tags: {
@@ -88,18 +98,74 @@
                 }
             };
 
-            // if (selectedFilter) {
-            //     userFilters;
-            //     let userParkCity;
-            //     selectedFilter.textContent = userParkCity;
-            //     console.log(userParkCity);
-            // }
+            JSON.parse(sessionStorage.getItem('userFilters'));
 
-            // event listener for downdownLinks 
-            // this is for the dropdowns that are inside the filter dropdown
-            // The console.log(item.id) is for testing purposes
-            // the console.log("clicked dropdown link!") is for testing purposes
-            // the cosole.log(item.id) returns the id of the link that was clicked
+            if (JSON.parse(sessionStorage.getItem('userFilters'))) {
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')));
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')).parkCity)
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')).sort)
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')).tags.wheelchair)
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')).tags.photosensitivity)
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')).tags.serviceAnimal)
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')).tags.sizeShape)
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')).tags.childSwap)
+                // if userFilters is not empty, add the selected class to the filter tags
+                if (JSON.parse(sessionStorage.getItem('userFilters')).parkCity) {
+                    let filterResultText = document.createTextNode(JSON.parse(sessionStorage.getItem('userFilters')).parkCity);
+                    if (filterResultText.textContent === "Universal's Islands of Adventure") {
+                        filterResultText.textContent = "UNIVERSAL IOA";
+                    }
+                    // replace filterResultText dashes with spaces
+                    filterResult.appendChild(filterResultText);
+                    filterResult.classList.add("filter-result-selected");
+                };
+                // if userFilters is not empty, add the selected class to the sort buttons
+                if (JSON.parse(sessionStorage.getItem('userFilters')).sort) {
+                    sortBtn.forEach(function (item) {
+                        console.log(item.textContent.toLowerCase());
+                        if(item.textContent.toLowerCase() === JSON.parse(sessionStorage.getItem('userFilters')).sort) {
+                            item.classList.add("sort-btn-item-selected");
+                        } else {
+                            console.log("no match");
+                        }
+                    });
+                };
+
+                // Variables for filter tags
+
+                // Wheelchair Variable
+                let wheelchairTag = JSON.parse(sessionStorage.getItem('userFilters')).tags.wheelchair;
+                // Photosensitivity Variable
+                let photosensitivityTag = JSON.parse(sessionStorage.getItem('userFilters')).tags.photosensitivity;
+                // Service Animal Variable
+                let serviceAnimalTag = JSON.parse(sessionStorage.getItem('userFilters')).tags.serviceAnimal;
+                // Size/Shape Variable
+                let sizeShapeTag = JSON.parse(sessionStorage.getItem('userFilters')).tags.sizeShape;
+                // Child Swap Variable
+                let childSwapTag = JSON.parse(sessionStorage.getItem('userFilters')).tags.childSwap;
+
+                // if userFilters is not null, add the selected class to the filter tags
+                if (wheelchairTag || photosensitivityTag || serviceAnimalTag || sizeShapeTag || childSwapTag) {
+                    filterTags.forEach(function (item) {
+                        if (item.id === "wheelchair" && wheelchairTag) {
+                            item.classList.add("filter-tags-btn-selected");
+                        } else if (item.id === "photosensitivity" && photosensitivityTag) {
+                            item.classList.add("filter-tags-btn-selected");
+                        } else if (item.id === "serviceAnimal" && serviceAnimalTag) {
+                            item.classList.add("filter-tags-btn-selected");
+                        } else if (item.id === "sizeShape" && sizeShapeTag) {
+                            item.classList.add("filter-tags-btn-selected");
+                        } else if (item.id === "childSwap" && childSwapTag) {
+                            item.classList.add("filter-tags-btn-selected");
+                        }
+                    });
+        
+                };
+
+            } else {
+                console.log("userFilters Session Storage is empty");
+            }
+            
             dropdownLinks.forEach(function (item) {
                 item.addEventListener("click", function (event) {
                     // clear the filterResultText node by setting it to an empty text node
