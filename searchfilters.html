@@ -125,6 +125,8 @@
                         console.log(item.textContent.toLowerCase());
                         if(item.textContent.toLowerCase() === JSON.parse(sessionStorage.getItem('userFilters')).sort) {
                             item.classList.add("sort-btn-item-selected");
+                        } else if(item.id === JSON.parse(sessionStorage.getItem('userFilters')).sort) {
+                            item.classList.add("sort-btn-item-selected");
                         } else {
                             console.log("no match");
                         }
@@ -389,7 +391,7 @@
             </div>
             <div class="sort-by-btn-div">
                 <button class="sort-btn-item">USER RATING</button>
-                <button class="sort-btn-item">ACCESS RATING</button>
+                <button id="rating" class="sort-btn-item">ACCESS RATING</button>
             </div>
             <!-- <div class="sort-by-btn-div">
                 <button class="sort-btn-item">ABC</button>
