@@ -266,8 +266,16 @@ function search(data) {
     let userFilters ={};
     userFilters = JSON.parse(sessionStorage.getItem('userFilters'));
     console.log(userFilters);
-    let searchfilters = userFilters;
-    console.log(searchfilters);
+
+    let searchFilters = userFilters;
+    console.log(searchFilters);
+
+    if (sessionStorage.getItem('userFiltersCleared') === 'true') {
+        sessionStorage.removeItem('userFiltersCleared');
+        sessionStorage.removeItem('userFilters');
+        userFilters = {};
+        searchFilters = userFilters;
+    } 
 
     const searchParks = document.getElementById('search-for-parks');
     const searchRides = document.getElementById('search-for-rides');
@@ -321,17 +329,29 @@ function search(data) {
     if (searchRides) {
         searchRides.addEventListener('input', () => {
             const searchValue = searchRides.value.toLowerCase();
-            console.log(searchfilters);
-            console.log(searchfilters.parkCity);
-            console.log(searchfilters.sort);
-            console.log(searchfilters.tags);
+            console.log(searchFilters);
+            console.log(searchFilters.parkCity);
+            console.log(searchFilters.sort);
+            console.log(searchFilters.tags);
             // if sort is alphabetical, sort by alphabetical order of rides
             // if sort is park, sort by park
             // if sort is access rating, sort by access rating
 
             //match rides with accessibilites and tags, find rides that match the tags 
             const filteredParks = data.filter(park => {
-                return park.name.toLowerCase().includes(searchValue);
+                // console.log(park);
+                if (searchFilters.parkCity) {
+                // only return parks that match the city filter
+                    console.log(park.park);
+                    if (park.location === searchFilters.parkCity) {
+                        return park.name.toLowerCase().includes(searchValue);
+                    } else if (park.park === searchFilters.parkCity) {
+                        return park.name.toLowerCase().includes(searchValue);
+                    }
+                } else {
+                    return park.name.toLowerCase().includes(searchValue);
+                } 
+                // return park.name.toLowerCase().includes(searchValue);
             });
          
             searchResultsContainer.innerHTML = "";

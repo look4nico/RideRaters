@@ -40,8 +40,24 @@
             }
 
             // remove userFilters from sessionStorage
-            sessionStorage.removeItem("userFilters");
-            
+            let userFilters = JSON.parse(sessionStorage.getItem('userFilters'));
+            // remove userFilters from sessionStorage
+            userFilters = {
+                parkCity: null,
+                sort: null,
+                tags: {
+                    wheelchair: false,
+                    photosensitivity: false,
+                    serviceAnimal: false,
+                    sizeShape: false,
+                    childSwap: false,
+                }
+            };
+            // sessionStorage.removeItem("userFilters");
+            sessionStorage.setItem('userFiltersCleared', true); // set userFiltersCleared to true'
+            sessionStorage.setItem('userFilters', JSON.stringify(userFilters));
+            console.log(userFilters);
+
             // if(!userFilters) {
             //     let userFilters = {
             //         parkCity: null,
@@ -75,7 +91,7 @@
 
             filterPageArrow.addEventListener("click", function (event) {
                 console.log("The search filter page arrow was clicked!");
-               
+                
                 if (sessionStorage.setItem("userFilters", JSON.stringify(userFilters))){
                     console.log("userFilters was set in sessionStorage");
                 } else {
@@ -185,18 +201,37 @@
                     filterResult.classList.add("filter-result-selected");
                     console.log("clicked dropdown link!");
                     console.log(item.id);
+                    console.log(filterResultText.textContent);
                     // console.log(filterResultText.textContent);
 
                     userFilters;
-
+                    let disneyTxt = "Disney's ";
                     if (filterResultText.textContent) {
                         if (filterResultText.textContent === "UNIVERSAL IOA") {
                             let filterContent = "Universal's Islands of Adventure";
                             userFilters.parkCity = filterContent;
                             console.log(userFilters.parkCity);
                             console.log(userFilters);
+                        } else if (item.classList.contains("park-city")) {
+                            let cityState = ", FL";
+                            // make every word in filterResultText.textContent lowercase except for the first letter of each word
+                            filterResultText.textContent = filterResultText.textContent.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+                            userFilters.parkCity = filterResultText.textContent + cityState;
+                            console.log(userFilters.parkCity);
+                            console.log(userFilters);
+                            
+                            
+                        } else if (filterResultText.textContent != 'LEGOLAND' && filterResultText.textContent != 'SEAWORLD' && filterResultText.textContent != 'EPCOT' && filterResultText.textContent != 'UNIVERSAL STUDIOS') {
+                            // filterResultText.textContent = filterResultText.textContent.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+                            userFilters.parkCity = disneyTxt + filterResultText.textContent.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+                            console.log(userFilters.parkCity);
+                            console.log(userFilters);
+                        } else if (filterResultText.textContent === "EPCOT"){
+                            userFilters.parkCity = disneyTxt + filterResultText.textContent.toUpperCase();
+                            console.log(userFilters.parkCity);
+                            console.log(userFilters);
                         } else {
-                            userFilters.parkCity = filterResultText.textContent;
+                            userFilters.parkCity = filterResultText.textContent.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });;
                             console.log(userFilters.parkCity);
                             console.log(userFilters);
                         }
@@ -368,10 +403,10 @@
                 </button>
                 <button class="filter-item" id="city">CITY<i class="fa-solid fa-angle-down"></i>
                     <div class="city-dropdown-content">
-                        <a href="#" id="orlando">Orlando</a>
-                        <a href="#" id="lake-buena-vista">Lake Buena Vista</a>
-                        <a href="#" id="tampa">Tampa</a>
-                        <a href="#" id="winter-haven">Winter Haven</a>
+                        <a href="#" class="park-city" id="orlando">Orlando</a>
+                        <a href="#" class="park-city" id="lake-buena-vista">Lake Buena Vista</a>
+                        <a href="#" class="park-city" id="tampa">Tampa</a>
+                        <a href="#" class="park-city" id="winter-haven">Winter Haven</a>
                     </div>
                 </button>
             </div>
