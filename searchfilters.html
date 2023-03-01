@@ -230,6 +230,10 @@
                             userFilters.parkCity = disneyTxt + filterResultText.textContent.toUpperCase();
                             console.log(userFilters.parkCity);
                             console.log(userFilters);
+                        } else if (filterResultText.textContent === "SEAWORLD") {
+                            userFilters.parkCity = "SeaWorld";
+                            console.log(userFilters.parkCity);
+                            console.log(userFilters);
                         } else {
                             userFilters.parkCity = filterResultText.textContent.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });;
                             console.log(userFilters.parkCity);
