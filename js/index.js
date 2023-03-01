@@ -282,43 +282,6 @@ function search(data) {
     const searchResultsContainer = document.getElementById("search-results-container");
     const template = document.getElementById("search-result-template");
     
-    // Old Version of Ride Search
-    // if (searchRides) {
-    //     searchRides.addEventListener('input', () => {
-    //         const searchValue = searchRides.value.toLowerCase();
-    //         const filteredParks = data.filter(park => {
-    //             return park.name.toLowerCase().includes(searchValue);
-    //         });
-    //         // console.log(filteredParks);
-    //         // console.log(filteredParks[0].name);
-    //         // console.log(filteredParks);
-        
-    //         searchResultsContainer.innerHTML = "";
-
-    //         filteredParks.forEach((ride) => {
-    //         const result = document.importNode(template.content, true);
-    //         const rideImg = result.querySelector(".list-ride-img");
-    //         const rideLocation = result.querySelector(".list-ride-location");
-    //         const rideName = result.querySelector(".list-ride-name");
-    //         const userRating = result.querySelector(".user-rating-txt");
-    //         const accessRating = result.querySelector(".access-rating-txt");
-    //         const location = result.querySelector(".proxima-regular");
-    //         const itemCity = result.querySelector(".ride-city");
-            
-    //         rideImg.src = ride.img;
-    //         rideLocation.textContent = ride.name;
-    //         rideName.textContent = ride.name;
-    //         userRating.textContent = ride.rating;
-    //         accessRating.textContent = ride.rating;
-    //         location.textContent = ride.rating;
-    //         itemCity.textContent = ride.location;
-
-    //         searchResultsContainer.appendChild(result);
-    //         });
-
-    
-    //     }); 
-    // }
 
     // search filters, on search page load, remove previous search results, 
     // or just save 
@@ -329,36 +292,225 @@ function search(data) {
     if (searchRides) {
         searchRides.addEventListener('input', () => {
             const searchValue = searchRides.value.toLowerCase();
-            console.log(searchFilters);
-            console.log(searchFilters.parkCity);
-            console.log(searchFilters.sort);
+            // console.log(searchFilters);
+            // console.log(searchFilters.parkCity);
+            // console.log(searchFilters.sort);
             console.log(searchFilters.tags);
+
             // if sort is alphabetical, sort by alphabetical order of rides
             // if sort is park, sort by park
             // if sort is access rating, sort by access rating
+            // if (searchFilters){
+                
+            // };
+            
 
-            //match rides with accessibilites and tags, find rides that match the tags 
+            
+
             const filteredParks = data.filter(park => {
                 // console.log(park);
-                if (searchFilters.parkCity) {
-                // only return parks that match the city filter
-                    console.log(park.park);
-                    if (park.location === searchFilters.parkCity) {
-                        return park.name.toLowerCase().includes(searchValue);
-                    } else if (park.park === searchFilters.parkCity) {
-                        return park.name.toLowerCase().includes(searchValue);
-                    }
+                if (searchFilters) {
+
+                    //Tag Object
+                    let searchTags = searchFilters.tags
+                    // Wheelchair Variable
+                    let wheelchairTag = searchFilters.tags.wheelchair;
+                    // Photosensitivity Variable
+                    let photosensitivityTag = searchFilters.tags.photosensitivity;
+                    // Service Animal Variable
+                    let serviceAnimalTag = searchFilters.tags.serviceAnimal;
+                    // Size/Shape Variable
+                    let sizeShapeTag = searchFilters.tags.sizeShape;
+                    // Child Swap Variable
+                    let childSwapTag = searchFilters.tags.childSwap;
+
+
+                    //match rides with accessibilites and tags, find rides that match the tags 
+                    if (wheelchairTag || photosensitivityTag || serviceAnimalTag || sizeShapeTag || childSwapTag) {
+                        console.log("One or some tag was choosen");
+                        for (let tag in searchTags){
+                            // console.log(tag + ": " + searchTags[tag]);
+                            if (searchTags[tag] === true) {
+                                console.log(tag);
+                                if (searchFilters.parkCity) {
+                                // only return parks that match the city filter
+                                console.log(park.park);
+                                if (park.location === searchFilters.parkCity && park.accessibility) {
+                                    console.log(park.location)
+                                    console.log(park)
+                                    return park.name.toLowerCase().includes(searchValue);
+                                } else if (park.park === searchFilters.parkCity) {
+                                    return park.name.toLowerCase().includes(searchValue);
+                                }
+                                } else {
+                                    return park.name.toLowerCase().includes(searchValue);
+                                } 
+                            }
+                        }
+                    } else if (!wheelchairTag && !photosensitivityTag && !serviceAnimalTag && !sizeShapeTag && !childSwapTag) {
+                        console.log("No tags were choosen");
+                        if (searchFilters.parkCity) {
+                        // only return parks that match the city filter
+                        console.log(park.park);
+                        if (park.location === searchFilters.parkCity) {
+                            return park.name.toLowerCase().includes(searchValue);
+                        } else if (park.park === searchFilters.parkCity) {
+                            return park.name.toLowerCase().includes(searchValue);
+                        }
+                        } else {
+                            return park.name.toLowerCase().includes(searchValue);
+                        } 
+                    };
+
+                     
                 } else {
                     return park.name.toLowerCase().includes(searchValue);
-                } 
+                };
+                
                 // return park.name.toLowerCase().includes(searchValue);
             });
-         
+            
+            // sort filteredParks by each rides 'rating' property
+            if (searchFilters.sort === "rating") {
+                let parksSorted = filteredParks.sort((a, b) => {
+                    return b.rating - a.rating;
+                });    
+                console.log(parksSorted);
+            }
+
+            
+
             searchResultsContainer.innerHTML = "";
 
             filteredParks.forEach((ride) => {
-                    // skip if ride.height is undefined
+                // skip if ride.height is undefined
                 if (ride.height === undefined) {
+                    console.log(ride.accessibility.photosensitivity)
+                    //Tag Object
+                    let searchTags = searchFilters.tags
+                    // Wheelchair Variable
+                    let wheelchairTag = searchFilters.tags.wheelchair;
+                    console.log(wheelchairTag);
+                    // Photosensitivity Variable
+                    let photosensitivityTag = searchFilters.tags.photosensitivity;
+                    console.log(photosensitivityTag);
+                    // Service Animal Variable
+                    let serviceAnimalTag = searchFilters.tags.serviceAnimal;
+                    console.log(serviceAnimalTag);
+                    // Size/Shape Variable
+                    let sizeShapeTag = searchFilters.tags.sizeShape;
+                    console.log(sizeShapeTag);
+                    // Child Swap Variable
+                    let childSwapTag = searchFilters.tags.childSwap;
+                    console.log(childSwapTag);
+
+
+                    if(ride.accessibility.wheelchair === true && wheelchairTag === true) {
+                        const result = document.importNode(template.content, true);
+                        const rideImg = result.querySelector(".list-ride-img");
+                        const rideLocation = result.querySelector(".list-ride-location");
+                        const rideName = result.querySelector(".list-ride-name");
+                        const userRating = result.querySelector(".user-rating-txt");
+                        const accessRating = result.querySelector(".access-rating-txt");
+                        const location = result.querySelector(".proxima-regular");
+                        const itemCity = result.querySelector(".ride-city");
+                        
+                        rideImg.src = ride.img;
+                        rideLocation.textContent = ride.park;
+                        rideName.textContent = ride.name;
+                        userRating.textContent = ride.rating;
+                        accessRating.textContent = ride.rating;
+                        location.textContent = ride.rating;
+                        itemCity.textContent = ride.location;
+
+                        searchResultsContainer.appendChild(result);
+                        console.log("wheelchair");
+                    } else if (ride.accessibility.photosensitivity === true && photosensitivityTag === true) {
+                        const result = document.importNode(template.content, true);
+                        const rideImg = result.querySelector(".list-ride-img");
+                        const rideLocation = result.querySelector(".list-ride-location");
+                        const rideName = result.querySelector(".list-ride-name");
+                        const userRating = result.querySelector(".user-rating-txt");
+                        const accessRating = result.querySelector(".access-rating-txt");
+                        const location = result.querySelector(".proxima-regular");
+                        const itemCity = result.querySelector(".ride-city");
+                        
+                        rideImg.src = ride.img;
+                        rideLocation.textContent = ride.park;
+                        rideName.textContent = ride.name;
+                        userRating.textContent = ride.rating;
+                        accessRating.textContent = ride.rating;
+                        location.textContent = ride.rating;
+                        itemCity.textContent = ride.location;
+
+                        searchResultsContainer.appendChild(result);
+                        console.log("photosensitivity");
+                    } else if (ride.accessibility.serviceAnimal === true && serviceAnimalTag === true) {
+                        const result = document.importNode(template.content, true);
+                        const rideImg = result.querySelector(".list-ride-img");
+                        const rideLocation = result.querySelector(".list-ride-location");
+                        const rideName = result.querySelector(".list-ride-name");
+                        const userRating = result.querySelector(".user-rating-txt");
+                        const accessRating = result.querySelector(".access-rating-txt");
+                        const location = result.querySelector(".proxima-regular");
+                        const itemCity = result.querySelector(".ride-city");
+                        
+                        rideImg.src = ride.img;
+                        rideLocation.textContent = ride.park;
+                        rideName.textContent = ride.name;
+                        userRating.textContent = ride.rating;
+                        accessRating.textContent = ride.rating;
+                        location.textContent = ride.rating;
+                        itemCity.textContent = ride.location;
+
+                        searchResultsContainer.appendChild(result);
+                        console.log("service animal");
+                    } else if (ride.accessibility.sizeShape === true && sizeShapeTag === true) {
+                        const result = document.importNode(template.content, true);
+                        const rideImg = result.querySelector(".list-ride-img");
+                        const rideLocation = result.querySelector(".list-ride-location");
+                        const rideName = result.querySelector(".list-ride-name");
+                        const userRating = result.querySelector(".user-rating-txt");
+                        const accessRating = result.querySelector(".access-rating-txt");
+                        const location = result.querySelector(".proxima-regular");
+                        const itemCity = result.querySelector(".ride-city");
+                        
+                        rideImg.src = ride.img;
+                        rideLocation.textContent = ride.park;
+                        rideName.textContent = ride.name;
+                        userRating.textContent = ride.rating;
+                        accessRating.textContent = ride.rating;
+                        location.textContent = ride.rating;
+                        itemCity.textContent = ride.location;
+
+                        searchResultsContainer.appendChild(result);
+                        console.log("sizeShapeTag");
+                    } else if (ride.accessibility.childSwap === true && childSwapTag === true) {
+                        const result = document.importNode(template.content, true);
+                        const rideImg = result.querySelector(".list-ride-img");
+                        const rideLocation = result.querySelector(".list-ride-location");
+                        const rideName = result.querySelector(".list-ride-name");
+                        const userRating = result.querySelector(".user-rating-txt");
+                        const accessRating = result.querySelector(".access-rating-txt");
+                        const location = result.querySelector(".proxima-regular");
+                        const itemCity = result.querySelector(".ride-city");
+                        
+                        rideImg.src = ride.img;
+                        rideLocation.textContent = ride.park;
+                        rideName.textContent = ride.name;
+                        userRating.textContent = ride.rating;
+                        accessRating.textContent = ride.rating;
+                        location.textContent = ride.rating;
+                        itemCity.textContent = ride.location;
+
+                        searchResultsContainer.appendChild(result);
+
+                        console.log("child swap");
+                    } else {
+
+                    }
+                        
+                } else {
                     const result = document.importNode(template.content, true);
                     const rideImg = result.querySelector(".list-ride-img");
                     const rideLocation = result.querySelector(".list-ride-location");
@@ -376,8 +528,6 @@ function search(data) {
                     location.textContent = ride.rating;
                     itemCity.textContent = ride.location;
 
-                    searchResultsContainer.appendChild(result);
-                } else {
                     console.log(ride.height);
                 }
             });
