@@ -1283,6 +1283,17 @@ function ridesCompared() {
             }
             
         });
+            const listRideImg = document.querySelectorAll('.compare-results-img');
+            if (listRideImg) {
+                listRideImg.forEach(function(element) {
+                    element.addEventListener('click', function() {
+                        ridePageRendered(element);
+                        window.location.href = 'ridepage.html';
+                    });
+                });
+            } else {
+                console.log('list ride image is not present');
+            }
 
     }
     
@@ -1482,19 +1493,35 @@ function parkPageImgRendered(img) {
 function ridePageRendered(img) {
     
     sessionStorage.removeItem('ridePageSelected');
-    const rideName = img.parentElement.nextElementSibling.children[0].children[1].innerText;
-    console.log(rideName);
-    // console.log(parksData);
-    console.log(ridesData);
+    if (img.className === 'list-ride-img') {
+        const rideName = img.parentElement.nextElementSibling.children[0].children[1].innerText;
+        console.log(rideName);
+        // console.log(parksData);
+        console.log(ridesData);
+        
+        const selectedRide = ridesData.find(ride => ride.name === rideName);
+        console.log(selectedRide);
+        
+        ridePageSelected = [];
+        ridePageSelected.push(selectedRide);
     
-    const selectedRide = ridesData.find(ride => ride.name === rideName);
-    console.log(selectedRide);
+        // clear the parkPageSelected session storage item
+        sessionStorage.setItem('ridePageSelected', JSON.stringify(ridePageSelected));
+    } else {
+        const rideName = img.nextElementSibling.nextElementSibling.innerText;
+        console.log(rideName);
+        // console.log(parksData);
+        console.log(ridesData);
+        
+        const selectedRide = ridesData.find(ride => ride.name === rideName);
+        console.log(selectedRide);
+        
+        ridePageSelected = [];
+        ridePageSelected.push(selectedRide);
     
-    ridePageSelected = [];
-    ridePageSelected.push(selectedRide);
-
-    // clear the parkPageSelected session storage item
-    sessionStorage.setItem('ridePageSelected', JSON.stringify(ridePageSelected));
+        // clear the parkPageSelected session storage item
+        sessionStorage.setItem('ridePageSelected', JSON.stringify(ridePageSelected));
+    }
     
 }
 
