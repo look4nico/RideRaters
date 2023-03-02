@@ -674,6 +674,19 @@ function search(data) {
             } else {
                 console.log('park view rides button is not present');
             }
+
+            const parksListImg = document.querySelectorAll('.parks-list-img');
+
+            if (parksListImg) {
+                parksListImg.forEach(function(element) {
+                    element.addEventListener('click', function() {
+                        parkPageImgRendered(element);
+                        window.location.href = 'parkpage.html';
+                    });
+                });
+            } else {
+                console.log('list ride image is not present');
+            }
             
 
         
@@ -1040,13 +1053,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Create event listener for parks-list-img
 document.addEventListener('DOMContentLoaded', function() {
-    const parksListImg = document.querySelector('.parks-list-img');
+    const parksListImg = document.querySelectorAll('.parks-list-img');
+    // if (parksListImg) {
+    //     parksListImg.addEventListener('click', function() {
+    //         parkPageImgRendered(parksListImg);
+    //         // window.location.href = 'parkpage.html';
+    //     });
+    // } else {
+    //     console.log('parks list image is not present');
+    // }
     if (parksListImg) {
-        parksListImg.addEventListener('click', function() {
-            window.location.href = 'parkpage.html';
+        parksListImg.forEach(function(element) {
+            element.addEventListener('click', function() {
+                window.location.href = 'parkpage.html';
+                parkPageImgRendered(element);
+            });
         });
-    } else {
-        console.log('parks list image is not present');
     }
 });
 
@@ -1484,6 +1506,7 @@ function parkPageImgRendered(img) {
    
     parkPageSelected = [];
     parkPageSelected.push(park);
+    console.log(parkPageSelected);
 
     // clear the parkPageSelected session storage item
     sessionStorage.setItem('parkPageSelected', JSON.stringify(parkPageSelected));
@@ -1529,6 +1552,7 @@ function ridePageRendered(img) {
 // Function that renders the selected park page
 function selectedParkPage() {
     parkPageSelected = JSON.parse(sessionStorage.getItem('parkPageSelected'));
+    console.log(parkPageSelected);
    
     // ridesResults.forEach(ride => {
     //     console.log(ride.name);
