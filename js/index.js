@@ -309,6 +309,7 @@ function search(data) {
 
             const filteredParks = data.filter(park => {
                 // console.log(park);
+                console.log(searchFilters);
                 if (searchFilters) {
 
                     //Tag Object
@@ -386,7 +387,8 @@ function search(data) {
                 // skip if ride.height is undefined
                 if (ride.height === undefined) {
                     if (searchFilters) {
-                       console.log(ride.accessibility.photosensitivity)
+
+                        console.log(ride.accessibility.photosensitivity)
                         //Tag Object
                         let searchTags = searchFilters.tags
                         // Wheelchair Variable
@@ -508,11 +510,7 @@ function search(data) {
 
                             console.log("child swap");
                         } else {
-
-                        }  
-
-                    } else {
-                        const result = document.importNode(template.content, true);
+                            const result = document.importNode(template.content, true);
                             const rideImg = result.querySelector(".list-ride-img");
                             const rideLocation = result.querySelector(".list-ride-location");
                             const rideName = result.querySelector(".list-ride-name");
@@ -530,8 +528,33 @@ function search(data) {
                             itemCity.textContent = ride.location;
 
                             searchResultsContainer.appendChild(result);
+
+                            console.log("child swap");
+                        }
+
+                    } else {
+                        const result = document.importNode(template.content, true);
+                        const rideImg = result.querySelector(".list-ride-img");
+                        const rideLocation = result.querySelector(".list-ride-location");
+                        const rideName = result.querySelector(".list-ride-name");
+                        const userRating = result.querySelector(".user-rating-txt");
+                        const accessRating = result.querySelector(".access-rating-txt");
+                        const location = result.querySelector(".proxima-regular");
+                        const itemCity = result.querySelector(".ride-city");
+                        
+                        rideImg.src = ride.img;
+                        rideLocation.textContent = ride.park;
+                        rideName.textContent = ride.name;
+                        userRating.textContent = ride.rating;
+                        accessRating.textContent = ride.rating;
+                        location.textContent = ride.rating;
+                        itemCity.textContent = ride.location;
+
+                        searchResultsContainer.appendChild(result);
+
+                        console.log("child swap");
                     }
-                   
+                    
                         
                 } else {
                     const result = document.importNode(template.content, true);
@@ -551,7 +574,7 @@ function search(data) {
                     location.textContent = ride.rating;
                     itemCity.textContent = ride.location;
 
-                    // console.log(ride.height);
+                    console.log(ride.height);
                 }
             });
 
