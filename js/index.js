@@ -45,6 +45,7 @@ fetch('/data/data.json')
     // searchRidesAndParks(ridesList);
     searchRidesAndParks(allParksAndRides);
     ridesGlobal(ridesList);
+    fanFavorite(ridesList);
     parksGlobal(parks);
     ridesCompared();
     selectedParkPage();
@@ -326,6 +327,43 @@ function clearFilters() {
 //     }
 // };
 
+
+// Fan Favorite Function
+function runFanFavorite() {
+
+}
+
+
+function fanFavorite(data) {
+    const fanFavContainer = document.getElementById("fan-results-container");
+    const template = document.getElementById("fan-result-template");
+
+    if (fanFavContainer) {
+        data.sort((a, b) => {
+            return b.rating - a.rating;
+        });    
+        // limit data to 4 items
+        data = data.slice(0, 4);
+        data.forEach((ride) => {
+            const result = document.importNode(template.content, true);
+            const rideImg = result.querySelector(".fan-fav-img");
+            const rideName = result.querySelector(".fan-fav-name");
+            const userRating = result.querySelector(".user-rating-txt");
+            const accessRating = result.querySelector(".access-rating-txt");
+            const itemCity = result.querySelector(".ride-city");
+            
+            rideImg.src = ride.img;
+            rideName.textContent = ride.name;
+            userRating.textContent = ride.rating;
+            accessRating.textContent = ride.rating;
+            location.textContent = ride.rating;
+            itemCity.textContent = ride.location;
+
+            fanFavContainer.appendChild(result);
+            console.log("photosensitivity");
+        });
+    }
+}
 
 // Search Function for Parks or Rides
 function search(data) {

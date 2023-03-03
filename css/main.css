@@ -64,6 +64,9 @@
 }
 
 .fan-fav-img {
+    width: 5.5em;
+    height: 11.1em;
+    object-fit: cover;
     cursor: pointer;
 }
 
