@@ -192,6 +192,72 @@ function searchRidesAndParks(data) {
 
 }
 
+function clearFilters() {
+    //on click of clear filters button, remove all selected classes from filter buttons
+    const filterTags = document.querySelectorAll(".filter-tags-btn");
+    const sortBtn = document.querySelectorAll(".sort-btn-item");
+    const filterDropdown = document.querySelectorAll(".filter-item");
+    const cityDropdown = document.querySelector(".city-dropdown-content");
+    const parkDropdown = document.querySelector(".park-dropdown-content");
+    const filterDiv = document.querySelector(".filter-dropdown-div");
+    const dropdownLinks = filterDiv.querySelectorAll("a");
+
+    // remove selected class from filter tags
+    filterTags.forEach(function (item) {
+        if (item.classList.contains("filter-tags-btn-selected")) {
+            item.classList.remove("filter-tags-btn-selected");
+        }
+    });
+
+    // remove selected class from sort buttons
+    sortBtn.forEach(function (item) {
+        if (item.classList.contains("sort-btn-item-selected")) {
+            item.classList.remove("sort-btn-item-selected");
+        }
+    });
+
+    // clear the filterResultText node by setting it to an empty text node
+    const filterResult = document.querySelector("#filter-result");
+    if (filterResult.hasChildNodes()) {
+        filterResult.removeChild(filterResult.firstChild);
+    }
+
+    // remove userFilters from sessionStorage
+    let userFilters = JSON.parse(sessionStorage.getItem('userFilters'));
+    // remove userFilters from sessionStorage
+    userFilters = {
+        parkCity: null,
+        sort: null,
+        tags: {
+            wheelchair: false,
+            photosensitivity: false,
+            serviceAnimal: false,
+            sizeShape: false,
+            childSwap: false,
+        }
+    };
+    // sessionStorage.removeItem("userFilters");
+    sessionStorage.setItem('userFiltersCleared', true); // set userFiltersCleared to true'
+    sessionStorage.setItem('userFilters', JSON.stringify(userFilters));
+    console.log(userFilters);
+
+    // if(!userFilters) {
+    //     let userFilters = {
+    //         parkCity: null,
+    //         sort: null,
+    //         tags: {
+    //             wheelchair: false,
+    //             photosensitivity: false,
+    //             serviceAnimal: false,
+    //             sizeShape: false,
+    //             childSwap: false,
+    //         }
+    //     };
+    //     console.log(userFilters);
+    // }
+
+}
+
 // function searchRides(data) {
 //     const searchRides = document.getElementById('search-for-rides');
 //     const searchResultsContainer = document.getElementById("search-results-container");
@@ -307,7 +373,7 @@ function search(data) {
             const filteredParks = data.filter(park => {
                 // console.log(park);
                 console.log(searchFilters);
-                if (searchFilters) {
+                if (searchFilters != undefined && searchFilters) {
 
                     //Tag Object
                     let searchTags = searchFilters.tags
@@ -404,6 +470,7 @@ function search(data) {
                         let childSwapTag = searchFilters.tags.childSwap;
                         console.log(childSwapTag);
 
+                        console.log(ride.accessibility.photosensitivity);
 
                         if(ride.accessibility.wheelchair === true && wheelchairTag === true) {
                             const result = document.importNode(template.content, true);
@@ -506,7 +573,7 @@ function search(data) {
                             searchResultsContainer.appendChild(result);
 
                             console.log("child swap");
-                        } else {
+                        } else if (wheelchairTag === false && photosensitivityTag === false && serviceAnimalTag === false && sizeShapeTag === false && childSwapTag === false) {
                             const result = document.importNode(template.content, true);
                             const rideImg = result.querySelector(".list-ride-img");
                             const rideLocation = result.querySelector(".list-ride-location");
@@ -526,7 +593,8 @@ function search(data) {
 
                             searchResultsContainer.appendChild(result);
 
-                            console.log("child swap");
+                            console.log("no tags");
+
                         }
 
                     } else {
@@ -549,7 +617,7 @@ function search(data) {
 
                         searchResultsContainer.appendChild(result);
 
-                        console.log("child swap");
+                        console.log("No Filters Selected");
                     }
                     
                         
