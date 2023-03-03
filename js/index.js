@@ -303,10 +303,7 @@ function search(data) {
             // if (searchFilters){
                 
             // };
-            
-
-            
-
+        
             const filteredParks = data.filter(park => {
                 // console.log(park);
                 console.log(searchFilters);
@@ -623,7 +620,21 @@ function search(data) {
         searchParks.addEventListener('input', () => {
             const searchValue = searchParks.value.toLowerCase();
             const filteredParks = data.filter(park => {
-                return park.name.toLowerCase().includes(searchValue);
+                if (searchFilters.parkCity) {
+                    // only return parks that match the city filter
+                    console.log(park.park);
+                    if (park.location === searchFilters.parkCity) {
+                        console.log(park.location)
+                        console.log(park)
+                        return park.name.toLowerCase().includes(searchValue);
+                    } else if (park.name === searchFilters.parkCity) {
+                        console.log(park.name)
+                        return park.name.toLowerCase().includes(searchValue);
+                    }
+                } else {
+                    return park.name.toLowerCase().includes(searchValue);
+                } 
+                // return park.name.toLowerCase().includes(searchValue);
             });
             // console.log(filteredParks);
             for (let i = 0; i < filteredParks.length; i++) {
@@ -631,12 +642,18 @@ function search(data) {
             }
             // console.log(filteredParks[0].name);
             // console.log(filteredParks);
-        
+            // sort filteredParks by each rides 'rating' property
+            if (searchFilters && searchFilters.sort === "rating") {
+                let parksSorted = filteredParks.sort((a, b) => {
+                    return b.rating - a.rating;
+                });    
+                console.log(parksSorted);
+            }
             searchResultsContainer.innerHTML = "";
 
             filteredParks.forEach((ride) => {
                 if (ride.height === undefined) {
-                    console.log(ride);  
+                    // console.log(ride);  
                 } else {
                     const result = document.importNode(template.content, true);
                     const rideImg = result.querySelector(".parks-list-img");
