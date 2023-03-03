@@ -1184,11 +1184,18 @@ if (navLogo) {
 // if filter-icon is clicked, go to searchfilters.html
 document.addEventListener('DOMContentLoaded', function() {
     const filterIcon = document.querySelector('.filter-icon');
+    const filterParksIcon = document.querySelector('.filter-parks-icon');
 
-    if (filterIcon) {
+    if (filterIcon && !filterParksIcon) {
         filterIcon.addEventListener('click', function() {
         window.location.href = 'searchfilters.html';
+        sessionStorage.setItem('filteringParks', 'false');
         }); 
+    } else if (filterParksIcon) {
+        filterParksIcon.addEventListener('click', function() {
+        sessionStorage.setItem('filteringParks', 'true');
+        window.location.href = 'searchfilters.html';
+        });
     } else {
         console.log('filter icon is not present');
     }

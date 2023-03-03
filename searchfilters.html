@@ -354,7 +354,21 @@
                 });
             });
             
+            sessionStorage.getItem("filteringParks");
+            console.log(sessionStorage.getItem("filteringParks"));
 
+            const tagsDiv = document.querySelector(".tags-div");
+            const tagsDivHr = document.querySelector(".tags-div-hr");
+
+            if (sessionStorage.getItem("filteringParks") == "true") {
+                // remove the div with the class tags-div
+                tagsDivHr.remove();
+                tagsDiv.remove();
+                console.log("Tags removed")
+                
+            } else {
+                console.log("Previous page was not the Parks page");
+            }
 
         });
 
@@ -440,7 +454,7 @@
             </div> -->
         </div>
 
-        <hr>
+        <hr class="tags-div-hr">
         
         <!--Tags Section-->
         <div class="tags-div">
