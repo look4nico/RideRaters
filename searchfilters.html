@@ -96,6 +96,7 @@
                     console.log("userFilters was set in sessionStorage");
                 } else {
                     sessionStorage.setItem("userFilters", JSON.stringify(userFilters));
+                    history.back();
                 }
                 
                 console.log(userFilters);
