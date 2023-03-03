@@ -333,7 +333,7 @@ function runFanFavorite() {
 
 }
 
-
+// function to get fan favorite data
 function fanFavorite(data) {
     const fanFavContainer = document.getElementById("fan-results-container");
     const template = document.getElementById("fan-result-template");
@@ -362,6 +362,33 @@ function fanFavorite(data) {
             fanFavContainer.appendChild(result);
             console.log("photosensitivity");
         });
+
+        // Added  this for button listener for going to the ride page on img click
+        const fanRideImg = document.querySelectorAll('.fan-fav-img');
+        if (fanRideImg) {
+            fanRideImg.forEach(function(element) {
+                element.addEventListener('click', function() {
+                    console.log(element);
+                    ridePageRendered(element);
+                    window.location.href = 'ridepage.html';
+                });
+            });
+        } else {
+            console.log('list ride image is not present');
+        }
+
+        // Added  this for button listener to add ride to list
+        const addRideListBtn = document.querySelectorAll('.add-ride-list-btn');
+        if (addRideListBtn) {
+            addRideListBtn.forEach(function(element) {
+                element.addEventListener('click', function() {
+                    window.location.href = 'addridepage.html';
+                });
+            });
+        } else {
+            console.log('add ride list button is not present');
+        }
+
     }
 }
 
@@ -1642,11 +1669,29 @@ function parkPageImgRendered(img) {
     sessionStorage.setItem('parkPageSelected', JSON.stringify(parkPageSelected));
 }
 
+function addRide2List(btn) {
+    console.log(btn);
+    const rideName = btn.parentElement.nextElementSibling.children[0].children[1].innerText;
+    console.log(rideName);
+    // console.log(parksData);
+    console.log(ridesData);
+    
+    const selectedRide = ridesData.find(ride => ride.name === rideName);
+    console.log(selectedRide);
+    
+    addedListRide = [];
+    addedListRide.push(selectedRide);
+
+    // clear the parkPageSelected session storage item
+    sessionStorage.setItem('addedListRide', JSON.stringify(addedListRide));
+}
+
 // Function that renders the ride page on img click
 function ridePageRendered(img) {
     
     sessionStorage.removeItem('ridePageSelected');
     if (img.className === 'list-ride-img') {
+        console.log(img);
         const rideName = img.parentElement.nextElementSibling.children[0].children[1].innerText;
         console.log(rideName);
         // console.log(parksData);
@@ -1660,7 +1705,23 @@ function ridePageRendered(img) {
     
         // clear the parkPageSelected session storage item
         sessionStorage.setItem('ridePageSelected', JSON.stringify(ridePageSelected));
+    } else if (img.className === 'fan-fav-img') {
+        console.log(img);
+        const rideName = img.nextElementSibling.nextElementSibling.children[0].innerText;
+        console.log(rideName);
+        // console.log(parksData);
+        console.log(ridesData);
+        
+        const selectedRide = ridesData.find(ride => ride.name === rideName);
+        console.log(selectedRide);
+        
+        ridePageSelected = [];
+        ridePageSelected.push(selectedRide);
+    
+        // clear the parkPageSelected session storage item
+        sessionStorage.setItem('ridePageSelected', JSON.stringify(ridePageSelected));
     } else {
+        console.log(img);        
         const rideName = img.nextElementSibling.nextElementSibling.innerText;
         console.log(rideName);
         // console.log(parksData);
