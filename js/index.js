@@ -358,11 +358,11 @@ function fanFavorite(data) {
             accessRating.textContent = ride.rating;
             location.textContent = ride.rating;
             itemCity.textContent = ride.location;
-
+            
             fanFavContainer.appendChild(result);
             console.log("photosensitivity");
         });
-
+        
         // Added  this for button listener for going to the ride page on img click
         const fanRideImg = document.querySelectorAll('.fan-fav-img');
         if (fanRideImg) {
@@ -379,6 +379,7 @@ function fanFavorite(data) {
 
         // Added  this for button listener to add ride to list
         const addRideListBtn = document.querySelectorAll('.add-ride-list-btn');
+        console.log(addRideListBtn);
         if (addRideListBtn) {
             addRideListBtn.forEach(function(element) {
                 element.addEventListener('click', function() {
@@ -388,8 +389,115 @@ function fanFavorite(data) {
         } else {
             console.log('add ride list button is not present');
         }
+        
+        const homePageItems = document.querySelectorAll('.fa-universal-access');
+      // if an item moves past the view port, change the dot to active
+        console.log(homePageItems);
+        // homePageItems.forEach(item => {
+        // console.log(item);
+
+        const homePageDots = document.querySelectorAll('.scroll-dot')
+        console.log(homePageDots);
+
+        for (let i = 0; i < homePageItems.length; i++) {
+            console.log(homePageItems[i]);
+            // add a class to each homePageItems item using the index
+            homePageItems[i].id = ("dot-" + i);
+
+            // homePageItems.classList.add("dot-[i]");
+        }
+        // });
+        const observer = new IntersectionObserver(entries => {
+            console.log(entries[0].target);
+            if (entries[0].target.className === "dot-one") {
+                console.log("dot one");
+            }
+        entries.forEach(entry => {
+            if (entry.intersectionRatio > 0 && entry.intersectionRatio < 1) {
+            console.log("item is in view port");
+                entry.target.parentElement.parentElement.parentElement.parentElement.style.backgroundColor = "red";
+                if (entry.target.parentElement.parentElement.parentElement.parentElement.style.backgroundColor = "red") {
+                console.log("Item is red!!!!!")
+                console.log(entry.target.id)
+                    if(entry.target.id === "dot-0"){
+                        console.log("dot one");
+                        homePageDots[0].classList.add("fa-solid");
+                        homePageDots[0].classList.remove("fa-regular");
+                    } else if (entry.target.id === "dot-1") {
+                        homePageDots[1].classList.add("fa-solid");
+                        homePageDots[1].classList.remove("fa-regular");
+                    } else if (entry.target.id === "dot-2") {
+                        homePageDots[2].classList.add("fa-solid");
+                        homePageDots[2].classList.remove("fa-regular");
+                    } else if (entry.target.id === "dot-3") {
+                        homePageDots[3].classList.add("fa-solid");
+                    }
+                }
+            //console.log the index of the item
+            console.log(entry.target);
+            } else if (entry.intersectionRatio === 1) {
+                entry.target.parentElement.parentElement.parentElement.parentElement.style.backgroundColor = "red";
+                console.log(entry.target.className)
+                if(entry.target.id === "dot-0"){
+                        console.log("dot one");
+                        homePageDots[0].classList.add("fa-solid");
+                        homePageDots[0].classList.remove("fa-regular");
+                    }    
+                
+            } else {
+                console.log("item moved past view port");
+                entry.target.parentElement.parentElement.parentElement.parentElement.style.backgroundColor = "blue";
+                if (entry.target.parentElement.parentElement.parentElement.parentElement.style.backgroundColor = "blue") {
+                console.log("Item is blue!!!!!")
+                    if(entry.target.id === "dot-0"){
+                        console.log("dot one");
+                        homePageDots[0].classList.remove("fa-solid");
+                        homePageDots[0].classList.add("fa-regular");
+                    } else if (entry.target.id === "dot-1") {
+                        homePageDots[1].classList.remove("fa-solid");
+                        homePageDots[1].classList.add("fa-regular");
+                    } else if (entry.target.id === "dot-2") {
+                        homePageDots[2].classList.remove("fa-solid");
+                        homePageDots[2].classList.add("fa-regular");
+                    } else if (entry.target.id === "dot-3") {
+                        homePageDots[3].classList.remove("fa-solid");
+                        homePageDots[3].classList.add("fa-regular");
+                    }
+                }
+                }
+            });
+            });
+
+            // observe all the homePageItems
+            homePageItems.forEach(item => {
+            observer.observe(item);
+            
+        });
+
 
     }
+}
+
+function moveHomeDots(){
+        const homePageItems = document.querySelectorAll('.fan-fav-item');
+      // if an item moves past the view port, change the dot to active
+        console.log(homePageItems);
+        homePageItems.forEach(item => {
+            if (item.getBoundingClientRect().left < 0) {
+                console.log("item moved past view port")
+            } else {
+                console.log("item is in view port")
+            }
+        });
+
+      
+      
+      // if (homePageItems[0].getBoundingClientRect().left < 0) {
+        //     console.log("item moved past view port")
+        // } else if (homePageItems[1].getBoundingClientRect().left < 0) {
+        //     homeDots[1].classList.remove('active');
+        //     homeDots[2].classList.add('active');
+        // }
 }
 
 // Search Function for Parks or Rides
@@ -1668,6 +1776,8 @@ function parkPageImgRendered(img) {
     // clear the parkPageSelected session storage item
     sessionStorage.setItem('parkPageSelected', JSON.stringify(parkPageSelected));
 }
+
+
 
 function addRide2List(btn) {
     console.log(btn);
