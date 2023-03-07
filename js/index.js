@@ -133,18 +133,6 @@ function searchRidesAndParks(data) {
                 console.log('add ride list button is not present');
             }
 
-            // // Adds event listeners to view rides button
-            // const viewParkBtn = document.querySelectorAll('.view-park-page');
-            // if (viewParkBtn) {
-            //     viewParkBtn.forEach(function(element) {
-            //         element.addEventListener('click', function() {
-            //             // Page gets rendered with park info
-            //             window.location.href = 'parkpage.html';
-            //         });
-            //     });
-            // } else {
-            //     console.log('View Rides button is not present');
-            // }
 
             // Enables user to click on park button to go to ride page
             const parkViewRidesBtnDiv = document.querySelectorAll('.view-park-page');
@@ -242,90 +230,32 @@ function clearFilters() {
     sessionStorage.setItem('userFilters', JSON.stringify(userFilters));
     console.log(userFilters);
 
-    // if(!userFilters) {
-    //     let userFilters = {
-    //         parkCity: null,
-    //         sort: null,
-    //         tags: {
-    //             wheelchair: false,
-    //             photosensitivity: false,
-    //             serviceAnimal: false,
-    //             sizeShape: false,
-    //             childSwap: false,
-    //         }
-    //     };
-    //     console.log(userFilters);
-    // }
+  
+}
+
+function returnClearFilters() {
+    // remove userFilters from sessionStorage
+    let userFilters = JSON.parse(sessionStorage.getItem('userFilters'));
+    // remove userFilters from sessionStorage
+    userFilters = {
+        parkCity: null,
+        sort: null,
+        tags: {
+            wheelchair: false,
+            photosensitivity: false,
+            serviceAnimal: false,
+            sizeShape: false,
+            childSwap: false,
+        }
+    };
+    // sessionStorage.removeItem("userFilters");
+    sessionStorage.setItem('userFiltersCleared', true); // set userFiltersCleared to true'
+    sessionStorage.setItem('userFilters', JSON.stringify(userFilters));
+    console.log(userFilters);
 
 }
 
-// function searchRides(data) {
-//     const searchRides = document.getElementById('search-for-rides');
-//     const searchResultsContainer = document.getElementById("search-results-container");
-//     const template = document.getElementById("search-result-template");
-    
-//     if (searchRides) {
-//         searchRides.addEventListener('input', () => {
-//             const searchValue = searchRides.value.toLowerCase();
-//             const filteredParks = data.filter(park => {
-//                 return park.name.toLowerCase().includes(searchValue);
-//             });
-//             // console.log(filteredParks);
-//             // console.log(filteredParks[0].name);
-//             // console.log(filteredParks);
-        
-//             searchResultsContainer.innerHTML = "";
 
-//             filteredParks.forEach((ride) => {
-//             const result = document.importNode(template.content, true);
-//             const rideImg = result.querySelector(".list-ride-img");
-//             const rideLocation = result.querySelector(".list-ride-location");
-//             const rideName = result.querySelector(".list-ride-name");
-//             const userRating = result.querySelector(".user-rating-txt");
-//             const accessRating = result.querySelector(".access-rating-txt");
-//             const location = result.querySelector(".proxima-regular");
-//             const itemCity = result.querySelector(".ride-city");
-            
-//             rideImg.src = ride.img;
-//             rideLocation.textContent = ride.park;
-//             rideName.textContent = ride.name;
-//             userRating.textContent = ride.rating;
-//             accessRating.textContent = ride.rating;
-//             location.textContent = ride.rating;
-//             itemCity.textContent = ride.location;
-
-//             searchResultsContainer.appendChild(result);
-//             });
-
-//             // Added  this for button listener to add ride to compare list
-//             const buttons = document.querySelectorAll('.add-ride-compare-btn');
-//             buttons.forEach(button => {
-//                 if (!button.hasEventListener) {
-//                     button.addEventListener('click', () => {
-//                         console.log("event listener added");
-//                         handleClick(button);
-//                     });
-//                     button.hasEventListener = true;
-//                 }
-//             });
-
-//             // Adds event listeners to add ride button on search results to add ride page
-//             // not present on compare page
-//             const addRideListBtn = document.querySelectorAll('.add-ride-list-btn');
-//             if (addRideListBtn) {
-//                 addRideListBtn.forEach(function(element) {
-//                     element.addEventListener('click', function() {
-//                         window.location.href = 'addridepage.html';
-//                     });
-//                 });
-//             } else {
-//                 console.log('add ride list button is not present');
-//             }
-
-    
-//         }); 
-//     }
-// };
 
 
 // Fan Favorite Function
@@ -1361,41 +1291,30 @@ document.addEventListener('DOMContentLoaded', function() {
 //create evemt listener for back arrow
 document.addEventListener('DOMContentLoaded', function() {
     const backArrow = document.querySelector('.header-arrow');
+    const filtersBackArrow = document.querySelector('.filters-header-arrow');
+    const searchPageBackArrow = document.querySelector('.search-page-header');
     // check if the back arrow is present on the page
     if (backArrow) { 
         console.log('back arrow is present');
         backArrow.addEventListener('click', function() {
             history.back();
         });
+    } else if (searchPageBackArrow) {
+        console.log('search page back arrow is present');
+        searchPageBackArrow.addEventListener('click', function() {
+            returnClearFilters();
+            history.back();
+        });
+    } else if(filtersBackArrow){
+        console.log('filter back arrow is present');
+        // filtersBackArrow.addEventListener('click', function() {
+        //     history.back();
+        // });
     } else {
         console.log('back arrow is not present');
     }
 });
 
-// // create event listener for thumbs-up-review button
-// document.addEventListener('DOMContentLoaded', function() {
-//     const thumbsDownReview = document.querySelectorAll('.thumbs-down-review');
-//     if (thumbsDownReview) {
-//         thumbsDownReview.forEach(function(thumbsDownReview) {
-//             thumbsDownReview.addEventListener('click', function() {
-//                 thumbsDownReview.children[0].style.color = '#8E6CAF';
-//             });
-//         });
-//     } else {
-//         console.log('thumbs down review button is not present');
-//     };
-
-//     const thumbsUpReview = document.querySelectorAll('.thumbs-up-review');
-//     if (thumbsUpReview) {
-//         thumbsUpReview.forEach(function(thumbsUpReview) {
-//             thumbsUpReview.addEventListener('click', function() {
-//                 thumbsUpReview.children[0].style.color = '#8E6CAF';
-//             });
-//         });
-//     } else {
-//         console.log('thumbs up review button is not present');
-//     };
-// });
 
 // create event listener for user-review-rating-div that allows users to choose between thumbs-up-review button and thumbs-down-review button 
 

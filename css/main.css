@@ -731,7 +731,7 @@ span {
     margin: 0.7em 0em 5.2em 0em;
 }
 
-.header-arrow {
+.header-arrow, .filters-header-arrow, .search-page-header {
     position: relative;
     top: 2.4em;
     left: 1.6em;
