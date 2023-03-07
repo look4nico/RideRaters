@@ -413,7 +413,7 @@ function fanFavorite(data) {
                 console.log("dot one");
             }
         entries.forEach(entry => {
-            if (entry.intersectionRatio > 0 && entry.intersectionRatio < 1) {
+            if (entry.intersectionRatio > 0 && entry.intersectionRatio < 2) {
             console.log("item is in view port");
                 entry.target.parentElement.parentElement.parentElement.parentElement.style.backgroundColor = "red";
                 if (entry.target.parentElement.parentElement.parentElement.parentElement.style.backgroundColor = "red") {
@@ -421,16 +421,40 @@ function fanFavorite(data) {
                 console.log(entry.target.id)
                     if(entry.target.id === "dot-0"){
                         console.log("dot one");
-                        homePageDots[0].classList.add("fa-solid");
                         homePageDots[0].classList.remove("fa-regular");
+                        homePageDots[0].classList.add("fa-solid");
+                        homePageDots[1].classList.remove("fa-solid");
+                        homePageDots[2].classList.remove("fa-solid");
+                        homePageDots[3].classList.remove("fa-solid");
+                        homePageDots[1].classList.add("fa-regular");
+                        homePageDots[2].classList.add("fa-regular");
+                        homePageDots[3].classList.add("fa-regular");
                     } else if (entry.target.id === "dot-1") {
-                        homePageDots[1].classList.add("fa-solid");
                         homePageDots[1].classList.remove("fa-regular");
+                        homePageDots[1].classList.add("fa-solid");
+                        homePageDots[0].classList.remove("fa-solid");
+                        homePageDots[2].classList.remove("fa-solid");
+                        homePageDots[3].classList.remove("fa-solid");
+                        homePageDots[0].classList.add("fa-regular");
+                        homePageDots[2].classList.add("fa-regular");
+                        homePageDots[3].classList.add("fa-regular");
                     } else if (entry.target.id === "dot-2") {
-                        homePageDots[2].classList.add("fa-solid");
                         homePageDots[2].classList.remove("fa-regular");
+                        homePageDots[2].classList.add("fa-solid");
+                        homePageDots[1].classList.remove("fa-solid");
+                        homePageDots[0].classList.remove("fa-solid");
+                        homePageDots[3].classList.remove("fa-solid");
+                        homePageDots[0].classList.add("fa-regular");
+                        homePageDots[1].classList.add("fa-regular");
+                        homePageDots[3].classList.add("fa-regular");
                     } else if (entry.target.id === "dot-3") {
                         homePageDots[3].classList.add("fa-solid");
+                        homePageDots[1].classList.remove("fa-solid");
+                        homePageDots[2].classList.remove("fa-solid");
+                        homePageDots[0].classList.remove("fa-solid");
+                        homePageDots[0].classList.add("fa-regular");
+                        homePageDots[2].classList.add("fa-regular");
+                        homePageDots[1].classList.add("fa-regular");
                     }
                 }
             //console.log the index of the item
