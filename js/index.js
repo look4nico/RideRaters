@@ -415,8 +415,9 @@ function fanFavorite(data) {
         entries.forEach(entry => {
             if (entry.intersectionRatio > 0 && entry.intersectionRatio < 2) {
             console.log("item is in view port");
-                entry.target.parentElement.parentElement.parentElement.parentElement.style.backgroundColor = "red";
-                if (entry.target.parentElement.parentElement.parentElement.parentElement.style.backgroundColor = "red") {
+                entry.target.parentElement.parentElement.parentElement.parentElement.classList.remove("item-outside-viewport");
+                entry.target.parentElement.parentElement.parentElement.parentElement.classList.add("item-inside-viewport");
+                if (entry.target.parentElement.parentElement.parentElement.parentElement.classList.contains("item-inside-viewport")) {
                 console.log("Item is red!!!!!")
                 console.log(entry.target.id)
                     if(entry.target.id === "dot-0"){
@@ -460,7 +461,8 @@ function fanFavorite(data) {
             //console.log the index of the item
             console.log(entry.target);
             } else if (entry.intersectionRatio === 1) {
-                entry.target.parentElement.parentElement.parentElement.parentElement.style.backgroundColor = "red";
+                entry.target.parentElement.parentElement.parentElement.parentElement.classList.remove("item-outside-viewport");
+                entry.target.parentElement.parentElement.parentElement.parentElement.classList.add("item-inside-viewport");
                 console.log(entry.target.className)
                 if(entry.target.id === "dot-0"){
                         console.log("dot one");
@@ -470,8 +472,9 @@ function fanFavorite(data) {
                 
             } else {
                 console.log("item moved past view port");
-                entry.target.parentElement.parentElement.parentElement.parentElement.style.backgroundColor = "blue";
-                if (entry.target.parentElement.parentElement.parentElement.parentElement.style.backgroundColor = "blue") {
+                entry.target.parentElement.parentElement.parentElement.parentElement.classList.remove("item-inside-viewport");
+                entry.target.parentElement.parentElement.parentElement.parentElement.classList.add("item-outside-viewport");
+                if (entry.target.parentElement.parentElement.parentElement.parentElement.classList.contains("item-outside-viewport")) {
                 console.log("Item is blue!!!!!")
                     if(entry.target.id === "dot-0"){
                         console.log("dot one");
