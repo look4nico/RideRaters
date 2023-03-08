@@ -256,8 +256,6 @@ function returnClearFilters() {
 }
 
 
-
-
 // Fan Favorite Function
 function runFanFavorite() {
 
@@ -1372,22 +1370,41 @@ if (navLogo) {
 document.addEventListener('DOMContentLoaded', function() {
     const filterIcon = document.querySelector('.filter-icon');
     const filterParksIcon = document.querySelector('.filter-parks-icon');
+    const filterCompareIcon = document.querySelector('.filter-compare-icon');
 
-    if (filterIcon && !filterParksIcon) {
+    if (filterIcon && !filterParksIcon && !filterCompareIcon) {
         filterIcon.addEventListener('click', function() {
         window.location.href = 'searchfilters.html';
         sessionStorage.setItem('filteringParks', 'false');
+        sessionStorage.setItem('filteringCompare', 'false');
         }); 
     } else if (filterParksIcon) {
         filterParksIcon.addEventListener('click', function() {
         sessionStorage.setItem('filteringParks', 'true');
+        sessionStorage.setItem('filteringCompare', 'false');
         window.location.href = 'searchfilters.html';
+        });
+    } else if (filterCompareIcon) {
+        filterIcon.addEventListener('click', function() {
+        window.location.href = 'searchfilters.html';
+        sessionStorage.setItem('filteringCompare', 'true');
+        sessionStorage.setItem('filteringParks', 'false');
         });
     } else {
         console.log('filter icon is not present');
     }
 } );
 
+document.addEventListener('DOMContentLoaded', function() {
+    const iconTextContainer = document.querySelectorAll('.icon-text-container');
+    if (iconTextContainer) {
+        iconTextContainer.forEach(function(iconTextContainer) {
+            iconTextContainer.addEventListener('click', function() {
+                returnClearFilters();
+            });
+    }); }
+
+});
 //when the first icon-text-container element in side the icon-container div is clicked, go to home.html
 //Home Icon Page Navigation
 document.addEventListener('DOMContentLoaded', function() {
@@ -1397,6 +1414,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let homeIcon = document.querySelector('.icon-container').children[0];
         console.log('home icon is present');
         homeIcon.addEventListener('click', function() {
+            returnClearFilters();
             window.location.href = 'home.html';
         });
     } else {
@@ -1413,6 +1431,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let profileIcon = document.querySelector('.icon-container').children[1];
         console.log('profile icon is present');
         profileIcon.addEventListener('click', function() {
+            returnClearFilters();
             window.location.href = 'profile.html';
         });
     } else {
@@ -1429,6 +1448,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let compareIcon = document.querySelector('.icon-container').children[2];
         console.log('compare icon is present');
         compareIcon.addEventListener('click', function() {
+            returnClearFilters();
             window.location.href = 'comparerides.html';
         });
     } else {

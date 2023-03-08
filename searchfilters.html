@@ -26,21 +26,26 @@
             filterPageArrow.addEventListener("click", function (event) {
                 console.log("The search filter page arrow was clicked!");
                 
-                if (sessionStorage.setItem("userFilters", JSON.stringify(userFilters))){
-                    console.log("userFilters was set in sessionStorage");
-                    history.back();
+                console.log("userFilters was set in sessionStorage");
+            
+                sessionStorage.setItem("userFilters", JSON.stringify(userFilters));
+                if (sessionStorage.getItem("filteringParks") == "true") {
+                    window.location.href = "parkspage.html";
+                } else if(sessionStorage.getItem("filteringCompare") == "true") {
+                    window.location.href = "comparerides.html";
                 } else {
-                    sessionStorage.setItem("userFilters", JSON.stringify(userFilters));
-                    history.back();
-                }
+                    window.location.href = "ridespage.html";
+
+                }         
+             
                 
                 console.log(userFilters);
 
             });
             
             let userFilters = JSON.parse(sessionStorage.getItem('userFilters')) || {
-                parkCity: "",
-                sort: "",
+                parkCity: null,
+                sort: null,
                 tags: {
                     wheelchair: false,
                     photosensitivity: false,
