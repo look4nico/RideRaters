@@ -7,7 +7,7 @@
         <script src="https://kit.fontawesome.com/a919c172a1.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/main.css">
         <title>RideRaters</title>
-        <script src="js/index.js"></script>
+        <script src="js/index.js?v=2"></script>
 
     </head>
     <body style="background-color:black; color: white;">
@@ -36,9 +36,9 @@
                 <label for="oldpass">OLD PASSWORD</label><br>
                 <input type="password" id="pwd" name="pwd" minlength="8">
                 <label for="newpass">NEW PASSWORD</label><br>
-                <input type="password" id="pwd" name="pwd" minlength="8">
+                <input type="password" id="newpwd1" name="newpwd1" minlength="8">
                 <label for="confirmpass">CONFIRM PASSWORD</label><br>
-                <input type="password" id="pwd" name="pwd" minlength="8">
+                <input type="password" id="newpwd2" name="newpwd2" minlength="8">
                 <!--Login Form: Bottom Options-->
                 <div class="resetpass-eyes">
                     <i class="fa-solid fa-eye-slash show-pwd eye-top"></i>
@@ -46,10 +46,10 @@
                     <i class="fa-solid fa-eye-slash show-pwd eye-btm"></i>
                 </div>
                 <!------------------------------->
-
+ 
                 <!--Update Pass Button Div-->
                 <div class="updatepass-btn-div">
-                        <button onclick="resetPass()" class="login-btn-lg">Update Password</button>
+                        <button onclick="resetPassword(event)" class="login-btn-lg">Update Password</button>
                 </div>
                 <!--------------------->
             </form>
