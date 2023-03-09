@@ -500,8 +500,8 @@ function search(data) {
         
             const filteredParks = data.filter(park => {
                 // console.log(park);
-                console.log(searchFilters);
-                if (searchFilters != undefined && searchFilters) {
+                //console.log(searchFilters);
+                if (searchFilters != undefined && searchFilters && searchFilters.tags != undefined) {
 
                     //Tag Object
                     let searchTags = searchFilters.tags
@@ -577,7 +577,7 @@ function search(data) {
             filteredParks.forEach((ride) => {
                 // skip if ride.height is undefined
                 if (ride.height === undefined) {
-                    if (searchFilters) {
+                    if (searchFilters != undefined && searchFilters && searchFilters.tags != undefined) {
 
                         console.log(ride.accessibility.photosensitivity)
                         //Tag Object
@@ -2229,7 +2229,17 @@ function reportThanks() {
 }
 
 function newList() { 
-  const profileHead = document.getElementById("profile-header"); 
+
+    const profileHeaderArrow = document.querySelector(".header-arrow");
+    profileHeaderArrow.classList.add("profile-header-arrow");
+    profileHeaderArrow.classList.remove("header-arrow");
+
+    //event listener 
+    profileHeaderArrow.addEventListener("click", function() {
+        window.location.href = "profile.html";
+    });
+
+    const profileHead = document.getElementById("profile-header"); 
   //remove profile header text node
     profileHead.removeChild(profileHead.childNodes[0]);
   //create text node
