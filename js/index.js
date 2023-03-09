@@ -5,7 +5,7 @@ document.head.appendChild(jQueryScript);
 
 
 function login(e) {
-    //delete cookie
+    //delete cookie..
     console.log("login function started ooooooooooooooooooooooooooooooooooooooooooooooooooo");
     e.preventDefault();
 
