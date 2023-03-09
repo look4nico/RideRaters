@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://kit.fontawesome.com/a919c172a1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
     <script src="js/index.js"></script>
@@ -31,328 +31,337 @@
                 style="color: rgb(0, 0, 0);font-size: 2em !important;margin-left: 0.12em;"></i>
         </span>
         <div class="park-ride-title-div">
-            <h1 class="park-ride-page">Gran Fiesta Tour Starring The Three Caballeros</h1>
+            <h1 class="park-ride-page"></h1>
         </div>
     </div>
 
-    <!--Park Ride Image-->
-    <div class="park-ride-img-div">
-        <div class="park-ride-img-btn">
-            <img src="media/imgs/Rides/Despicable-Me-Minion-Mayhem.jpg" alt="" class="park-ride-page-img">
-            
-            <!--Add Ride to List Div-->
-            <div class="add-ride-park-btn-div">
-                <button class="add-ride-park-btn proxima-semibold"><i class="fa-solid fa-circle-plus"></i>Add to List</button>
-            </div>
-        </div>
+    <div id="ride-results-container"></div>
+    
+    <!-- Template for search result item -->
+    <template id="ride-result-template">
 
-    </div>
-
-    <!--Park Ride Info-->
-    <div class="park-ride-info-div">
-        <!--Location Info-->
-        <div class="park-ride-location-div">
-            <i class="fa-solid fa-location-dot"></i>
-            <span class="park-ride-location-txt">
-                <p class="park-ride-themepark proxima-semibold">Universal’s Islands of Adventure</p>
-                <p class="park-ride-city proxima-regular">Orlando, FL</p>
-            </span>
-        </div>
-
-        <!--Ride User Rating-->
-        <div class="park-ride-ratings-div">
-            <!--User Rating-->
-            <div class="ride-user-rating">
-                <span class="fa-stack">
-                    <i class="fa fa-circle fa-stack-2x" style="color: #F4C153;"></i>
-                    <i class="fas fa-star fa-stack-1x"
-                        style="color: rgb(255, 255, 255);"></i>
-                </span>
-                <p class="user-rating-txt proxima-regular">
-                    4.5
-                </p>
-            </div>
-
-            <!--Ride Accessibility Data-->
-            <div class="ride-access-rating">
-                <span class="fa-stack">
-                    <i class="fa fa-circle fa-stack-2x" style="color: rgb(255, 255, 255);"></i>
-                    <i class="fa-solid fa-universal-access fa-stack-2x" style="color: #739CF9;"></i>
-                </span>
-                <p class="access-rating-txt proxima-regular">
-                    4.5
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!--Park Ride Description & Data-->
-    <div class="park-ride-data-div">
-        <!--Ride Description-->
-        <div class="ride-descript-div">
-            <p class="ride-descript-txt proxima-regular">
-                "Take in the sights of Mexico and the antics of 3 feathered amigos on this gentle boat ride through the Mexico
-                Pavilion."
-            </p>
-            <!--Ride Site Link-->
-            <div class="ride-site-link-div">               
-                    <a href="https://disneyworld.disney.go.com/attractions/epcot/gran-fiesta-tour-starring-three-caballeros/" class="ride-site-link proxima-regular"><p>RIDE SITE</p><i class="fa-solid fa-up-right-from-square"></i></a>  
-            </div>
-            <hr class="park-ride-hr">
-            <!--Park Ride Accessibility Data-->
-            <div class="park-ride-access-data-div">
-                <p class="park-ride-access-title proxima-semibold">ACCESSIBILITY</p>
-                <div class="park-ride-access-data">
-                    <button class="access-data-item access-ride-true">
-                        WHEELCHAIR
-                    </button>
-                    <button class="access-data-item access-ride-true">
-                        PHOTOSENSITIVE
-                    </button>
-                    <button class="access-data-item">
-                        SERVICE-ANIMAL
-                    </button>
-                    <button class="access-data-item">
-                        SIZE/SHAPE
-                    </button>
-                    <button class="access-data-item">
-                        CHILD SWAP
-                    </button>
+        <!--Park Ride Image-->
+        <div class="ride-page-img-div park-ride-img-div">
+            <div class="park-ride-img-btn">
+                <img src="media/imgs/Rides/Despicable-Me-Minion-Mayhem.jpg" alt="" class="park-ride-page-img">
+                
+                <!--Add Ride to List Div-->
+                <div class="add-ride-park-btn-div">
+                    <button class="add-ride-park-btn proxima-semibold"><i class="fa-solid fa-circle-plus"></i>Add to List</button>
                 </div>
             </div>
-            <hr class="park-ride-hr">
-            <!--Park Statistics-->
-            <div class="park-ride-stats-div">
-                <p class="park-ride-stats-title proxima-semibold">PARK INFORMATION</p>
-                <div class="park-ride-stat-div">
-                    <div class="park-stat-btn-div">
-                        <button class="ride-stat-item">
+
+        </div>
+
+        <!--Park Ride Info-->
+        <div class="ride-page-info-div park-ride-info-div">
+            <!--Location Info-->
+            <div class="park-ride-location-div">
+                <i class="fa-solid fa-location-dot"></i>
+                <span class="park-ride-location-txt">
+                    <p class="park-ride-themepark proxima-semibold">Universal’s Islands of Adventure</p>
+                    <p class="park-ride-city proxima-regular">Orlando, FL</p>
+                </span>
+            </div>
+
+            <!--Ride User Rating-->
+            <div class="park-ride-ratings-div">
+                <!--User Rating-->
+                <div class="ride-user-rating">
+                    <span class="fa-stack">
+                        <i class="fa fa-circle fa-stack-2x" style="color: #F4C153;"></i>
+                        <i class="fas fa-star fa-stack-1x"
+                            style="color: rgb(255, 255, 255);"></i>
+                    </span>
+                    <p class="user-rating-txt proxima-regular">
+                        4.5
+                    </p>
+                </div>
+
+                <!--Ride Accessibility Data-->
+                <div class="ride-access-rating">
+                    <span class="fa-stack">
+                        <i class="fa fa-circle fa-stack-2x" style="color: rgb(255, 255, 255);"></i>
+                        <i class="fa-solid fa-universal-access fa-stack-2x" style="color: #739CF9;"></i>
+                    </span>
+                    <p class="access-rating-txt proxima-regular">
+                        4.5
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--Park Ride Description & Data-->
+        <div class="ride-page-data-div park-ride-data-div">
+            <!--Ride Description-->
+            <div class="ride-descript-div">
+                <p class="ride-descript-txt proxima-regular">
+                    "Take in the sights of Mexico and the antics of 3 feathered amigos on this gentle boat ride through the Mexico
+                    Pavilion."
+                </p>
+                <!--Ride Site Link-->
+                <div class="ride-site-link-div">               
+                        <a href="https://disneyworld.disney.go.com/attractions/epcot/gran-fiesta-tour-starring-three-caballeros/" class="ride-site-link proxima-regular"><p>RIDE SITE</p><i class="fa-solid fa-up-right-from-square"></i></a>  
+                </div>
+                <hr class="park-ride-hr">
+                <!--Park Ride Accessibility Data-->
+                <div class="park-ride-access-data-div">
+                    <p class="park-ride-access-title proxima-semibold">ACCESSIBILITY</p>
+                    <div class="park-ride-access-data">
+                        <button class="access-data-item access-wheel">
                             WHEELCHAIR
                         </button>
-                        <p class="park-stat-txt proxima-regular">72.7%</p>
-                    </div>
-                    <div class="park-stat-btn-div">
-                        <button class="ride-stat-item">
+                        <button class="access-data-item access-photo">
                             PHOTOSENSITIVE
                         </button>
-                        <p class="park-stat-txt proxima-regular">41 inches</p>
+                        <button class="access-data-item access-animal">
+                            SERVICE-ANIMAL
+                        </button>
+                        <button class="access-data-item access-shape">
+                            SIZE/SHAPE
+                        </button>
+                        <button class="access-data-item access-swap">
+                            CHILD SWAP
+                        </button>
+                    </div>
+                </div>
+                <hr class="park-ride-hr">
+                <!--Park Statistics-->
+                <div class="park-ride-stats-div">
+                    <p class="park-ride-stats-title proxima-semibold">PARK INFORMATION</p>
+                    <div class="park-ride-stat-div">
+                        <div class="park-stat-btn-div">
+                            <button class="ride-stat-item">
+                                WHEELCHAIR
+                            </button>
+                            <p class="park-stat-txt park-wheel proxima-regular">72.7%</p>
+                        </div>
+                        <div class="park-stat-btn-div">
+                            <button class="ride-stat-item">
+                                AVERAGE HEIGHT-LIMIT
+                            </button>
+                            <p class="park-stat-txt park-height proxima-regular">41 inches</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!--User Reviews Div-->
-        <div class="users-reviews-div">
-            <!--User Reviews Title-->
-            <p class="user-reviews-title">
-                USER REVIEWS
-            </p>
+            
+            <!--User Reviews Div-->
+            <div class="users-reviews-div">
+                <!--User Reviews Title-->
+                <p class="user-reviews-title">
+                    USER REVIEWS
+                </p>
 
-            <!--User Reviews Item Div-->
-            <div class="user-review-item-div">
+                <!--User Reviews Item Div-->
+                <div class="user-review-item-div">
+                    
+                    <!--User Reviewer Profile Picture-->
+                    <div class="user-review-pfp-div">     
+                        <img src="media/imgs/Rides/ioa-the-cat-in-the-hat-ride-guests-c.jpg" alt="" class="reviewer-pfp">
+                    </div>
+
+                    <!--User Review Div -->
+                    <div class="user-review-div">
+                        <!--User Reviewer Name-->
+                        <p class="username-review">
+                            Username123
+                        </p>
+
+                        <!--User Review Text-->
+                        <div class="user-review-scroll-div">
+                            <p class="user-review-para proxima-regular">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Aenean nunc justo, porta
+                                eget metus.Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Aenean nunc justo, porta
+                                eget metus.Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Aenean nunc justo, porta
+                                eget metus.
+                            </p>
+                        </div>
+
+                        <!--User Review Rating Div-->
+                        <div class="user-review-rating-div">
+                            <!--Review Rating Thumbs up-->
+                            <div class="thumbs-up-review">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                                <p class="thumbs-up-review-count">5</p>
+                            </div>
+
+                            <!--Review Rating Thumbs down-->
+                            <div class="thumbs-down-review">
+                                <i class="fa-solid fa-thumbs-down"></i>
+                                <p class="thumbs-down-review-count">1</p>
+                            </div>
+
+                            <!--triangle exclamation Icon-->
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                    </div>
+                </div>
+                <hr class="park-ride-hr">
+
+                <!--User Reviews Item Div-->
+                <div class="user-review-item-div">
                 
-                <!--User Reviewer Profile Picture-->
-                <div class="user-review-pfp-div">     
-                    <img src="media/imgs/Rides/ioa-the-cat-in-the-hat-ride-guests-c.jpg" alt="" class="reviewer-pfp">
-                </div>
-
-                <!--User Review Div -->
-                <div class="user-review-div">
-                    <!--User Reviewer Name-->
-                    <p class="username-review">
-                        Username123
-                    </p>
-
-                    <!--User Review Text-->
-                    <div class="user-review-scroll-div">
-                        <p class="user-review-para proxima-regular">
-                            Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Aenean nunc justo, porta
-                            eget metus.Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Aenean nunc justo, porta
-                            eget metus.Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Aenean nunc justo, porta
-                            eget metus.
+                    <!--User Reviewer Profile Picture-->
+                    <div class="user-review-pfp-div">
+                        <img src="media/imgs/Rides/ioa-the-cat-in-the-hat-ride-guests-c.jpg" alt="" class="reviewer-pfp">
+                    </div>
+                
+                    <!--User Review Div -->
+                    <div class="user-review-div">
+                        <!--User Reviewer Name-->
+                        <p class="username-review">
+                            Username123
                         </p>
-                    </div>
-
-                    <!--User Review Rating Div-->
-                    <div class="user-review-rating-div">
-                        <!--Review Rating Thumbs up-->
-                        <div class="thumbs-up-review">
-                            <i class="fa-solid fa-thumbs-up"></i>
-                            <p class="thumbs-up-review-count">5</p>
+                
+                        <!--User Review Text-->
+                        <div class="user-review-scroll-div">
+                            <p class="user-review-para proxima-regular">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Aenean nunc justo, porta
+                                eget metus.Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Aenean nunc justo, porta
+                                eget metus.Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Aenean nunc justo, porta
+                                eget metus.
+                            </p>
                         </div>
-
-                        <!--Review Rating Thumbs down-->
-                        <div class="thumbs-down-review">
-                            <i class="fa-solid fa-thumbs-down"></i>
-                            <p class="thumbs-down-review-count">1</p>
+                
+                        <!--User Review Rating Div-->
+                        <div class="user-review-rating-div">
+                            <!--Review Rating Thumbs up-->
+                            <div class="thumbs-up-review">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                                <p class="thumbs-up-review-count">5</p>
+                            </div>
+                
+                            <!--Review Rating Thumbs down-->
+                            <div class="thumbs-down-review">
+                                <i class="fa-solid fa-thumbs-down"></i>
+                                <p class="thumbs-down-review-count">1</p>
+                            </div>
+                
+                            <!--triangle exclamation Icon-->
+                            <i class="fa-solid fa-triangle-exclamation"></i>
                         </div>
-
-                        <!--triangle exclamation Icon-->
-                        <i class="fa-solid fa-triangle-exclamation"></i>
                     </div>
                 </div>
-            </div>
-            <hr class="park-ride-hr">
+                <hr class="park-ride-hr">
 
-            <!--User Reviews Item Div-->
-            <div class="user-review-item-div">
-            
-                <!--User Reviewer Profile Picture-->
-                <div class="user-review-pfp-div">
-                    <img src="media/imgs/Rides/ioa-the-cat-in-the-hat-ride-guests-c.jpg" alt="" class="reviewer-pfp">
-                </div>
-            
-                <!--User Review Div -->
-                <div class="user-review-div">
-                    <!--User Reviewer Name-->
-                    <p class="username-review">
-                        Username123
-                    </p>
-            
-                    <!--User Review Text-->
-                    <div class="user-review-scroll-div">
-                        <p class="user-review-para proxima-regular">
-                            Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Aenean nunc justo, porta
-                            eget metus.Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Aenean nunc justo, porta
-                            eget metus.Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Aenean nunc justo, porta
-                            eget metus.
+                <!--User Reviews Item Div-->
+                <div class="user-review-item-div">
+                
+                    <!--User Reviewer Profile Picture-->
+                    <div class="user-review-pfp-div">
+                        <img src="media/imgs/Rides/ioa-the-cat-in-the-hat-ride-guests-c.jpg" alt="" class="reviewer-pfp">
+                    </div>
+                
+                    <!--User Review Div -->
+                    <div class="user-review-div">
+                        <!--User Reviewer Name-->
+                        <p class="username-review">
+                            Username123
                         </p>
-                    </div>
-            
-                    <!--User Review Rating Div-->
-                    <div class="user-review-rating-div">
-                        <!--Review Rating Thumbs up-->
-                        <div class="thumbs-up-review">
-                            <i class="fa-solid fa-thumbs-up"></i>
-                            <p class="thumbs-up-review-count">5</p>
+                
+                        <!--User Review Text-->
+                        <div class="user-review-scroll-div">
+                            <p class="user-review-para proxima-regular">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Aenean nunc justo, porta
+                                eget metus.Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Aenean nunc justo, porta
+                                eget metus.Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Aenean nunc justo, porta
+                                eget metus.
+                            </p>
                         </div>
-            
-                        <!--Review Rating Thumbs down-->
-                        <div class="thumbs-down-review">
-                            <i class="fa-solid fa-thumbs-down"></i>
-                            <p class="thumbs-down-review-count">1</p>
+                
+                        <!--User Review Rating Div-->
+                        <div class="user-review-rating-div">
+                            <!--Review Rating Thumbs up-->
+                            <div class="thumbs-up-review">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                                <p class="thumbs-up-review-count">5</p>
+                            </div>
+                
+                            <!--Review Rating Thumbs down-->
+                            <div class="thumbs-down-review">
+                                <i class="fa-solid fa-thumbs-down"></i>
+                                <p class="thumbs-down-review-count">1</p>
+                            </div>
+                
+                            <!--triangle exclamation Icon-->
+                            <i class="fa-solid fa-triangle-exclamation"></i>
                         </div>
-            
-                        <!--triangle exclamation Icon-->
-                        <i class="fa-solid fa-triangle-exclamation"></i>
                     </div>
                 </div>
-            </div>
-            <hr class="park-ride-hr">
-
-            <!--User Reviews Item Div-->
-            <div class="user-review-item-div">
-            
-                <!--User Reviewer Profile Picture-->
-                <div class="user-review-pfp-div">
-                    <img src="media/imgs/Rides/ioa-the-cat-in-the-hat-ride-guests-c.jpg" alt="" class="reviewer-pfp">
-                </div>
-            
-                <!--User Review Div -->
-                <div class="user-review-div">
-                    <!--User Reviewer Name-->
-                    <p class="username-review">
-                        Username123
-                    </p>
-            
-                    <!--User Review Text-->
-                    <div class="user-review-scroll-div">
-                        <p class="user-review-para proxima-regular">
-                            Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Aenean nunc justo, porta
-                            eget metus.Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Aenean nunc justo, porta
-                            eget metus.Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Aenean nunc justo, porta
-                            eget metus.
+                <hr class="park-ride-hr">
+                
+                <!--User Reviews Item Div-->
+                <div class="user-review-item-div">
+                
+                    <!--User Reviewer Profile Picture-->
+                    <div class="user-review-pfp-div">
+                        <img src="media/imgs/Rides/ioa-the-cat-in-the-hat-ride-guests-c.jpg" alt="" class="reviewer-pfp">
+                    </div>
+                
+                    <!--User Review Div -->
+                    <div class="user-review-div">
+                        <!--User Reviewer Name-->
+                        <p class="username-review">
+                            Username123
                         </p>
-                    </div>
-            
-                    <!--User Review Rating Div-->
-                    <div class="user-review-rating-div">
-                        <!--Review Rating Thumbs up-->
-                        <div class="thumbs-up-review">
-                            <i class="fa-solid fa-thumbs-up"></i>
-                            <p class="thumbs-up-review-count">5</p>
+                
+                        <!--User Review Text-->
+                        <div class="user-review-scroll-div">
+                            <p class="user-review-para proxima-regular">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Aenean nunc justo, porta
+                                eget metus.Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Aenean nunc justo, porta
+                                eget metus.Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Aenean nunc justo, porta
+                                eget metus.
+                            </p>
                         </div>
-            
-                        <!--Review Rating Thumbs down-->
-                        <div class="thumbs-down-review">
-                            <i class="fa-solid fa-thumbs-down"></i>
-                            <p class="thumbs-down-review-count">1</p>
+                
+                        <!--User Review Rating Div-->
+                        <div class="user-review-rating-div">
+                            <!--Review Rating Thumbs up-->
+                            <div class="thumbs-up-review">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                                <p class="thumbs-up-review-count">5</p>
+                            </div>
+                
+                            <!--Review Rating Thumbs down-->
+                            <div class="thumbs-down-review">
+                                <i class="fa-solid fa-thumbs-down"></i>
+                                <p class="thumbs-down-review-count">1</p>
+                            </div>
+                
+                            <!--triangle exclamation Icon-->
+                            <i class="fa-solid fa-triangle-exclamation"></i>
                         </div>
-            
-                        <!--triangle exclamation Icon-->
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                    </div>
-                </div>
-            </div>
-            <hr class="park-ride-hr">
-            
-            <!--User Reviews Item Div-->
-            <div class="user-review-item-div">
-            
-                <!--User Reviewer Profile Picture-->
-                <div class="user-review-pfp-div">
-                    <img src="media/imgs/Rides/ioa-the-cat-in-the-hat-ride-guests-c.jpg" alt="" class="reviewer-pfp">
-                </div>
-            
-                <!--User Review Div -->
-                <div class="user-review-div">
-                    <!--User Reviewer Name-->
-                    <p class="username-review">
-                        Username123
-                    </p>
-            
-                    <!--User Review Text-->
-                    <div class="user-review-scroll-div">
-                        <p class="user-review-para proxima-regular">
-                            Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Aenean nunc justo, porta
-                            eget metus.Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Aenean nunc justo, porta
-                            eget metus.Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Aenean nunc justo, porta
-                            eget metus.
-                        </p>
-                    </div>
-            
-                    <!--User Review Rating Div-->
-                    <div class="user-review-rating-div">
-                        <!--Review Rating Thumbs up-->
-                        <div class="thumbs-up-review">
-                            <i class="fa-solid fa-thumbs-up"></i>
-                            <p class="thumbs-up-review-count">5</p>
-                        </div>
-            
-                        <!--Review Rating Thumbs down-->
-                        <div class="thumbs-down-review">
-                            <i class="fa-solid fa-thumbs-down"></i>
-                            <p class="thumbs-down-review-count">1</p>
-                        </div>
-            
-                        <!--triangle exclamation Icon-->
-                        <i class="fa-solid fa-triangle-exclamation"></i>
                     </div>
                 </div>
-            </div>
-            <hr class="park-ride-hr">
+                <hr class="park-ride-hr">
 
-        </div>
+            </div>
 
-        <!--Leave a Review Button Div-->
-        <div class="review-btn-div leave-review-btn">
-            <button onclick="location.href='review.html'" class="contact-btn-lg">
-                <p>Leave a Ride Review</p><i class="fa-solid fa-circle-plus"></i>
-            </button>
-        </div>
-    </div>
+            <!--Leave a Review Button Div-->
+            <div class="review-btn-div leave-review-btn">
+                <button class="contact-btn-lg">
+                    <p>Leave a Ride Review</p><i class="fa-solid fa-circle-plus"></i>
+                </button>
+            </div>
+        </div>    
+
+    </template>
+    <!--Park Ride Image-->
+    
     
     <!------BOTTOM MENU------>
     <footer class="app-footer">

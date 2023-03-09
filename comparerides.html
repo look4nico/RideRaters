@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://kit.fontawesome.com/a919c172a1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
     <script src="js/index.js"></script>
@@ -20,24 +20,36 @@
             document.addEventListener('DOMContentLoaded', function() {
                 const xMark = document.querySelectorAll('.fa-circle-xmark');
             
-                xMark.forEach(function (xMark) {
-                    //rotate the xmark icon by 45 degrees on click and remove the img src of the img element below the xMark icon and if the xMark icon is clicked again, rotate the xMark icon back to 0 degrees and add the img src back to the img element below the xMark icon
-                    xMark.addEventListener('click', function () {
-                        if (xMark.style.transform === 'rotate(45deg)') {
-                            // take the user to the comparerides page
-                            window.location.href = 'comparesearch.html';
-                        } else {
-                            xMark.style.transform = 'rotate(45deg)';
-                            xMark.nextElementSibling.src = '';
-                        }
-                    });
-                });
+                // xMark.forEach(function (xMark) {
+                //     //rotate the xmark icon by 45 degrees on click and remove the img src of the img element below the xMark icon and if the xMark icon is clicked again, rotate the xMark icon back to 0 degrees and add the img src back to the img element below the xMark icon
+                //     // if (xMark.nextElementSibling.src != 'http://127.0.0.1:5500/media/imgs/empty-img.png') {
+                //     //     xMark.style.transform = 'rotate(0deg)';
+                //     //     console.log("the x is ready to be turned");
+                //     // }
+                //     xMark.addEventListener('click', function () {
+                //         // if (xMark.style.transform === 'rotate(0deg)') {
+                //         //     // take the user to the comparerides page
+                //         //     // window.location.href = 'comparesearch.html';
+                //         // } else {
+                //         //     xMark.style.transform = 'rotate(45deg)';
+                //         //     xMark.nextElementSibling.src = 'media/imgs/empty-img.png';
+                //         // }
+                //         if (xMark.style.transform === 'rotate(45deg)') {
+                //             xMark.style.transform = 'rotate(0deg)';
+                //             xMark.nextElementSibling.src = 'media/imgs/empty-img.png';
+                //         // } else {
+                //         //     xMark.style.transform = 'rotate(45deg)';
+                //         //     xMark.nextElementSibling.src = 'media/imgs/empty-img.png';
+                //         }
+                //     });
+                // });
 
 
 
 
 
             });
+            
     </script>
     <title>RideRaters</title>
 </head>
@@ -54,7 +66,7 @@
 
     <!---Header-->
     <div class="page-list-header search-results-page" style="margin-bottom:0.1rem">
-        <span class="fa-stack header-arrow" style="display: flex;">
+        <span class="fa-stack search-page-header" style="display: flex;">
             <i class="fa-regular fa-circle fa-stack-2x"
                 style="color: #000000;font-size: 3em !important;margin-top: -0.15em;"></i>
             <i class="fa-solid fa-arrow-left fa-stack-1x"
@@ -65,8 +77,8 @@
 
     <div class="search-bar-div search-results-bar search-compare-page">
         <i class="fa-solid fa-magnifying-glass fa-xl mag-icon"></i>
-        <input type="text" class="search-bar" placeholder="SEARCH...">
-        <i class="fa-solid fa-sliders fa-2x filter-icon"></i>
+        <input type="text" id="search-for-rides" class="search-bar" placeholder="SEARCH...">
+        <i class="fa-solid fa-sliders fa-2x filter-icon filter-compare-icon"></i>
     </div>
 
     <!--Recent Searches Div-->
@@ -81,6 +93,60 @@
         <!--Search Result Items Div-->
         <div class="search-result-items-div">
 
+            <!-- Container for search results -->
+            <div id="search-results-container"></div>
+            
+            <!-- Template for search result item -->
+            <template id="search-result-template">
+                <div class="Search-result-item">
+                    <!-- Ride Image Div -->
+                    <div class="list-ride-img-div">
+                        <img src="" class="list-ride-img" alt="">
+                    </div>
+                    <!-- Ride Data Div -->
+                    <div class="list-ride-data-div">
+                        <!-- Ride Name and Location Div -->
+                        <div class="list-ride-info-div">
+                            <p class="list-ride-location proxima-semibold"></p>
+                            <p class="list-ride-name proxima-semibold"></p>
+                        </div>
+                        <!-- Ride Ratings Div -->
+                        <div class="list-ride-ratings-div">
+                            <div class="ride-user-rating">
+                                <span class="fa-stack">
+                                    <i class="fa fa-circle fa-stack-2x" style="color: #F4C153;"></i>
+                                    <i class="fas fa-star fa-stack-1x"
+                                        style="color: rgb(255, 255, 255); margin-top: -0.85px; font-size: 0.5rem;"></i>
+                                </span>
+                                <p class="user-rating-txt proxima-regular"></p>
+                            </div>
+                            <div class="ride-access-rating">
+                                <span class="fa-stack">
+                                    <i class="fa fa-circle fa-stack-2x" style="color: rgb(255, 255, 255);"></i>
+                                    <i class="fa-solid fa-universal-access fa-stack-2x" style="color: #739CF9;"></i>
+                                </span>
+                                <p class="access-rating-txt proxima-regular"></p>
+                            </div>
+                        </div>
+                        <!-- Park Location Div -->
+                        <div class="list-ride-location-div">
+                            <i class="fa-solid fa-location-dot" style="color: #FF8B8B;"></i>
+                            <p class="proxima-regular ride-city"></p>
+                        </div>
+                    </div>
+                    <!-- Add Ride to List Div -->
+                    <div class="add-ride-list-btn-div">
+                        <button onclick="addCompare()" class="add-ride-compare-btn proxima-semibold"><i class="fa-solid fa-circle-plus"></i>Add Ride</button>
+                    </div>
+                </div>
+            
+                <!--Ride Item Divider-->
+                <hr class="park-ride-hr">
+            </template>
+
+
+
+
             <!--Search Result Item-->
             <div class="Search-result-item">
                 <!--Ride Image Div-->
@@ -337,7 +403,7 @@
                     <!--Ride Name and Location Div-->
                     <div class="list-ride-info-div">
                         <p class="list-ride-location proxima-semibold">Universal Studios</p>
-                        <p class="list-ride-name proxima-semibold">Despicable Me Minion Mayhem</p>
+                        <p class="list-ride-name proxima-semibold">Last Me Minion Mayhem</p>
                     </div>
                     <!--Ride Ratings Div-->
                     <div class="list-ride-ratings-div">
@@ -385,21 +451,21 @@
             <div class="rides-compared-div">
                 <div class="ride-compared">
                     <i class="fa-solid fa-circle-xmark"></i>
-                    <img src="media/imgs/Rides/Despicable-Me-Minion-Mayhem.jpg" class="ride-compared-img" alt="">
+                    <img src="media/imgs/empty-img.png" class="ride-compared-img" alt="">
                     <p class="ride-compare-num proxima-semibold">1</p>
                 </div>
                 <div class="ride-compared">
                     <i class="fa-solid fa-circle-xmark"></i>
-                    <img src="media/imgs/Rides/Despicable-Me-Minion-Mayhem.jpg" class="ride-compared-img" alt="">
+                    <img src="media/imgs/empty-img.png" class="ride-compared-img" alt="">
                     <p class="ride-compare-num proxima-semibold">2</p>
                 </div>
                 <div class="ride-compared">
                     <i class="fa-solid fa-circle-xmark"></i>
-                    <img src="media/imgs/Rides/Despicable-Me-Minion-Mayhem.jpg" class="ride-compared-img" alt="">
+                    <img src="media/imgs/empty-img.png" class="ride-compared-img" alt="">
                     <p class="ride-compare-num proxima-semibold">3</p>
                 </div>
             </div>
-            <button onclick="" class="compare-btn">
+            <button onclick="ridesAllAdded()" class="compare-btn">
                 <p id="compare-ride-button">COMPARE</p>
             </button>
         </div>

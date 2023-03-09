@@ -64,6 +64,9 @@
 }
 
 .fan-fav-img {
+    width: 5.5em;
+    height: 11.1em;
+    object-fit: cover;
     cursor: pointer;
 }
 
@@ -728,7 +731,7 @@ span {
     margin: 0.7em 0em 5.2em 0em;
 }
 
-.header-arrow {
+.header-arrow, .filters-header-arrow, .search-page-header, .profile-header-arrow {
     position: relative;
     top: 2.4em;
     left: 1.6em;
@@ -1170,6 +1173,7 @@ span {
     border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3em 0.8em 0.3em 0.8em;
+    float: right;
     float: inline-end;
     bottom: 1.45em;
     right: 1.6em;
@@ -1244,6 +1248,7 @@ span {
     border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3em 0.7em 0.3em 0.4em;
+    float: right;
     float: inline-end;
     bottom: 0.3em;
     margin-left: 4em;
@@ -1770,6 +1775,7 @@ display: flex;
     border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3em 0.5em 0.3em 0.5em;
+    float: right;
     float: inline-end;
     margin-left: 1.5rem;
     cursor: pointer;
@@ -1865,12 +1871,22 @@ display: flex;
     display: flex;
 }
 
+.park-rides-div {
+    overflow-y: scroll;
+    max-height: 26vh;
+    padding-top: 0.4rem;
+}
+
 .park-ride-page {
     text-align: center;
     font-size: 2rem;
     line-height: 2.3rem;
     margin: auto;
     max-width: 17rem;
+    min-height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .park-ride-img-div {
@@ -1901,7 +1917,8 @@ display: flex;
     border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3rem 0.7em 0.3em 0.7em;
-    float: inline-end;
+    float: right;
+    float: inline-end;   
     cursor: pointer;
 }
 
@@ -1919,6 +1936,8 @@ display: flex;
     justify-content: center;
     position: relative;
     bottom: 1rem;
+    /* margin-left: 1rem;
+    margin-right: 1rem; */
 }
 
 .park-ride-location-div {
@@ -2177,7 +2196,8 @@ padding-bottom: 1rem;
     border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3em 0.7em 0.3em 0.7em;
-    float: inline-end;
+    float: right;
+    float: inline-end;   
     margin-left: 2rem;
     cursor: pointer;
 }
@@ -2194,6 +2214,7 @@ padding-bottom: 1rem;
     border: solid #707070 2px;
     border-radius: 17px;
     padding: 0.3em 0.7em 0.3em 0.7em;
+    float: right;
     float: inline-end;
     margin-left: 2rem;
     cursor: pointer;
@@ -2444,7 +2465,8 @@ padding-bottom: 1rem;
 .city-dropdown-content {
     display: none;
     margin-right: 2.7rem;
-    margin-top: 6.9rem;
+    margin-top: 8.4rem;
+    /* margin-top: 6.9rem; */
     position: absolute;
     flex-direction: column;
     z-index: 1;
@@ -2633,6 +2655,7 @@ padding-bottom: 1rem;
 
 .search-result-items-div {
     margin-top: 0.2rem;
+    margin-bottom: 5rem;
 }
 
 .Search-result-item {
@@ -2731,6 +2754,7 @@ padding-bottom: 1rem;
     top: 0.6rem;
     left: 1.5rem;
     font-size: 1.2rem;
+    rotate: 45deg;
 }
 
 .ride-compared p {
@@ -2958,6 +2982,7 @@ color: #6D6D6D;
         background-color: pink;
     }
 }
+
 
 @media screen and (max-width: 428px) and (max-height: 926px) {
     
@@ -3646,6 +3671,8 @@ color: #6D6D6D;
     }
 
 }
+
+
 
 @media screen and (max-width: 360px) {
     .welcome-btm-links {

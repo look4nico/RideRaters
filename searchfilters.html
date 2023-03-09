@@ -3,44 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://kit.fontawesome.com/a919c172a1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
     <script src="js/index.js"></script>
     <script>
         
-        function clearFilters() {
-            //on click of clear filters button, remove all selected classes from filter buttons
-            const filterTags = document.querySelectorAll(".filter-tags-btn");
-            const sortBtn = document.querySelectorAll(".sort-btn-item");
-            const filterDropdown = document.querySelectorAll(".filter-item");
-            const cityDropdown = document.querySelector(".city-dropdown-content");
-            const parkDropdown = document.querySelector(".park-dropdown-content");
-            const filterDiv = document.querySelector(".filter-dropdown-div");
-            const dropdownLinks = filterDiv.querySelectorAll("a");
-
-            // remove selected class from filter tags
-            filterTags.forEach(function (item) {
-                if (item.classList.contains("filter-tags-btn-selected")) {
-                    item.classList.remove("filter-tags-btn-selected");
-                }
-            });
-
-            // remove selected class from sort buttons
-            sortBtn.forEach(function (item) {
-                if (item.classList.contains("sort-btn-item-selected")) {
-                    item.classList.remove("sort-btn-item-selected");
-                }
-            });
-
-            // clear the filterResultText node by setting it to an empty text node
-            const filterResult = document.querySelector("#filter-result");
-            if (filterResult.hasChildNodes()) {
-                filterResult.removeChild(filterResult.firstChild);
-            }
-
-        }
-
         // this event listener waits for the DOM to load before running the function
         document.addEventListener("DOMContentLoaded", function () {
             const sortBtn = document.querySelectorAll(".sort-btn-item");
@@ -51,12 +19,112 @@
             const filterDiv = document.querySelector(".filter-dropdown-div");
             const dropdownLinks = filterDiv.querySelectorAll("a");
             const filterResult = document.querySelector("#filter-result");
+            const selectedFilter = document.querySelector("#filter-result-selected");
 
-            // event listener for downdownLinks 
-            // this is for the dropdowns that are inside the filter dropdown
-            // The console.log(item.id) is for testing purposes
-            // the console.log("clicked dropdown link!") is for testing purposes
-            // the cosole.log(item.id) returns the id of the link that was clicked
+            const filterPageArrow = document.querySelector("#search-filters-arrow");
+
+            filterPageArrow.addEventListener("click", function (event) {
+                console.log("The search filter page arrow was clicked!");
+                
+                console.log("userFilters was set in sessionStorage");
+            
+                sessionStorage.setItem("userFilters", JSON.stringify(userFilters));
+                if (sessionStorage.getItem("filteringParks") == "true") {
+                    window.location.href = "parkspage.html";
+                } else if(sessionStorage.getItem("filteringCompare") == "true") {
+                    window.location.href = "comparerides.html";
+                } else {
+                    window.location.href = "ridespage.html";
+
+                }         
+             
+                
+                console.log(userFilters);
+
+            });
+            
+            let userFilters = JSON.parse(sessionStorage.getItem('userFilters')) || {
+                parkCity: null,
+                sort: null,
+                tags: {
+                    wheelchair: false,
+                    photosensitivity: false,
+                    serviceAnimal: false,
+                    sizeShape: false,
+                    childSwap: false,
+                }
+            };
+
+            JSON.parse(sessionStorage.getItem('userFilters'));
+
+            if (JSON.parse(sessionStorage.getItem('userFilters'))) {
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')));
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')).parkCity)
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')).sort)
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')).tags.wheelchair)
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')).tags.photosensitivity)
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')).tags.serviceAnimal)
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')).tags.sizeShape)
+                console.log(JSON.parse(sessionStorage.getItem('userFilters')).tags.childSwap)
+                // if userFilters is not empty, add the selected class to the filter tags
+                if (JSON.parse(sessionStorage.getItem('userFilters')).parkCity) {
+                    let filterResultText = document.createTextNode(JSON.parse(sessionStorage.getItem('userFilters')).parkCity);
+                    if (filterResultText.textContent === "Universal's Islands of Adventure") {
+                        filterResultText.textContent = "UNIVERSAL IOA";
+                    }
+                    // replace filterResultText dashes with spaces
+                    filterResult.appendChild(filterResultText);
+                    filterResult.classList.add("filter-result-selected");
+                };
+                // if userFilters is not empty, add the selected class to the sort buttons
+                if (JSON.parse(sessionStorage.getItem('userFilters')).sort) {
+                    sortBtn.forEach(function (item) {
+                        console.log(item.textContent.toLowerCase());
+                        if(item.textContent.toLowerCase() === JSON.parse(sessionStorage.getItem('userFilters')).sort) {
+                            item.classList.add("sort-btn-item-selected");
+                        } else if(item.id === JSON.parse(sessionStorage.getItem('userFilters')).sort) {
+                            item.classList.add("sort-btn-item-selected");
+                        } else {
+                            console.log("no match");
+                        }
+                    });
+                };
+
+                // Variables for filter tags
+
+                // Wheelchair Variable
+                let wheelchairTag = JSON.parse(sessionStorage.getItem('userFilters')).tags.wheelchair;
+                // Photosensitivity Variable
+                let photosensitivityTag = JSON.parse(sessionStorage.getItem('userFilters')).tags.photosensitivity;
+                // Service Animal Variable
+                let serviceAnimalTag = JSON.parse(sessionStorage.getItem('userFilters')).tags.serviceAnimal;
+                // Size/Shape Variable
+                let sizeShapeTag = JSON.parse(sessionStorage.getItem('userFilters')).tags.sizeShape;
+                // Child Swap Variable
+                let childSwapTag = JSON.parse(sessionStorage.getItem('userFilters')).tags.childSwap;
+
+                // if userFilters is not null, add the selected class to the filter tags
+                if (wheelchairTag || photosensitivityTag || serviceAnimalTag || sizeShapeTag || childSwapTag) {
+                    filterTags.forEach(function (item) {
+                        if (item.id === "wheelchair" && wheelchairTag) {
+                            item.classList.add("filter-tags-btn-selected");
+                        } else if (item.id === "photosensitivity" && photosensitivityTag) {
+                            item.classList.add("filter-tags-btn-selected");
+                        } else if (item.id === "serviceAnimal" && serviceAnimalTag) {
+                            item.classList.add("filter-tags-btn-selected");
+                        } else if (item.id === "sizeShape" && sizeShapeTag) {
+                            item.classList.add("filter-tags-btn-selected");
+                        } else if (item.id === "childSwap" && childSwapTag) {
+                            item.classList.add("filter-tags-btn-selected");
+                        }
+                    });
+        
+                };
+
+            } else {
+                console.log("userFilters Session Storage is empty");
+            }
+            
             dropdownLinks.forEach(function (item) {
                 item.addEventListener("click", function (event) {
                     // clear the filterResultText node by setting it to an empty text node
@@ -67,12 +135,53 @@
                     }
                                     
                     let filterResultText = document.createTextNode(item.id.toUpperCase());
+                    
                     // replace filterResultText dashes with spaces
                     filterResultText.textContent = filterResultText.textContent.replace(/-/g, " ");
                     filterResult.appendChild(filterResultText);
                     filterResult.classList.add("filter-result-selected");
                     console.log("clicked dropdown link!");
                     console.log(item.id);
+                    console.log(filterResultText.textContent);
+                    // console.log(filterResultText.textContent);
+
+                    userFilters;
+                    let disneyTxt = "Disney's ";
+                    if (filterResultText.textContent) {
+                        if (filterResultText.textContent === "UNIVERSAL IOA") {
+                            let filterContent = "Universal's Islands of Adventure";
+                            userFilters.parkCity = filterContent;
+                            console.log(userFilters.parkCity);
+                            console.log(userFilters);
+                        } else if (item.classList.contains("park-city")) {
+                            let cityState = ", FL";
+                            // make every word in filterResultText.textContent lowercase except for the first letter of each word
+                            filterResultText.textContent = filterResultText.textContent.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+                            userFilters.parkCity = filterResultText.textContent + cityState;
+                            console.log(userFilters.parkCity);
+                            console.log(userFilters);
+                            
+                            
+                        } else if (filterResultText.textContent != 'LEGOLAND' && filterResultText.textContent != 'SEAWORLD' && filterResultText.textContent != 'EPCOT' && filterResultText.textContent != 'UNIVERSAL STUDIOS') {
+                            // filterResultText.textContent = filterResultText.textContent.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+                            userFilters.parkCity = disneyTxt + filterResultText.textContent.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+                            console.log(userFilters.parkCity);
+                            console.log(userFilters);
+                        } else if (filterResultText.textContent === "EPCOT"){
+                            userFilters.parkCity = disneyTxt + filterResultText.textContent.toUpperCase();
+                            console.log(userFilters.parkCity);
+                            console.log(userFilters);
+                        } else if (filterResultText.textContent === "SEAWORLD") {
+                            userFilters.parkCity = "SeaWorld";
+                            console.log(userFilters.parkCity);
+                            console.log(userFilters);
+                        } else {
+                            userFilters.parkCity = filterResultText.textContent.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });;
+                            console.log(userFilters.parkCity);
+                            console.log(userFilters);
+                        }
+                    }
+                    
                 });
             });
 
@@ -115,7 +224,7 @@
             })
             
 
-            // event listener that toggles the sort button but only lets you choose one at a time
+            // event listener that toggles the SORT button but only lets you choose one at a time
             sortBtn.forEach(function (item) {
                 item.addEventListener("click", function (event) {
                     console.log("clicked!");
@@ -127,7 +236,22 @@
                             item.classList.remove("sort-btn-item-selected");
                         });
                         item.classList.add("sort-btn-item-selected");
+
+                        console.log(item.textContent);
+                        
+                        userFilters;
+
+                        if (item.textContent) {
+
+                            userFilters.sort = item.textContent.toLowerCase();
+                            if (userFilters.sort === "access rating") {
+                                userFilters.sort = "rating";
+                            }
+                            console.log(userFilters.sort);
+                            console.log(userFilters);
+                        }
                     }
+                    
                 });
             });
 
@@ -140,19 +264,55 @@
                 item.addEventListener("click", function (event) {
                    console.log("clicked!");
                    if (item.classList.contains("filter-tags-btn-selected")) {
-                          item.classList.remove("filter-tags-btn-selected");
+                            item.classList.remove("filter-tags-btn-selected");
+                            
+                            // Declaring the userFilters variable
+                            userFilters;
+                            // Changing the value of the tag to false
+                            if (item.id) {
+                                let tagText = item.id
+                                userFilters.tags[tagText] = false;
+                                console.log(userFilters.tags[tagText]);
+                                console.log(item.id);
+                                console.log(userFilters);
+                            }
                         //   selectRideBtn.classList.add("disabled");
                      } else {
                           item.classList.add("filter-tags-btn-selected");
                         //   selectRideBtn.classList.remove("disabled");
+                        
+                        // Declaring the userFilters variable
+                        userFilters;
+                        // Changing the value of the tag to true
+                        if (item.id) {
+                            let tagText = item.id
+                            userFilters.tags[tagText] = true;
+                            console.log(userFilters.tags[tagText]);
+                            console.log(item.id);
+                            console.log(userFilters);
+                        }
                    }
                 });
             });
             
-             
-            
-             
+            sessionStorage.getItem("filteringParks");
+            console.log(sessionStorage.getItem("filteringParks"));
+
+            const tagsDiv = document.querySelector(".tags-div");
+            const tagsDivHr = document.querySelector(".tags-div-hr");
+
+            if (sessionStorage.getItem("filteringParks") == "true") {
+                // remove the div with the class tags-div
+                tagsDivHr.remove();
+                tagsDiv.remove();
+                console.log("Tags removed")
+                
+            } else {
+                console.log("Previous page was not the Parks page");
+            }
+
         });
+
 
 
     </script>
@@ -171,7 +331,7 @@
 
     <!---Header-->
     <div class="page-list-header review-page-header">
-        <span class="fa-stack header-arrow" style="display: flex;">
+        <span id="search-filters-arrow" class="fa-stack filters-header-arrow" style="display: flex;">
             <i class="fa-regular fa-circle fa-stack-2x"
                 style="color: #000000;font-size: 3em !important;margin-top: -0.15em;"></i>
             <i class="fa-solid fa-arrow-left fa-stack-1x"
@@ -202,9 +362,10 @@
                 </button>
                 <button class="filter-item" id="city">CITY<i class="fa-solid fa-angle-down"></i>
                     <div class="city-dropdown-content">
-                        <a href="#" id="orlando">Orlando</a>
-                        <a href="#" id="lake-buena-vista">Lake Buena Vista</a>
-                        <a href="#" id="tampa">Tampa</a>
+                        <a href="#" class="park-city" id="orlando">Orlando</a>
+                        <a href="#" class="park-city" id="lake-buena-vista">Lake Buena Vista</a>
+                        <a href="#" class="park-city" id="tampa">Tampa</a>
+                        <a href="#" class="park-city" id="winter-haven">Winter Haven</a>
                     </div>
                 </button>
             </div>
@@ -218,13 +379,13 @@
             <p class="sort-by-title-txt">
                 SORT BY
             </p>
-            <div class="sort-by-btn-div">
+            <!-- <div class="sort-by-btn-div">
                 <button class="sort-btn-item">ABC</button>
                 <button class="sort-btn-item">PARK</button>
-            </div>
+            </div> -->
             <div class="sort-by-btn-div">
                 <button class="sort-btn-item">USER RATING</button>
-                <button class="sort-btn-item">ACCESS RATING</button>
+                <button id="rating" class="sort-btn-item">ACCESS RATING</button>
             </div>
             <!-- <div class="sort-by-btn-div">
                 <button class="sort-btn-item">ABC</button>
@@ -234,7 +395,7 @@
             </div> -->
         </div>
 
-        <hr>
+        <hr class="tags-div-hr">
         
         <!--Tags Section-->
         <div class="tags-div">
@@ -242,19 +403,19 @@
                 TAGS
             </p>
             <div class="filter-tags-btn-div">
-                <button class="filter-tags-btn">
+                <button id="wheelchair" class="filter-tags-btn">
                     WHEELCHAIR
                 </button>
-                <button class="filter-tags-btn">
+                <button id="photosensitivity" class="filter-tags-btn">
                     PHOTOSENSITIVE
                 </button>
-                <button class="filter-tags-btn">
+                <button id="serviceAnimal" class="filter-tags-btn">
                     SERVICE-ANIMAL
                 </button>
-                <button class="filter-tags-btn">
+                <button id="sizeShape" class="filter-tags-btn">
                     SIZE/SHAPE
                 </button>
-                <button class="filter-tags-btn">
+                <button id="childSwap" class="filter-tags-btn">
                     CHILD SWAP
                 </button>
             </div>
