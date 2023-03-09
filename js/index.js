@@ -816,7 +816,7 @@ function search(data) {
         searchParks.addEventListener('input', () => {
             const searchValue = searchParks.value.toLowerCase();
             const filteredParks = data.filter(park => {
-                if (searchFilters.parkCity) {
+                if (searchFilters != undefined && searchFilters.parkCity) {
                     // only return parks that match the city filter
                     console.log(park.park);
                     if (park.location === searchFilters.parkCity) {
