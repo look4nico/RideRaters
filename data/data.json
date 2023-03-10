@@ -1318,7 +1318,7 @@
                     "description": "The Dragon is an indoor/outdoor steel roller coaster",
                     "rating": 2.5,
                     "site": "https://www.legoland.com/florida/things-to-do/theme-park/rides-attractions/the-dragon/",
-                    "img": "media/imgs/ride-imgs/the-great-lego-race.jpg",
+                    "img": "media/imgs/ride-imgs/the_dragon.jpg",
                     "accessibility": 
                         {
                             "wheelchair": true,
@@ -1335,7 +1335,7 @@
                     "description": "The Great LEGO\u00ae Race is an exciting wild-mouse style rollercoaster that thrills riders with large drops, hair-pin turns, and thrill inducing fun!",
                     "rating": 3.5,
                     "site": "https://www.legoland.com/florida/things-to-do/theme-park/rides-attractions/the-great-lego-race/",
-                    "img": "media/imgs/ride-imgs/the_dragon.jpg",
+                    "img": "media/imgs/ride-imgs/the-great-lego-race.jpg",
                     "accessibility": 
                         {
                             "wheelchair": true,
