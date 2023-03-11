@@ -106,7 +106,7 @@
         $ridearray = array();
         
         if($connection != null) {             
-            $results = mysqli_query($connection, "SELECT t1.parkid, t1.parkname, t1.parklocation, t1.parkdescription, t1.parkWebSite, t2.rideid, t2.ridename, t2.ridedescription, t2.rideWebSite from parks t1, rides t2 where t1.parkid = t2.parkid;");
+            $results = mysqli_query($connection, "SELECT t1.parkid, t1.parkname, t1.parkimagepath, t1.parklocation, t1.parkdescription, t1.parkWebSite, t2.rideid, t2.ridename, t2.ridedescription, t2.rideimagepath, t2.rideWebSite from parks t1, rides t2 where t1.parkid = t2.parkid;");
             
             // mysqli_fetch_assoc() returns either null or row data
             while ($row = mysqli_fetch_assoc($results)){
