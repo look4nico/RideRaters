@@ -9,6 +9,72 @@
     <script src="js/index.js"></script>
     <script>
         
+        function clearFilters() {
+            //on click of clear filters button, remove all selected classes from filter buttons
+            const filterTags = document.querySelectorAll(".filter-tags-btn");
+            const sortBtn = document.querySelectorAll(".sort-btn-item");
+            const filterDropdown = document.querySelectorAll(".filter-item");
+            const cityDropdown = document.querySelector(".city-dropdown-content");
+            const parkDropdown = document.querySelector(".park-dropdown-content");
+            const filterDiv = document.querySelector(".filter-dropdown-div");
+            const dropdownLinks = filterDiv.querySelectorAll("a");
+
+            // remove selected class from filter tags
+            filterTags.forEach(function (item) {
+                if (item.classList.contains("filter-tags-btn-selected")) {
+                    item.classList.remove("filter-tags-btn-selected");
+                }
+            });
+
+            // remove selected class from sort buttons
+            sortBtn.forEach(function (item) {
+                if (item.classList.contains("sort-btn-item-selected")) {
+                    item.classList.remove("sort-btn-item-selected");
+                }
+            });
+
+            // clear the filterResultText node by setting it to an empty text node
+            const filterResult = document.querySelector("#filter-result");
+            if (filterResult.hasChildNodes()) {
+                filterResult.removeChild(filterResult.firstChild);
+            }
+
+            // remove userFilters from sessionStorage
+            let userFilters = JSON.parse(sessionStorage.getItem('userFilters'));
+            // remove userFilters from sessionStorage
+            userFilters = {
+                parkCity: null,
+                sort: null,
+                tags: {
+                    wheelchair: false,
+                    photosensitivity: false,
+                    serviceAnimal: false,
+                    sizeShape: false,
+                    childSwap: false,
+                }
+            };
+            // sessionStorage.removeItem("userFilters");
+            sessionStorage.setItem('userFiltersCleared', true); // set userFiltersCleared to true'
+            sessionStorage.setItem('userFilters', JSON.stringify(userFilters));
+            console.log(userFilters);
+
+            // if(!userFilters) {
+            //     let userFilters = {
+            //         parkCity: null,
+            //         sort: null,
+            //         tags: {
+            //             wheelchair: false,
+            //             photosensitivity: false,
+            //             serviceAnimal: false,
+            //             sizeShape: false,
+            //             childSwap: false,
+            //         }
+            //     };
+            //     console.log(userFilters);
+            // }
+
+        }
+
         // this event listener waits for the DOM to load before running the function
         document.addEventListener("DOMContentLoaded", function () {
             const sortBtn = document.querySelectorAll(".sort-btn-item");
@@ -26,26 +92,19 @@
             filterPageArrow.addEventListener("click", function (event) {
                 console.log("The search filter page arrow was clicked!");
                 
-                console.log("userFilters was set in sessionStorage");
-            
-                sessionStorage.setItem("userFilters", JSON.stringify(userFilters));
-                if (sessionStorage.getItem("filteringParks") == "true") {
-                    window.location.href = "parkspage.html";
-                } else if(sessionStorage.getItem("filteringCompare") == "true") {
-                    window.location.href = "comparerides.html";
+                if (sessionStorage.setItem("userFilters", JSON.stringify(userFilters))){
+                    console.log("userFilters was set in sessionStorage");
                 } else {
-                    window.location.href = "ridespage.html";
-
-                }         
-             
+                    sessionStorage.setItem("userFilters", JSON.stringify(userFilters));
+                }
                 
                 console.log(userFilters);
 
             });
             
             let userFilters = JSON.parse(sessionStorage.getItem('userFilters')) || {
-                parkCity: null,
-                sort: null,
+                parkCity: "",
+                sort: "",
                 tags: {
                     wheelchair: false,
                     photosensitivity: false,
@@ -171,10 +230,6 @@
                             userFilters.parkCity = disneyTxt + filterResultText.textContent.toUpperCase();
                             console.log(userFilters.parkCity);
                             console.log(userFilters);
-                        } else if (filterResultText.textContent === "SEAWORLD") {
-                            userFilters.parkCity = "SeaWorld";
-                            console.log(userFilters.parkCity);
-                            console.log(userFilters);
                         } else {
                             userFilters.parkCity = filterResultText.textContent.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });;
                             console.log(userFilters.parkCity);
@@ -295,21 +350,7 @@
                 });
             });
             
-            sessionStorage.getItem("filteringParks");
-            console.log(sessionStorage.getItem("filteringParks"));
 
-            const tagsDiv = document.querySelector(".tags-div");
-            const tagsDivHr = document.querySelector(".tags-div-hr");
-
-            if (sessionStorage.getItem("filteringParks") == "true") {
-                // remove the div with the class tags-div
-                tagsDivHr.remove();
-                tagsDiv.remove();
-                console.log("Tags removed")
-                
-            } else {
-                console.log("Previous page was not the Parks page");
-            }
 
         });
 
@@ -331,7 +372,7 @@
 
     <!---Header-->
     <div class="page-list-header review-page-header">
-        <span id="search-filters-arrow" class="fa-stack filters-header-arrow" style="display: flex;">
+        <span id="search-filters-arrow" class="fa-stack header-arrow" style="display: flex;">
             <i class="fa-regular fa-circle fa-stack-2x"
                 style="color: #000000;font-size: 3em !important;margin-top: -0.15em;"></i>
             <i class="fa-solid fa-arrow-left fa-stack-1x"
@@ -379,10 +420,10 @@
             <p class="sort-by-title-txt">
                 SORT BY
             </p>
-            <!-- <div class="sort-by-btn-div">
+            <div class="sort-by-btn-div">
                 <button class="sort-btn-item">ABC</button>
                 <button class="sort-btn-item">PARK</button>
-            </div> -->
+            </div>
             <div class="sort-by-btn-div">
                 <button class="sort-btn-item">USER RATING</button>
                 <button id="rating" class="sort-btn-item">ACCESS RATING</button>
@@ -395,7 +436,7 @@
             </div> -->
         </div>
 
-        <hr class="tags-div-hr">
+        <hr>
         
         <!--Tags Section-->
         <div class="tags-div">
