@@ -217,7 +217,7 @@ function fetchRides() {
 
 
 // fetch data from json file and store in variables for use in other functions and pages 
-fetch('/data/data.json')
+fetch('./data/data.json')
   .then(response => response.json())
   .then(data => {
     console.log(data);
