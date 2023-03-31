@@ -22,7 +22,7 @@ function login(e) {
      
     $(document).ready(function(){
         $.ajax({
-            url: 'http://localhost/rideratersback/login2.php',
+            url: '/rideratersbackend/login2.php',
             dataType: 'json',
             async: 'false',
             type: 'post',
@@ -69,7 +69,7 @@ function signup(e) {
     $(document).ready(function(){
 
         $.ajax({
-            url: 'http://localhost/rideratersback/signup2.php',
+            url: '/rideratersbackend/signup2.php',
             dataType: 'json',
             async: 'false',
             type: 'post',
@@ -132,7 +132,7 @@ function resetPassword(e) {
     $(document).ready(function(){
         e.preventDefault();
         return $.ajax({
-            url: 'http://localhost/rideratersback/resetpass.php',
+            url: '/rideratersbackend/resetpass.php',
             dataType: 'json',
             async: 'false',
             type: 'post',
@@ -182,7 +182,7 @@ function fetchRides() {
     $(document).ready(function(){
 
         $.ajax({
-            url: 'http://localhost/rideratersback/fetchAllRides.php',
+            url: '/rideratersbackend/fetchAllRides.php',
             dataType: 'json',
             async: 'false',
             type: 'post',
