@@ -177,7 +177,7 @@ function fetchRides() {
     var vEmail = localStorage.getItem("hiddenuserid");
 
     var vAllRides = "";
-    //alert(vEmail + '=' + vPassword);
+    //alert(vEmail + '=' + vPassword) ;
 
     $(document).ready(function(){
 
