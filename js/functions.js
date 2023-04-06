@@ -132,7 +132,6 @@ function resetPassword(e) {
     }
 
     $(document).ready(function(){
-        e.preventDefault();
         return $.ajax({
             url: './rideratersbackend/resetpass.php',
             dataType: 'json',
@@ -166,13 +165,12 @@ function resetPassword(e) {
     //alert("test end");
 }
 
-resetPassword().then( response =>
-    
-   console.log("ajax complete")
-    );
+//resetPassword().then( response =>
+//   console.log("ajax complete")
+//    );
 
-
-function fetchRides() {
+function fetchRides(e) {
+    e.preventDefault();
     console.log("fetchRides initiated");
 
     var vEmail = localStorage.getItem("hiddenuserid");
