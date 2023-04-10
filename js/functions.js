@@ -213,3 +213,182 @@ function fetchRides(e) {
     })
 
 }
+
+function setRideRating(e) {     
+    e.preventDefault();
+    console.log("setRideRating function started ooooooooooooooooooooooooooooooooooooooooooooooooooo");
+    
+    var form = document.getElementById('testform');
+    var data = new FormData(form);
+    for (var [key, value] of data) {
+        console.log(key, value)
+    }
+    var vUserid = document.getElementById("userid").value; 
+    var vRideid = document.getElementById("rideid").value; 
+    var vRiderating = document.getElementById("riderating").value;  
+     
+    $(document).ready(function(){
+        return $.ajax({
+            url: './rideratersbackend/setriderating.php',
+            dataType: 'json',
+            async: 'false',
+            type: 'post',
+            data: {userid: vUserid, rideid: vRideid, riderating: vRiderating},
+            success: function(response) {            
+                //alert("Alert 1: " + JSON.stringify(response));
+                console.log("log 1: " + JSON.stringify(response));
+                // Handle the response from the PHP script
+                if(response.success == "true")
+                { 
+                    //transfer to other page 
+                   // window.location.href = "home.html";
+                    console.log("log 2: " + JSON.stringify(response));
+                    //window.location.href = "xxxxxxxxxxxx.html";
+                    //alert("Alert 2: " + 'success');
+                } else {                
+                    console.log("log 3: " + JSON.stringify(response));
+                    alert('Failed to set ride rating');
+                    //window.location.replace = "xxxxxxxxxxxxxxxx.html";
+                };
+            },
+            error: function(xhr, status, error) {
+                console.log(xhr.responseText);
+                alert('Error setiing ride rating: ' + xhr.responseText);                
+                //window.location.replace = "xxxxxxxxxxxxx.html";
+            }
+        }); 
+    });
+    //alert("test end");
+}
+
+function GetAllRideRatings(e) {
+    e.preventDefault();
+    console.log("GetAllRideRatings initiated");
+
+    var vAllRideRatings = "";    
+    var vEmail = localStorage.getItem("hiddenuserid");
+
+    $(document).ready(function(){
+
+        $.ajax({
+            url: './rideratersbackend/GetAllRideRatings.php',
+            dataType: 'json',
+            async: 'false',
+            type: 'post',
+            data: {username: vEmail},
+            success: function(response) {            
+                //alert("Alert 1: " + JSON.stringify(response));
+                console.log("log 1: " + JSON.stringify(response));
+                // Handle the response from the PHP script
+                if(response.success == "true")
+                {
+                    vAllRideRatings = response.allRides;
+                    console.log("log 2: " + JSON.stringify(response));
+                // alert("Alert 2: " + 'success');
+                } else {                
+                    console.log("log 3: " + JSON.stringify(response));
+                    alert('System error, trying to figure this out');
+                };
+            },
+            error: function(xhr, status, error) {
+                console.log(xhr.responseText);
+                alert('Error: ' + xhr.responseText);
+            },
+            complete: function (response){
+                console.log("Ajax completed");
+                //alert('Ajax completed');
+
+                }
+        });
+    })
+
+}
+function GetRideRating(e){
+    //retrieve ride rating for user, and avarege rating for ride
+    e.preventDefault();
+    console.log("retrieveRideRating initiated");
+
+    //var vEmail = localStorage.getItem("hiddenuserid");
+    var vUserid = document.getElementById("userid1").value; 
+    var vRideid = document.getElementById("rideid1").value; 
+
+    var vUserRating = ""; 
+    var vAveRating = ""; 
+
+    $(document).ready(function(){
+
+        $.ajax({
+            url: './rideratersbackend/GetRideRating.php',
+            dataType: 'json',
+            async: 'false',
+            type: 'post',
+            data: {userid: vUserid, rideid: vRideid},
+            success: function(response) {            
+                //alert("Alert 1: " + JSON.stringify(response));
+                console.log("log 1: " + JSON.stringify(response));
+                // Handle the response from the PHP script
+                if(response.success == "true")
+                {
+                    vUserRating = response.userrating;
+                    vAveRating = response.averating;
+                    console.log("log 2: " + JSON.stringify(response));
+                // alert("Alert 2: " + 'success');
+                } else {                
+                    console.log("log 3: " + JSON.stringify(response));
+                    alert('System error, trying to figure this out');
+                };
+            },
+            error: function(xhr, status, error) {
+                console.log(xhr.responseText);
+                alert('Error: ' + xhr.responseText);
+            },
+            complete: function (response){
+                console.log("Ajax completed");
+                //alert('Ajax completed');
+
+                }
+        });
+    })
+}
+function GetUserRideRatings(e){
+    //retrieve ride rating for user, and avarege rating for ride
+    e.preventDefault();
+    console.log("retrieveRideRating initiated");
+
+    //var vEmail = localStorage.getItem("hiddenuserid");
+    var vUserid = document.getElementById("userid2").value; 
+    var vAllRideRatings = '';
+    $(document).ready(function(){
+
+        $.ajax({
+            url: './rideratersbackend/GetUserRideRatings.php',
+            dataType: 'json',
+            async: 'false',
+            type: 'post',
+            data: {userid: vUserid},
+            success: function(response) {            
+                //alert("Alert 1: " + JSON.stringify(response));
+                console.log("log 1: " + JSON.stringify(response));
+                // Handle the response from the PHP script
+                if(response.success == "true")
+                {
+                    vAllRideRatings = response.allRides;
+                    console.log("log 2: " + JSON.stringify(response));
+                // alert("Alert 2: " + 'success');
+                } else {                
+                    console.log("log 3: " + JSON.stringify(response));
+                    alert('System error, trying to figure this out');
+                };
+            },
+            error: function(xhr, status, error) {
+                console.log(xhr.responseText);
+                alert('Error: ' + xhr.responseText);
+            },
+            complete: function (response){
+                console.log("Ajax completed");
+                //alert('Ajax completed');
+
+                }
+        });
+    })
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <script src="https://kit.fontawesome.com/a919c172a1.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/main.css"> 
+        <script src="js/functions.js"></script>
+
+        <title>TestFunctions</title>
+    </head>
+    <body style="background-color:black; color: white;">
+            <span>
+                Test functions     
+            </span>  
+        <div >
+            <form id="testform" action="">
+                <div >
+                    <label >function Set Ride Rating</label><br> 
+                    <label for="userid">userid</label><br>
+                    <input type="text" id="userid" name="userid" placeholder=""><br>
+                    <label for="rideid">rideid</label><br>
+                    <input type="text" id="rideid" name="rideid" placeholder=""><br>
+                    <label for="riderating">riderating</label><br>
+                    <input type="text" id="riderating" name="riderating" minlength="1" maxlength="1">
+                    <br>&nbsp;<br>
+                    
+                    <div> 
+                        <button onclick="setRideRating(event)" style="background-color: rgb(0, 238, 255);; width: 200px;">Submit</button>
+                    </div> 
+                </div>
+                <!-------------------->
+                <div >
+                    <br>&nbsp;<br>
+                    <label >function fetchAllRides</label><br>  
+                    <div> 
+                        <button onclick="fetchRides(event)" style="background-color: rgb(0, 238, 255); width: 200px;">Submit</button>
+                    </div> 
+                </div>
+                <!-------------------->
+                <div >
+                    <br>&nbsp;<br>
+                    <label >function Get All Ride Ratings</label><br>  
+                    <div> 
+                        <button onclick="GetAllRideRatings(event)" style="background-color: rgb(0, 238, 255);; width: 200px;">Submit</button>
+                    </div> 
+                </div>
+                <!-------------------->
+                <div >
+                    <br>&nbsp;<br>
+                    <label >function GetRideRating</label><br> 
+                    <label for="userid1">userid</label><br>
+                    <input type="text" id="userid1" name="userid1" placeholder=""><br>
+                    <label for="rideid1">rideid</label><br>
+                    <input type="text" id="rideid1" name="rideid1" placeholder=""><br>
+                    
+                    <div> 
+                        <button onclick="GetRideRating(event)" style="background-color: rgb(0, 238, 255);; width: 200px;">Submit</button>
+                    </div> 
+                </div>
+                <!-------------------->
+                <div >
+                    <br>&nbsp;<br>
+                    <label >function GetUserRideRatings</label><br> 
+                    <label for="userid2">userid</label><br>
+                    <input type="text" id="userid2" name="userid2" placeholder=""><br>
+                     
+                    <div> 
+                        <button onclick="GetUserRideRatings(event)" style="background-color: rgb(0, 238, 255);; width: 200px;">Submit</button>
+                    </div> 
+                </div>
+            </form>
+        </div>
+        <!-------------------->
+    </body>
+</html>
