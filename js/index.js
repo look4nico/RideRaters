@@ -1,3 +1,85 @@
+var jq = jQuery.noConflict();
+let rideUserRatings;
+
+jq(document).ready(function() {
+    function getAllRideRatings() {
+        console.log("GetAllRideRatings initiated");
+
+        var vAllRideRatings = "";    
+        var vEmail = localStorage.getItem("hiddenuserid");
+
+        return new Promise(function(resolve, reject) {
+            jq.ajax({
+            url: './rideratersbackend/GetAllRideRatings.php',
+            dataType: 'json',
+            async: 'false',
+            type: 'post',
+            data: {username: vEmail},
+            success: function(response) {            
+                console.log("log 1: " + JSON.stringify(response));
+                // rideUserRatings = JSON.stringify(response);
+                if(response.success == "true") {
+                    vAllRideRatings = response.allRides;
+                    console.log("log 2: " + JSON.stringify(response));
+                    resolve(response);
+                } else {                
+                    console.log("log 3: " + JSON.stringify(response));
+                    reject('System error, trying to figure this out');
+                };
+            },
+            error: function(xhr, status, error) {
+                console.log(xhr.responseText);
+                reject('Error: ' + xhr.responseText);
+            },
+            complete: function (response){
+                console.log("Ajax completed");
+            }
+            });
+        });
+    }
+
+    getAllRideRatings().then(function(response) {
+        console.log(response);
+        let rideRating = response;
+        console.log(rideRating);
+        userRatings(rideRating);
+        rideRating = rideUserRatings;
+        console.log("getAllRideRatings completed");
+        console.log(rideUserRatings);
+        
+    }).catch(function(error) {
+        console.error(error);
+    });
+
+});
+
+let userRatingsObj;
+function userRatings(ratings) {
+    console.log(ratings);
+    userRatingsObj = ratings;
+    console.log(userRatingsObj);
+    console.log(userRatingsObj.allRides);
+    console.log(userRatingsObj.allRides);
+}
+
+// console.log(rideUserRatings);
+// if (typeof rideUserRatings !== 'undefined') {
+//    console.log(rideUserRatings);
+// } else {
+//     console.log("rideUserRatings is undefined");
+// }
+
+
+
+// function userRatings(ridesRatings) {
+//     ridesRatings = rideUserRatings;
+//     console.log(rideUserRatings);
+//     return rideUserRatings;
+// }
+
+// if (rideUserRatings != undefined) {
+//     console.log(rideUserRatings);
+// }
 
 
 // fetch data from json file and store in variables for use in other functions and pages 

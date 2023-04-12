@@ -41,7 +41,7 @@
         $username = "root";
         // If using XAMPP, 
         //  the password is an empty string.
-        $password = "";
+        $password = "root";
         // Database
         $database = "lab";
 
@@ -223,4 +223,3 @@
         database_close();
         return $vReturn;
     }
-?>
