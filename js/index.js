@@ -58,6 +58,7 @@ function userRatings(ratings) {
     console.log(ratings);
     userRatingsObj = ratings;
     console.log(userRatingsObj);
+    sessionStorage.setItem("userRatingsObj", JSON.stringify(userRatingsObj));
     console.log(userRatingsObj.allRides);
     console.log(userRatingsObj.allRides);
 
@@ -87,6 +88,9 @@ function userRatings(ratings) {
 //     console.log(rideUserRatings);
 // }
 
+function roundToTenth(x) {
+    return Math.round(10*Number(x))/10;
+}
 
 // fetch data from json file and store in variables for use in other functions and pages 
 fetch('./data/data.json')
@@ -368,13 +372,27 @@ function fanFavorite(data) {
             const userRating = result.querySelector(".user-rating-txt");
             const accessRating = result.querySelector(".access-rating-txt");
             const itemCity = result.querySelector(".ride-city");
+
             
+            let userRatingsObj = JSON.parse(sessionStorage.getItem('userRatingsObj'));
+            // for (i = 0; i < userRatingsObj.allRides.length; i++) {
+            //     if (ride.id == userRatingsObj.allRides[i].rideid) {
+            //         userRating.textContent = parseInt(userRatingsObj.allRides[i].averagerating);
+            //         console.log(parseInt(userRatingsObj.allRides[i].averagerating) + " " + ride.id);
+            //     }   else {
+            //         console.log("no ratings");
+            //     }
+            // };
+
             rideImg.src = ride.img;
             rideName.textContent = ride.name;
             userRating.textContent = ride.rating;
             accessRating.textContent = ride.rating;
             location.textContent = ride.rating;
             itemCity.textContent = ride.location;
+            userRating.textContent = parseFloat(userRatingsObj.allRides[ride.id-1].averagerating);
+            console.log(ride.id-1);
+            console.log(userRatingsObj.allRides[50]);
             
             fanFavContainer.appendChild(result);
             console.log("photosensitivity");
@@ -688,7 +706,8 @@ function search(data) {
                         console.log(childSwapTag);
 
                         console.log(ride.accessibility.photosensitivity);
-
+                        let userRatingsObj = JSON.parse(sessionStorage.getItem('userRatingsObj'));
+            
                         if(ride.accessibility.wheelchair === true && wheelchairTag === true) {
                             const result = document.importNode(template.content, true);
                             const rideImg = result.querySelector(".list-ride-img");
@@ -821,15 +840,15 @@ function search(data) {
                         const rideName = result.querySelector(".list-ride-name");
                         const userRating = result.querySelector(".user-rating-txt");
                         const accessRating = result.querySelector(".access-rating-txt");
-                        const location = result.querySelector(".proxima-regular");
+                        // const location = result.querySelector(".proxima-regular");
                         const itemCity = result.querySelector(".ride-city");
                         
                         rideImg.src = ride.img;
                         rideLocation.textContent = ride.park;
                         rideName.textContent = ride.name;
-                        userRating.textContent = ride.rating;
+                        userRating.textContent = roundToTenth(userRatingsObj.allRides[ride.id-1].averagerating);
                         accessRating.textContent = ride.rating;
-                        location.textContent = ride.rating;
+                        // location.textContent = ride.rating;
                         itemCity.textContent = ride.location;
 
                         searchResultsContainer.appendChild(result);
