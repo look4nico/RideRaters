@@ -60,6 +60,12 @@ function userRatings(ratings) {
     console.log(userRatingsObj);
     console.log(userRatingsObj.allRides);
     console.log(userRatingsObj.allRides);
+
+    //search for ride in userRatingsObj.allRides
+    for (let i = 0; i < userRatingsObj.allRides.length; i++) {
+        console.log(userRatingsObj.allRides[i].rideid);
+        console.log(userRatingsObj.allRides[i].ridename);
+    }
 }
 
 // console.log(rideUserRatings);
