@@ -184,9 +184,9 @@ function searchRidesAndParks(data) {
                     rideImg.src = ride.img;
                     rideLocation.textContent = ride.park;
                     rideName.textContent = ride.name;
-                    userRating.textContent = ride.rating;
+                    userRating.textContent = roundToTenth(userRatingsObj.allRides[ride.id-1].averagerating);
                     accessRating.textContent = ride.rating;
-                    location.textContent = ride.rating;
+                    // location.textContent = ride.rating;
                     itemCity.textContent = ride.location;
 
                     searchResultsContainer.appendChild(result); 
@@ -203,9 +203,9 @@ function searchRidesAndParks(data) {
                     rideImg.src = ride.img;
                     rideLocation.textContent = ride.name;
                     rideName.textContent = ride.name;
-                    userRating.textContent = ride.rating;
+                    userRating.textContent = roundToTenth(userRatingsObj.allRides[ride.id-1].averagerating);
                     accessRating.textContent = ride.rating;
-                    location.textContent = ride.rating;
+                    // location.textContent = ride.rating;
                     itemCity.textContent = ride.location;
 
                     searchResultsContainer.appendChild(result);
@@ -386,7 +386,7 @@ function fanFavorite(data) {
 
             rideImg.src = ride.img;
             rideName.textContent = ride.name;
-            userRating.textContent = ride.rating;
+            // userRating.textContent = ride.rating;
             accessRating.textContent = ride.rating;
             location.textContent = ride.rating;
             itemCity.textContent = ride.location;
@@ -715,15 +715,15 @@ function search(data) {
                             const rideName = result.querySelector(".list-ride-name");
                             const userRating = result.querySelector(".user-rating-txt");
                             const accessRating = result.querySelector(".access-rating-txt");
-                            const location = result.querySelector(".proxima-regular");
+                            // const location = result.querySelector(".proxima-regular");
                             const itemCity = result.querySelector(".ride-city");
                             
                             rideImg.src = ride.img;
                             rideLocation.textContent = ride.park;
                             rideName.textContent = ride.name;
-                            userRating.textContent = ride.rating;
+                            userRating.textContent = roundToTenth(userRatingsObj.allRides[ride.id-1].averagerating);
                             accessRating.textContent = ride.rating;
-                            location.textContent = ride.rating;
+                            // location.textContent = ride.rating;
                             itemCity.textContent = ride.location;
 
                             searchResultsContainer.appendChild(result);
@@ -735,15 +735,15 @@ function search(data) {
                             const rideName = result.querySelector(".list-ride-name");
                             const userRating = result.querySelector(".user-rating-txt");
                             const accessRating = result.querySelector(".access-rating-txt");
-                            const location = result.querySelector(".proxima-regular");
+                            // const location = result.querySelector(".proxima-regular");
                             const itemCity = result.querySelector(".ride-city");
                             
                             rideImg.src = ride.img;
                             rideLocation.textContent = ride.park;
                             rideName.textContent = ride.name;
-                            userRating.textContent = ride.rating;
+                            userRating.textContent = roundToTenth(userRatingsObj.allRides[ride.id-1].averagerating);
                             accessRating.textContent = ride.rating;
-                            location.textContent = ride.rating;
+                            // location.textContent = ride.rating;
                             itemCity.textContent = ride.location;
 
                             searchResultsContainer.appendChild(result);
@@ -755,15 +755,15 @@ function search(data) {
                             const rideName = result.querySelector(".list-ride-name");
                             const userRating = result.querySelector(".user-rating-txt");
                             const accessRating = result.querySelector(".access-rating-txt");
-                            const location = result.querySelector(".proxima-regular");
+                            // const location = result.querySelector(".proxima-regular");
                             const itemCity = result.querySelector(".ride-city");
                             
                             rideImg.src = ride.img;
                             rideLocation.textContent = ride.park;
                             rideName.textContent = ride.name;
-                            userRating.textContent = ride.rating;
+                            userRating.textContent = roundToTenth(userRatingsObj.allRides[ride.id-1].averagerating);
                             accessRating.textContent = ride.rating;
-                            location.textContent = ride.rating;
+                            // location.textContent = ride.rating;
                             itemCity.textContent = ride.location;
 
                             searchResultsContainer.appendChild(result);
@@ -775,15 +775,15 @@ function search(data) {
                             const rideName = result.querySelector(".list-ride-name");
                             const userRating = result.querySelector(".user-rating-txt");
                             const accessRating = result.querySelector(".access-rating-txt");
-                            const location = result.querySelector(".proxima-regular");
+                            // const location = result.querySelector(".proxima-regular");
                             const itemCity = result.querySelector(".ride-city");
                             
                             rideImg.src = ride.img;
                             rideLocation.textContent = ride.park;
                             rideName.textContent = ride.name;
-                            userRating.textContent = ride.rating;
+                            userRating.textContent = roundToTenth(userRatingsObj.allRides[ride.id-1].averagerating);
                             accessRating.textContent = ride.rating;
-                            location.textContent = ride.rating;
+                            // location.textContent = ride.rating;
                             itemCity.textContent = ride.location;
 
                             searchResultsContainer.appendChild(result);
@@ -795,15 +795,15 @@ function search(data) {
                             const rideName = result.querySelector(".list-ride-name");
                             const userRating = result.querySelector(".user-rating-txt");
                             const accessRating = result.querySelector(".access-rating-txt");
-                            const location = result.querySelector(".proxima-regular");
+                            // const location = result.querySelector(".proxima-regular");
                             const itemCity = result.querySelector(".ride-city");
                             
                             rideImg.src = ride.img;
                             rideLocation.textContent = ride.park;
                             rideName.textContent = ride.name;
-                            userRating.textContent = ride.rating;
+                            userRating.textContent = roundToTenth(userRatingsObj.allRides[ride.id-1].averagerating);
                             accessRating.textContent = ride.rating;
-                            location.textContent = ride.rating;
+                            // location.textContent = ride.rating;
                             itemCity.textContent = ride.location;
 
                             searchResultsContainer.appendChild(result);
@@ -816,15 +816,15 @@ function search(data) {
                             const rideName = result.querySelector(".list-ride-name");
                             const userRating = result.querySelector(".user-rating-txt");
                             const accessRating = result.querySelector(".access-rating-txt");
-                            const location = result.querySelector(".proxima-regular");
+                            // const location = result.querySelector(".proxima-regular");
                             const itemCity = result.querySelector(".ride-city");
                             
                             rideImg.src = ride.img;
                             rideLocation.textContent = ride.park;
                             rideName.textContent = ride.name;
-                            userRating.textContent = ride.rating;
+                            userRating.textContent = roundToTenth(userRatingsObj.allRides[ride.id-1].averagerating);
                             accessRating.textContent = ride.rating;
-                            location.textContent = ride.rating;
+                            // location.textContent = ride.rating;
                             itemCity.textContent = ride.location;
 
                             searchResultsContainer.appendChild(result);
@@ -867,12 +867,14 @@ function search(data) {
                     const location = result.querySelector(".proxima-regular");
                     const itemCity = result.querySelector(".ride-city");
                     
+                    let userRatingsObj = JSON.parse(sessionStorage.getItem('userRatingsObj'));
                     rideImg.src = ride.img;
                     rideLocation.textContent = ride.park;
                     rideName.textContent = ride.name;
                     userRating.textContent = ride.rating;
+                    // userRating.textContent = roundToTenth(userRatingsObj.allRides[ride.id-1].averagerating);
                     accessRating.textContent = ride.rating;
-                    location.textContent = ride.rating;
+                    // location.textContent = ride.rating;
                     itemCity.textContent = ride.location;
 
                     console.log(ride.height);
@@ -973,7 +975,7 @@ function search(data) {
                     rideName.textContent = ride.name;
                     userRating.textContent = ride.rating;
                     accessRating.textContent = ride.rating;
-                    location.textContent = ride.rating;
+                    // location.textContent = ride.rating;
                     itemCity.textContent = ride.location;
 
                     searchResultsContainer.appendChild(result);
@@ -1633,12 +1635,13 @@ function ridesCompared() {
             if (!item) {
                 return;
             } else {
+            let userRatingsObj = JSON.parse(sessionStorage.getItem('userRatingsObj'));
             const compareResultsClone = compareResultsTemplate.content.cloneNode(true);
             compareResultsClone.querySelector('.compare-results-img').src = item.img;
             compareResultsClone.querySelector('.compare-results-img-text:nth-of-type(1)').textContent = item.park;
             compareResultsClone.querySelector('.compare-results-img-text:nth-of-type(2)').textContent = item.name;
             compareResultsClone.querySelector('.ride-location-txt').textContent = item.location;
-            compareResultsClone.querySelector('.user-rating-txt').textContent = item.rating;
+            compareResultsClone.querySelector('.user-rating-txt').textContent = roundToTenth(userRatingsObj.allRides[ridePageSelected[0].id-1].averagerating);
             compareResultsClone.querySelector('.access-rating-txt').textContent = item.rating;
             compareResultsContainer.appendChild(compareResultsClone);
             }
@@ -1984,9 +1987,9 @@ function selectedParkPage() {
             rideImg.src = ride.img;
             rideLocation.textContent = ride.park;
             rideName.textContent = ride.name;
-            userRating.textContent = ride.rating;
+            userRating.textContent = roundToTenth(userRatingsObj.allRides[ride.id-1].averagerating);
             accessRating.textContent = ride.rating;
-            location.textContent = ride.rating;
+            // location.textContent = ride.rating;
             itemCity.textContent = ride.location;
             parkRidesContainer.appendChild(result);
         });
@@ -2050,13 +2053,13 @@ function selectedRidePage() {
 
         const selectedRidePark = parksData.find(park => park.name === parkName);
         console.log(selectedRidePark);
-
+        let userRatingsObj = JSON.parse(sessionStorage.getItem('userRatingsObj'));
         const rideResultsClone = rideResultsTemplate.content.cloneNode(true);
         rideResultsClone.querySelector('.park-ride-page-img').src = ridePageSelected[0].img;
         document.querySelector('.park-ride-page').textContent = ridePageSelected[0].name;
         rideResultsClone.querySelector('.park-ride-themepark').textContent = ridePageSelected[0].park;
         rideResultsClone.querySelector('.park-ride-city').textContent = ridePageSelected[0].location;
-        rideResultsClone.querySelector('.user-rating-txt').textContent = ridePageSelected[0].rating;
+        rideResultsClone.querySelector('.user-rating-txt').textContent = roundToTenth(userRatingsObj.allRides[ridePageSelected[0].id-1].averagerating);
         rideResultsClone.querySelector('.access-rating-txt').textContent = ridePageSelected[0].rating;
         rideResultsClone.querySelector('.ride-descript-txt').textContent = ridePageSelected[0].description;
         rideResultsClone.querySelector('.ride-site-link').href = ridePageSelected[0].site;
