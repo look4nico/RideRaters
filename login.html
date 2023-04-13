@@ -8,7 +8,16 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/index.js"></script>
         <script src="js/functions.js"></script>
-
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const backArrow = document.querySelector('.header-arrow');
+                backArrow.addEventListener('click', function () {
+                    // on click, go back to previous page
+                    console.log('clicked');
+                    window.history.back();
+                });
+            });
+        </script>
         <title>RideRaters</title>
     </head>
     <body style="background-color:black; color: white;">
@@ -39,7 +48,7 @@
                 <!--Login Form: Bottom Options-->
                 <div class="login-options">
                     <a href="forgotpass.html" class="forgot-pass">FORGOT PASSWORD</a>
-                    <a href="" class="signup">SIGN UP</a>
+                    <a href="signup.html" class="signup">SIGN UP</a>
                     <i class="fa-solid fa-eye-slash show-pwd eye-login"></i>
                 </div>
                 <!------------------------------->

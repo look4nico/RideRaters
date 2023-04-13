@@ -59,15 +59,37 @@ function userRatings(ratings) {
     userRatingsObj = ratings;
     console.log(userRatingsObj);
     sessionStorage.setItem("userRatingsObj", JSON.stringify(userRatingsObj));
-    console.log(userRatingsObj.allRides);
-    console.log(userRatingsObj.allRides);
+    // console.log(userRatingsObj.allRides);
+    // console.log(userRatingsObj.allRides);
 
     //search for ride in userRatingsObj.allRides
     for (let i = 0; i < userRatingsObj.allRides.length; i++) {
-        console.log(userRatingsObj.allRides[i].rideid);
-        console.log(userRatingsObj.allRides[i].ridename);
+        // console.log(userRatingsObj.allRides[i].rideid);
+        // console.log(userRatingsObj.allRides[i].ridename);
     }
 }
+
+let userName;
+$(document).ready(function () {
+    $.ajax({
+        url: './RideRatersBackend/getUserProfile.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            if (data.error) {
+                alert(data.error);
+            } else {
+                userName = data.username;
+                $('#username').text(data.username);
+                console.log(data);
+            }
+        },
+        error: function (xhr, status, error) {
+            alert('Error retrieving user info: ' + error);
+        }
+    });
+});
+
 
 // console.log(rideUserRatings);
 // if (typeof rideUserRatings !== 'undefined') {
@@ -155,6 +177,7 @@ function searchRidesAndParks(data) {
     const searchResultsContainer = document.getElementById("search-results-container");
     const template = document.getElementById("search-result-template");
     const templatePark = document.getElementById("search-result-park-template");
+    let userRatingsObj = JSON.parse(sessionStorage.getItem('userRatingsObj'));
 
     if (searchAll) {
         searchAll.addEventListener('input', () => {
@@ -180,6 +203,7 @@ function searchRidesAndParks(data) {
                     const accessRating = result.querySelector(".access-rating-txt");
                     const location = result.querySelector(".proxima-regular");
                     const itemCity = result.querySelector(".ride-city");
+                    let userRatingsObj = JSON.parse(sessionStorage.getItem('userRatingsObj'));
                     
                     rideImg.src = ride.img;
                     rideLocation.textContent = ride.park;
@@ -199,11 +223,12 @@ function searchRidesAndParks(data) {
                     const accessRating = result.querySelector(".access-rating-txt");
                     const location = result.querySelector(".proxima-regular");
                     const itemCity = result.querySelector(".park-city");
+                    let userRatingsObj = JSON.parse(sessionStorage.getItem('userRatingsObj'));
                     
                     rideImg.src = ride.img;
                     rideLocation.textContent = ride.name;
                     rideName.textContent = ride.name;
-                    userRating.textContent = roundToTenth(userRatingsObj.allRides[ride.id-1].averagerating);
+                    userRating.textContent = ride.rating;
                     accessRating.textContent = ride.rating;
                     // location.textContent = ride.rating;
                     itemCity.textContent = ride.location;
