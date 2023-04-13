@@ -69,26 +69,26 @@ function userRatings(ratings) {
     }
 }
 
-let userName;
-$(document).ready(function () {
-    $.ajax({
-        url: './RideRatersBackend/getUserProfile.php',
-        type: 'GET',
-        dataType: 'json',
-        success: function (data) {
-            if (data.error) {
-                alert(data.error);
-            } else {
-                userName = data.username;
-                $('#username').text(data.username);
-                console.log(data);
-            }
-        },
-        error: function (xhr, status, error) {
-            alert('Error retrieving user info: ' + error);
-        }
-    });
-});
+// let userName;
+// $(document).ready(function () {
+//     $.ajax({
+//         url: './RideRatersBackend/getUserProfile.php',
+//         type: 'GET',
+//         dataType: 'json',
+//         success: function (data) {
+//             if (data.error) {
+//                 alert(data.error);
+//             } else {
+//                 userName = data.username;
+//                 $('#username').text(data.username);
+//                 console.log(data);
+//             }
+//         },
+//         error: function (xhr, status, error) {
+//             alert('Error retrieving user info: ' + error);
+//         }
+//     });
+// });
 
 
 // console.log(rideUserRatings);
@@ -1911,6 +1911,7 @@ function ridePageRendered(img) {
         
         const selectedRide = ridesData.find(ride => ride.name === rideName);
         console.log(selectedRide);
+        console.log(selectedRide.id);
         
         ridePageSelected = [];
         ridePageSelected.push(selectedRide);
