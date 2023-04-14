@@ -30,24 +30,43 @@
         
     }
 
-
     function database_connect() {
         // Use the global connection
         global $connection;
+        // //echo " step 1 ";
+        // $connection = mysqli_init();
+        // //echo " step 2 ";
+        // if (!$connection) {
+        //     echo " Connection to DataBase Failed 3 ";
+        //     die("mysqli_init failed");
+        // } 
+        // //echo " step 4 ";
+        // mysqli_options($connection, MYSQLI_OPT_CONNECT_TIMEOUT, 10); 
+        // mysqli_options($connection, MYSQLI_OPT_READ_TIMEOUT, 10); 
+        // mysqli_options($connection, MYSQLI_OPT_NET_CMD_BUFFER_SIZE, '8M' ); 
+        // mysqli_options($connection, MYSQLI_OPT_NET_READ_BUFFER_SIZE, '8M' );
+        // //echo " step 6 ";
+        // mysqli_real_connect($connection,"localhost","mi051819","!1Qqazxcvbnm","mi051819");
+        // //echo " step 7 ";
+        // return;
+        // //exit();
 
-        // Server
+        // Server "localhost"  
         $server = "localhost";
-        // Username
-        $username = "root";
+        // Username "root"
+        $username = "mi051819";
         // If using XAMPP, 
         //  the password is an empty string.
-        $password = "";
-        // Database
-        $database = "lab";
+        $password = "!1Qqazxcvbnm";
+        // Database, in school server 'mi051819' was "lab"
+        $database = "mi051819";
+        // $options = ["MYSQLI_OPT_CONNECT_TIMEOUT" => "10","MYSQLI_OPT_READ_TIMEOUT" => "10","MYSQLI_OPT_NET_CMD_BUFFER_SIZE" => "15"];
 
         if($connection == null) {
-            $connection = mysqli_connect($server, $username, $password, $database);
-        }
+            $connection = mysqli_connect($server, $username, $password, $database); 
+            // mysqli_options($connection, MYSQLI_OPT_CONNECT_TIMEOUT, 10);
+            // mysqli_options($connection, MYSQLI_OPT_READ_TIMEOUT, 10);
+        }        
     }
 
     function database_addUser($username, $password) {
@@ -105,15 +124,23 @@
         
         $ridearray = array();
         
-        if($connection != null) {             
-            $results = mysqli_query($connection, "SELECT t1.parkid, t1.parkname, t1.parkimagepath, t1.parklocation, t1.parkdescription, t1.parkWebSite, t2.rideid, t2.ridename, t2.ridedescription, t2.rideimagepath, t2.rideWebSite from parks t1, rides t2 where t1.parkid = t2.parkid;");
-            
-            // mysqli_fetch_assoc() returns either null or row data
-            while ($row = mysqli_fetch_assoc($results)){
-                $ridearray[] = $row;
-            }   
-                     
-            $status = "true";
+        if($connection != null) {    
+            try {    //echo "here 1";
+                $vSQL = " SELECT T1.PARKID, T1.PARKNAME, T1.PARKIMAGEPATH, T1.PARKLOCATION, T1.PARKDESCRIPTION, T1.PARKWEBSITE, " ;
+                $vSQL = $vSQL ." T2.RIDEID, T2.RIDENAME, T2.RIDEDESCRIPTION, T2.RIDEIMAGEPATH, T2.RIDEWEBSITE "; 
+                $vSQL = $vSQL ." FROM PARKS T1, RIDES T2 WHERE T1.PARKID = T2.PARKID ; ";
+                $results = mysqli_query($connection, $vSQL);            
+                //echo "here 2";
+                // mysqli_fetch_assoc() returns either null or row data
+                while ($row = mysqli_fetch_assoc($results)){
+                    $ridearray[] = $row;
+                }   
+                        
+                $status = "true";
+            }
+            catch (exception $e){
+                echo " Failed at database_fetchAllRides " .$e->getMessage();
+            }
         }
         
         //database_close();
@@ -128,7 +155,7 @@
         database_connect();
         $status = "false"; 
                  
-        if($connection != null) { 
+        if($connection != null) {             
             try {         
                 $result = mysqli_query($connection, "INSERT INTO rideratings (userid, rideid, rating, date) VALUES ('{$userid}', '{$rideid}', '{$riderating}', sysdate());");
                 if ($result) { $status = "true";}  
@@ -137,8 +164,8 @@
                 //echo " here 3 " .$e->getMessage();; 
                 // if duplicate, then update existing record
                 if (mysqli_errno($connection) == 1062) {  
-                    $result = mysqli_query($connection, "update rideratings set rating = '{$riderating}', date = sysdate() where userid ='{$userid}' and rideid = '{$rideid}' ;");
-                      
+                    $result = mysqli_query($connection, "UPDATE rideratings SET rating = '{$riderating}', date = NOW() WHERE userid ='{$userid}' AND rideid = '{$rideid}' ;");
+                    
                     if ($result) { $status = "true";}
                 }
             }
@@ -149,27 +176,35 @@
     }
     function database_getAllRideRatings () {
         global $connection;
-        database_connect();
         $status = "false";
-        $vReturn =['success' => $status];
-        
+        $vReturn =['success' => $status];        
         $ridearray = array();
-        
-        if($connection != null) {             
-            $results = mysqli_query($connection, "SELECT rideid, ridename, averagerating, ratingcount from rides ;");
+        $error = "Success";
+        //echo "Step DB 1 ";
+        try {            
+            database_connect();
+            //echo "Step DB 2 ";
             
-            // mysqli_fetch_assoc() returns either null or row data
-            while ($row = mysqli_fetch_assoc($results)){
-                $ridearray[] = $row;
-            }   
-                     
-            $status = "true";
+            if($connection != null) {                          
+                //$results = mysqli_query($connection, "SELECT rideid, ridename, averagerating, ratingcount FROM rides  WHERE RIDEID < 3  ;");  
+                $results = mysqli_query($connection, "SELECT rideid, ridename, averagerating, ratingcount FROM rides ;");   
+                //echo "Step DB 4 ";
+                while ($row = mysqli_fetch_assoc($results)){
+                    $ridearray[] = $row;
+                }   
+               // echo "Step DB 5 ";  
+                $status = "true";                
+                database_close();
+            }
         }
-        
-        database_close();
-              
-        $vReturn = ['success' => $status, 'allRides' => $ridearray]; 
-
+        catch (exception $e){
+            echo " Failed at database_getAllRideRatings " .$e->getMessage();
+            $error = 'Error: ' .$e-> getMessage();
+        }        
+       // echo "Step DB 7 ";
+        $vReturn = ['success' => $status, 'allRides' => $ridearray, 'Message' => $error]; 
+        //echo json_encode($vReturn);   
+        //echo "Step DB 8 ";
         return $vReturn;
     }
     function database_getRideRating(string $userid, string $rideid){
@@ -181,7 +216,7 @@
             try {   
                 $vSQL = "SELECT t1.rating, t2.averagerating FROM rideratings t1, rides t2 ";
                 $vSQL = $vSQL ." WHERE t1.userid = '{$userid}' and t1.rideid='{$rideid}' ";
-                $vSQL = $vSQL ."  and t1.rideid = t2.rideid";     
+                $vSQL = $vSQL ."  and t1.rideid = t2.rideid ;";     
                 //echo $vSQL; 
                 $results = mysqli_query($connection, $vSQL );
                 $row = mysqli_fetch_assoc($results);
@@ -190,7 +225,7 @@
                 $vReturn = ['success' => "true", 'userrating' => $row['rating'], 'averating' => $row['averagerating']];   
             }
             catch (exception $e) { 
-                //echo " here 3 " .$e->getMessage();;  
+                echo " Failed at database_getRideRating " .$e->getMessage();
             }
             finally{  }            
         }
@@ -207,7 +242,7 @@
             try {   
                 $vSQL = "SELECT t1.rideid, t1.rating, t2.averagerating FROM rideratings t1, rides t2 ";
                 $vSQL = $vSQL ." WHERE t1.userid = '{$userid}' ";
-                $vSQL = $vSQL ."  and t1.rideid = t2.rideid";     
+                $vSQL = $vSQL ."  and t1.rideid = t2.rideid ;";     
                 //echo $vSQL; 
                 $results = mysqli_query($connection, $vSQL );
                 while ($row = mysqli_fetch_assoc($results)){
@@ -216,7 +251,7 @@
                 $vReturn = ['success' => "true", 'allUserRatings' => $ridearray]; 
             }
             catch (exception $e) { 
-                //echo " here 3 " .$e->getMessage();;  
+                echo " Failed at database_getAllUserRideRatings " .$e->getMessage(); 
             }
             finally{  }            
         }

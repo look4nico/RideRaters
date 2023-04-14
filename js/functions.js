@@ -22,7 +22,7 @@ function login(e) {
      
     $(document).ready(function(){
         $.ajax({
-            url: './rideratersbackend/login2.php',
+            url: './RideRatersBackend/login2.php',
             dataType: 'json',
             async: 'false',
             type: 'post',
@@ -69,7 +69,7 @@ function signup(e) {
     $(document).ready(function(){
 
         $.ajax({
-            url: './rideratersbackend/signup2.php',
+            url: './RideRatersBackend/signup2.php',
             dataType: 'json',
             async: 'false',
             type: 'post',
@@ -133,7 +133,7 @@ function resetPassword(e) {
 
     $(document).ready(function(){
         return $.ajax({
-            url: './rideratersbackend/resetpass.php',
+            url: './RideRatersBackend/resetpass.php',
             dataType: 'json',
             async: 'false',
             type: 'post',
@@ -181,7 +181,7 @@ function fetchRides(e) {
     $(document).ready(function(){
 
         $.ajax({
-            url: './rideratersbackend/fetchAllRides.php',
+            url: './RideRatersBackend/fetchAllRides.php',
             dataType: 'json',
             async: 'false',
             type: 'post',
@@ -229,7 +229,7 @@ function setRideRating(e) {
      
     $(document).ready(function(){
         return $.ajax({
-            url: './rideratersbackend/setriderating.php',
+            url: './RideRatersBackend/setRideRating.php',
             dataType: 'json',
             async: 'false',
             type: 'post',
@@ -271,7 +271,7 @@ function GetAllRideRatings(e) {
     $(document).ready(function(){
 
         $.ajax({
-            url: './rideratersbackend/GetAllRideRatings.php',
+            url: './RideRatersBackend/GetAllRideRatings.php',
             dataType: 'json',
             async: 'false',
             type: 'post',
@@ -292,7 +292,7 @@ function GetAllRideRatings(e) {
             },
             error: function(xhr, status, error) {
                 console.log(xhr.responseText);
-                alert('Error: ' + xhr.responseText);
+                alert('Error in GetAllRideRatings function : ' + xhr.responseText);
             },
             complete: function (response){
                 console.log("Ajax completed");
@@ -318,7 +318,7 @@ function GetRideRating(e){
     $(document).ready(function(){
 
         $.ajax({
-            url: './rideratersbackend/GetRideRating.php',
+            url: './RideRatersBackend/GetRideRating.php',
             dataType: 'json',
             async: 'false',
             type: 'post',
@@ -361,7 +361,7 @@ function GetUserRideRatings(e){
     $(document).ready(function(){
 
         $.ajax({
-            url: './rideratersbackend/GetUserRideRatings.php',
+            url: './RideRatersBackend/GetUserRideRatings.php',
             dataType: 'json',
             async: 'false',
             type: 'post',
