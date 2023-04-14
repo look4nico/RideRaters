@@ -9,8 +9,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/functions.js"></script>
     <script>
-        
         document.addEventListener("DOMContentLoaded", function () {
                 let stars = document.querySelectorAll(".fa-star");
                 const btnNg = document.querySelector("#btn-ng");
@@ -105,7 +105,129 @@
                     });
                 });
             });
+        // get rideSelectedId from session storage and log it to the console
+        rideSelectedId = sessionStorage.getItem("rideSelectedId");
+        console.log(Number(rideSelectedId));
 
+        $(document).ready(function () {
+            $.ajax({
+                url: './RideRatersBackend/getUserProfile.php',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        let username = data.username;
+                        $('#username').text(username);
+                        console.log(data);
+                        console.log(Number(data.id));
+                        // set session storage for userid
+                        sessionStorage.setItem("userid", Number(data.id));
+
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert('Error retrieving user info: ' + error);
+                }
+            });
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Your JavaScript code here
+            var vRiderating;
+            //create event listener for feedback-stars class
+            document.getElementById('feedback-stars').addEventListener("click", function () {
+                // if id='one-star' is selected then vRiderating = 1
+                if (document.getElementById("one-star").classList.contains("stars-checked") && !document.getElementById("two-star").classList.contains("stars-checked") && !document.getElementById("three-star").classList.contains("stars-checked") && !document.getElementById("four-star").classList.contains("stars-checked") && !document.getElementById("five-star").classList.contains("stars-checked")) {
+                    vRiderating = 1;
+                    // remove session storage for vRiderating
+                    sessionStorage.removeItem("vRiderating");
+                    sessionStorage.setItem("vRiderating", vRiderating);
+                    console.log("vRiderating: " + vRiderating);
+                }
+                // if id='one -star' id='two-star' is selected then vRiderating = 2
+                if (document.getElementById("one-star").classList.contains("stars-checked") && document.getElementById("two-star").classList.contains("stars-checked") && !document.getElementById("three-star").classList.contains ("stars-checked") && !document.getElementById("four-star").classList.contains("stars-checked") && !document.getElementById("five-star").classList.contains("stars-checked")) {
+                    vRiderating = 2;
+                    sessionStorage.removeItem("vRiderating");
+                    sessionStorage.setItem("vRiderating", vRiderating);
+                    console.log("vRiderating: " + vRiderating);
+                }
+                // if id='one -star' id='two-star' id='three-star' is selected then vRiderating = 3
+                if (document.getElementById("one-star").classList.contains("stars-checked") && document.getElementById("two-star").classList.contains("stars-checked") && document.getElementById("three-star").classList.contains("stars-checked") && !document.getElementById("four-star").classList.contains("stars-checked") && !document.getElementById("five-star").classList.contains("stars-checked")) {
+                    vRiderating = 3;
+                    sessionStorage.removeItem("vRiderating");
+                    sessionStorage.setItem("vRiderating", vRiderating);
+                    console.log("vRiderating: " + vRiderating);
+                }
+                // if id='one -star' id='two-star' id='three-star' id='four-star' is selected then vRiderating = 4
+                if (document.getElementById("one-star").classList.contains("stars-checked") && document.getElementById("two-star").classList.contains("stars-checked") && document.getElementById("three-star").classList.contains("stars-checked") && document.getElementById("four-star").classList.contains("stars-checked") && !document.getElementById("five-star").classList.contains("stars-checked")) {
+                    vRiderating = 4;
+                    sessionStorage.removeItem("vRiderating");
+                    sessionStorage.setItem("vRiderating", vRiderating);
+                    console.log("vRiderating: " + vRiderating);
+                }
+                // if id='one -star' id='two-star' id='three-star' id='four-star' id='five-star' is selected then vRiderating = 5
+                if (document.getElementById("one-star").classList.contains("stars-checked") && document.getElementById("two-star").classList.contains("stars-checked") && document.getElementById("three-star").classList.contains("stars-checked") && document.getElementById("four-star").classList.contains("stars-checked") && document.getElementById("five-star").classList.contains("stars-checked")) {
+                    vRiderating = 5;
+                    sessionStorage.removeItem("vRiderating");
+                    sessionStorage.setItem("vRiderating", vRiderating);
+                    console.log("vRiderating: " + vRiderating);
+                }
+            });
+        });
+
+        if (sessionStorage.getItem("vRiderating") != null) {
+            vRiderating = sessionStorage.getItem("vRiderating");
+            console.log("vRiderating: " + vRiderating);
+        }
+
+ 
+        
+        function settingRideRating(e) {
+            e.preventDefault();
+            console.log("setRideRating function started ooooooooooooooooooooooooooooooooooooooooooooooooooo");
+
+            var vUserid = sessionStorage.getItem("userid");
+            var vRideid = Number(rideSelectedId);
+
+
+            
+
+            $(document).ready(function () {
+                return $.ajax({
+                    url: './rideratersbackend/setriderating.php',
+                    dataType: 'json',
+                    async: 'false',
+                    type: 'post',
+                    data: { userid: vUserid, rideid: vRideid, riderating: vRiderating },
+                    success: function (response) {
+                        //alert("Alert 1: " + JSON.stringify(response));
+                        console.log("log 1: " + JSON.stringify(response));
+                        // Handle the response from the PHP script
+                        if (response.success == "true") {
+                            //transfer to other page 
+                            // window.location.href = "home.html";
+                            console.log("log 2: " + JSON.stringify(response));
+                            //window.location.href = "xxxxxxxxxxxx.html";
+                            //alert("Alert 2: " + 'success');
+                        } else {
+                            console.log("log 3: " + JSON.stringify(response));
+                            alert('Failed to set ride rating');
+                            //window.location.replace = "xxxxxxxxxxxxxxxx.html";
+                        };
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr.responseText);
+                        alert('Error setiing ride rating: ' + xhr.responseText);
+                        //window.location.replace = "xxxxxxxxxxxxx.html";
+                    }
+                });
+            });
+            //alert("test end");
+        }
 
       
     </script>
@@ -145,7 +267,7 @@
         <!--Review Form Div-->
         <div class="feedback-form-div">
             <!--Review Form-->
-            <form action="" class="review-area">
+            <form action="" id="review-form" class="review-area">
                 <!--Divider-->
                 <hr class="review-hr">
                 <!--Star Rating Div-->
@@ -156,7 +278,7 @@
                         <p class="review-txt-para proxima-regular">Your star rating will be posted with your review and added to the user score average.</p>
                     </div>
                     <!--Stars Div-->
-                    <div class="feedback-stars">
+                    <div class="feedback-stars" id="feedback-stars">
                         <i class="fa-solid fa-star" id="one-star"></i>
                         <i class="fa-solid fa-star" id="two-star"></i>
                         <i class="fa-solid fa-star" id="three-star"></i>
@@ -201,7 +323,7 @@
                 <textarea id="review"  class="proxima-regular" name="review" rows="">I think...</textarea>
                 <!--Submit Review Button Div-->
                 <div class="submit-btn-div">
-                        <button onclick="reviewThanks()" class="submit-btn">SUBMIT</button>
+                        <button onclick="reviewThanks(); settingRideRating(event)" class="submit-btn">SUBMIT</button>
                 </div>
                 
             </form>

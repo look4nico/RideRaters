@@ -7,7 +7,6 @@ jq(document).ready(function() {
 
         var vAllRideRatings = "";    
         var vEmail = localStorage.getItem("hiddenuserid");
-
         return new Promise(function(resolve, reject) {
             jq.ajax({
             url: './rideratersbackend/GetAllRideRatings.php',
@@ -1911,7 +1910,15 @@ function ridePageRendered(img) {
         
         const selectedRide = ridesData.find(ride => ride.name === rideName);
         console.log(selectedRide);
+        // save selectedRide.id to session storage
+        // clear the rideSelectedId session storage item
+        sessionStorage.removeItem('rideSelectedId');
+        let rideSelectedId = sessionStorage.setItem('rideSelectedId', selectedRide.id);
         console.log(selectedRide.id);
+        console.log(rideSelectedId);
+        // get session storage rideSelectedId 
+        rideSelectedId = Number(sessionStorage.getItem('rideSelectedId'));
+        console.log(rideSelectedId);
         
         ridePageSelected = [];
         ridePageSelected.push(selectedRide);
