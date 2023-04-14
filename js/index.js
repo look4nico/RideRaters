@@ -1900,7 +1900,7 @@ function addRide2List(btn) {
 
 // Function that renders the ride page on img click
 function ridePageRendered(img) {
-    
+    console.log("ridePageRendered(img) has started bro" );
     sessionStorage.removeItem('ridePageSelected');
     if (img.className === 'list-ride-img') {
         console.log(img);
@@ -1935,6 +1935,13 @@ function ridePageRendered(img) {
         
         const selectedRide = ridesData.find(ride => ride.name === rideName);
         console.log(selectedRide);
+        sessionStorage.removeItem('rideSelectedId');
+        let rideSelectedId = sessionStorage.setItem('rideSelectedId', selectedRide.id);
+        console.log(selectedRide.id);
+        console.log(rideSelectedId);
+        // get session storage rideSelectedId 
+        rideSelectedId = Number(sessionStorage.getItem('rideSelectedId'));
+        console.log(rideSelectedId);
         
         ridePageSelected = [];
         ridePageSelected.push(selectedRide);
