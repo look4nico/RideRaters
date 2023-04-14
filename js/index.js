@@ -15,14 +15,14 @@ jq(document).ready(function() {
             type: 'post',
             data: {username: vEmail},
             success: function(response) {            
-                console.log("log 1: " + JSON.stringify(response));
+                // console.log("log 1: " + JSON.stringify(response));
                 // rideUserRatings = JSON.stringify(response);
                 if(response.success == "true") {
                     vAllRideRatings = response.allRides;
-                    console.log("log 2: " + JSON.stringify(response));
+                    // console.log("log 2: " + JSON.stringify(response));
                     resolve(response);
                 } else {                
-                    console.log("log 3: " + JSON.stringify(response));
+                    // console.log("log 3: " + JSON.stringify(response));
                     reject('System error, trying to figure this out');
                 };
             },
@@ -1665,7 +1665,7 @@ function ridesCompared() {
             compareResultsClone.querySelector('.compare-results-img-text:nth-of-type(1)').textContent = item.park;
             compareResultsClone.querySelector('.compare-results-img-text:nth-of-type(2)').textContent = item.name;
             compareResultsClone.querySelector('.ride-location-txt').textContent = item.location;
-            compareResultsClone.querySelector('.user-rating-txt').textContent = roundToTenth(userRatingsObj.allRides[ridePageSelected[0].id-1].averagerating);
+            compareResultsClone.querySelector('.user-rating-txt').textContent = roundToTenth(userRatingsObj.allRides[item.id-1].averagerating);
             compareResultsClone.querySelector('.access-rating-txt').textContent = item.rating;
             compareResultsContainer.appendChild(compareResultsClone);
             }
@@ -1702,6 +1702,7 @@ function handleClick(button) {
     console.log(ride.name);
     console.log(ride.img);
     console.log(compareIcon[0].src);
+    console.log(window.location.origin);
     // const xMark = document.querySelectorAll('.fa-circle-xmark');
     
     // xMark.forEach(function (xMark) {
@@ -1757,7 +1758,7 @@ function handleClick(button) {
     }
 
     
-    if (compareIcon[0].src === window.location.origin + '/media/imgs/empty-img.png' && compareIcon[1].src === window.location.origin + '/media/imgs/empty-img.png' && compareIcon[2].src === window.location.origin + '/media/imgs/empty-img.png') {
+    if (compareIcon[0].src === window.location.origin + '/RideRaters/media/imgs/empty-img.png' && compareIcon[1].src === window.location.origin + '/RideRaters/media/imgs/empty-img.png' && compareIcon[2].src === window.location.origin + '/RideRaters/media/imgs/empty-img.png') {
         console.log('All images are empty');
         compareIcon[0].src = '';
         compareIcon[0].src = ride.img;
@@ -1765,7 +1766,7 @@ function handleClick(button) {
         console.log(rideInfoFirst);
         xMark[0].style.transform = 'rotate(45deg)';
         return;        
-    } else if (compareIcon[1].src === window.location.origin + '/media/imgs/empty-img.png' && compareIcon[2].src === window.location.origin + '/media/imgs/empty-img.png') {
+    } else if (compareIcon[1].src === window.location.origin + '/RideRaters/media/imgs/empty-img.png' && compareIcon[2].src === window.location.origin + '/RideRaters/media/imgs/empty-img.png') {
         console.log('Image 1 and Image 2 are full');
         compareIcon[1].src = '';
         compareIcon[1].src = ride.img;
@@ -1774,7 +1775,7 @@ function handleClick(button) {
         xMark[1].style.transform = 'rotate(45deg)';
         return;
  
-    } else if (compareIcon[1].src != window.location.origin + '/media/imgs/empty-img.png' && compareIcon[2].src === window.location.origin + '/media/imgs/empty-img.png') {
+    } else if (compareIcon[1].src != window.location.origin + '/RideRaters/media/imgs/empty-img.png' && compareIcon[2].src === window.location.origin + '/RideRaters/media/imgs/empty-img.png') {
         console.log('Image 2 and Image 3 are full');
         compareIcon[2].src = '';
         compareIcon[2].src = ride.img;
@@ -1782,7 +1783,7 @@ function handleClick(button) {
         console.log(rideInfoThird);
         xMark[2].style.transform = 'rotate(45deg)';
         return;
-    } else if (compareIcon[0].src === window.location.origin + '/media/imgs/empty-img.png' && compareIcon[1].src != window.location.origin + '/media/imgs/empty-img.png' && compareIcon[2].src != window.location.origin + '/media/imgs/empty-img.png') {
+    } else if (compareIcon[0].src === window.location.origin + '/RideRaters/media/imgs/empty-img.png' && compareIcon[1].src != window.location.origin + '/RideRaters/media/imgs/empty-img.png' && compareIcon[2].src != window.location.origin + '/RideRaters/media/imgs/empty-img.png') {
         console.log('All images are empty');
         compareIcon[0].src = '';
         compareIcon[0].src = ride.img;
@@ -1790,7 +1791,7 @@ function handleClick(button) {
         console.log(rideInfoFirst);
         xMark[0].style.transform = 'rotate(45deg)';
         return;    
-    } else if (compareIcon[1].src === window.location.origin + '/media/imgs/empty-img.png' && compareIcon[0].src != window.location.origin + '/media/imgs/empty-img.png' && compareIcon[2].src != window.location.origin + '/media/imgs/empty-img.png') {
+    } else if (compareIcon[1].src === window.location.origin + '/RideRaters/media/imgs/empty-img.png' && compareIcon[0].src != window.location.origin + '/RideRaters/media/imgs/empty-img.png' && compareIcon[2].src != window.location.origin + '/RideRaters/media/imgs/empty-img.png') {
         console.log('All images are empty');
         compareIcon[1].src = '';
         compareIcon[1].src = ride.img;
@@ -1798,7 +1799,7 @@ function handleClick(button) {
         console.log(rideInfoSecond);
         xMark[1].style.transform = 'rotate(45deg)';
         return;    
-    } else if (compareIcon[2].src === window.location.origin + '/media/imgs/empty-img.png' && compareIcon[0].src != window.location.origin + '/media/imgs/empty-img.png' && compareIcon[1].src != window.location.origin + '/media/imgs/empty-img.png') {
+    } else if (compareIcon[2].src === window.location.origin + '/RideRaters/media/imgs/empty-img.png' && compareIcon[0].src != window.location.origin + '/RideRaters/media/imgs/empty-img.png' && compareIcon[1].src != window.location.origin + '/RideRaters/media/imgs/empty-img.png') {
         console.log('All images are empty');
         compareIcon[2].src = '';
         compareIcon[2].src = ride.img;
