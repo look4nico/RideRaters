@@ -27,7 +27,7 @@
 
     function security_changePassword(){
         // Set a default value
-        $status = false;
+        $status = false; 
 
         $result = security_sanitizeChangePassword();
         // Open connection.
@@ -52,7 +52,7 @@
         $status = false;
         
         // Validate
-        if(isset($_POST["username"]) and isset($_POST["password"])) {
+        if(isset($_POST["email"]) and isset($_POST["password"])) {
             $status = true;
         }
 
@@ -78,7 +78,7 @@
         // Open connection
         database_connect();
         // Use the connection
-        $status = database_verifyUser($result["username"], $result["password"]);
+        $status = database_verifyUser($result["email"], $result["password"]);
         // Close connection
         database_close();
         // Check status
@@ -89,7 +89,7 @@
         return $status;
     }
 
-    function security_addNewUser() {
+    function security_addNewUser(){
         // Set a default value
         $status = false;
         // Validate and sanitize.
@@ -101,17 +101,18 @@
         //
         // We want to make sure we don't add
         //  duplicate values.
-        if(!database_verifyUser($result["username"], $result["password"])) {
+        if (!database_verifyUser($result["username"], $result["password"], $result["email"])) {
             // Username does not exist.
             // Add a new one.
-            database_addUser($result["username"], $result["password"]);
+            database_addUser($result["username"], $result["password"], $result["email"]);
             $status = true;
         }
-        
+
         // Close connection.
         database_close();
         return $status;
     }
+
 
     function security_loggedIn() {
         // Does a cookie exist?
@@ -127,13 +128,15 @@
         // Create an array of keys username and password
         $result = [
             "username" => null,
-            "password" => null 
+            "password" => null,
+            "email" => null
         ];
 
         if(security_validate()) {
             // After validation, sanitize text input.
             $result["username"] = htmlspecialchars($_POST["username"]);
             $result["password"] = htmlspecialchars($_POST["password"]);
+            $result["email"] = htmlspecialchars($_POST["email"]);
         }
 
         // Return array

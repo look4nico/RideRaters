@@ -69,7 +69,7 @@
         }        
     }
 
-    function database_addUser($username, $password) {
+    function database_addUser($username, $password, $email) {
         // Use the global connection
         global $connection;
 
@@ -77,11 +77,12 @@
             // Overwrite the existing password value as a hash
             $password = password_hash($password, PASSWORD_DEFAULT);
             // Insert username and hashed password
-            mysqli_query($connection, "INSERT INTO users (username, password) VALUES ('{$username}', '{$password}');");
+            mysqli_query($connection, "INSERT INTO users (username, password, email) VALUES ('{$username}', '{$password}', '{$email}');");
         }
     }
+    
 
-    function database_verifyUser($username, $password) {
+    function database_verifyUser($email, $password) {
         // Use the global connection
         global $connection;
 
@@ -90,7 +91,7 @@
 
         if($connection != null) {
             // Use WHERE expressions to look for username
-            $results = mysqli_query($connection, "SELECT password FROM users WHERE username = '{$username}';");
+            $results = mysqli_query($connection, "SELECT password FROM users WHERE email = '{$email}';");
             
             // mysqli_fetch_assoc() returns either null or row data
             $row = mysqli_fetch_assoc($results);
@@ -258,4 +259,3 @@
         database_close();
         return $vReturn;
     }
-?>

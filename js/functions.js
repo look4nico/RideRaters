@@ -26,7 +26,7 @@ function login(e) {
             dataType: 'json',
             async: 'false',
             type: 'post',
-            data: {username: vEmail, password: vPassword},
+            data: {email: vEmail, password: vPassword}, 
             success: function(response) {            
                 //alert("Alert 1: " + JSON.stringify(response));
                 console.log("log 1: " + JSON.stringify(response));
@@ -64,6 +64,7 @@ function signup(e) {
 
     var vEmail = document.getElementById("email").value;
     var vPassword = document.getElementById("pwd").value;
+    var vUsername = document.getElementById("username").value;
     //alert(vEmail + '=' + vPassword);
 
     $(document).ready(function(){
@@ -71,9 +72,9 @@ function signup(e) {
         $.ajax({
             url: './RideRatersBackend/signup2.php',
             dataType: 'json',
-            async: 'false',
+            async: false,
             type: 'post',
-            data: {username: vEmail, password: vPassword},
+            data: {username: vUsername, password: vPassword, email: vEmail},
             success: function(response) {            
                 //alert("Alert 1: " + JSON.stringify(response));
                 console.log("log 1: " + JSON.stringify(response));

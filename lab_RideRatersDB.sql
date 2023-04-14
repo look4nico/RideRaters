@@ -76,7 +76,7 @@ CREATE TABLE `posts` (
   `Name` varchar(50) NOT NULL,
   `Content` varchar(2500) NOT NULL,
   `UserID` varchar(20) NOT NULL,
-  `Date` date NOT NULL DEFAULT current_timestamp()
+  `date` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
