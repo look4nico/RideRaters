@@ -5,7 +5,7 @@ database_connect();
 
 session_start();
 
-if (isset($_SESSION['user'])) {
+if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
     $query = "SELECT id, username FROM users WHERE email = '{$email}'";
     $result = mysqli_query($connection, $query);
@@ -19,5 +19,4 @@ if (isset($_SESSION['user'])) {
 } else {
     echo json_encode(array('error' => 'User not logged in'));
 }
-
 database_close();
