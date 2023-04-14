@@ -19,6 +19,8 @@ jq(document).ready(function() {
                 // rideUserRatings = JSON.stringify(response);
                 if(response.success == "true") {
                     vAllRideRatings = response.allRides;
+                    // referesh the page
+                    
                     // console.log("log 2: " + JSON.stringify(response));
                     resolve(response);
                 } else {                
@@ -414,9 +416,19 @@ function fanFavorite(data) {
             accessRating.textContent = ride.rating;
             location.textContent = ride.rating;
             itemCity.textContent = ride.location;
-            userRating.textContent = parseFloat(userRatingsObj.allRides[ride.id-1].averagerating);
+            if (userRatingsObj) {
+                userRating.textContent = parseFloat(userRatingsObj.allRides[ride.id-1].averagerating);
+            } else {
+                userRating.textContent = 0;
+                // in 3 seconds run the function to get the user ratings
+                setTimeout(function() {
+                    // userRating.textContent = parseFloat(userRatingsObj.allRides[ride.id-1].averagerating);
+                    location.reload();
+                }
+                , 500);
+            }
             console.log(ride.id-1);
-            console.log(userRatingsObj.allRides[50]);
+            // console.log(userRatingsObj.allRides[50]);
             
             fanFavContainer.appendChild(result);
             console.log("photosensitivity");
