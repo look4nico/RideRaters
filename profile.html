@@ -23,7 +23,14 @@
                         $('#username').text(username);
                         console.log(data);
                         let userNameTxt = document.querySelector(".username-txt");
-                        userNameTxt.textContent = username;
+                        // Username Sentance case username
+                        let usernameArr = username.split(" ");
+                        let usernameCase = "";
+                        for (let i = 0; i < usernameArr.length; i++) {
+                            usernameCase += usernameArr[i].charAt(0).toUpperCase() + usernameArr[i].slice(1) + " ";
+                        } 
+
+                        userNameTxt.textContent = usernameCase;
                     }
                 },
                 error: function (xhr, status, error) {

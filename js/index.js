@@ -20,7 +20,12 @@ jq(document).ready(function() {
                 if(response.success == "true") {
                     vAllRideRatings = response.allRides;
                     // referesh the page
-                    
+                    let rideRating = response;
+                    console.log(rideRating);
+                    console.log(rideRating.allRides);
+                    let allRidesRated = rideRating.allRides;
+                    session.remove("allRidesRated");
+                    sessionStorage.setItem("allRidesRated", JSON.stringify(allRidesRated));
                     // console.log("log 2: " + JSON.stringify(response));
                     resolve(response);
                 } else {                
@@ -69,6 +74,8 @@ function userRatings(ratings) {
         // console.log(userRatingsObj.allRides[i].ridename);
     }
 }
+
+
 
 // let userName;
 // $(document).ready(function () {
